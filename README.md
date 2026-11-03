@@ -13,7 +13,6 @@ Windows first, forked from [ServerBox](https://github.com/lollipopkit/flutter_se
 
 ![LBox terminal](screenshots/screenshot-1.png)
 
-> Add or replace images in `screenshots/`.
 
 ## Features
 
