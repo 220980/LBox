@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    TODO: remove once placed widgets of this provider are gone; `widget_status`
+    replaced it. Kept so a widget already on a home screen keeps working, drawn
+    the same way at any size, and hidden from the picker (API 28+; some OEM
+    launchers ignore the flag and still list it).
+-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="250dp"
+    android:minHeight="110dp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="2"
+    android:updatePeriodMillis="1800000"
+    android:initialLayout="@layout/widget_message"
+    android:configure="tech.lolli.toolbox.widget.WidgetConfigureActivity"
+    android:resizeMode="horizontal|vertical"
+    android:minResizeWidth="110dp"
+    android:minResizeHeight="40dp"
+    android:widgetFeatures="reconfigurable|hide_from_picker"
+    android:widgetCategory="home_screen">
+</appwidget-provider>

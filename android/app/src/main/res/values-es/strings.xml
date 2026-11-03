@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Widget strings only. Everything the Flutter side owns stays in its
+    ARB files; these are drawn by native code in a process the Flutter
+    engine may never have started in, so `l10n` is not reachable.
+
+    Indonesian is `values-in`, not `values-id`: resource qualifiers use
+    the legacy ISO code, which is what `Locale.getLanguage()` returns
+    on every Android version.
+-->
+<resources>
+    <string name="widget_configure_title">Widget</string>
+    <string name="widget_configure_server">Servidor</string>
+    <string name="widget_configure_metric">Métrica principal</string>
+    <string name="widget_configure_save">Guardar</string>
+    <string name="widget_configure_empty">Aún no hay ningún servidor con ServerBox Monitor activado.\nAñade un servidor en ServerBox y vuelve aquí.</string>
+    <string name="widget_metric_cpu">CPU</string>
+    <string name="widget_metric_memory">Memoria</string>
+    <string name="widget_metric_disk">Disco</string>
+    <string name="widget_metric_network">Red</string>
+    <string name="widget_err_not_configured">Toca para elegir un servidor</string>
+    <string name="widget_err_no_token">Faltan las credenciales de acceso. Abre ServerBox.</string>
+    <string name="widget_err_insecure">Se requiere HTTPS</string>
+    <string name="widget_err_network">Error de red</string>
+    <string name="widget_err_timeout">Tiempo agotado</string>
+    <string name="widget_chart_desc">Gráficos de estado</string>
+    <string name="widget_refresh_desc">Actualizar</string>
+    <string name="widget_small_label">Valores del servidor</string>
+    <string name="widget_medium_label">Gráficos del servidor</string>
+    <string name="widget_label">Estado del servidor</string>
+    <string name="widget_description">Consulta rápidamente el estado de la CPU, la memoria, el disco y la red. Amplía el widget para ver más información.</string>
+
+    <string name="process_text_label">Guardar como fragmento de código</string>
+    <string name="tile_no_sessions">No hay sesiones en ejecución</string>
+    <plurals name="tile_sessions">
+        <item quantity="one">%d sesión</item>
+        <item quantity="other">%d sesiones</item>
+    </plurals>
+    <string name="channel_transfers">Transferencias de archivos</string>
+    <string name="incoming_failed">No se pudieron recibir los archivos compartidos</string>
+    <string name="shortcut_server_gone">Servidor eliminado</string>
+</resources>

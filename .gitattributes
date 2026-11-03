@@ -1,0 +1,109 @@
+# Test inputs the parsers read verbatim. The tests build and match marker lines
+# with "\n", so a CRLF checkout changes what they assert:
+# `create_host_prefers_kvm_and_q35` replaces "kvm\n<domainCapabilities>" and,
+# with CRLF, replaces nothing — the parser then sees the KVM the test expects
+# to have been simulated away — and
+# `vnc_console_without_a_password_or_refused_one` looks up "{marker}\n", finds
+# no match, and unwraps the None. Pin the endings; the files hold no CR today,
+# so nothing in history is rewritten.
+#
+# The libvirt fixtures moved with the command layer to `sbm_virt`, and the
+# rule has to follow them: without it the two tests above failed again on
+# `Rust tests (windows-latest)`, with `live_xml_as_a_definition`.
+#
+# The binaries among them are not text: `*.hive` and `*.bin` carry CR bytes
+# that belong to the data the storage-migration tests restore, and those
+# fixtures cannot be regenerated; `*.iso` are the cloud-init seeds the
+# libvirt tests read. `text` would normalise them at checkout, so each extension is
+# excluded — a later line wins, and the exclusions below come after. The
+# rules that follow this block (`rootfs_manifest/*.sig`) are narrower still
+# and override it for their own files.
+crates/sbm_parser/tests/fixtures/** text eol=lf
+crates/sbm_virt/tests/fixtures/** text eol=lf
+crates/sbm_virt/tests/fixtures/**/*.iso -text
+test/fixtures/** text eol=lf
+test/fixtures/**/*.hive -text
+test/fixtures/**/*.bin -text
+test/fixtures/**/*.age -text
+
+# sqlx hashes each migration file's bytes and records the checksum in the
+# agent's `_sqlx_migrations` table. `migrate!` embeds those bytes at compile
+# time, so a checkout that converted line endings produces a binary whose
+# checksums disagree with the ones an earlier build already recorded, and the
+# migrator refuses to start rather than run against a database it cannot
+# account for.
+#
+# Windows checkouts are where this bites: `Rust tests (windows-latest)` failed
+# `shipped_migrations_keep_their_checksums` because CRLF changed migration 1's
+# SHA-384 from ac7a765b… to 1ca2d91b…. Pin the bytes so every platform hashes
+# the same file.
+monitor/migrations/*.sql text eol=lf
+
+# Ed25519 verifies the original bytes, including line endings.
+test/fixtures/rootfs_manifest/signed.json text eol=lf
+test/fixtures/rootfs_manifest/*.sig -text
+
+# Images, fonts, theme packages and PDFs outside the app's build are Git LFS
+# objects: a new version of one is a new pointer, not another copy of the file
+# in every clone's history. Earlier versions stay in history as regular blobs
+# (history is not rewritten).
+#
+# Only the agent, the docs, the website and the theme store: F-Droid builds the
+# app from a plain `git clone`, without LFS (fdroidserver#1190), and reads
+# `fastlane/` for its listing, so anything the app's build or listing reads
+# (`android/`, `ios/`, `macos/`, `linux/`, `windows/`, `web/`, `assets/`,
+# `fastlane/`, the packages) stays a regular file.
+#
+# Every CI checkout has `lfs: true`; Cloudflare Pages fetches LFS objects when it
+# clones. A checkout without LFS gets pointer text instead of the file, which a
+# build would ship without an error, so `scripts/check-lfs.sh` fails a build
+# that finds one (`npm run build` of the panel, the website and the docs). The
+# theme store is packed from the working tree for the same reason (`git archive`
+# writes pointers): scripts/store-tarball.sh.
+monitor/**/*.png filter=lfs diff=lfs merge=lfs -text
+monitor/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+monitor/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+monitor/**/*.webp filter=lfs diff=lfs merge=lfs -text
+monitor/**/*.gif filter=lfs diff=lfs merge=lfs -text
+monitor/**/*.avif filter=lfs diff=lfs merge=lfs -text
+monitor/**/*.ico filter=lfs diff=lfs merge=lfs -text
+monitor/**/*.woff2 filter=lfs diff=lfs merge=lfs -text
+monitor/**/*.woff filter=lfs diff=lfs merge=lfs -text
+monitor/**/*.ttf filter=lfs diff=lfs merge=lfs -text
+monitor/**/*.otf filter=lfs diff=lfs merge=lfs -text
+monitor/**/*.fsbt filter=lfs diff=lfs merge=lfs -text
+monitor/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+docs/**/*.png filter=lfs diff=lfs merge=lfs -text
+docs/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+docs/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+docs/**/*.webp filter=lfs diff=lfs merge=lfs -text
+docs/**/*.gif filter=lfs diff=lfs merge=lfs -text
+docs/**/*.avif filter=lfs diff=lfs merge=lfs -text
+docs/**/*.ico filter=lfs diff=lfs merge=lfs -text
+docs/**/*.woff2 filter=lfs diff=lfs merge=lfs -text
+docs/**/*.woff filter=lfs diff=lfs merge=lfs -text
+docs/**/*.ttf filter=lfs diff=lfs merge=lfs -text
+docs/**/*.otf filter=lfs diff=lfs merge=lfs -text
+docs/**/*.fsbt filter=lfs diff=lfs merge=lfs -text
+docs/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+website/**/*.png filter=lfs diff=lfs merge=lfs -text
+website/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+website/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+website/**/*.webp filter=lfs diff=lfs merge=lfs -text
+website/**/*.gif filter=lfs diff=lfs merge=lfs -text
+website/**/*.avif filter=lfs diff=lfs merge=lfs -text
+website/**/*.ico filter=lfs diff=lfs merge=lfs -text
+website/**/*.woff2 filter=lfs diff=lfs merge=lfs -text
+website/**/*.woff filter=lfs diff=lfs merge=lfs -text
+website/**/*.ttf filter=lfs diff=lfs merge=lfs -text
+website/**/*.otf filter=lfs diff=lfs merge=lfs -text
+website/**/*.fsbt filter=lfs diff=lfs merge=lfs -text
+website/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+store/**/*.png filter=lfs diff=lfs merge=lfs -text
+store/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+store/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+store/**/*.webp filter=lfs diff=lfs merge=lfs -text
+store/**/*.gif filter=lfs diff=lfs merge=lfs -text
+store/**/*.avif filter=lfs diff=lfs merge=lfs -text
+store/**/*.fsbt filter=lfs diff=lfs merge=lfs -text
+store/**/*.fsba filter=lfs diff=lfs merge=lfs -text

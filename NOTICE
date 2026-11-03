@@ -1,0 +1,21 @@
+LBox
+====
+
+LBox is a modified fork of ServerBox.
+
+Upstream project:
+  ServerBox
+  Copyright (C) lollipopkit
+  https://github.com/lollipopkit/flutter_server_box
+  Licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).
+
+This repository is based on that source and has been modified. The full text
+of the license is in LICENSE. In accordance with the AGPL-3.0, the complete
+source code of this modified version is published in this repository, and any
+binary built from it is offered together with access to this source.
+
+Changes from upstream (summary): rebranded to LBox, a different terminal page
+layout (status panel, file browser, tabs), a whole-page colour scheme setting,
+and Windows packaging. See the git history for the exact changes.
+
+LBox is not affiliated with or endorsed by the upstream author.

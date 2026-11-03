@@ -1,0 +1,11 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - lib/src/pty/bindings_generated.dart
+    - third_party/**
+    - build/**
+
+linter:
+  rules:
+    always_use_package_imports: true

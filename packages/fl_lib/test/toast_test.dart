@@ -1,0 +1,95 @@
+import 'package:fl_lib/fl_lib.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart';
+
+Future<void> _show(WidgetTester tester, String title, {ToastAction? action, ThemeData? theme}) async {
+  await tester.pumpWidget(
+    MaterialApp(theme: theme, builder: (_, child) => ToastHost(child: child!), home: const SizedBox()),
+  );
+  Toast.show(title, action: action, duration: Duration.zero);
+  await tester.pump();
+  await tester.pump(const Duration(milliseconds: 500));
+}
+
+void main() {
+  tearDown(Toast.dismissAll);
+
+  final long = 'A title far too long for one line of a toast, ' * 3;
+  final action = ToastAction(label: 'Configure', onTap: () {});
+
+  testWidgets('a title too long for one line can be opened', (tester) async {
+    await _show(tester, long);
+    expect(find.byIcon(Icons.keyboard_arrow_down), findsOneWidget);
+  });
+
+  testWidgets('and still can with an action button beside it', (tester) async {
+    await _show(tester, long, action: action);
+    expect(find.text('Configure'), findsOneWidget);
+    expect(find.byIcon(Icons.keyboard_arrow_down), findsOneWidget);
+  });
+
+  testWidgets('a short one has nothing to open, action or not', (tester) async {
+    await _show(tester, 'Saved', action: action);
+    expect(find.byIcon(Icons.keyboard_arrow_down), findsNothing);
+  });
+
+  // A throw-out that is interrupted is the reader's: the settle being cancelled
+  // used to count as the throw finishing, and the toast left anyway.
+  testWidgets('a toast caught on its way out stays', (tester) async {
+    await _show(tester, 'Saved');
+    final card = find.text('Saved');
+
+    await tester.fling(card, const Offset(300, 0), 3000);
+    await tester.pump(const Duration(milliseconds: 40));
+    final grab = await tester.startGesture(tester.getCenter(card, warnIfMissed: false));
+    await tester.pump();
+    for (var i = 0; i < 10; i++) {
+      await grab.moveBy(const Offset(-60, 0));
+      await tester.pump(const Duration(milliseconds: 16));
+    }
+    await tester.pump(const Duration(milliseconds: 300));
+    await grab.up();
+    await tester.pump(const Duration(seconds: 1));
+
+    expect(card, findsOneWidget);
+  });
+
+  // Measured the way the button paints its label: a title that fits beside
+  // the button with the default style does not beside a wider one, and has
+  // to be openable there.
+  testWidgets("the button's own text style decides where the title ends", (tester) async {
+    const title = 'Twelve chars';
+    await _show(tester, title, action: action);
+    expect(find.byIcon(Icons.keyboard_arrow_down), findsNothing, reason: 'fits beside the button');
+
+    Toast.dismissAll();
+    await _show(
+      tester,
+      title,
+      action: action,
+      theme: ThemeData(
+        textButtonTheme: const TextButtonThemeData(
+          style: ButtonStyle(textStyle: WidgetStatePropertyAll(TextStyle(letterSpacing: 20))),
+        ),
+      ),
+    );
+    expect(find.byIcon(Icons.keyboard_arrow_down), findsOneWidget, reason: 'the spaced label leaves it no room');
+  });
+
+  // The default corner, top end, is where iPhone Duo's inner display keeps its
+  // status bar beside a bar in the top inset, and where iPad puts nothing.
+  testWidgets('a toast at the top steps below the zones over it', (tester) async {
+    tester.view.physicalSize = const Size(669, 951);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    addTearDown(() => WindowControls.zones.value = const []);
+    WindowControls.zones.value = const [Rect.fromLTRB(525, 0, 669, 82)];
+    await _show(tester, 'Saved');
+    expect(tester.getTopLeft(find.text('Saved')).dy, greaterThanOrEqualTo(82));
+
+    WindowControls.zones.value = const [Rect.fromLTRB(0, 0, 16, 82)];
+    await tester.pump();
+    expect(tester.getTopLeft(find.text('Saved')).dy, lessThan(82), reason: 'a zone off to the side is no reason to move');
+  });
+}
+

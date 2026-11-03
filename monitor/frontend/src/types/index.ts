@@ -1,0 +1,3321 @@
+export interface SystemMetrics {
+  timestamp: string;
+  // Last refresh of CLI-backed extended fields such as battery, sensors, and
+  // disk SMART data. `timestamp` updates every poll, including cycles that
+  // carry these readings forward.
+  extended_updated_at?: string;
+  server_name: string;
+  cpu_usage: number;
+  // Wire-compatible with Monitor's `CpuCoreTime { used, total }`. The array
+  // index identifies the core because the wire format has no ID or label.
+  cpu_cores?: { used: number; total: number; usage_percent: number | null }[];
+  memory: MemoryMetrics;
+  swap: SwapMetrics;
+  disk: DiskMetrics;
+  network: NetworkMetrics;
+  temperature?: number;
+  temps?: TempReading[];
+  sys?: string;
+  // Linux `/etc/os-release` identifiers. Older agents provide only `sys`
+  // (the `PRETTY_NAME` value).
+  os_id?: string;
+  os_id_like?: string[];
+  cpu_brand?: string;
+  // Detail lists are optional for compatibility with older agents.
+  gpus?: GpuMetrics[];
+  disk_details?: DiskDetail[];
+  // Every block device, mounted or not (Linux `lsblk`); absent on older agents
+  block_devices?: StatusBlockDevice[];
+  ifaces?: IfaceMetrics[];
+  // Already formatted by the collector, e.g. "up 3 days, 2:14".
+  uptime?: string;
+  conn?: ConnMetrics;
+  // Cumulative sector counters since boot (not a rate) — see diskio_rate
+  // for a live speed derived from this
+  diskio?: DiskIoMetrics[];
+  // Bytes/sec since the previous poll; empty on the agent's first cycle or
+  // for a device with no prior sample yet
+  diskio_rate?: DiskIoRate[];
+  batteries?: BatteryMetrics[];
+  sensors?: SensorMetrics[];
+  disk_smart?: DiskSmartMetrics[];
+  /// Output of the user's custom commands, in the order they run in.
+  /// Refreshed on the extended cycle, like the fields above it.
+  custom_cmds?: CustomCmdOutput[];
+}
+
+export interface TempReading {
+  device: string;
+  value: number;
+}
+
+export interface CustomCmdOutput {
+  name: string;
+  output: string;
+}
+
+/// A custom command as it is stored: a file in the agent's
+/// `~/.config/server_box/custom_cmds`, the same set the app edits over SSH.
+export interface CustomCmd {
+  name: string;
+  cmd: string;
+}
+
+export interface CustomCmdsView {
+  commands: CustomCmd[];
+  /// Whether this panel may change them (`access.ok`) — writing one arranges
+  /// for code to run as the agent's user. A hint for the UI; the agent
+  /// re-checks it on the write.
+  editable: boolean;
+}
+
+export type FieldSupport = 'supported' | 'not_implemented' | 'hardware_dependent'
+
+/// Platform-only support level per ServerStatus field — depends on OS, not
+/// on any sample. See sbm_parser::capabilities for the three-state meaning:
+/// 'not_implemented' = this platform never collects it (hide unconditionally),
+/// 'hardware_dependent' = collected when present, empty just means no such
+/// hardware, 'supported' = always populated when the command succeeds.
+export type Platform = 'linux' | 'bsd' | 'windows'
+
+export interface Capabilities {
+  cpu: FieldSupport
+  cpu_brand: FieldSupport
+  mem: FieldSupport
+  swap: FieldSupport
+  disks: FieldSupport
+  net: FieldSupport
+  temps: FieldSupport
+  conn: FieldSupport
+  uptime: FieldSupport
+  sys: FieldSupport
+  host: FieldSupport
+  diskio: FieldSupport
+  batteries: FieldSupport
+  sensors: FieldSupport
+  /** Vendor-neutral per-device GPU support. Absent on older agents. */
+  gpu?: FieldSupport
+  nvidia: FieldSupport
+  amd: FieldSupport
+  disk_smart: FieldSupport
+  // Mechanically derived from the same system_type() capabilities() is
+  // computed from — 'bsd' covers macOS, the only Bsd target this ships on
+  platform: Platform
+  /// Whether the account may act over this link. `ok` false (a plaintext,
+  /// non-loopback link, or a watch token) leaves only reading; the agent
+  /// refuses the rest with 403.
+  access?: { ok: boolean; why?: AccessWhy }
+  /// The machine-management endpoints the agent serves. Absent on agents
+  /// predating them, which serve none — see `machineAccess`.
+  features?: MachineFeature[]
+  /// The web apps the agent deployed (`/stacks*`); absent on older agents.
+  stacks?: { id: string; state: 'installing' | 'installed' | 'failed' }[]
+  /// The agent's own version.
+  version?: string
+}
+
+/// How the agent was put on its machine, which decides how it is updated
+/// (`sbm_parser::monitor_agent::InstallKind`).
+export type AgentInstall = 'script' | 'container' | 'nix' | 'other'
+
+/// The LK Cloud account the agent is signed in to, as homebase answers it;
+/// never a token.
+export interface LkcUser {
+  id: string
+  name: string
+  /// `user`, `admin`, `bot`, …
+  group: string
+  avatar: string | null
+}
+
+/// A device-code sign-in the agent is waiting on: the person opens
+/// `verification_uri_complete` (or `verification_uri` and types
+/// `user_code`) anywhere and approves it.
+export interface LkcSignIn {
+  user_code: string
+  verification_uri: string
+  verification_uri_complete: string | null
+  expires_at_ms: number
+  failed?: 'denied' | 'expired' | 'rejected' | 'invalid'
+}
+
+/// `GET /lkc`.
+export interface LkcState {
+  user: LkcUser | null
+  sign_in: LkcSignIn | null
+}
+
+/// `GET /update`: whether a newer agent is released, as the agent read it.
+export interface AgentUpdate {
+  version: string
+  /// Absent when the releases could not be read.
+  latest?: string | null
+  /// Absent before the agent's first read.
+  checked_at?: string | null
+  /// Why they could not, in English.
+  error?: string
+  outdated: boolean
+  install: AgentInstall
+  /// What updates it, run on the machine: for `script`.
+  command?: string
+  /// Whether `POST /update/run` needs the sudo password (OpenRC, not root).
+  needs_password?: boolean
+  /// The last update the agent started, as its log tells it.
+  run?: AgentUpdateRun
+}
+
+export interface AgentUpdateRun {
+  /// `interrupted`: no end recorded, and too long ago to be running still.
+  state: 'running' | 'done' | 'failed' | 'interrupted'
+  started_at?: string
+  exit?: number | null
+  lines: string[]
+}
+
+/// A machine-management page the agent may serve (`api::machine::FEATURES`).
+///
+/// Not every entry is a page: `container_exec`, `iperf` and `tmux` are the
+/// terminal's `target`, an action the panel offers only where the agent lists
+/// it (`tmux` also covers the `/tmux` listing).
+export type MachineFeature =
+  | 'power'
+  | 'process'
+  | 'services'
+  | 'cron'
+  | 'containers'
+  | 'container_exec'
+  /// Backups of containers' volumes and folders (`/container-backups`).
+  | 'container_backups'
+  /// Backups of the monitor's own settings to WebDAV (`/monitor-backup`).
+  | 'monitor_backup'
+  /// Disks, RAID arrays and ZFS pools (`/storage`).
+  | 'storage'
+  /// SMB and NFS shares (`/shares`).
+  | 'shares'
+  | 'iperf'
+  | 'tmux'
+  | 'benchmark'
+  | 'system_users'
+  | 'firewall'
+  | 'snippets'
+  | 'desktop'
+  | 'backup'
+  | 'bmc'
+  | 'virt'
+  /// The agent keeps the panel's desk (`/desk*`).
+  | 'desk'
+  /// Agent mode: tasks an AI agent runs on the machine (`/agent*`).
+  | 'agent_mode'
+  /// Web apps deployed with Docker Compose behind the agent's proxy
+  /// (`/stacks*`).
+  | 'stacks'
+  | 'inference'
+  | 'agent_tools'
+  | 'proxy'
+  | 'kernel'
+  | 'ubuntu_pro'
+  | 'cleanup'
+  | 'tailscale'
+  | 'waf'
+  /// Whether a newer agent is out and how this one is updated (`/update`).
+  | 'update'
+  /// The LK Cloud account the agent is signed in to (`/lkc*`).
+  | 'lkc'
+
+export type PowerAction = 'shutdown' | 'reboot' | 'suspend'
+
+/// What `POST /power` answered. A suspend that never returns is an ordinary
+/// end for one, so a timeout is a field; `sudo_rejected` is the one outcome
+/// the caller can act on, by asking for another password.
+export interface PowerResult {
+  exit_code: number | null
+  stdout: string
+  stderr: string
+  sudo_rejected: boolean
+  truncated: boolean
+  timed_out: boolean
+}
+
+/// Why the account may not act over this link: it is plaintext and not
+/// loopback.
+export type AccessWhy = 'insecure_transport'
+
+export type WsTicketPurpose = 'terminal' | 'stream' | 'rdp'
+
+export interface WsTicketResponse {
+  ticket: string
+  expires_in: number
+}
+
+export interface ConnMetrics {
+  max_conn: number;
+  fail: number;
+}
+
+export interface DiskIoMetrics {
+  dev: string;
+  sectors_read: number;
+  sectors_write: number;
+  sectors_read_exact?: string;
+  sectors_write_exact?: string;
+}
+
+export interface DiskIoRate {
+  dev: string;
+  read_bytes_per_sec: number;
+  write_bytes_per_sec: number;
+}
+
+export interface BatteryMetrics {
+  percent: number | null;
+  status: 'charging' | 'discharging' | 'full' | 'unknown';
+  name: string | null;
+  cycle: number | null;
+  tech: string | null;
+}
+
+export interface SensorMetrics {
+  device: string;
+  adapter: string;
+  details: [string, string][];
+}
+
+export interface DiskSmartMetrics {
+  device: string;
+  healthy: boolean | null;
+  temperature: number | null;
+  model: string | null;
+  serial: string | null;
+  power_on_hours: number | null;
+  power_cycle_count: number | null;
+}
+
+export interface GpuMetrics {
+  id?: string;
+  vendor?: string;
+  name: string;
+  usage_percent: number | null;
+  temperature: number | null;
+  power: string | null;
+  memory_used: number | null;
+  memory_total: number | null;
+  memory_unit: string | null;
+  fan_speed?: number | null;
+  clock_speed?: number | null;
+  /// What holds the card's memory (MiB, 0 where the driver does not say).
+  /// Absent on older agents.
+  processes?: { pid: number; name: string; memory: number }[];
+}
+
+// A block device as the status reads it (`sbm_parser::types::BlockDevice`);
+// the storage app's richer one is `BlockDevice`. Sizes in bytes. `mount` is
+// `[SWAP]` for an active swap area.
+export interface StatusBlockDevice {
+  name: string;
+  path: string;
+  kind: string;
+  model?: string | null;
+  size: number;
+  tran?: string | null;
+  fs_type?: string | null;
+  mount?: string | null;
+  // Mounted, carrying other devices, or an LVM/RAID/LUKS member
+  in_use: boolean;
+  children: StatusBlockDevice[];
+}
+
+export interface DiskDetail {
+  path: string;
+  mount: string;
+  fs_type?: string;
+  used: number;
+  total: number;
+  usage_percent: number;
+}
+
+export interface IfaceMetrics {
+  name: string;
+  rx_bytes: number;
+  tx_bytes: number;
+  rx_bytes_exact?: string;
+  tx_bytes_exact?: string;
+}
+
+export interface MemoryMetrics {
+  total: number;
+  used: number;
+  free: number;
+  usage_percent: number;
+}
+
+export interface SwapMetrics {
+  total: number;
+  used: number;
+  usage_percent: number;
+}
+
+export interface DiskMetrics {
+  total: number;
+  used: number;
+  free: number;
+  usage_percent: number;
+}
+
+export interface NetworkMetrics {
+  rx_bytes: number;
+  tx_bytes: number;
+  rx_bytes_exact?: string;
+  tx_bytes_exact?: string;
+}
+
+export interface StatusResponse {
+  name: string;
+  cpu: string;
+  memory: string;
+  disk: string;
+  network: string;
+  temperature?: string;
+  timestamp: string;
+}
+
+export interface HistoryPoint {
+  timestamp: string;
+  cpu: number;
+  memory: number;
+  disk: number;
+  net_rx_speed: number;
+  net_tx_speed: number;
+  temperature?: number;
+  diskio_read_speed: number;
+  diskio_write_speed: number;
+  battery_percent?: number;
+}
+
+export interface LoginRequest {
+  password: string;
+}
+
+export interface LoginResponse {
+  token: string;
+  /// A device token, when the request carried none the agent knows.
+  device?: string;
+}
+
+export interface ApiError {
+  error: string;
+}
+
+export interface MonitoringRule {
+  name: string;
+  monitor_type: string;
+  threshold: string;
+  matcher: string;
+}
+
+export interface DataRetentionConfig {
+  metrics_days: number;
+  alerts_days: number;
+  cleanup_interval_hours: number;
+  max_db_size_mb: number;
+}
+
+/// One notification channel. `config` is the channel's own free-form settings
+/// — a webhook's url/method/headers, a bark key, an iOS token — and carries
+/// keys this panel knows nothing about (`legacy_go_format`, a webhook's
+/// `expected_http_status`), so an editor must send the loaded object back with
+/// its edits applied rather than rebuild it from the fields it renders.
+///
+/// A `null` value means "set on the agent, not disclosed"; the key being
+/// absent means it is not set at all. Sending the `null` back keeps the stored
+/// value — which is only possible with `from_index`, the position the entry was
+/// loaded from, so a rename or a reorder does not lose a credential.
+export interface PushEntry {
+  name: string;
+  push_type: string;
+  config: Record<string, unknown>;
+  from_index: number | null;
+}
+
+export interface PushView extends PushEntry {
+  /// False when the agent has no sender for `push_type` and therefore cannot
+  /// know which of the entry's keys are credentials: `config` comes back empty
+  /// and the channel can be removed but not edited here.
+  editable: boolean;
+}
+
+export interface PushPayload {
+  pushes: PushEntry[];
+  /// "N/duration", e.g. "1/1m". null = the agent's default of one per minute.
+  push_rate: string | null;
+}
+
+export interface PushListView extends PushPayload {
+  pushes: PushView[];
+  /// The channel types this agent can actually deliver through.
+  push_types: string[];
+  /// Whether a saved channel only reaches the rule engine on the next restart.
+  applies_on_restart: boolean;
+}
+
+export interface PushTestResult {
+  ok: boolean;
+  error?: string;
+}
+
+/// Whitelisted, writable subset of config.toml — see monitor's settings-page
+/// plan for why jwt_secret/database_url are deliberately excluded. The push
+/// channels have their own endpoint, for the reason card order does.
+export interface SettingsPayload {
+  interval_seconds: number;
+  extended_interval_secs: number | null;
+  idle_pause_enabled: boolean;
+  idle_pause_threshold_secs: number | null;
+  rules: MonitoringRule[];
+  data_retention: DataRetentionConfig | null;
+  cors_allowed_origins: string[];
+  /// Whether NFS, SMB and the like count in the disk total. Absent from an
+  /// agent older than the setting; absent from a PUT, the agent keeps its value.
+  disk_counts_network?: boolean;
+}
+
+/// GET response: the payload plus which of its own field names take effect
+/// immediately vs. require a monitor restart
+export interface SettingsView extends SettingsPayload {
+  live_fields: string[];
+  /// What `data_retention` becomes when an editor switches it on. `null` there
+  /// means no cleanup runs at all rather than "the defaults apply", so the
+  /// values have to come from somewhere — and from the agent rather than from
+  /// a copy in each editor.
+  data_retention_defaults: DataRetentionConfig;
+}
+
+/// Home-grid card order — kept out of SettingsPayload; see the dedicated
+/// GET/PUT /api/v1/card-order handlers for why
+export interface CardOrderPayload {
+  card_order: string[];
+}
+
+/// One entry in a directory the agent serves, as `/fs/list` and `/fs/stat`
+/// answer. Mirrors `EntryView` in `monitor/src/api/fs.rs`, which the app's
+/// `FileEntry` is also defined against — the three have to agree.
+export interface FsEntry {
+  name: string;
+  /// Matches the app's `FileKind`.
+  kind: 'file' | 'dir' | 'link' | 'other';
+  /// Null where the platform did not say, which reads as "no size" rather
+  /// than as zero.
+  size: number | null;
+  /// Seconds since the epoch, as SFTP reports them.
+  modified: number | null;
+  /// Permission bits only, so `chmod` can take the value back unchanged.
+  mode: number | null;
+  /// Where a link points, unresolved. Null for anything else.
+  link_target: string | null;
+  /// Opaque token for this exact file state, stated back as `if_version` when
+  /// saving so a file that moved on is refused rather than overwritten. Null
+  /// where the agent had none to give.
+  version: string | null;
+}
+
+/// The directories the operator opened up. Everything outside them is denied,
+/// so this is the whole of what the panel can browse.
+export interface FsRootsResponse {
+  roots: string[];
+}
+
+/// How the process table may be ordered. The set the agent answers — `sorts` in
+/// the response — is a property of the columns the machine printed, so a mode
+/// absent there is one this table cannot answer.
+export type ProcessSortMode = 'cpu' | 'mem' | 'rss' | 'read' | 'write' | 'pid' | 'user' | 'name'
+
+/// What may be sent to a process. Windows has the one stop there is, BSD none
+/// at all — `signals` in the response is the list, and empty means no stop is
+/// offered.
+export type ProcessSignal = 'term' | 'kill'
+
+/// What happened to a signal.
+///
+/// Told apart from the exit status because the caller's next move differs for
+/// each: `denied` is a process this account does not own, which is what the
+/// retry as root is for; `target_changed` is a table that has moved on.
+export type ProcessKillOutcome = 'succeeded' | 'target_changed' | 'denied' | 'failed'
+
+/// Which of the machine's columns carried a value, which is what the page
+/// draws and what decides which orders are available.
+export interface ProcessColumns {
+  user: boolean
+  cpu: boolean
+  mem: boolean
+  rss: boolean
+  read: boolean
+  write: boolean
+  read_speed: boolean
+  write_speed: boolean
+}
+
+/// One process, as the agent read it from the machine.
+export interface ProcRow {
+  user: string | null
+  pid: number
+  ppid: number | null
+  cpu: number | null
+  mem: number | null
+  vsz: string | null
+  rss: string | null
+  tty: string | null
+  stat: string | null
+  nice: number | null
+  threads: number | null
+  start: string | null
+  /// The identity a stop is checked against: a PID the kernel has since handed
+  /// to something else is refused rather than signalled.
+  start_id: string | null
+  time: string | null
+  elapsed_seconds: number | null
+  read_bytes: number | null
+  write_bytes: number | null
+  /// Bytes a second since the previous reading. `null` where there is nothing
+  /// to difference against, which is every first reading.
+  read_speed: number | null
+  write_speed: number | null
+  /// The whole command line as printed.
+  command: string
+  process_name: string | null
+  /// What to call this process where the command line does not fit. Sent by the
+  /// agent rather than derived here: it is a rule, and a second implementation
+  /// of it would drift.
+  name: string
+  /// `RSS` in KiB as a number — the column itself is a string because the two
+  /// `ps` dialects print different things into it, and `-` is not zero.
+  rss_kb: number | null
+  /// Whether this row is `kthreadd` or one of its children. Hidden by default:
+  /// they are not something a user acts on, and there are dozens.
+  is_kernel_thread: boolean
+  /// Whether this row may be signalled at all — a PID whose start identity the
+  /// machine did not report cannot be checked before the signal.
+  killable: boolean
+}
+
+/// Why the machine gave no table.
+export type ProcessReason = 'did_not_finish' | 'too_large' | 'empty'
+
+/// One reading of the process table.
+export interface ProcessView {
+  /// Whether the machine gave a table at all. `false` is a state of the
+  /// machine, not a failure of the caller.
+  available: boolean
+  reason_kind: ProcessReason | null
+  /// What the machine said, verbatim. Never translated: it is the only thing
+  /// that distinguishes one failure from another.
+  reason: string | null
+  procs: ProcRow[]
+  /// Rows the agent's parser had to drop. The rest of the table is still here.
+  issue: { failure: string; diagnostics: string } | null
+  load: { one: number; five: number; fifteen: number } | null
+  /// The instant this reading was taken, in Unix milliseconds. Older than the
+  /// request when the agent answered with the reading it already had.
+  sampled_at_millis: number
+  columns: ProcessColumns
+  /// The orders this table can answer, in the order the page draws them.
+  sorts: ProcessSortMode[]
+  /// What this answer is ordered by, after the agent's fallbacks.
+  sort: ProcessSortMode | null
+  ascending: boolean | null
+  signals: ProcessSignal[]
+}
+
+/// One signal to one process.
+///
+/// The password travels as its own field rather than inside a command, for the
+/// reason `/power`'s does: a password in a command line lands in the machine's
+/// process list and in the agent's audit row. Omitted unless the first attempt
+/// came back `denied`.
+export interface ProcessSignalRequest {
+  pid: number
+  /// The identity the listing gave this PID. Without it the agent refuses
+  /// rather than signalling whatever holds the number now.
+  start_id: string | null
+  signal: ProcessSignal
+  password?: string
+}
+
+export interface ProcessSignalResult {
+  outcome: ProcessKillOutcome
+  exit_code: number | null
+  stdout: string
+  stderr: string
+  /// `sudo` refused the password that was sent. The one outcome the caller can
+  /// act on, which is why it is a field rather than a status code.
+  sudo_rejected: boolean
+}
+
+/// Which of the known service managers a machine runs. `null` where the
+/// detector found one this agent cannot list — `detected_name` is then what it
+/// found instead, in the machine's own words.
+export type ServiceManagerType = 'systemd' | 'procd' | 'openrc'
+
+/// What the machine said about its own init, for a page that has to explain a
+/// machine it cannot list.
+export interface ServiceManagerView {
+  type: ServiceManagerType | null
+  /// What the machine called it: `systemd`, `procd`, `launchd`, `init`.
+  detected_name: string
+  /// `systemd (Debian GNU/Linux)`, or the OS name alone.
+  description: string
+}
+
+export type ServiceUnitType = 'service' | 'socket' | 'mount' | 'timer'
+
+/// Whose unit it is. systemd's `--user` scope is the only second one that
+/// exists, which is why the page only draws it where `supports_user_scope`.
+export type ServiceScope = 'system' | 'user'
+
+export type ServiceState = 'running' | 'stopped' | 'failed' | 'starting' | 'stopping' | 'unknown'
+
+export type ServiceAction = 'start' | 'stop' | 'restart' | 'enable' | 'disable'
+
+/// One unit, as the agent read it.
+export interface ServiceUnit {
+  /// What the page sends back to ask about this unit or to act on it. Derived
+  /// by the agent so the listing and the two requests cannot spell it
+  /// differently.
+  key: string
+  /// Without the type suffix: `sshd`, not `sshd.service`.
+  name: string
+  full_name: string
+  type: ServiceUnitType
+  scope: ServiceScope
+  state: ServiceState
+  description: string | null
+  /// Startup registration. `null` where the manager cannot report it, which is
+  /// not the same as "not registered".
+  enabled: boolean | null
+  /// The manager's own word for startup registration, which says more than
+  /// `enabled` can: a `static` or `masked` unit cannot be enabled at all.
+  /// Drawn verbatim rather than translated — it is the manager's vocabulary.
+  unit_file_state: string | null
+  /// The manager's finer state: `running`, `exited`, `dead`, `start-pre`.
+  sub_state: string | null
+  /// Why the last run ended, where the manager says: `exit-code`, `signal`,
+  /// `timeout`.
+  result: string | null
+  /// The main process's exit status, present only where `result` is
+  /// `exit-code`.
+  exit_status: number | null
+  memory_bytes: number | null
+  /// When the unit entered its current state, in Unix milliseconds at the
+  /// machine's own clock. See the agent's note on the clock shift.
+  since_millis: number | null
+  /// When a timer next fires, in Unix milliseconds.
+  next_elapse_millis: number | null
+  /// What may be done to it, derived by the agent from the state and the
+  /// startup registration so that a page drawing its own set would be a second
+  /// implementation of that rule.
+  actions: ServiceAction[]
+  /// `unit_file_state`, or `enabled`/`disabled` in the same words where the
+  /// manager has no such state to report.
+  startup: string | null
+}
+
+export type ServicePart = 'list' | 'logs' | 'definition' | 'status'
+
+/// Why the machine gave no listing, as its own word so the page phrases it in
+/// its own language. `null` alongside `available: false` means the machine
+/// said something the agent does not classify, and `reason` is that text.
+export type ServiceReason =
+  | 'unsupported_manager'
+  | 'unsupported_platform'
+  | 'unreadable'
+  | 'no_such_unit'
+  | 'no_log'
+
+/// A part of the listing that is missing while the rest of it is readable.
+export type ServiceListingNotice = 'user_scope_unavailable' | 'details_unavailable'
+
+export interface ServiceLogLine {
+  /// The time as the manager printed it, already localised by `journalctl`.
+  time: string | null
+  text: string
+}
+
+export interface ServiceLog {
+  lines: ServiceLogLine[]
+  /// The log was read but not parsed — a format this agent does not know.
+  /// Drawn as raw text rather than as an empty log.
+  unreadable: boolean
+}
+
+/// One part of the machine's service state.
+export interface ServiceView {
+  part: ServicePart
+  /// Whether this part could be read at all. `false` is a state of the machine
+  /// — no manager this agent lists, no unit by that key — not a failure of the
+  /// caller, so it is a field and the page has one shape to draw.
+  available: boolean
+  reason_kind: ServiceReason | null
+  /// What the machine said, verbatim. Never translated: it is the only thing
+  /// that distinguishes one failure from another.
+  reason: string | null
+  manager: ServiceManagerView | null
+  /// Whether the machine has a second account scope at all.
+  supports_user_scope: boolean
+  units: ServiceUnit[]
+  notice: ServiceListingNotice | null
+  /// What the machine said about the notice, verbatim.
+  detail: string | null
+  /// The machine's own clock at the moment the listing was read.
+  sampled_at_millis: number | null
+  log: ServiceLog | null
+  /// A unit's definition or the manager's own status, for `part: 'definition'`
+  /// and `part: 'status'`.
+  text: string | null
+}
+
+/// One action on one unit.
+///
+/// The password travels as its own field rather than inside a command, for the
+/// reason `/power`'s does: a password in a command line lands in the machine's
+/// process list and in the agent's audit row. Omitted until the first attempt
+/// comes back `sudo_rejected`.
+export interface ServiceActRequest {
+  key: string
+  action: ServiceAction
+  password?: string
+}
+
+export interface ServiceActResult {
+  /// Whether the manager's command exited zero. What the machine said about it
+  /// is in `stderr`, and it is the only thing that distinguishes one failure
+  /// from another.
+  succeeded: boolean
+  sudo_rejected: boolean
+  exit_code: number | null
+  stdout: string
+  stderr: string
+}
+
+/// One job in the account's crontab, with its schedule already expanded.
+///
+/// The expansion is done on the server, against the server's own clock: cron
+/// matches an expression against the machine's wall time, so a client that
+/// interpreted it in the viewer's timezone would name a time the job does not
+/// run at.
+export interface CronJobView {
+  /// Index into the listing the client was given. This is what an edit
+  /// addresses, and the agent re-reads the file at write time — an index that
+  /// no longer names a job is refused rather than applied to whatever moved
+  /// into its place.
+  line_index: number
+  schedule: string
+  command: string
+  /// Whether the job runs. A disabled job is a commented-out line on disk; the
+  /// spelling is the agent's, which is why a client never writes the text back.
+  enabled: boolean
+  /// Whether the schedule is one this app reads. `false` means the fields
+  /// below are empty, and the expression is shown as written.
+  parsed: boolean
+  is_reboot: boolean
+  minutes: number[]
+  hours: number[]
+  days_of_month: number[]
+  months: number[]
+  days_of_week: number[]
+  /// Whether the day fields actually narrow the schedule. A `*` there means
+  /// "every", which is not the same as a list that happens to cover everything —
+  /// cron's day-of-month/day-of-week rule is an OR, and an OR of two
+  /// unrestricted fields is every day.
+  day_of_month_restricted: boolean
+  day_of_week_restricted: boolean
+  /// The server's own wall clock, `YYYY-MM-DDTHH:MM`. Null when the schedule
+  /// has no next run within the search window, or when the machine could not
+  /// report its UTC offset (an old agent, or a `date` without `%z`) — in which
+  /// case the schedule still lists and only the next run is unplaceable.
+  next_run: string | null
+}
+
+/// Why a crontab could not be read, as its own word so the panel phrases it in
+/// its own language. `null` alongside `available: false` means the machine said
+/// something this agent does not classify, and `reason` is that text.
+export type CronReason = 'not_installed' | 'unsupported_platform' | 'unreadable'
+
+export interface CronView {
+  /// Whether the crontab could be read at all. `false` is a state of the
+  /// machine — no `crontab(1)`, a platform that has none — not a failure of the
+  /// caller, so it is a field and the page has one shape to draw either way.
+  available: boolean
+  reason_kind: CronReason | null
+  /// What the machine said, verbatim. Never translated: it is the only thing
+  /// that distinguishes one failure from another.
+  reason: string | null
+  /// The account whose crontab this is, as the machine named it.
+  user: string | null
+  /// The agent machine's wall clock when it was read, `YYYY-MM-DDTHH:MM`.
+  now: string | null
+  jobs: CronJobView[]
+  /// Comments, environment assignments and anything else that is not a job.
+  /// Shown so a crontab another tool manages does not look like it lost them.
+  preserved: string[]
+}
+
+/// One change to one line.
+///
+/// An operation rather than a whole document: a client that round-tripped the
+/// text would be the thing that decides how a disabled line is spelled, and a
+/// client that got it slightly wrong would rewrite a file it does not own.
+export type CronEdit =
+  | { op: 'upsert'; line_index: number | null; schedule: string; command: string; enabled: boolean }
+  | { op: 'remove'; line_index: number }
+  | { op: 'set_enabled'; line_index: number; enabled: boolean }
+
+/// A normalised container state, from either runtime's own words.
+export type ContainerStatus =
+  | 'running'
+  | 'exited'
+  | 'created'
+  | 'paused'
+  | 'restarting'
+  | 'removing'
+  | 'dead'
+  | 'unknown'
+
+/// Which runtime answered. Its name is also the command it is asked under.
+export type ContainerType = 'docker' | 'podman'
+
+/// One sample of a running container's resource use.
+///
+/// Every field is the runtime's own rendering of a quantity, kept as text
+/// because both runtimes print two quantities in one field (`1.2MiB / 7.6GiB`)
+/// and neither is a number this side can recompute. The pair is split so the
+/// row can lay it out; nothing here is a sentence, so nothing here is
+/// translated.
+export interface ContainerStats {
+  cpu: string | null
+  /// Podman's average over the sample window. Docker reports none.
+  cpu_avg: string | null
+  mem: string | null
+  /// The halves of `mem`; absent from an agent before they were split.
+  mem_used?: string | null
+  mem_limit?: string | null
+  net_down: string | null
+  net_up: string | null
+  disk_read: string | null
+  disk_write: string | null
+}
+
+/// Which action, without which container.
+export type ContainerActionKind =
+  | 'start'
+  | 'stop'
+  | 'restart'
+  | 'remove'
+  | 'logs'
+  | 'terminal'
+
+export interface ContainerRow {
+  id: string | null
+  name: string | null
+  image: string | null
+  /// The compose project this container belongs to. Also what the list is
+  /// grouped by.
+  project: string | null
+  working_dir: string | null
+  /// Published ports condensed to `host→container`. Null when there are none.
+  ports: string | null
+  /// The runtime's own lifecycle text, verbatim.
+  raw_status: string | null
+  status: ContainerStatus
+  /// Absent for a container that is not running, and for one the runtime did
+  /// not answer for.
+  stats: ContainerStats | null
+  /// Which actions this container's state is offered under. Sent by the agent
+  /// rather than derived here: whether an unrecognised state groups with a
+  /// stopped one is a rule, and a second implementation of it would drift.
+  actions: ContainerActionKind[]
+}
+
+export interface ContainerImage {
+  /// Always present: a runtime that names no repository has `<none>`.
+  repository: string
+  tag: string | null
+  id: string | null
+  digest: string | null
+  size: string | null
+  /// How many containers use this image. `null` is *unknown*, never zero:
+  /// reading Docker's `N/A` as zero is how a prune comes to offer an image
+  /// that is in use.
+  containers: number | null
+  /// The runtime's own creation text: absolute on current Docker, relative on
+  /// older ones and on Podman.
+  created_at: string | null
+  /// Podman's creation time in Unix seconds.
+  created: number | null
+  /// `ContainerImage::is_dangling` — no name to lose (`<none>:<none>`). Sent
+  /// by the agent rather than derived here: the panel decides nothing about a
+  /// runtime.
+  dangling: boolean
+  /// `ContainerImage::reference`: `repository:tag`, or the short id of a
+  /// dangling image.
+  reference: string
+}
+
+export interface ContainerDiskUsage {
+  image_count: number | null
+  /// Summed over every type the runtime reported — images, stopped containers,
+  /// unused volumes, build cache — because that is what the prune actions
+  /// between them reclaim.
+  reclaimable_bytes: number | null
+}
+
+/// Which of the four things the panel asked for. One route for all of them.
+export type ContainerPart = 'containers' | 'images' | 'usage' | 'logs'
+
+/// Why the runtime could not answer, as its own word so the panel phrases it
+/// in its own language. `null` alongside `available: false` means the machine
+/// said something this agent does not classify, and `reason` is that text.
+export type ContainerReason =
+  | 'not_installed'
+  | 'unsupported_platform'
+  | 'permission_denied'
+  | 'unreadable'
+
+export interface ContainerRuntime {
+  kind: ContainerType
+  /// The *client's* version, or null when the machine did not report one: it
+  /// is the client that reads the socket, so it is the client's version that
+  /// decides how a stats row is shaped.
+  version: string | null
+}
+
+export interface ContainerView {
+  part: ContainerPart
+  /// Whether the machine has a runtime this agent could talk to. `false` is a
+  /// state of the machine, not a failure of the caller, so the page has one
+  /// shape to draw either way.
+  available: boolean
+  reason_kind: ContainerReason | null
+  /// What the machine said, verbatim. Never translated: it is the only thing
+  /// that distinguishes one failure from another.
+  reason: string | null
+  runtime: ContainerRuntime | null
+  containers: ContainerRow[]
+  images: ContainerImage[]
+  /// Tagged images nothing uses, from `count_unused_tagged_images`. `null`
+  /// when the count could not be confirmed — an unknown shown as a number is a
+  /// count wrong by however many images are in use — and for every part but
+  /// `'images'`.
+  unused_tagged: number | null
+  usage: ContainerDiskUsage | null
+  /// The container's log, for `part: 'logs'`.
+  logs: string | null
+}
+
+/// Why an action's values were refused before anything ran
+/// (`sbm_parser::container::ContainerActionError`), as a code the page
+/// phrases. The agent answers `400 {error:"invalid_input", issue:<code>}`.
+export type ContainerIssue =
+  | 'empty'
+  | 'control_character'
+  | 'leading_dash'
+  | 'too_long'
+  | 'invalid_reference'
+  | 'invalid_name'
+  | 'invalid_args'
+
+/// One change to one container.
+///
+/// An action rather than a command line: the agent composes the command, so a
+/// build that does not implement an action refuses it while deserializing
+/// instead of reaching a shell. A `run`'s `args` is the raw text the user
+/// typed; the agent splits it, never this side.
+export type ContainerAction =
+  | { action: 'start'; id: string }
+  | { action: 'stop'; id: string }
+  | { action: 'restart'; id: string }
+  | { action: 'remove'; id: string; force: boolean }
+  | { action: 'prune_containers' }
+  | { action: 'prune_volumes' }
+  | { action: 'remove_image'; id: string }
+  | { action: 'pull_image'; reference: string }
+  | { action: 'prune_images'; all_unused: boolean }
+  | { action: 'prune_system'; all_unused_images: boolean; include_volumes: boolean }
+  | { action: 'run'; image: string; name: string; args: string }
+
+/// One tmux session, as `/tmux` lists it — `sbm_parser::tmux::TmuxSession`.
+export interface TmuxSession {
+  /// `$` and digits, the stable target. A name may contain `:`, which tmux
+  /// reads as a session/window separator, so the id is what is attached.
+  id: string
+  name: string
+  windows: number
+  attached: boolean
+  /// Seconds since the epoch, as tmux prints them; null where tmux had no value
+  /// (a session nobody has attached to, one that never saw output), which the
+  /// page shows as nothing rather than as 1970.
+  created: number | null
+  last_attached: number | null
+  activity: number | null
+}
+
+/// What `/tmux` answered. `available: false` means tmux is not installed on
+/// the machine; a machine with tmux and no sessions answers `available: true`
+/// with an empty list. `error` is set when the listing itself failed, which
+/// would otherwise read as "this machine has no sessions".
+export interface TmuxView {
+  available: boolean
+  sessions: TmuxSession[]
+  error: string | null
+}
+
+/// What a change answered: the listing as it now stands, plus how the command
+/// went.
+export interface ContainerActionResult extends ContainerView {
+  /// Absent when the command did not end within the agent's
+  /// `[remote_access.exec]` limit; `null` when it ended without one (killed).
+  exit_code?: number | null
+  /// What the runtime printed, with the agent's own scaffolding dropped out of
+  /// it. Absent or `null` when it printed nothing, or did not end.
+  output?: string | null
+}
+
+/// One yabs run's options.
+///
+/// Every phase is a choice, and the defaults here are the agent's — which are
+/// not yabs' own: Geekbench is off because it downloads a proprietary binary and
+/// **publishes the machine's specs** to a public `browser.geekbench.com` page,
+/// reduced iperf is on because seven locations both ways is tens of gigabytes of
+/// egress, and the IP lookup is off because it is plaintext HTTP to a third
+/// party. See `BenchOptions` in `sbm_parser::bench`.
+export interface BenchOptions {
+  /// fio: four block sizes, ~30s each. Writes a 2 GB test file (512 MB on ARM)
+  /// into the working directory, and needs that much free or yabs skips it.
+  disk: boolean
+  network: boolean
+  /// Three iperf locations instead of seven.
+  reduced_network: boolean
+  /// Geekbench. Off by default — see this type's note.
+  cpu: boolean
+  /// `'v4' | 'v5' | 'v6' | 'v7'` — the digit is yabs' flag.
+  geekbench_version: string
+  ip_info: boolean
+  /// Use the binaries yabs ships rather than the host's own fio and iperf3,
+  /// which means fetching them from raw.githubusercontent.com.
+  prefer_precompiled_binaries: boolean
+  /// Empty means the invoking account's home directory.
+  work_dir: string
+}
+
+/// What a set of options is going to cost, as the agent computes it.
+///
+/// Shown before the run starts because all three are invisible at the moment the
+/// decision is made: a disk test that takes three minutes is a surprise on a
+/// page with a spinner, and an iperf run is tens of gigabytes on a plan paid for
+/// by the gigabyte.
+export interface BenchEstimate {
+  /// Whole minutes, rounded up, and deliberately labelled "about".
+  minutes: number
+  traffic_bytes: number
+  /// Free space the disk phase needs, or `null` when it is not running.
+  required_free_bytes: number | null
+  /// Whether the options ask for anything at all — everything off still
+  /// collects the system information header.
+  system_info_only: boolean
+}
+
+/// One run in the history.
+export interface BenchRun {
+  id: string
+  started_at: string
+  finished_at: string | null
+  /// `'running' | 'completed' | 'failed' | 'cancelled'`.
+  status: string
+  /// What produced this result, as the options were recorded.
+  options: Partial<BenchOptions>
+  /// Where the run happens on the machine, stored rather than re-derived.
+  run_dir: string
+  exit_code: number | null
+  /// Why a run that ended badly ended badly, as a stable code this page
+  /// phrases. Empty when the run is going, and for every run that ended well.
+  error: BenchRunErrorCode | ''
+  /// Whether a result and a log are stored on this row, so opening it is worth
+  /// a second request.
+  has_result: boolean
+}
+
+/// The live state of the run that is going, as of the request that carried it.
+///
+/// Polled rather than pushed: the agent's own resident poller is what carries a
+/// run to a terminal state, and this is the same state read for a page.
+export interface BenchLive {
+  id: string
+  /// Whether this is an answer at all. **False means ask again** — an agent that
+  /// hit its own timeout answers an empty body, and reading that as "the run is
+  /// gone" fails a benchmark that is running perfectly well.
+  answered: boolean
+  /// The answer was too large to read in one piece, so the log below is not the
+  /// whole of it.
+  truncated: boolean
+  /// Whether the launcher's process is still there. Needed beside `exit_code`:
+  /// a run killed by the OOM killer leaves neither an exit file nor a process,
+  /// and only the pair tells that apart from a run in its first second.
+  alive: boolean
+  dir_exists: boolean
+  exit_code: number | null
+  /// The end of the log — what the run has printed, which on a page is progress.
+  log: string
+  /// The run's process group, one process per line. Empty when the machine has
+  /// no `ps` that took the flags.
+  processes: string
+  result_json: string | null
+}
+
+export interface BenchView {
+  runs: BenchRun[]
+  /// The run that is going, or absent when there is none.
+  live?: BenchLive
+  /// Whether a benchmark can run on this machine at all.
+  supported: boolean
+}
+
+/// One run in full: the row, plus the two large columns.
+export interface BenchDetail extends BenchRun {
+  /// yabs' `-w` output, verbatim **as a string**.
+  ///
+  /// Not parsed here on purpose: yabs assembles it with `+=` on a shell string,
+  /// so a field it could not collect arrives as an empty slot and a distro name
+  /// containing a quote produces a document no parser accepts. A result that
+  /// will not parse is drawn as the text it is rather than as nothing.
+  result_json: string | null
+  log: string
+}
+
+/// Why a benchmark request was refused, as a stable code the page phrases.
+///
+/// One list, all of them about the request or about this machine rather than
+/// about the run: a platform yabs does not run on, a working directory too long
+/// to be a path, a run already going.
+export type BenchRefusalCode =
+  | 'already_running'
+  | 'unsupported_platform'
+  | 'work_dir_too_long'
+  | 'no_home_directory'
+  | 'asset_unreadable'
+  | 'no_entropy'
+  | 'script_not_writable'
+  | 'start_failed'
+  | 'history_unavailable'
+  | 'no_such_run'
+  | 'run_in_progress'
+
+/// Why a run that ended badly ended badly, as a stable code the page phrases.
+///
+/// A second list rather than more [`BenchRefusalCode`]s: these describe a run
+/// that is in the history rather than a request this page just made, and every
+/// one of them is drawn beside a row rather than as an error over the page.
+export type BenchRunErrorCode = 'launcher_failed' | 'nonzero_exit' | 'no_exit_code'
+
+// --- Firewall (`/api/v1/firewall`) ---
+//
+// `sbm_parser::firewall`'s types as serde writes them. The panel draws them
+// and names a change; what a change runs and does is the agent's answer
+// (`FirewallPlan`), never worked out here.
+
+export type FirewallKind = 'ufw' | 'firewalld'
+
+/// Whether a new connection gets through: `unknown` where it depends on
+/// something the agent cannot tell (the address or interface it arrives by).
+export type FirewallReach = 'open' | 'limited' | 'unknown' | 'blocked'
+
+/// A way into the machine a change is checked against: the panel's connection
+/// to this agent (`monitor`), or the machine's SSH port.
+export interface FirewallAccess {
+  via: 'ssh' | 'monitor'
+  port: number
+  client: string | null
+  server: string | null
+  iface: string | null
+}
+
+export interface FirewallAccessNow extends FirewallAccess {
+  reach: FirewallReach
+  /// firewalld: it gets in now and will not after a reload or a boot.
+  shut_by_reload: boolean
+}
+
+export type UfwAction = 'allow' | 'deny' | 'reject' | 'limit'
+export type UfwDirection = 'incoming' | 'outgoing'
+export type UfwPolicy = 'allow' | 'deny' | 'reject'
+export type UfwChain = 'incoming' | 'outgoing' | 'routed'
+export type UfwLogLevel = 'off' | 'low' | 'medium' | 'high' | 'full'
+export type UfwLog = 'log' | 'log_all'
+
+export interface UfwEndpoint {
+  address: string | null
+  port: string | null
+  app: string | null
+}
+
+export interface UfwRule {
+  action: UfwAction
+  direction: UfwDirection
+  routed: boolean
+  log: UfwLog | null
+  protocol: string | null
+  to: UfwEndpoint
+  from: UfwEndpoint
+  interface_in: string | null
+  interface_out: string | null
+  comment: string | null
+  ip_version: string
+  /// The rule's lines in ufw's own files: what names it in a deletion.
+  tuples: string[]
+}
+
+export interface UfwApp {
+  name: string
+}
+
+export interface UfwSnapshot {
+  active: boolean | null
+  status_line: string | null
+  version: string | null
+  log_level: UfwLogLevel | null
+  policies: Partial<Record<UfwChain, UfwPolicy>>
+  rules: UfwRule[]
+  apps: UfwApp[]
+}
+
+/// A rule as the form fills it in; the agent checks it.
+export interface UfwRuleDraft {
+  action: UfwAction
+  direction: UfwDirection
+  routed: boolean
+  protocol: string | null
+  port: string
+  source_port: string
+  app: string | null
+  from: string
+  to: string
+  interface_in: string
+  interface_out: string
+  log: UfwLog | null
+  comment: string
+  prepend: boolean
+}
+
+export type UfwDraftIssue =
+  | 'nothing_matched'
+  | 'invalid_port'
+  | 'too_many_ports'
+  | 'ports_need_protocol'
+  | 'invalid_address'
+  | 'mixed_ip_versions'
+  | 'invalid_interface'
+  | 'invalid_comment'
+  | 'invalid_protocol'
+
+export type FirewalldTarget = 'default_target' | 'accept' | 'drop' | 'reject'
+export type FirewalldItem = 'service' | 'port' | 'rich_rule' | 'source' | 'forward_port'
+export type FirewalldInputIssue =
+  | 'invalid_port'
+  | 'invalid_source'
+  | 'invalid_interface'
+  | 'invalid_rich_rule'
+  | 'invalid_forward_port'
+
+export interface FirewalldPort {
+  port: string
+  protocol: string
+}
+
+export interface FirewalldZone {
+  name: string
+  target: FirewalldTarget
+  active: boolean
+  interfaces: string[]
+  sources: string[]
+  services: string[]
+  ports: FirewalldPort[]
+  forward_ports: string[]
+  rich_rules: { raw: string }[]
+  masquerade: boolean
+}
+
+export interface FirewalldView {
+  running: boolean
+  version: string | null
+  default_zone: string | null
+  panic: boolean
+  /// What is in force; null while stopped.
+  runtime: FirewalldZone[] | null
+  /// What is written down.
+  permanent: FirewalldZone[]
+  services: Record<string, FirewalldPort[]>
+  service_names: string[]
+  /// A reload or a boot would change what is in force.
+  drifted: boolean
+  /// The zone each of `FirewallView.accesses` surely lands in, where it is one.
+  access_zones: (string | null)[]
+}
+
+export interface FirewallView {
+  available: boolean
+  reason_kind: 'unsupported_platform' | 'none_installed' | 'unreadable' | null
+  reason: string | null
+  /// `sudo` wants a password, or refused the one sent.
+  sudo_required: boolean
+  /// Each firewall found, and whether it is on.
+  ufw_installed: boolean | null
+  firewalld_installed: boolean | null
+  kind: FirewallKind | null
+  accesses: FirewallAccessNow[]
+  /// The panel reaches the agent through a proxy on the machine: its own
+  /// connection is not one a rule here decides.
+  proxied: boolean
+  ufw?: UfwSnapshot
+  firewalld?: FirewalldView
+}
+
+export type UfwChange =
+  | { type: 'enable' | 'disable' | 'reload' }
+  | { type: 'policy'; chain: UfwChain; policy: UfwPolicy }
+  | { type: 'logging'; level: UfwLogLevel }
+  | { type: 'add_rule'; draft: UfwRuleDraft }
+  | { type: 'delete_rule'; tuples: string[] }
+
+export type FirewalldChange =
+  | { type: 'start' | 'stop' | 'reload' | 'runtime_to_permanent' | 'panic_off' }
+  | { type: 'default_zone'; zone: string }
+  | { type: 'target'; zone: string; target: FirewalldTarget }
+  | { type: 'masquerade'; zone: string; enabled: boolean }
+  | { type: 'add' | 'remove'; zone: string; item: FirewalldItem; value: string }
+  | { type: 'change_interface' | 'remove_interface'; zone: string; iface: string }
+
+export type FirewallChange =
+  | { kind: 'ufw'; change: UfwChange }
+  | { kind: 'firewalld'; change: FirewalldChange }
+
+/// What one way in is now (`before`) and after the change; `later` is about
+/// the saved configuration, in force from the next reload or boot.
+export interface FirewallEffect {
+  access: FirewallAccess
+  before: FirewallReach
+  after: FirewallReach
+  later: boolean
+  /// `after` shuts or narrows the way in: what the confirmation warns of.
+  worse: boolean
+}
+
+/// What a change runs and does, as the agent planned it.
+export interface FirewallPlan {
+  commands: string[]
+  effects: FirewallEffect[]
+  notes: 'reload_loses'[]
+  destructive: boolean
+  /// Ask before running; otherwise nothing gets worse and it runs at once.
+  confirm: boolean
+  /// Rules that keep the ways in this change shuts open, run first if ticked.
+  keep_open: string[]
+  keep_open_default: boolean
+  /// Something is surely shut: the confirmation waits a few seconds.
+  countdown: boolean
+}
+
+export interface FirewallPlanResult {
+  sudo_required: boolean
+  plan: FirewallPlan | null
+  /// What names this plan; sent back with the change once the user confirms.
+  plan_id: string | null
+}
+
+export interface FirewallActResult {
+  succeeded: boolean
+  sudo_rejected: boolean
+  exit_code: number | null
+  stderr: string
+  /// Nothing ran: the firewall as it is now makes a plan that asks, and it is
+  /// not the one confirmed. Show `plan` and confirm `plan_id` instead.
+  confirm_required: boolean
+  plan: FirewallPlan | null
+  plan_id: string | null
+}
+
+// --- System users (`/api/v1/system-users`) ---
+
+/// Whether an account can be logged into with a password.
+///
+/// `none` is an empty password field, which lets anyone in — a different thing
+/// from `locked`, and the half that must not be drawn as the safe one.
+export type UserPasswordState = 'set' | 'locked' | 'none'
+
+/// Why the machine gave no catalog, as its own word so the page phrases it in
+/// its own language. `null` alongside `available: false` means the machine said
+/// something the agent does not classify, and `reason` is that text.
+export type UserReason = 'unsupported_platform' | 'unreadable' | 'no_such_user'
+
+/// One account, as the agent read it out of `/etc/passwd` and `/etc/group`.
+export interface SystemUser {
+  name: string
+  uid: number
+  gid: number
+  /// The gecos field, whole: everything up to the first comma is conventionally
+  /// the full name, and splitting it is a presentation decision.
+  comment: string
+  home: string
+  shell: string
+  primary_group: string | null
+  /// Without the primary group, sorted. An empty list means it is in none.
+  supplementary_groups: string[]
+}
+
+/// One account as the page draws it: the account, plus the flags the agent
+/// derived so that no rule here is a second implementation of one.
+export interface UserRow extends SystemUser {
+  is_root: boolean
+  /// Below the machine's own threshold, from [`UserView.uid_min`]. Not a
+  /// constant: a distribution that sets 500 answers for itself.
+  system: boolean
+  /// The shell is `nologin` or `false`, so no password or key login. About the
+  /// shell only — a locked password is `password_state` in the detail.
+  login_disabled: boolean
+  /// The account the agent itself runs as.
+  agent_account: boolean
+  /// Whether the agent would remove it: false for root and for its own account.
+  deletable: boolean
+}
+
+/// What `/etc/shadow`, the account's `authorized_keys` and sudoers say.
+///
+/// Every field may be `null`, and `null` means "not readable from here" rather
+/// than "absent": all three sources are root-only on a normal machine, and an
+/// unprivileged session would otherwise report every account as having no
+/// password and no keys.
+export interface UserDetail {
+  password_state: UserPasswordState | null
+  /// Unix milliseconds. Shadow counts days, and the agent multiplies.
+  password_changed_millis: number | null
+  expires_millis: number | null
+  /// Empty is the only thing that means never — an unreadable field is `null`
+  /// above rather than `true` here.
+  never_expires: boolean
+  /// Distinct key types in file order. An empty list means the file was read
+  /// and held none; `null` means it could not be read.
+  ssh_key_types: string[] | null
+  /// The right-hand side of the account's sudoers entry, e.g. `NOPASSWD: ALL`.
+  sudo_rule: string | null
+}
+
+export type UserPart = 'list' | 'detail'
+
+/// One part of the machine's accounts.
+export interface UserView {
+  part: UserPart
+  /// Whether the accounts could be read. `false` is a state of the machine —
+  /// not Linux, no readable catalog — not a failure of the caller, so it is a
+  /// field and the page has one shape to draw.
+  available: boolean
+  reason_kind: UserReason | null
+  /// What the machine said, verbatim. Never translated: it is the only thing
+  /// that distinguishes one failure from another.
+  reason: string | null
+  /// The account the agent runs as, and the one it will not remove. `null` when
+  /// no catalog could be read.
+  agent_account: string | null
+  /// The uid below which this machine counts an account as a system one.
+  uid_min: number | null
+  /// The gid below which this machine counts a group as a system one.
+  gid_min: number | null
+  users: UserRow[]
+  groups: GroupRow[]
+  /// The account a detail is about, echoed because a response is read beside a
+  /// request that may be older.
+  name: string | null
+  detail: UserDetail | null
+}
+
+/// What a caller wants an account to be — the same fields for a new account and
+/// for a change to one, because the two forms ask for the same things. An empty
+/// `home` or `primary_group` is left alone (neither can be cleared); an empty
+/// `comment` and an empty group list *are* the values and clear what was there.
+export interface UserDraft {
+  name: string
+  comment: string
+  home: string
+  shell: string
+  primary_group: string
+  supplementary_groups: string[]
+  /// Whether a new account gets a home directory.
+  create_home: boolean
+  /// Whether an existing home directory is moved when `home` changes.
+  move_home: boolean
+  /// A system account, with no aging and a uid below the machine's threshold.
+  system: boolean
+  /// The password to set, when the caller is setting one. Omitted or empty
+  /// leaves the account's password alone. It travels inside the script the
+  /// agent runs, never as a command-line argument.
+  password?: string
+}
+
+/// One group, as `/etc/group` describes it. `members` is supplementary
+/// membership, not the accounts whose primary gid is this group.
+export interface SystemGroup {
+  name: string
+  gid: number
+  members: string[]
+  /// Accounts whose primary gid is this group.
+  primary_members: string[]
+  /// Whether `/etc/group` holds it. A group from LDAP or SSSD is read-only.
+  local: boolean
+}
+
+export interface GroupRow extends SystemGroup {
+  is_root: boolean
+  system: boolean
+  /// Whether the agent would remove it: false for root and for a group that
+  /// is anyone's primary group.
+  deletable: boolean
+}
+
+export interface GroupDraft {
+  name: string
+  members: string[]
+  system: boolean
+}
+
+export type ActKind = 'user' | 'group'
+
+export type UserAction = 'create' | 'edit' | 'delete'
+
+/// One write, as the page describes it.
+///
+/// Two passwords may travel here and neither reaches a command line: the
+/// account's own inside `draft`, and the `sudo` one as its own field — omitted
+/// until the first attempt comes back `sudo_rejected`.
+export interface UserActRequest {
+  action: UserAction
+  /// Omitted is an account, so an older client still writes users.
+  kind?: ActKind
+  draft?: UserDraft
+  group?: GroupDraft
+  /// Which account or group a change or a removal is about. The record as it
+  /// is comes from a catalog the agent reads at the moment of the write.
+  name?: string
+  /// Whether a removal takes the home directory with it.
+  remove_home?: boolean
+  /// The `sudo` password, when the caller has one.
+  password?: string
+}
+
+export interface UserActResult {
+  succeeded: boolean
+  sudo_rejected: boolean
+  exit_code: number | null
+  stdout: string
+  stderr: string
+}
+
+/// Why a write was refused before it ran, as a stable code the page phrases.
+/// A `UserError` case from the shared parser, or one of the endpoint's own:
+/// `missingDraft`, `missingName`, `unsupportedPlatform`, `unreadable`,
+/// `userExists`, `agentAccount`, `noSuchUser`.
+export type UserRefusalCode =
+  | 'invalidName'
+  | 'lineBreak'
+  | 'invalidPrimaryGroup'
+  | 'invalidSupplementaryGroup'
+  | 'passwordLineBreak'
+  | 'renaming'
+  | 'rootNotDeletable'
+  | 'missingDraft'
+  | 'missingName'
+  | 'unsupportedPlatform'
+  | 'unreadable'
+  | 'userExists'
+  | 'agentAccount'
+  | 'noSuchUser'
+  | 'unknownMember'
+  | 'rootGroupNotDeletable'
+  | 'groupInUse'
+  | 'groupNotLocal'
+  | 'groupExists'
+  | 'noSuchGroup'
+
+/// A snippet saved on the agent (`/snippets`, migration 013). The library is
+/// the agent's rather than this browser's: `localStorage` is lost with the
+/// browser profile and invisible from a second one.
+export interface Snippet {
+  /// Minted by this client; the agent refuses a missing or repeated one.
+  id: string
+  name: string
+  /// As written, `${…}` included. Expanded when it runs, never on save.
+  script: string
+  note: string
+  tags: string[]
+}
+
+export interface SnippetsView {
+  snippets: Snippet[]
+}
+
+/// One thing a terminal is fed, in order: `sbm_parser::snippet::Step`'s wire
+/// shape, which the app's terminal executes too.
+export type SnippetStep =
+  /// Type this, exactly.
+  | { type: 'text'; text: string }
+  /// The first character with the modifier held, then `rest`.
+  | { type: 'combo'; ctrl: boolean; alt: boolean; key: string; rest: string }
+  | { type: 'sleep'; seconds: number }
+  /// Press Enter this many times. Never 0.
+  | { type: 'enter'; times: number }
+
+export interface SnippetPlan {
+  steps: SnippetStep[]
+}
+
+/// A remote desktop route saved on the agent (`/desktops`, migration 014).
+/// No password: it is typed when a session opens and goes to the desktop only.
+export type DesktopProtocol = 'vnc' | 'rdp'
+
+export interface Desktop {
+  /// Minted by this client; the agent refuses a missing or repeated one.
+  id: string
+  name: string
+  protocol: DesktopProtocol
+  /// Dialled by the agent, so `127.0.0.1` is the agent's machine.
+  host: string
+  port: number
+  username: string | null
+  domain: string | null
+  view_only: boolean
+  shared: boolean
+}
+
+export interface DesktopProtocolView {
+  id: DesktopProtocol
+  default_port: number
+}
+
+export interface DesktopsView {
+  desktops: Desktop[]
+  protocols: DesktopProtocolView[]
+}
+
+/// One blob the agent hosts (`api::backup::BlobView`). Never its contents.
+export interface BackupBlob {
+  name: string
+  size: number
+  /// RFC 3339.
+  updated_at: string
+}
+
+/// `GET /backup`.
+export interface BackupView {
+  blobs: BackupBlob[]
+  max_bytes: number
+}
+
+/// A BMC target the agent reaches (`api::bmc::TargetView`). The password is
+/// never read back.
+export interface BmcTarget {
+  id: string
+  name: string
+  /// `https://host[:port]`.
+  url: string
+  username: string
+  has_password: boolean
+  cert_sha256: string | null
+}
+
+/// What a write sends: `password` `null` keeps the stored one.
+export interface BmcTargetInput {
+  id: string
+  name: string
+  url: string
+  username: string
+  password: string | null
+  cert_sha256: string | null
+}
+
+export interface BmcList {
+  targets: BmcTarget[]
+  /// Whether this caller may change the set (`access.ok`).
+  editable: boolean
+}
+
+/// `sbm_redfish::model::PowerState`.
+export type BmcPowerState = 'on' | 'off' | 'poweringOn' | 'poweringOff' | 'paused' | 'unknown'
+/// `sbm_redfish::model::PowerIntent`.
+export type BmcIntent = 'on' | 'gracefulShutdown' | 'forceOff' | 'restart' | 'powerCycle'
+
+export interface BmcReading {
+  name: string
+  value: number
+  unit: string | null
+}
+
+/// The parts of `sbm_redfish::Snapshot` the page shows.
+export interface BmcSnapshot {
+  topology: {
+    root: { product: string | null; vendor: string | null; version: string | null }
+    system: {
+      power_state: BmcPowerState
+      model: string | null
+      manufacturer: string | null
+      serial: string | null
+      bios_version: string | null
+      health: string | null
+    } | null
+    has_multiple_systems: boolean
+  }
+  sensors: { temperatures: BmcReading[]; fans: BmcReading[]; watts: number | null }
+  sensors_truncated: boolean
+}
+
+/// `GET /bmc/{id}`: the state, and the actions this system answers.
+export interface BmcStatus {
+  snapshot: BmcSnapshot
+  intents: BmcIntent[]
+}
+
+/// `POST /bmc/probe`: the certificate an address presents.
+export interface BmcCertInfo {
+  fingerprint: string
+  subject: string
+  issuer: string
+  /// Unix seconds.
+  not_before: number
+  not_after: number
+}
+
+// --- Virtualization (`/virt`, `sbm_virt::model`) ---
+
+export type VirtHostKind = 'pve' | 'libvirt'
+export type VirtGuestKind = 'qemu' | 'lxc'
+export type VirtGuestState =
+  | 'running'
+  | 'paused'
+  | 'stopped'
+  | 'starting'
+  | 'stopping'
+  | 'rebooting'
+  | 'migrating'
+  | 'backup'
+  | 'unknown'
+export type VirtPowerAction = 'start' | 'shutdown' | 'reboot' | 'force_stop' | 'suspend' | 'resume'
+
+export interface VirtNode {
+  name: string
+  online: boolean
+  /// Fraction of `max_cpu` in use, 0..1.
+  cpu: number | null
+  max_cpu: number | null
+  mem_used: number | null
+  mem_total: number | null
+  /// Seconds.
+  uptime: number | null
+}
+
+export interface VirtHost {
+  kind: VirtHostKind
+  version: string | null
+  hypervisor: string | null
+  nodes: VirtNode[]
+}
+
+export interface VirtGuest {
+  /// PVE `qemu/100`, libvirt the domain's UUID.
+  id: string
+  name: string
+  kind: VirtGuestKind
+  state: VirtGuestState
+  /// PVE's lock or QEMU status, libvirt's reason.
+  state_reason: string | null
+  vmid: number | null
+  node: string | null
+  vcpu: number | null
+  /// Bytes.
+  mem_bytes: number | null
+  /// Seconds.
+  uptime: number | null
+  tags: string[]
+  template: boolean
+  autostart: boolean | null
+  actions: VirtPowerAction[]
+}
+
+/// One reading; null is "not measured", never zero.
+export interface VirtStats {
+  /// Unix ms.
+  at: number
+  /// Percent of the guest's own vCPUs.
+  cpu: number | null
+  mem_used: number | null
+  mem_total: number | null
+  disk_used: number | null
+  disk_total: number | null
+  /// Bytes per second.
+  disk_read: number | null
+  disk_write: number | null
+  net_in: number | null
+  net_out: number | null
+}
+
+/// What a view shows or hides by. Only the fields this panel reads.
+export interface VirtCapabilities {
+  lxc: boolean
+  pause: boolean
+  cluster: boolean
+  [key: string]: boolean | string[]
+}
+
+export interface VirtHostView {
+  host: VirtHost
+  guests: VirtGuest[]
+  stats: Record<string, VirtStats>
+  capabilities: VirtCapabilities
+}
+
+export type VirtErrorKind =
+  | 'unreachable'
+  | 'not_configured'
+  | 'auth_failed'
+  | 'need_tfa'
+  | 'cert_unconfirmed'
+  | 'cert_changed'
+  | 'permission_denied'
+  | 'invalid_response'
+  | 'action_failed'
+  | 'unsupported'
+  | 'exists'
+  | 'conflict'
+  | 'not_installed'
+  | 'sudo_password_required'
+  | 'sudo_password_rejected'
+  | 'closed'
+  | 'unknown'
+
+/// `sbm_virt::error::Detail`: what the panel phrases itself.
+export type VirtErrorDetail =
+  | { code: 'no_user' | 'password_required' | 'token_incomplete' }
+  | { code: 'otp_required' | 'otp_empty' | 'otp_rejected' }
+  | { code: 'invalid_body' | 'invalid_data' | 'missing_ticket' | 'not_offered' | 'cert_not_presented' }
+  | { code: 'no_privileges'; token: boolean; account: string; command: string }
+  | { code: 'task_still_running'; node: string; upid: string; minutes: number }
+  | { code: 'needs_privilege'; account: string; privilege: string; path: string; command: string }
+  | { code: 'refused'; issue: VirtIssue }
+  | { code: 'create_refused'; issue: VirtCreateIssue }
+  | { code: 'hardware_refused'; issue: VirtHwIssue }
+  | { code: 'backup_refused'; issue: VirtBackupIssue }
+  | { code: 'apply_touches_management'; ifaces: string[] }
+  | { code: 'apply_unreadable' }
+
+export interface VirtError {
+  kind: VirtErrorKind
+  /// The host's own words.
+  message: string | null
+  detail: VirtErrorDetail | null
+  cert: BmcCertInfo | null
+  previous_fingerprint: string | null
+  /// Waits for the operator (`VirtError::needs_input`): refreshing would
+  /// repeat it. Absent from older agents.
+  needs_input?: boolean
+}
+
+/// `POST /virt`.
+export interface VirtLoad {
+  host: VirtHostKind | null
+  supported: boolean
+  pve_configured: boolean
+  view: VirtHostView | null
+  error: VirtError | null
+}
+
+export type PveAuthKind = 'password' | 'token'
+
+/// `GET /virt/pve`: never a secret.
+export interface PveConfigView {
+  configured: boolean
+  addr: string | null
+  auth: PveAuthKind | null
+  username: string | null
+  has_password: boolean
+  token_id: string | null
+  has_token_secret: boolean
+  cert_sha256: string | null
+  editable: boolean
+}
+
+/// `PUT /virt/pve`. A secret of `null` keeps the stored one.
+export interface PveConfigInput {
+  addr: string
+  auth: PveAuthKind
+  username: string | null
+  password: string | null
+  token_id: string | null
+  token_secret: string | null
+  cert_sha256: string | null
+}
+
+export type VirtConsoleKind = 'text' | 'vnc'
+export type VirtHistoryWindow = 'hour' | 'day' | 'week'
+
+export interface VirtDisk {
+  device: string
+  source_type: string | null
+  source: string | null
+  target: string | null
+  bus: string | null
+  format: string | null
+  readonly: boolean
+  /// Bytes.
+  size: number | null
+}
+
+export interface VirtNic {
+  kind: string
+  mac: string | null
+  source: string | null
+  model: string | null
+  target: string | null
+}
+
+export interface VirtGraphics {
+  kind: string
+  port: number | null
+  tls_port: number | null
+  autoport: boolean
+  listen: string | null
+  socket: string | null
+}
+
+export interface VirtGuestDetail {
+  disks: VirtDisk[]
+  nics: VirtNic[]
+  graphics: VirtGraphics[]
+  display: { uri: string; protocol: string; host: string | null; port: number | null } | null
+  consoles: VirtConsoleKind[]
+  description: string | null
+  arch: string | null
+  machine: string | null
+}
+
+/// `POST /virt/console`.
+export interface VirtConsoleAnswer {
+  /// Opens `/virt/console/ws` once, within 30 s.
+  ticket: string | null
+  /// VNC: the display's password for this connection, for the VNC client only.
+  vnc_password: string | null
+  password_known: boolean
+  /// A libvirt text console: what to run in a terminal on the machine.
+  command: string | null
+  error: VirtError | null
+}
+
+export interface VirtSnapshot {
+  name: string
+  parent: string | null
+  description: string | null
+  /// Unix seconds.
+  created_at: number | null
+  current: boolean
+  with_memory: boolean
+  external: boolean
+  layers: { target: string; file: string | null; external: boolean }[]
+}
+
+export interface VirtChainFile {
+  path: string
+  format: string | null
+  allocation: number | null
+  backing: string | null
+  snap: string | null
+  active: boolean
+}
+
+export interface VirtChain {
+  disks: { target: string; files: VirtChainFile[]; pool: string | null; error: string | null }[]
+  refusal: string | null
+  external_refusal: string | null
+  pools: string[]
+}
+
+export type VirtSnapshotMemory = 'none' | 'optional' | 'always'
+
+/// `POST /virt/snapshots`.
+export interface VirtSnapshots {
+  snapshots?: VirtSnapshot[]
+  memory?: VirtSnapshotMemory
+  refusal?: string | null
+  /// libvirt: the chain an external snapshot sits on.
+  chain?: VirtChain | null
+  error: VirtError | null
+}
+
+export type VirtSnapshotOp =
+  | { op: 'create'; name: string; description: string | null; memory: boolean; external: boolean; pool: string | null }
+  | { op: 'revert'; name: string; start: boolean }
+  | { op: 'delete'; name: string }
+
+export interface VirtSnapDiff {
+  group: 'cpu' | 'memory' | 'disks' | 'nics' | 'firmware' | 'boot' | 'other'
+  key: string
+  before: string | null
+  after: string | null
+}
+
+// --- Storage and networks (`sbm_virt::resource`) ---
+
+export interface VirtGuestRef {
+  guest_id: string | null
+  vmid: number | null
+  device: string | null
+  mac: string | null
+  ip: string | null
+}
+
+export interface VirtPool {
+  id: string
+  name: string
+  node: string | null
+  type: string
+  path: string | null
+  source: string | null
+  capacity: number | null
+  used: number | null
+  available: number | null
+  active: boolean
+  autostart: boolean | null
+  enabled: boolean | null
+  shared: boolean | null
+  content: string[]
+  volume_count: number | null
+}
+
+/// What a form offers for one pool, the agent's answer.
+export interface VirtPoolRule {
+  formats: string[]
+  resizable: boolean
+}
+
+export interface VirtVolume {
+  id: string
+  name: string
+  path: string | null
+  format: string | null
+  content: string | null
+  capacity: number | null
+  allocation: number | null
+  backing: string | null
+  created_at: number | null
+  users: VirtGuestRef[]
+  backs: string[]
+}
+
+export interface VirtNetHost {
+  mac: string
+  ip: string
+  name: string | null
+}
+
+export interface VirtNetwork {
+  id: string
+  name: string
+  node: string | null
+  mode: string
+  bridge: string | null
+  cidrs: string[]
+  gateway: string | null
+  dhcp_ranges: string[]
+  ports: string[]
+  vlan_aware: boolean | null
+  vlan_id: number | null
+  vlan_device: string | null
+  bond_mode: string | null
+  active: boolean
+  autostart: boolean | null
+  comment: string | null
+  hosts: VirtNetHost[]
+  xml: string
+  pending_restart: boolean
+  management_editable: boolean
+  users: VirtGuestRef[]
+}
+
+export interface VirtNetworkChanges {
+  node: string
+  diff: string
+}
+
+/// `sbm_virt::resource::Issue`: why the agent refused a change.
+export type VirtIssue =
+  | 'name_empty'
+  | 'name_invalid'
+  | 'name_taken'
+  | 'source_invalid'
+  | 'target_invalid'
+  | 'cidr_invalid'
+  | 'dhcp_invalid'
+  | 'subnet_taken'
+  | 'bridge_invalid'
+  | 'size'
+  | 'space'
+  | 'format'
+  | 'in_use'
+  | 'shrink'
+  | 'host_invalid'
+  | 'management_iface'
+  | 'not_found'
+  | 'unsupported'
+
+/// `sbm_virt::resource::Change`.
+export type VirtChange =
+  | {
+      op: 'pool_create'
+      name: string
+      type: string
+      source: string
+      target?: string | null
+      node?: string | null
+      content?: string[]
+      autostart?: boolean
+    }
+  | { op: 'pool_set_active'; pool: string; active: boolean }
+  | { op: 'pool_set_autostart'; pool: string; on: boolean }
+  | { op: 'pool_refresh'; pool: string }
+  | { op: 'pool_delete'; pool: string; delete_storage?: boolean }
+  | { op: 'volume_create'; pool: string; name: string; gib: number; format: string }
+  | { op: 'volume_delete'; pool: string; volume: string }
+  | { op: 'volume_resize'; pool: string; volume: string; bytes: number }
+  | { op: 'volume_clone'; pool: string; volume: string; name: string }
+  | {
+      op: 'network_create'
+      name: string
+      mode: string
+      node?: string | null
+      bridge?: string | null
+      cidr?: string | null
+      dhcp_start?: string | null
+      dhcp_end?: string | null
+      vlan_aware?: boolean
+      autostart?: boolean
+    }
+  | {
+      op: 'network_edit'
+      network: string
+      mode: string
+      bridge?: string | null
+      address?: string | null
+      prefix?: number | null
+      dhcp_start?: string | null
+      dhcp_end?: string | null
+      hosts?: VirtNetHost[]
+      restart?: boolean
+      base_xml?: string | null
+    }
+  | {
+      op: 'network_edit_bridge'
+      network: string
+      ports?: string | null
+      cidr?: string | null
+      gateway?: string | null
+      vlan_aware?: boolean | null
+      autostart?: boolean | null
+    }
+  | { op: 'network_restart'; network: string; base_xml?: string | null }
+  | { op: 'network_set_active'; network: string; active: boolean }
+  | { op: 'network_set_autostart'; network: string; on: boolean }
+  | { op: 'network_delete'; network: string }
+  | { op: 'network_apply'; node: string }
+  | { op: 'network_revert'; node: string }
+
+// --- Creating, copying and deleting guests (`sbm_virt::create`) ---
+
+/// `sbm_virt::create::Issue`: why the agent refused to create, copy, delete
+/// or make a template of a guest.
+export type VirtCreateIssue =
+  | 'name_empty'
+  | 'name_invalid'
+  | 'name_taken'
+  | 'vmid_invalid'
+  | 'vmid_taken'
+  | 'node'
+  | 'cores'
+  | 'memory'
+  | 'storage'
+  | 'disk_size'
+  | 'template'
+  | 'media'
+  | 'credentials'
+  | 'password'
+  | 'ssh_keys'
+  | 'image'
+  | 'image_size'
+  | 'network'
+  | 'secure_boot'
+  | 'not_offered'
+  | 'ci_user'
+  | 'ci_credentials'
+  | 'ci_hostname'
+  | 'ci_address'
+  | 'ci_gateway'
+  | 'ci_dns'
+  | 'ci_search'
+  | 'clone_linked_target'
+  | 'clone_storage'
+  | 'clone_storage_content'
+  | 'clone_storage_shared'
+  | 'clone_node_unknown'
+  | 'not_stopped'
+  | 'is_template'
+  | 'not_found'
+  | 'unsupported'
+
+/// What the host offers a new VM. Lists put the default first.
+export interface VirtCreateOptions {
+  buses: string[]
+  nic_models: string[]
+  uefi: boolean
+  tpm: boolean
+  secure_boot: boolean
+  cloud_images: boolean
+  cloud_init: boolean
+  /// Why cloud-init is not offered, the host's words.
+  cloud_init_missing: string | null
+}
+
+/// A volume a form offers, with the id of the pool it is in.
+export interface VirtOffer {
+  pool: string
+  volume: VirtVolume
+}
+
+/// `POST /virt/create/form`.
+export interface VirtCreateForm {
+  options: VirtCreateOptions
+  /// PVE: the cluster's next free VMID.
+  next_vmid: number | null
+  storages: VirtPool[]
+  networks: VirtNetwork[]
+  /// A VM's install media, or a container's templates.
+  media: VirtOffer[]
+  /// Cloud images.
+  images: VirtOffer[]
+}
+
+/// A pool's id and a volume's id in it.
+export interface VirtVolumeRef {
+  pool: string
+  volume: string
+}
+
+export interface VirtCloudInit {
+  user: string
+  password?: string
+  ssh_keys: string[]
+  /// libvirt; the guest's name when omitted.
+  hostname?: string
+  /// `a.b.c.d/prefix`; omitted is DHCP.
+  address?: string
+  gateway?: string
+  dns: string[]
+  search_domains: string[]
+}
+
+/// `sbm_virt::create::CreateSpec`. Optional fields are omitted when unset.
+export interface VirtCreateSpec {
+  kind: VirtGuestKind
+  name: string
+  /// PVE.
+  node?: string
+  /// PVE; omitted takes the next free one.
+  vmid?: number
+  cores: number
+  memory_mib: number
+  /// Pool id.
+  storage: string
+  disk_gib: number
+  /// A VM's ISO or a container's template.
+  media?: VirtVolumeRef
+  /// A cloud image; never with `media`.
+  image?: VirtVolumeRef
+  /// Network id.
+  network?: string
+  /// A container's root password.
+  password?: string
+  /// A container's root keys.
+  ssh_keys: string[]
+  unprivileged: boolean
+  bus?: string
+  nic_model?: string
+  uefi: boolean
+  secure_boot: boolean
+  tpm: boolean
+  cloud_init?: VirtCloudInit
+  start: boolean
+}
+
+export interface VirtCreated {
+  id: string
+  /// Created, but it did not start: the host's words.
+  start_error: string | null
+  /// The disk is a cloud image's size, bigger than asked.
+  disk_kept_bytes: number | null
+}
+
+/// `sbm_virt::create::CloneRequest`.
+export interface VirtCloneRequest {
+  name: string
+  /// PVE: full or linked (templates only). libvirt: contents copied or
+  /// empty disks.
+  full: boolean
+  /// PVE.
+  vmid?: number
+  /// PVE: a storage name.
+  storage?: string
+  /// PVE.
+  target_node?: string
+  /// libvirt: a pool name.
+  target_pool?: string
+}
+
+// --- A guest's hardware and settings (`sbm_virt::hardware`) ---
+
+export type VirtHwDiskKind = 'disk' | 'cdrom' | 'rootfs' | 'mount'
+
+export interface VirtHwDisk {
+  /// PVE option (`scsi0`, `rootfs`, `mp0`), libvirt target (`vda`).
+  key: string
+  kind: VirtHwDiskKind
+  /// PVE volume id, libvirt path; null for an empty drive.
+  source: string | null
+  /// Bytes.
+  size: number | null
+  storage: string | null
+  /// A container mount point's path.
+  mount_point: string | null
+  bus: string | null
+  format: string | null
+  readonly: boolean
+  /// null for the host's default.
+  cache: string | null
+  /// A CD-ROM holding the guest's cloud-init data, not install media.
+  cloud_init: boolean
+  resizable: boolean
+}
+
+export interface VirtHwNic {
+  /// PVE option (`net0`), libvirt MAC.
+  key: string
+  mac: string | null
+  /// libvirt's interface type; null on PVE.
+  type: string | null
+  /// Bridge or network name.
+  source: string | null
+  model: string | null
+  link_up: boolean
+  /// PVE; null where there is none.
+  firewall: boolean | null
+  /// A container's interface name.
+  name: string | null
+}
+
+/// One setting the running guest has differently from its next start.
+export interface VirtPendingField {
+  key: string
+  current: string | null
+  pending: string | null
+  /// Goes at the next start.
+  delete: boolean
+}
+
+export type VirtDeviceKind = 'usb' | 'pci' | 'tpm'
+
+export interface VirtHwDevice {
+  key: string
+  kind: VirtDeviceKind
+  detail: string | null
+  /// Given through a PVE resource mapping.
+  mapping: boolean
+}
+
+/// What this guest can be changed to, on its host.
+export interface VirtHwSupport {
+  buses: string[]
+  caches: string[]
+  nic_models: string[]
+  mac: boolean
+  protocols: string[]
+  listen: boolean
+  gpus: string[]
+  uefi: boolean
+  secure_boot: boolean
+  tpm: boolean
+  usb: boolean
+  pci: boolean
+}
+
+/// `POST /virt/hardware`: the definition the next start gets.
+export interface VirtHardware {
+  kind: VirtGuestKind
+  running: boolean
+  cpu: { sockets: number; cores: number; threads: number; online: number | null; type: string | null }
+  memory: { mib: number; min_mib: number | null; balloon: boolean; swap_mib: number | null }
+  disks: VirtHwDisk[]
+  nics: VirtHwNic[]
+  /// Boot devices in order, by disk or NIC key; null where there is none.
+  boot: string[] | null
+  autostart: boolean
+  name: string | null
+  description: string | null
+  /// PVE; null where the host has no such setting.
+  protection: boolean | null
+  rename_running: boolean
+  pending: VirtPendingField[]
+  /// Sent back with an edit.
+  revision: string | null
+  limits: { host_cpus: number | null; host_memory_bytes: number | null }
+  cpu_types: string[]
+  config_text: string | null
+  firmware: { uefi: boolean; secure_boot: boolean; vars_storage: string | null } | null
+  display: { protocol: string | null; listen: string | null; gpu: string | null; port: number | null } | null
+  devices: VirtHwDevice[]
+  support: VirtHwSupport
+}
+
+/// A host device a guest can be given.
+export interface VirtHostDevice {
+  id: string
+  label: string
+  detail: string | null
+  mapping: boolean
+  usb_bus: number | null
+  usb_port: string | null
+  usb_device: number | null
+  iommu_group: number | null
+  /// Devices sharing its IOMMU group, itself included.
+  group_size: number
+}
+
+/// `POST /virt/host-devices`.
+export interface VirtHostDevices {
+  usb: VirtHostDevice[]
+  pci: VirtHostDevice[]
+  /// false: a PCI device given to a guest keeps it from starting.
+  iommu: boolean
+  /// PVE: this login may only use resource mappings.
+  mappings_only: boolean
+}
+
+export type VirtUsbNaming = 'vendor_product' | 'address'
+
+/// `sbm_virt::hardware::Change`. null keeps (or, where noted, clears).
+export type VirtHwChange =
+  | { op: 'set_cpu'; sockets: number; cores: number; online: number | null; type: string | null }
+  | { op: 'set_memory'; mib: number; min_mib: number | null; swap_mib: number | null }
+  | { op: 'grow_disk'; key: string; bytes: number }
+  | { op: 'add_disk'; pool: string; gib: number; mount_point: string | null }
+  | { op: 'attach_volume'; volume: VirtVolumeRef; mount_point: string | null }
+  | { op: 'remove_disk'; key: string; delete_volume: boolean }
+  | { op: 'add_cdrom'; media: VirtVolumeRef | null }
+  /// null ejects.
+  | { op: 'set_media'; key: string; media: VirtVolumeRef | null }
+  | { op: 'add_nic'; network: string; model: string | null }
+  | { op: 'remove_nic'; key: string }
+  | { op: 'update_nic'; key: string; network: string | null; link_up: boolean; firewall: boolean | null }
+  | { op: 'set_boot'; order: string[] }
+  | { op: 'set_autostart'; on: boolean }
+  | { op: 'set_name'; name: string }
+  | { op: 'set_description'; text: string }
+  | { op: 'set_protection'; on: boolean }
+  | { op: 'update_disk'; key: string; bus: string | null; cache: string | null }
+  | { op: 'set_nic_hardware'; key: string; model: string | null; mac: string | null }
+  | { op: 'set_firmware'; uefi: boolean; secure_boot: boolean; storage: string | null }
+  | { op: 'set_display'; protocol: string | null; listen: string | null; gpu: string | null }
+  | { op: 'add_device'; kind: VirtDeviceKind; host: VirtHostDevice | null; storage: string | null; usb_naming: VirtUsbNaming }
+  | { op: 'remove_device'; key: string }
+  | { op: 'revert'; keys: string[] }
+
+/// What a change came to, beyond succeeding.
+export interface VirtHwOutcome {
+  /// The running guest refused its half: the next start gets the change.
+  live_error: string | null
+  /// A disk's volume was to be deleted, but the running guest still has it.
+  volume_kept: boolean
+}
+
+/// `sbm_virt::hardware::Issue`: why the agent refused a change.
+export type VirtHwIssue =
+  | 'cpu_count'
+  | 'cpu_online'
+  | 'memory'
+  | 'memory_min'
+  | 'disk_shrink'
+  | 'disk_size'
+  | 'storage_space'
+  | 'mount_point'
+  | 'boot_empty'
+  | 'name_invalid'
+  | 'name_running'
+  | 'description'
+  | 'mac'
+  | 'stop_first'
+  | 'storage_missing'
+  | 'device'
+  | 'volume_in_use'
+  | 'media'
+  | 'not_offered'
+  | 'not_found'
+  | 'unsupported'
+
+/// `POST /virt/cloud-init`: never the password.
+export interface VirtCloudInitState {
+  user: string
+  ssh_keys: string[]
+  /// libvirt; null on PVE, whose cloud-init uses the VM's name.
+  hostname: string | null
+  /// null for DHCP.
+  address: string | null
+  gateway: string | null
+  dns: string[]
+  search_domains: string[]
+  /// How many NICs the settings configure; the first is the one edited.
+  nics: number
+  password_set: boolean
+  /// libvirt: the password expires at the first login.
+  password_expires: boolean
+  /// The guest has the NIC the address settings apply to.
+  network: boolean
+  /// libvirt: the seed says more than this app writes.
+  foreign: boolean
+  revision: string
+}
+
+/// `sbm_virt::hardware::CloudInitEdit`: `values.password` is a new one,
+/// omitted to keep the one set.
+export interface VirtCloudInitEdit {
+  values: VirtCloudInit
+  remove_password: boolean
+  password_expires: boolean
+  revision: string
+}
+
+// --- Backups and backup jobs (`sbm_virt::backup`, PVE only) ---
+
+export type VirtBackupMode = 'snapshot' | 'suspend' | 'stop'
+/// `0` is none.
+export type VirtBackupCompress = '0' | 'zstd' | 'lzo' | 'gzip'
+
+/// One backup of a guest, as a backup storage lists it.
+export interface VirtBackup {
+  /// PVE's volid: `local:backup/vzdump-qemu-100-….vma.zst`.
+  id: string
+  storage: string
+  node: string
+  vmid: number | null
+  /// Unix seconds.
+  created_at: number | null
+  size: number | null
+  /// `vma.zst`, `tar.zst`, …
+  format: string | null
+  notes: string | null
+  protected: boolean
+  /// `ok` or `failed`, where a verification job has run on it.
+  verification: string | null
+  kind: VirtGuestKind | null
+}
+
+/// A scheduled backup job (`/cluster/backup`).
+export interface VirtBackupJob {
+  id: string
+  schedule: string | null
+  storage: string | null
+  mode: string | null
+  compress: string | null
+  enabled: boolean
+  /// Every guest (less `exclude`), the `vmids`, or the guests of `pool`.
+  all: boolean
+  vmids: number[]
+  exclude: number[]
+  pool: string | null
+  /// null: every node.
+  node: string | null
+  comment: string | null
+  notes_template: string | null
+  /// `always` or `failure`.
+  mail_notification: string | null
+  /// PVE's `prune-backups`: `keep-last=7,keep-daily=4`.
+  prune: string | null
+}
+
+/// `sbm_virt::backup::BackupJobEdit`: the whole job, an absent optional
+/// field cleared.
+export interface VirtBackupJobEdit {
+  id?: string
+  is_new: boolean
+  node?: string
+  storage: string
+  schedule: string
+  mode: VirtBackupMode
+  compress: VirtBackupCompress
+  enabled: boolean
+  all: boolean
+  vmids: number[]
+  exclude: number[]
+  pool?: string
+  comment?: string
+  notes_template?: string
+  mail_notification?: string
+  prune?: string
+}
+
+/// `sbm_virt::backup::BackupRequest`: one backup taken now.
+export interface VirtBackupRequest {
+  storage: string
+  mode: VirtBackupMode
+  compress: VirtBackupCompress
+  notes?: string
+  protected: boolean
+  prune?: string
+}
+
+/// `sbm_virt::backup::BackupEdit`.
+export interface VirtBackupEdit {
+  notes: string
+  protected: boolean
+}
+
+/// What the host makes of a schedule: its refusal, or the next runs (Unix
+/// seconds, oldest first).
+export interface VirtScheduleCheck {
+  error: string | null
+  next: number[]
+}
+
+/// `POST /virt/backups`.
+export interface VirtBackups {
+  backups: VirtBackup[] | null
+  /// The jobs that take this guest.
+  jobs: VirtBackupJob[] | null
+  /// Its node's storages that hold backups.
+  storages: VirtPool[] | null
+  error: VirtError | null
+}
+
+/// `POST /virt/backup-jobs`.
+export interface VirtBackupJobs {
+  jobs: VirtBackupJob[] | null
+  /// Every node's storages that hold backups.
+  storages: VirtPool[] | null
+  error: VirtError | null
+}
+
+/// `sbm_virt::backup::Issue`: why the agent refused a backup request.
+export type VirtBackupIssue =
+  | 'schedule_empty'
+  | 'schedule_invalid'
+  | 'storage'
+  | 'mode'
+  | 'compress'
+  | 'guests'
+  | 'node_offline'
+  | 'not_stopped'
+  | 'not_found'
+  | 'unsupported'
+
+/// Desk apps installed on the agent (`api::apps`).
+/// A package's manifest as the agent checked it (`api::apps::Manifest`).
+export interface PackageManifest {
+  /// The app's id is `<publisher>.<name>` (`InstalledApp.id`).
+  publisher: string
+  name: string
+  version: string
+  api: number
+  kind: 'web' | 'wasm'
+  title: string | Record<string, string>
+  /// What it does, shown on its App Store page.
+  description?: string | Record<string, string>
+  glyph: string
+  tone: string
+  permissions: string[]
+  instances?: number
+  size?: { width: number; height: number }
+  min_size?: { width: number; height: number }
+  opens?: { dirs?: boolean; ext?: string[] }
+  keywords?: string[]
+  /// The systems it is for (`/etc/os-release` `ID`); any when absent.
+  os?: string[]
+}
+
+export interface InstalledApp {
+  id: string
+  version: string
+  /// Of the package; an approval names it, so it approves exactly this code.
+  sha256: string
+  manifest: PackageManifest
+  /// Null while waiting for approval.
+  approved_permissions: string[] | null
+  installed_at: string
+  approved_at: string | null
+  /// The first-party key that signed the package; null for an unknown
+  /// publisher.
+  signed_by?: string | null
+}
+
+/// A desk app package the agent offers (`GET /apps/catalog`).
+export interface OfferedApp {
+  id: string
+  version: string
+  sha256: string
+  size: number
+  manifest: PackageManifest
+  signedBy: string | null
+  source: 'bundled' | 'store'
+  repo: string | null
+}
+
+/// Text in several languages, keyed by locale (`en` always there).
+export type LocalizedText = Record<string, string>
+
+/// A setting a web app's deploy dialog asks (`stacks::manifest::Setting`).
+export type StackSetting =
+  | { type: 'path'; key: string; label: LocalizedText; help?: LocalizedText | null; env: string; default: string; data: boolean }
+  | {
+      type: 'port'
+      key: string
+      label: LocalizedText
+      help?: LocalizedText | null
+      env: string
+      default: number
+      /// Absent from an older agent: TCP.
+      protocol?: 'tcp' | 'udp' | 'both'
+    }
+  | { type: 'bool'; key: string; label: LocalizedText; help?: LocalizedText | null; default: boolean }
+  | {
+      type: 'choice'
+      key: string
+      label: LocalizedText
+      help?: LocalizedText | null
+      default: string
+      options: { value: string; label: LocalizedText }[]
+    }
+  | { type: 'text'; key: string; label: LocalizedText; help?: LocalizedText | null; env: string; default?: string | null; optional: boolean; pattern: string }
+
+export type StackNotice =
+  | 'pullsImages'
+  | 'buildsImages'
+  | 'bindsPaths'
+  | 'mountsHostFiles'
+  | 'gpuDevices'
+  | 'publishesPort'
+  | 'privileged'
+  | 'hostNetwork'
+  | 'dockerSocket'
+
+/// A web app of the agent's catalog (`store/apps/<id>/manifest.toml`).
+export interface StackManifest {
+  /// `<publisher>.<name>` (`futo.immich`), made by the agent.
+  id: string
+  publisher: string
+  name: string
+  /// The upstream project's name (`Immich`).
+  project: string
+  /// Who makes the service, when the manifest says.
+  developer?: string | null
+  version: string
+  homepage: string
+  source: string
+  glyph: string
+  tone: string
+  categories: string[]
+  /// Offered by the desk's first-run guide. Absent on older agents.
+  recommended?: boolean
+  notices: StackNotice[]
+  title: LocalizedText
+  description: LocalizedText
+  license: { spdx: string; url: string; accept: boolean }
+  requirements: {
+    memory_min_mib?: number | null
+    memory_recommended_mib?: number | null
+    cores_min?: number | null
+    arch: string[]
+    os: string[]
+  }
+  /// The page a window shows; absent for a model server, which serves `llm`.
+  web?: { port: string; path: string } | null
+  /// Its OpenAI-compatible API (`[llm]`), offered to Agent mode once deployed.
+  llm?: StackLlm | null
+  settings: StackSetting[]
+  login?: StackLogin | null
+  /// Its MCP servers, which Agent mode connects to once it is deployed.
+  /// Absent on older agents.
+  mcp?: StackMcp[]
+}
+
+/// A model server's OpenAI-compatible API (`[llm]`), at
+/// `http://127.0.0.1:<port setting><path>` on the machine.
+export interface StackLlm {
+  port: string
+  path: string
+  /// The text setting naming the model it serves.
+  model?: string
+  /// The `[[secrets]]` entry it asks for as a bearer token.
+  key?: string
+}
+
+/// An app's MCP server (`[[mcp]]`): the service's own, or a sidecar.
+export interface StackMcp {
+  port: string
+  path: string
+  publisher: 'builtin' | 'official' | 'community'
+  service?: string
+  source?: string
+}
+
+/// How the admin signs in to a deployed app the first time (`[login]`):
+/// `password` names the secret, which `POST /stacks/{id}/login` reads.
+export interface StackLogin {
+  user?: string | null
+  password?: string | null
+  note?: LocalizedText | null
+}
+
+export type StackValue = string | number | boolean
+
+/// A deployment (`stacks::store::StackRow`).
+export interface StackRow {
+  state: 'installing' | 'installed' | 'failed'
+  version: string
+  id?: string
+  settings?: Record<string, StackValue>
+  proxy_port?: number
+  license?: string
+  license_accepted_at?: string
+  installed_at?: string
+  updated_at?: string
+  last_error?: string | null
+}
+
+export type StackJobKind = 'install' | 'update' | 'reconfigure' | 'start' | 'stop' | 'restart' | 'remove' | 'backup' | 'restore' | 'storage' | 'shares' | 'kernel' | 'ubuntuPro' | 'scan' | 'cleanup' | 'tailscale'
+
+/// A deploy, update, start, stop or removal (`stacks::job::JobView`).
+export interface StackJob {
+  id: number
+  kind: StackJobKind
+  state: 'running' | 'succeeded' | 'failed' | 'cancelled'
+  error: string | null
+  lines: { seq: number; text: string }[]
+  /// The next line's sequence number: what to ask from next time.
+  next: number
+}
+
+export interface StackApp {
+  manifest: StackManifest
+  /// Where the agent has it: shipped, a repository of the store (`repo`),
+  /// or the operator's own folder (`[stacks] local_apps`); `part` is one of
+  /// Local inference's engines, shown in its window, not the App Store.
+  source?: 'bundled' | 'store' | 'local' | 'part'
+  repo?: string | null
+  stack: StackRow | null
+  /// The latest job.
+  job: StackJob | null
+  /// Whether the agent's proxy is in front of it now.
+  proxy: boolean
+  /// The agent's last look at its containers, once installed.
+  health?: StackHealth | null
+}
+
+/// `stacks::health::Health`: checked every minute.
+export interface StackHealth {
+  state: 'healthy' | 'starting' | 'unhealthy' | 'down' | 'stopped'
+  /// The services that are not well.
+  failing: string[]
+  checked_at: string
+}
+
+/// What a deploy dialog starts from (`GET /stacks/{id}/prepare`).
+export interface StackPrepare {
+  defaults: Record<string, StackValue>
+  runtime: { available: true; runtime: 'docker' | 'podman'; compose: string } | { available: false; error: 'noRuntime' | 'noCompose' }
+  memory_mib: number | null
+  cores: number | null
+  /// GPU vendors containers can be given (CUDA needs the NVIDIA Container
+  /// Toolkit).
+  gpus: string[]
+  /// Every GPU vendor the agent sees.
+  gpus_seen: string[]
+  wsl: boolean
+  /// The agent runs in a container or under WSL: ports other programs use
+  /// may not all be seen.
+  ports_partial: boolean
+}
+
+/// A ticket for a web app's proxy (`POST /stacks/{id}/enter`).
+export interface StackEntry {
+  ticket: string
+  port: number
+  tls: boolean
+  path: string
+  enter: string
+  /// The window's address when the agent takes apps by host
+  /// (`[stacks] apps_url`).
+  url?: string | null
+}
+
+export interface StackService {
+  service: string
+  name: string
+  image: string
+  state: string
+  health: string | null
+  exit_code: number | null
+  status: string
+}
+
+/// What deploying chosen settings would do (`POST /stacks/{id}/check`).
+export interface StackPreview {
+  settings: Record<string, StackValue>
+  images: string[]
+  /// Images built on the machine from the package's Dockerfiles.
+  built: string[]
+  data_paths: string[]
+  port: number | null
+  /// Ports suggested that are in use now, and where they will move.
+  moved: { setting: string; from: number; to: number }[]
+}
+
+/// A volume or a folder bound into a container (`sbm_parser::container_backup::Mount`).
+export type ContainerMount =
+  | { kind: 'volume'; name: string; destination: string }
+  | { kind: 'bind'; source: string; destination: string }
+
+/// A backup of containers' volumes and folders (`container_backups::Meta`).
+export interface ContainerBackup {
+  id: string
+  /// The compose project's name, or the container's.
+  label: string
+  created_at: string
+  /// The containers were stopped while archived.
+  stopped: boolean
+  containers: { name: string; image: string; project: string | null }[]
+  archives: { file: string; container: string; mount: ContainerMount; bytes: number }[]
+  /// Left out: a system folder of the host, or a bound file.
+  skipped: { container: string; mount: ContainerMount; why: 'system' | 'notFolder' | 'shared' }[]
+}
+
+/// A block device (`sbm_parser::storage::BlockDevice`), sizes in bytes.
+export interface BlockDevice {
+  name: string
+  path: string
+  /// `disk`, `part`, `raid1`…, `lvm`, `crypt`, `loop`, `rom`.
+  kind: string
+  size: number
+  model: string | null
+  serial: string | null
+  rotational: boolean
+  transport: string | null
+  removable: boolean
+  read_only: boolean
+  part_type?: string | null
+  fstype: string | null
+  label: string | null
+  uuid: string | null
+  /// `[SWAP]` for swap.
+  mountpoints: string[]
+  /// A filesystem on it is mounted (swap is not).
+  mounted: boolean
+  /// A filesystem nothing mounts, and not a member of an array, pool or volume group.
+  mountable: boolean
+  /// A mounted filesystem the device grew under, which can grow to fill it.
+  expandable: boolean
+  /// The filesystem's size, mounted only; absent from older agents.
+  fs_size?: number | null
+  available: number | null
+  used: number | null
+  children: BlockDevice[]
+}
+
+export interface MdArray {
+  name: string
+  state: string
+  level: string | null
+  members: { name: string; faulty: boolean; spare: boolean }[]
+  raid_disks: number | null
+  working_disks: number | null
+  sync: { action: string; permille: number; finish: string | null } | null
+  /// Grows by one more working member (RAID 1, 5, 6).
+  growable: boolean
+}
+
+export interface ZPool {
+  name: string
+  size: number
+  allocated: number
+  free: number
+  health: string
+  scan: string | null
+  /// A scrub or resilver is running now; absent from older agents.
+  scanning?: boolean
+  /// `section`: outside the data vdevs (`spares`, `logs`, `cache`…); absent
+  /// from older agents.
+  vdevs: {
+    name: string
+    state: string
+    depth: number
+    errors: number
+    section?: string | null
+    /// What may be asked of the device, by where it sits.
+    actions: { replace: boolean; attach: boolean; remove: boolean; online: boolean }
+  }[]
+}
+
+/// Why a device may not be partitioned, formatted or built on.
+export type DeviceBusy = 'mounted' | 'swap' | 'raidMember' | 'poolMember' | 'lvmMember' | 'holdsVolume' | 'readOnly' | 'systemPartition' | 'notFound'
+
+/// `GET /storage`.
+export interface StorageView {
+  disks: BlockDevice[]
+  busy: Record<string, DeviceBusy>
+  /// Devices mounted where the system lives: never unmounted. Absent from
+  /// older agents.
+  system?: string[]
+  /// What may be given to a new array or pool, or formatted, in the tree's order.
+  free: string[]
+  /// For each free device, the free devices it is or holds: never picked together.
+  overlaps: Record<string, string[]>
+  /// Each disk's last partition with room after it.
+  growable_partitions: string[]
+  /// The first `md` name no array has.
+  next_md: string
+  raid_levels: { value: number; minimum: number }[]
+  pool_layouts: { value: string; minimum: number }[]
+  arrays: MdArray[]
+  pools: ZPool[]
+  /// mdadm, zpool, smartctl, mkfs.ext4, mkfs.xfs, mkfs.btrfs, sfdisk, wipefs.
+  tools: string[]
+  job: StackJob | null
+  /// The last SMART reading (`POST /storage/health`); null until one is
+  /// made, absent from older agents.
+  health?: HealthReading | null
+  /// The maintenance schedule, one per task that is on; absent from older
+  /// agents.
+  maintenance?: MaintenanceTask[]
+  /// The agent's account, which a sudoers rule for the schedule names.
+  account?: string | null
+}
+
+export type MaintenanceKind = 'scrub' | 'smartShort' | 'smartLong'
+
+/// `storage_watch::Task`.
+export interface MaintenanceTask {
+  task: MaintenanceKind
+  every: 'weekly' | 'monthly'
+  /// `HH:MM`, the machine's time.
+  at: string
+  /// Weekly: 0 Monday … 6 Sunday. Monthly: 1 … 28.
+  day: number
+  last_run: string | null
+  /// `sudoNeedsPassword`, or what failed.
+  last_error: string | null
+}
+
+/// `api::storage::HealthReading`.
+export interface HealthReading {
+  /// Unix seconds.
+  at: number
+  disks: DiskHealth[]
+}
+
+/// `sbm_parser::storage::DiskHealth`.
+/// What a disk's SMART reading says.
+export type HealthVerdict = 'healthy' | 'wearing' | 'failing' | 'unsupported' | 'asleep'
+
+export interface DiskHealth {
+  device: string
+  /// The disk answers SMART; false for a virtual disk or a USB bridge.
+  supported: boolean
+  asleep: boolean
+  passed: boolean | null
+  temperature: number | null
+  power_on_hours: number | null
+  /// Remapped, pending or unreadable sectors (NVMe: media errors).
+  bad_sectors: number | null
+  /// Percent left of a self-test running now.
+  testing: number | null
+  last_test: SelfTestResult | null
+  /// What the reading says, for the disk's badge.
+  verdict: HealthVerdict
+  /// Every attribute the disk reports (ATA) or its NVMe health log fields;
+  /// absent from older agents.
+  attributes?: SmartAttribute[]
+  /// Self-tests that ended, newest first.
+  tests?: SelfTestResult[]
+}
+
+export interface SelfTestResult {
+  long: boolean
+  outcome: 'passed' | 'failed' | 'aborted'
+  hours: number | null
+}
+
+/// `sbm_parser::storage::SmartAttribute`.
+export interface SmartAttribute {
+  id: number | null
+  name: string
+  value: number | null
+  worst: number | null
+  thresh: number | null
+  raw: string
+  failing: boolean
+}
+
+/// `sbm_parser::storage::StorageAction`.
+export type StorageAction =
+  | { action: 'partition'; device: string }
+  | { action: 'format'; device: string; fstype: 'ext4' | 'xfs' | 'btrfs'; label?: string | null; encrypt?: boolean }
+  | { action: 'mount'; device: string; mountpoint: string; persist: boolean; own: boolean }
+  | { action: 'unmount'; mountpoint: string }
+  | { action: 'createRaid'; name: string; level: number; devices: string[] }
+  | { action: 'addToRaid'; array: string; device: string }
+  | { action: 'removeFromRaid'; array: string; device: string }
+  | { action: 'deleteRaid'; array: string }
+  | { action: 'createPool'; name: string; layout: 'stripe' | 'mirror' | 'raidz1' | 'raidz2' | 'raidz3'; devices: string[] }
+  | { action: 'scrubPool'; name: string }
+  | { action: 'destroyPool'; name: string }
+  | { action: 'smartTest'; device: string; long: boolean }
+  | { action: 'growRaid'; array: string; device: string }
+  | { action: 'expandFilesystem'; device: string }
+  | { action: 'addToPool'; name: string; layout: 'stripe' | 'mirror' | 'raidz1' | 'raidz2' | 'raidz3'; devices: string[] }
+  | { action: 'replaceInPool'; name: string; old: string; new: string }
+  | { action: 'attachToPool'; name: string; existing: string; new: string }
+  | { action: 'addSpare'; name: string; devices: string[] }
+  | { action: 'removeFromPool'; name: string; device: string }
+  | { action: 'onlineInPool'; name: string; device: string }
+  | { action: 'growPartition'; device: string }
+  | { action: 'unlock'; device: string }
+  | { action: 'lock'; device: string }
+
+/// `sbm_parser::shares::SmbShare`.
+export interface SmbShare {
+  name: string
+  path: string
+  comment: string | null
+  read_only: boolean
+  /// Anyone on the network, without an account.
+  guest: boolean
+  /// Accounts allowed in; none is every account with an SMB password.
+  users: string[]
+  /// A Mac backs up here with Time Machine (`fruit` module).
+  time_machine: boolean
+  /// Deleted files go to `.recycle` in the share first (`recycle` module).
+  recycle: boolean
+  /// ServerBox's (in its own file); the others are shown, not changed.
+  managed: boolean
+}
+
+/// `sbm_parser::shares::NfsClient`.
+export interface NfsClient {
+  /// `*`, a host, an address or a network.
+  host: string
+  read_only: boolean
+  squash: 'root' | 'all' | 'none'
+  options: string[]
+}
+
+/// `sbm_parser::shares::NfsExport`.
+export interface NfsExport {
+  path: string
+  clients: NfsClient[]
+  managed: boolean
+}
+
+/// `POST /shares/connections`.
+export interface ShareConnections {
+  smb: { share: string; user: string | null; machine: string; since: string | null }[]
+  nfs: string[]
+}
+
+/// `GET /shares`.
+export interface SharesView {
+  /// smbd, testparm, smbpasswd, exportfs.
+  tools: string[]
+  smb_active: boolean
+  nfs_active: boolean
+  smb: SmbShare[]
+  nfs: NfsExport[]
+  job: StackJob | null
+}
+
+/// Where container backups go, and how many are kept (`container_backups::Settings`).
+export interface ContainerBackupSettings {
+  destination: string | null
+  keep: number
+}
+
+export interface ContainerBackupSchedule {
+  id: string
+  label: string
+  containers: string[]
+  project: boolean
+  stop: boolean
+  every: 'daily' | 'weekly'
+  at: string
+  weekday: number | null
+  keep: number | null
+  last_run: string | null
+  last_error: string | null
+}
+
+/// `GET /monitor-backup`: where the monitor's settings are backed up and how
+/// the last backup went. Never the WebDAV password.
+export interface MonitorBackupView {
+  configured: boolean
+  url: string | null
+  username: string | null
+  has_password: boolean
+  allow_insecure: boolean
+  enabled: boolean
+  keep: number
+  /// The key backups are encrypted to now; null until a passphrase is set.
+  key_id: string | null
+  last_backup_at: string | null
+  last_name: string | null
+  /// A code: `webdav.unauthorized`, `keyMissing`, `tooLarge`, …
+  last_error: string | null
+  last_error_at: string | null
+  running: boolean
+  max_bytes: number
+  min_passphrase: number
+}
+
+/// A WebDAV folder. `password` absent keeps the saved one (same server only),
+/// `''` removes it.
+export interface MonitorBackupTarget {
+  url: string
+  username: string
+  password?: string
+  allow_insecure: boolean
+}
+
+export interface MonitorBackupSettings extends MonitorBackupTarget {
+  enabled: boolean
+  keep: number
+}
+
+/// One backup in the folder.
+export interface MonitorBackupFile {
+  name: string
+  size: number
+  created_at: string
+  key_id: string
+  /// The monitor that made it (its files' id in the folder).
+  instance: string
+  /// Made by this monitor.
+  own: boolean
+  /// Made by this monitor with the passphrase backups use now.
+  current_key: boolean
+}
+
+export interface MonitorBackupRestored {
+  restored: { tables: [string, number][]; blobs: number; config: boolean }
+  /// The monitor restarts on its own.
+  restart: boolean
+}

@@ -1,0 +1,134 @@
+---
+title: Remote Desktop (RDP and VNC)
+description: Connect to graphical desktops through SSH or Monitor
+---
+
+Server Box includes RDP and VNC clients for Android, iOS, Linux, macOS, and
+Windows. It reaches desktops through an existing server connection: SSH or a
+Monitor. The desktop port does not need to be exposed to the network
+running Server Box.
+
+## Set up a connection
+
+1. Set up the server connection in Server Box with SSH or a Monitor.
+   If both are available, the server's **Try first** preference determines
+   which connection is tried first; Server Box falls back to the other if it
+   fails.
+2. Open the **Remote desktop** tab and choose the server, or open the feature
+   from that server's detail page.
+3. Add a profile for the desktop. Profile names must be unique on that server.
+4. Select **Connect** to open or return to a session. Use **Edit** to change a
+   profile; **Test** in the editor connects with the current form values and
+   replaces that profile's existing session.
+
+The desktop address is resolved from the server's network, not from the phone
+or computer running Server Box. The default targets are:
+
+| Protocol | Default target |
+| --- | --- |
+| RDP | `127.0.0.1:3389` |
+| VNC | `127.0.0.1:5900` |
+
+These defaults work when the desktop service runs on the server itself. You can
+also enter an internal address reachable from that server. SSH connections use
+the same authentication and jump-server settings as terminal and port
+forwarding connections. With the Monitor, it connects from its own
+machine as the account it runs under. A plaintext HTTP connection to a Monitor
+is used only when that connection is to a loopback address.
+
+Passwords are not saved unless **Save password** is enabled. A password entered
+for a session stays in memory for that session and its reconnect attempts.
+Saved passwords are stored in Server Box's encrypted database and included in
+encrypted backups and sync data. They are not included in server QR-code shares.
+
+## Verify an RDP certificate
+
+Server Box first checks the RDP certificate against the platform trust store.
+If the certificate is trusted and its name matches the target, the connection
+continues without a prompt.
+
+For a self-signed certificate, unknown issuer, or name mismatch, Server Box
+stops before sending credentials and shows the certificate identity and
+SHA-256 fingerprint:
+
+1. Verify the fingerprint through a separate trusted channel.
+2. Select **Trust and reconnect** to trust that certificate for this profile.
+3. Later connections accept only the same fingerprint.
+4. If the certificate changes, the connection is blocked. Verify the new
+   fingerprint before selecting **Replace trust**.
+
+Changing a profile's protocol, target host, or target port clears its saved
+certificate trust. Logs and diagnostics do not include passwords, clipboard
+text, or certificate contents.
+
+## Use sessions and controls
+
+The **Remote desktop** tab can keep several RDP and VNC sessions open. On wide
+windows, the session list appears beside the current desktop and can be resized
+or collapsed. On narrow windows, select the session name at the top to switch
+sessions.
+
+The viewer offers fit-to-window, 1:1 and fixed zoom levels, full screen,
+reconnect, close, view-only mode, clipboard send, a soft keyboard, and
+Ctrl+Alt+Delete. Desktop platforms also support physical keyboards, all three
+mouse buttons, and scrolling. When keyboard focus leaves the viewer, held RDP
+keys are released.
+
+On phones and tablets, touchpad mode is enabled by default: move one finger to
+move the pointer, tap to click, use two fingers to right-click or scroll, and
+pinch to zoom. Direct-pointer mode maps each touch to the corresponding point
+on the remote desktop.
+
+RDP synchronizes text clipboard data in both directions. Classic VNC clipboard
+text uses Latin-1; Server Box rejects text that cannot be represented rather
+than sending corrupted characters. RDP can adjust the remote resolution to the
+viewer. VNC uses the dimensions provided by its server.
+
+## Connection recovery
+
+After a transport failure, Server Box retries after 1, 2, and 5 seconds. Each
+attempt checks the connection again and creates a new temporary tunnel that
+listens only on a local loopback address. Authentication failures, rejected
+certificates, and invalid profile settings are not retried automatically.
+
+When the server names the reason a connection failed or a session ended, Server
+Box shows that reason and does not reconnect on its own: a wrong password, a
+locked or expired account, an idle or session time limit, a log-off, another
+connection taking over the session, or a server shutting down. Retrying would
+get the same answer, and taking a session back from another connection would
+disconnect that one. Select **Reconnect** once the cause is resolved.
+
+## Troubleshoot xrdp
+
+If the server offers only Standard RDP Security, the connection fails. That
+mode uses RC4 and does not authenticate the server, so Server Box requires TLS
+or CredSSP/NLA instead. Clients that accept the legacy mode, such as the
+Windows client, can still connect. On the server:
+
+1. In `/etc/xrdp/xrdp.ini`, set `security_layer=negotiate` or `tls`, not `rdp`.
+2. Make sure xrdp can read the files named by `certificate` and `key_file`. On
+   Debian and Ubuntu, the default key is in `/etc/ssl/private` and readable
+   only by the `ssl-cert` group: `sudo adduser xrdp ssl-cert`.
+3. Restart xrdp: `sudo systemctl restart xrdp`. In `/var/log/xrdp.log`, a line
+   such as `Cannot read private key file` means step 2 is still needed.
+
+Desktop platforms and Android use the app's existing background behavior when
+the operating system allows it. iOS may suspend network activity in the
+background; Server Box checks the session and reconnects if needed when you
+return to the app.
+
+## Supported protocols and limits
+
+- **RDP:** TCP, TLS, CredSSP/NLA, graphics, keyboard and pointer input, dynamic
+  resolution, and text CLIPRDR are supported. Username/password authentication
+  with an optional domain primarily uses NTLM; Kerberos is not guaranteed.
+  Standard RDP Security (RC4) is not supported.
+- **VNC:** RFB 3.3, 3.7, and 3.8 are supported with None or classic VNC
+  Authentication. Classic VNC passwords are ASCII; a longer one is accepted
+  and, as in TigerVNC, only its first eight characters are used.
+  Supported updates include Raw, CopyRect, ZRLE, Tight, Tight JPEG, cursor, and
+  desktop size.
+- VNC does not support VeNCrypt, SASL, Apple Remote Desktop authentication, or
+  RealVNC proprietary authentication.
+- Audio, microphone, multiple monitors, RemoteApp, RDP Gateway, UDP transport,
+  and file, disk, printer, USB, or smart-card redirection are not supported.

@@ -1,0 +1,7441 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'l10n.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Dutch Flemish (`nl`).
+class AppLocalizationsNl extends AppLocalizations {
+  AppLocalizationsNl([String locale = 'nl']) : super(locale);
+
+  @override
+  String get crashCollect => 'Diagnostische gegevens';
+
+  @override
+  String get crashCollectIntro =>
+      'ServerBox registreert informatie over het gebruik om problemen te onderzoeken en op te lossen.';
+
+  @override
+  String get crashCollectNone => 'Niets';
+
+  @override
+  String get crashCollectNoneTip =>
+      'Het rapport wordt alleen op dit apparaat opgeslagen. Na een crash kun je het handmatig versturen.';
+
+  @override
+  String get crashCollectBasic => 'Basisgegevens';
+
+  @override
+  String get crashCollectBasicTip =>
+      'Bevat alleen crashinformatie, geen logs of prestatiegegevens. **Dit helpt de app te verbeteren en bugs op te lossen.**';
+
+  @override
+  String get crashCollectFooter =>
+      'Ongeacht het gekozen niveau worden bekende servernamen, adressen en gebruikersnamen tijdens het vastleggen vervangen door tijdelijke aanduidingen. Je kunt het verzamelingsniveau later wijzigen in Instellingen.';
+
+  @override
+  String get privacy => 'Privacy';
+
+  @override
+  String get privacyPolicy => 'Privacybeleid';
+
+  @override
+  String get crashLastRunFailed =>
+      'ServerBox is tijdens de vorige uitvoering onverwacht afgesloten.';
+
+  @override
+  String get crashReportTitle => 'Crashrapport';
+
+  @override
+  String get crashReportHint =>
+      'Dit is het logboek van de vorige uitvoering. Bekende servernamen en adressen zijn vervangen door plaatsaanduidingen, maar andere gegevens kunnen achterblijven. Lees het zorgvuldig door voordat je het indient.';
+
+  @override
+  String get crashReportSubmit => 'Kopiëren en melden';
+
+  @override
+  String get preReleaseUpdates => 'Pre-release-updates ontvangen';
+
+  @override
+  String get addSystemPrivateKeyTip =>
+      'Er is momenteel geen privésleutel, wilt u degene toevoegen die bij het systeem wordt geleverd (~/.ssh/id_rsa)?';
+
+  @override
+  String get added2List => 'Toegevoegd aan takenlijst';
+
+  @override
+  String get askAi => 'AI vragen';
+
+  @override
+  String get askAiInsertTerminal => 'In terminal invoegen';
+
+  @override
+  String get remoteDesktop => 'Extern bureaublad';
+
+  @override
+  String get askAiRiskReadOnly => 'Alleen lezen';
+
+  @override
+  String get askAiRiskCaution => 'Wijzigt het systeem';
+
+  @override
+  String get askAiRiskUnvetted => 'Niet-geverifieerde host';
+
+  @override
+  String get askAiRiskDestructive => 'Hoog risico';
+
+  @override
+  String get askAiAutoRunSafeCommands =>
+      'Alleen-lezen commando\'s automatisch uitvoeren';
+
+  @override
+  String get askAiAutoRunSafeCommandsTip =>
+      'Draait alleen als model én lokale controle het alleen-lezen noemen';
+
+  @override
+  String get askAiHistory => 'Gespreksgeschiedenis';
+
+  @override
+  String get askAiNewConversation => 'Nieuw gesprek';
+
+  @override
+  String get askAiUntitledConversation => 'Naamloos';
+
+  @override
+  String get askAiRenameConversation => 'Gesprek hernoemen';
+
+  @override
+  String get askAiDeleteConversationTitle => 'Dit gesprek verwijderen?';
+
+  @override
+  String get askAiDeleteConversationTip =>
+      'Verwijdert het van dit apparaat. Kan niet ongedaan worden gemaakt.';
+
+  @override
+  String get agentNoHistory => 'Geen opgeslagen globale agentgesprekken';
+
+  @override
+  String get agentClearHistoryTitle => 'Globale agentgeschiedenis wissen?';
+
+  @override
+  String get agentClearHistoryTip =>
+      'Alle globale agentgesprekken worden van dit apparaat verwijderd.';
+
+  @override
+  String get agentCommandMayStillRun =>
+      'De gestopte opdracht draait mogelijk nog op de server.';
+
+  @override
+  String get agentToolShell => 'Shell';
+
+  @override
+  String get agentToolReadFile => 'Bestand lezen';
+
+  @override
+  String get agentToolWriteFile => 'Bestand schrijven';
+
+  @override
+  String get floatOverTabs => 'Boven andere tabbladen zweven';
+
+  @override
+  String get agentToolSshConnect => 'SSH verbinden';
+
+  @override
+  String get agentToolSshDisconnect => 'SSH verbreken';
+
+  @override
+  String get agentSshConnectTitle => 'Met een nieuwe host verbinden';
+
+  @override
+  String get agentAuthMethod => 'Authenticatie';
+
+  @override
+  String get agentSshConnectTip =>
+      'Agent vraagt om een SSH-verbinding. Voer hier het wachtwoord in.';
+
+  @override
+  String get agentAdHocSessions => 'Tijdelijke verbindingen';
+
+  @override
+  String get agentSaveServerTitle => 'Als server opslaan';
+
+  @override
+  String get agentSaveServerTip =>
+      'De gegevens van deze host en het wachtwoord dat je invoert, worden op dit apparaat opgeslagen.';
+
+  @override
+  String get agentMonitorOptional => 'Monitor (optioneel)';
+
+  @override
+  String get authFailTip => 'Authenticatie mislukt. Controleer de gegevens';
+
+  @override
+  String get autoBackupConflict =>
+      'Er kan slechts één automatische back-up tegelijk worden ingeschakeld.';
+
+  @override
+  String get autoConnect => 'Automatisch verbinden';
+
+  @override
+  String get autoRun => 'Automatisch uitvoeren';
+
+  @override
+  String get autoUpdateHomeWidget => 'Automatische update van home-widget';
+
+  @override
+  String get availableTabs => 'Beschikbare tabbladen';
+
+  @override
+  String get backupEncrypted => 'Back-up is versleuteld';
+
+  @override
+  String get backupNotEncrypted => 'Back-up is niet versleuteld';
+
+  @override
+  String get backupPassword => 'Back-up wachtwoord';
+
+  @override
+  String get backupPasswordRemoveSynced =>
+      'Hiermee wordt het back-upwachtwoord verwijderd van alle apparaten die dezelfde iCloud-sleutelhanger gebruiken. Hun synchronisatie stopt totdat er opnieuw een wachtwoord is ingesteld.';
+
+  @override
+  String get backupPasswordRemoved => 'Back-up wachtwoord verwijderd';
+
+  @override
+  String get backupPasswordSet => 'Back-up wachtwoord ingesteld';
+
+  @override
+  String get backupPasswordTip =>
+      'Stel een wachtwoord in om back-upbestanden te versleutelen. Laat leeg om versleuteling uit te schakelen.';
+
+  @override
+  String get backupPasswordWrong => 'Onjuist back-up wachtwoord';
+
+  @override
+  String get connectAll => 'Alles verbinden';
+
+  @override
+  String get disconnectAll => 'Alles verbreken';
+
+  @override
+  String get distIcon => 'Distributiemarkeringen';
+
+  @override
+  String get distIconIntroLegal =>
+      'Een merkteken zegt alleen wat dit apparaat van het externe systeem heeft gelezen; dat kan onjuist of verouderd zijn en duidt geen afgeleide, herbouw of specifieke versie aan. Kan het niet worden vastgesteld, dan wordt een neutraal pictogram getekend.\n\nElk merkteken is een handelsmerk van de betreffende eigenaar en wordt hier alleen gebruikt om te verwijzen naar het systeem dat het aanduidt.';
+
+  @override
+  String get distIconTip =>
+      'Toon naast elke server een klein teken van het systeem dat er lijkt te draaien';
+
+  @override
+  String get distNameMap => 'Naamtoewijzing';
+
+  @override
+  String get distNameMapTip =>
+      'Stel dit alleen in als de bestandsnaam van een distributiepictogram op de host afwijkt van de naam die de app gebruikt. Gebruik de app-naam als sleutel en de werkelijke bestandsnaam als waarde. Laat dit leeg als er geen pictogrammen ontbreken.';
+
+  @override
+  String get logoUrl => 'Logo-URL';
+
+  @override
+  String get logoUrlTip =>
+      'De grote afbeelding boven aan de pagina van een server, in de eigen kleuren.';
+
+  @override
+  String get globe => 'Globe';
+
+  @override
+  String get locationTip =>
+      'Waar deze server op de globe wordt getekend. Breedtegraad en dan lengtegraad, in graden — bijvoorbeeld 39.9042, 116.4074.';
+
+  @override
+  String get markUrl => 'Merkteken-URL';
+
+  @override
+  String get markUrlTip =>
+      'Het kleine teken naast een servernaam in lijsten. Leeg betekent geen.\n\nNiet dezelfde afbeelding als het logo';
+
+  @override
+  String get navTabMenuTip =>
+      'Houd een tabblad ingedrukt of klik erop met de rechtermuisknop om alle servers in dat tabblad tegelijk te verbinden of te verbreken.';
+
+  @override
+  String nTags(int count) {
+    return '$count tags';
+  }
+
+  @override
+  String get remoteBackupPasswordRequired =>
+      'Externe back-ups vereisen een niet-leeg back-upwachtwoord';
+
+  @override
+  String get monitorHttpsRequired =>
+      'Een externe Monitor vereist HTTPS, tenzij HTTP ervoor is toegestaan.';
+
+  @override
+  String get monitorAllowInsecureHttp => 'HTTP toestaan';
+
+  @override
+  String get plainHttpTitle => 'Deze Monitor gebruikt niet-versleutelde HTTP.';
+
+  @override
+  String get plainHttpTip =>
+      'Wachtwoorden en alle door de app opgevraagde gegevens worden onversleuteld verzonden. Er wordt niets verzonden voordat je de verbinding toestaat.';
+
+  @override
+  String get allowForThisServer => 'Toestaan voor deze server';
+
+  @override
+  String get viewError => 'Fout bekijken';
+
+  @override
+  String get monitorAllowInsecureHttpTip =>
+      'Alleen op een vertrouwd privénetwerk dat het transport zelf versleutelt, zoals Tailscale';
+
+  @override
+  String monitorHttpTip(String url) {
+    return 'Lees de status van deze server via de HTTP-interface van **Monitor** in plaats van opdrachten via SSH uit te voeren.\n\nMonitor moet eerst op de server zijn geïnstalleerd; dat maakt trends, de Watch-app en de widgets op het startscherm mogelijk.\n\n[Monitor instellen]($url)';
+  }
+
+  @override
+  String get backupThemesNotRestored =>
+      'Hersteld, behalve deze thema’s. Installeer ze opnieuw vanuit de themastore of het oorspronkelijke bestand.';
+
+  @override
+  String get backupTip =>
+      'De geëxporteerde gegevens kunnen worden versleuteld met een wachtwoord. \nBewaar deze aub veilig.';
+
+  @override
+  String get icloudBackupStatusTitle => 'Back-upstatus';
+
+  @override
+  String get icloudBackupStatusLoading => 'iCloud-back-upstatus laden...';
+
+  @override
+  String get icloudBackupStatusError =>
+      'Kan de metadata van de iCloud-back-up niet lezen';
+
+  @override
+  String get icloudBackupStatusEmpty =>
+      'Nog geen iCloud-back-upbestand gevonden';
+
+  @override
+  String get icloudBackupStateUploading => 'Uploaden';
+
+  @override
+  String get icloudBackupStateConflict => 'Conflict gevonden';
+
+  @override
+  String get icloudBackupStateUploaded => 'Geüpload';
+
+  @override
+  String get icloudBackupStateWaiting => 'Wacht op iCloud';
+
+  @override
+  String icloudBackupStatusSummary(String lastModified, String remoteState) {
+    return 'Laatste back-up: $lastModified\nStatus: $remoteState';
+  }
+
+  @override
+  String get bgRun => 'Uitvoeren op de achtergrond';
+
+  @override
+  String get bgRunTip =>
+      'Deze schakelaar betekent alleen dat het programma zal proberen op de achtergrond uit te voeren, of het in de achtergrond kan worden uitgevoerd, hangt af van of de toestemming is ingeschakeld of niet. Voor native Android, schakel \"Batterijoptimalisatie\" uit in deze app, en voor miui, wijzig de energiebesparingsbeleid naar \"Onbeperkt\".';
+
+  @override
+  String get trayReadings => 'Metingen';
+
+  @override
+  String get trayChart => 'Grafiek';
+
+  @override
+  String get trayChartNone => 'Geen';
+
+  @override
+  String get trayCompact => 'Compacte rijen';
+
+  @override
+  String get trayCompactTip =>
+      'Eén regel per server, zonder grafiek. Linux gebruikt altijd een indeling van één regel omdat het paneelmenu via D-Bus wordt verstuurd, dat een label in plaats van een aangepaste indeling overbrengt; de geselecteerde grafiek kan wel als afbeelding worden toegevoegd.';
+
+  @override
+  String get trayKeepRunning => 'In het systeemvak blijven draaien';
+
+  @override
+  String get trayKeepRunningTip =>
+      'Als je het venster sluit, blijft de app in de menubalk of het systeemvak actief en je servers bewaken. Schakel dit uit om de app met de sluitknop te beëindigen.';
+
+  @override
+  String get bgRunNeedsNotification =>
+      'Op de achtergrond draaien vereist een permanente melding, en deze app heeft geen meldingsrechten. Tik om ze toe te staan.';
+
+  @override
+  String get clearAllStatsContent =>
+      'Weet u zeker dat u alle serververbindingsstatistieken wilt wissen? Deze actie kan niet ongedaan worden gemaakt.';
+
+  @override
+  String get clearAllStatsTitle => 'Alle statistieken wissen';
+
+  @override
+  String get clearAllSettings => 'Alle instellingen wissen';
+
+  @override
+  String clearServerStatsContent(String serverName) {
+    return 'Weet u zeker dat u de verbindingsstatistieken voor server \"$serverName\" wilt wissen? Deze actie kan niet ongedaan worden gemaakt.';
+  }
+
+  @override
+  String clearServerStatsTitle(String serverName) {
+    return 'Statistieken van $serverName wissen';
+  }
+
+  @override
+  String get clearThisServerStats => 'Statistieken van deze server wissen';
+
+  @override
+  String get closeAfterSave => 'Opslaan en sluiten';
+
+  @override
+  String get collapseUITip =>
+      'Of lange lijsten in de UI standaard moeten worden ingeklapt';
+
+  @override
+  String get connectionDetails => 'Verbindingsdetails';
+
+  @override
+  String get connectionStats => 'Verbindingsstatistieken';
+
+  @override
+  String get connectionStatsDesc =>
+      'Bekijk server verbindingssucces ratio en geschiedenis';
+
+  @override
+  String get containerTrySudoTip =>
+      'Bijvoorbeeld: als de gebruikersnaam in de app aaa is, maar Docker als root is geïnstalleerd, schakel je deze optie in.';
+
+  @override
+  String get containerSudoPasswordRequired =>
+      'Voor toegang tot Docker is een sudo-wachtwoord nodig. Voer het wachtwoord in.';
+
+  @override
+  String get containerSudoPasswordIncorrect =>
+      'Het sudo-wachtwoord is onjuist of dit account mag sudo niet gebruiken. Probeer het opnieuw.';
+
+  @override
+  String get copyPath => 'Pad kopiëren';
+
+  @override
+  String get customCmd => 'Aangepaste opdrachten';
+
+  @override
+  String get deleteServers => 'Servers batchgewijs verwijderen';
+
+  @override
+  String get deleteDirRecursive => 'De map en alles erin verwijderen';
+
+  @override
+  String get dirEmpty => 'Zorg ervoor dat de map leeg is.';
+
+  @override
+  String get discoverSshServers => 'SSH-servers zoeken';
+
+  @override
+  String get discoveryFailed => 'Ontdekking mislukt';
+
+  @override
+  String get discoverySettings => 'Ontdekkingsinstellingen';
+
+  @override
+  String get distro => 'Distributie';
+
+  @override
+  String get diskHealth => 'Schijfgezondheid';
+
+  @override
+  String dl2Local(String fileName) {
+    return 'Download $fileName naar lokaal?';
+  }
+
+  @override
+  String get dockerEmptyRunningItems =>
+      'Er zijn geen actieve containers.\nDit kan komen doordat:\n- De Docker-installatiegebruiker niet overeenkomt met de gebruikersnaam die is geconfigureerd binnen de app.\n- De omgevingsvariabele DOCKER_HOST is niet correct gelezen. U kunt deze krijgen door `echo \$DOCKER_HOST` in de terminal uit te voeren.';
+
+  @override
+  String get dockerProjectOther => 'Overig';
+
+  @override
+  String get dockerPruneTip =>
+      'Verwijder ongebruikte gegevens om schijfruimte vrij te maken';
+
+  @override
+  String get dockerStatistics => 'Docker-statistieken';
+
+  @override
+  String get editVirtKeys => 'Virtuele toetsen';
+
+  @override
+  String get editorHighlightTip =>
+      'De huidige codehighlighting-prestaties zijn slechter en kunnen optioneel worden uitgeschakeld om te verbeteren.';
+
+  @override
+  String get enableMdns => 'mDNS inschakelen';
+
+  @override
+  String get enableMdnsDesc =>
+      'Gebruik mDNS/Bonjour om SSH-services te ontdekken';
+
+  @override
+  String get envVars => 'Omgevingsvariabele';
+
+  @override
+  String get extraArgs => 'Extra argumenten';
+
+  @override
+  String get fallbackSshDest => 'Fallback SSH-bestemming';
+
+  @override
+  String get fdroidReleaseTip =>
+      'Als u deze app van F-Droid heeft gedownload, wordt aanbevolen deze optie uit te schakelen.';
+
+  @override
+  String fileTooLarge(String file, String size, String sizeMax) {
+    return 'Bestand “$file” is $size groot en overschrijdt de limiet van $sizeMax.';
+  }
+
+  @override
+  String fileChangedOverwrite(String file) {
+    return '\'$file\' is op de server gewijzigd nadat het werd geopend. Overschrijven?';
+  }
+
+  @override
+  String get fileDirGone => 'Deze map is er niet meer';
+
+  @override
+  String get fileDirGoneTip => 'Het is verwijderd of hernoemd';
+
+  @override
+  String get fullScreen => 'Volledig scherm';
+
+  @override
+  String get fullScreenJitter => 'Volledig scherm trilling';
+
+  @override
+  String get fullScreenJitterHelp => 'Om inbranden van het scherm te voorkomen';
+
+  @override
+  String get fullScreenTip =>
+      'Moet de volledig schermmodus worden ingeschakeld wanneer het apparaat naar de liggende modus wordt gedraaid? Deze optie is alleen van toepassing op het servertabblad.';
+
+  @override
+  String get githubGistIdOptional => 'Gist-ID (optioneel)';
+
+  @override
+  String get githubGistToken => 'GitHub Gist-token';
+
+  @override
+  String get githubGistTokenEmpty => 'Token is leeg';
+
+  @override
+  String get githubGistIdInvalid =>
+      'Dit is geen Gist-ID en ook geen Gist-link. Gebruik het laatste deel van het gist-adres (https://gist.github.com/<user>/<ID>) of laat dit leeg om bij de eerste back-up een nieuwe geheime gist te laten maken.';
+
+  @override
+  String get githubGistNotFound =>
+      'GitHub heeft geen gist met deze ID gevonden die dit token kan lezen: de ID is mogelijk onjuist, de gist is verwijderd of hoort bij een ander account. Laat de ID leeg om bij de eerste back-up een nieuwe geheime gist te laten maken.';
+
+  @override
+  String get githubGistTokenRejected =>
+      'GitHub heeft dit token geweigerd: het is mogelijk onjuist, verlopen of ingetrokken, of mist de gist-machtiging (classic token: de scope \"gist\"; fine-grained token: Gists read and write).';
+
+  @override
+  String get goto => 'Ga naar';
+
+  @override
+  String get homeTabs => 'Home-tabbladen';
+
+  @override
+  String get homeTabsCustomizeDesc =>
+      'Pas aan welke tabbladen op de startpagina worden weergegeven en hun volgorde';
+
+  @override
+  String get ignoreCert => 'Certificaat negeren';
+
+  @override
+  String get image => 'Afbeelding';
+
+  @override
+  String get macDmgBody =>
+      'De App Store vereist een sandbox, en een sandbox kan geen terminal openen. De DMG-versie wel.\n\nDe App Store-versie wordt mogelijk niet meer bijgewerkt.';
+
+  @override
+  String get macDmgImportDenied =>
+      'macOS liet de gegevens van de vorige versie niet lezen';
+
+  @override
+  String get macDmgImported => 'Gegevens van de vorige versie geïmporteerd';
+
+  @override
+  String get macDmgImportFailed =>
+      'Kon de gegevens van de vorige versie niet lezen';
+
+  @override
+  String get macDmgTip =>
+      'De DMG-versie ondersteunt een lokale terminal en het lokaal uitvoeren van codefragmenten.';
+
+  @override
+  String get macDmgTitle => 'DMG-versie';
+
+  @override
+  String get showHiddenFiles => 'Verborgen bestanden tonen';
+
+  @override
+  String get sshKeyAlgorithm => 'Algoritme';
+
+  @override
+  String get sshKeyComment => 'Opmerking';
+
+  @override
+  String get sshKeyGenerate => 'Sleutelpaar genereren';
+
+  @override
+  String get sshKeyGenerating => 'Bezig met genereren…';
+
+  @override
+  String sshKeyLockedFmt(String name) {
+    return 'De privésleutel [$name] is niet ontgrendeld.';
+  }
+
+  @override
+  String get sshKeyPassphraseTip =>
+      'Optioneel. Een sleutel met wachtwoordzin wordt versleuteld opgeslagen en wordt gevraagd zodra een verbinding de sleutel voor het eerst gebruikt.';
+
+  @override
+  String get sshKeyPassphraseWrong => 'Onjuiste wachtwoordzin.';
+
+  @override
+  String get sshKeyPublicKey => 'Publieke sleutel';
+
+  @override
+  String get sshKeyPublicKeyTip =>
+      'Voeg deze regel toe aan ~/.ssh/authorized_keys op de server.';
+
+  @override
+  String get sshKeyRecommended => 'Aanbevolen';
+
+  @override
+  String get rememberKeyPassphrase => 'Wachtwoordzinnen van sleutels onthouden';
+
+  @override
+  String get rememberKeyPassphraseTip =>
+      'Bewaar de wachtwoordzinnen van versleutelde privésleutels in de systeemsleutelhanger van dit apparaat, zodat ze na een herstart niet opnieuw worden gevraagd. In back-ups blijven de sleutels versleuteld. Uitschakelen verwijdert de opgeslagen wachtwoordzinnen.';
+
+  @override
+  String sshKeyUnlockTip(String name) {
+    return 'Voer de wachtwoordzin voor de privésleutel [$name] in.';
+  }
+
+  @override
+  String get ungrouped => 'Zonder groep';
+
+  @override
+  String get containerReclaimable => 'Reclaimable';
+
+  @override
+  String get unused => 'Ongebruikt';
+
+  @override
+  String get dangling => 'Bungelend';
+
+  @override
+  String get pruneUnusedImages => 'Ongebruikte images opschonen';
+
+  @override
+  String get pruneDanglingImages => 'Bungelende images opschonen';
+
+  @override
+  String get pruneImages => 'Images opschonen';
+
+  @override
+  String get unusedTaggedImages => 'Ongebruikte tags';
+
+  @override
+  String get pruneDanglingImagesTip => 'Verwijdert alleen loshangende images.';
+
+  @override
+  String get pruneUnusedImagesTip =>
+      'Verwijder ook getagde images die door geen container worden gebruikt.';
+
+  @override
+  String get includeUnusedVolumesTip =>
+      'Verwijder ook volumes die door geen container worden gebruikt.';
+
+  @override
+  String get pruneCommandPreview => 'Opdrachtvoorbeeld';
+
+  @override
+  String get pruneForceSshTip =>
+      '-f slaat de interactieve bevestiging over en is bij SSH-uitvoering altijd ingeschakeld.';
+
+  @override
+  String get pruneVolumes => 'Volumes opschonen';
+
+  @override
+  String get pruneUnusedData => 'Ongebruikte gegevens opschonen';
+
+  @override
+  String get pull => 'Pull';
+
+  @override
+  String get invalidHostFormat =>
+      'Ongeldige hostindeling. Alleen IPv4-, IPv6- en domeintekens zijn toegestaan.';
+
+  @override
+  String get jumpServer => 'Spring naar server';
+
+  @override
+  String jumpServersNotFoundFmt(String serverName, String jumpIds) {
+    return 'Jumpservers niet gevonden voor $serverName: $jumpIds';
+  }
+
+  @override
+  String nameAlreadyExistsFmt(String name) {
+    return '\'$name\' bestaat al';
+  }
+
+  @override
+  String get noJumpServerAvailable => 'Geen jumpserver beschikbaar.';
+
+  @override
+  String get jumpServerAndProxyCommandCannotBeUsedTogether =>
+      'Jumpserver en ProxyCommand kunnen niet samen worden gebruikt.';
+
+  @override
+  String get noConnectionMethod => 'Stel SSH, Monitor of beide in.';
+
+  @override
+  String get keepForeground => 'Houd de app op de voorgrond!';
+
+  @override
+  String get keepStatusWhenErr => 'Behoud de laatste serverstatus';
+
+  @override
+  String get keepStatusWhenErrTip =>
+      'Alleen in geval van een fout tijdens de scriptuitvoering';
+
+  @override
+  String get keyAuth => 'Sleutelauthenticatie';
+
+  @override
+  String get lastFailure => 'Laatst gefaald';
+
+  @override
+  String get lastSuccess => 'Laatst succesvol';
+
+  @override
+  String get letterCache => 'Normale toetsenbordinvoer';
+
+  @override
+  String get letterCacheTip =>
+      'Wanneer dit is ingeschakeld, gaat invoer via de normale IME, wat op sommige systemen beveiligde toetsenbordmeldingen in de terminal kan vermijden.';
+
+  @override
+  String get linuxShellTip =>
+      'Met welke shell een terminal start. Leeg herstelt /bin/sh.';
+
+  @override
+  String get linuxNetTip =>
+      'DNS-server. Laat leeg om de standaardinstelling te gebruiken.';
+
+  @override
+  String madeWithLove(String myGithub) {
+    return 'Gemaakt door $myGithub met ❤️';
+  }
+
+  @override
+  String get maxConcurrency => 'Maximale gelijktijdigheid';
+
+  @override
+  String get maxRetryCount =>
+      'Maximum aantal pogingen om opnieuw met de server te verbinden';
+
+  @override
+  String get mirror => 'Mirror';
+
+  @override
+  String get needRestart => 'App moet opnieuw worden gestart';
+
+  @override
+  String get newContainer => 'Nieuwe container';
+
+  @override
+  String get noConnectionStatsData => 'Geen verbindingsstatistiekgegevens';
+
+  @override
+  String get noPrivateKeyTip =>
+      'De privésleutel bestaat niet, deze is mogelijk verwijderd of er is een configuratiefout.';
+
+  @override
+  String get noPromptAgain => 'Niet meer vragen';
+
+  @override
+  String get openLastPath => 'Open het laatste pad';
+
+  @override
+  String get openLastPathTip =>
+      'Verschillende servers hebben verschillende logs, en de log is het pad naar de uitgang';
+
+  @override
+  String get parseContainerStatsTip =>
+      'Het parsen van de bezettingsstatus van Docker is relatief langzaam.';
+
+  @override
+  String get privateKey => 'Privésleutel';
+
+  @override
+  String privateKeyNotFoundFmt(String keyId) {
+    return 'Privésleutel [$keyId] niet gevonden.';
+  }
+
+  @override
+  String get bmcPowerOnAction => 'Inschakelen';
+
+  @override
+  String get bmcShutdown => 'Afsluiten';
+
+  @override
+  String get bmcForceOff => 'Geforceerd uitschakelen';
+
+  @override
+  String get restart => 'Opnieuw starten';
+
+  @override
+  String get bmcPowerCycle => 'Stroom uit en aan';
+
+  @override
+  String bmcPowerConfirm(String server, String resetType) {
+    return 'Naar $server sturen? De service krijgt \"$resetType\"';
+  }
+
+  @override
+  String get bmcPowerDone => 'De voedingsstatus is gewijzigd';
+
+  @override
+  String get bmcPowerAccepted =>
+      'Geaccepteerd, maar de energiestatus is niet gewijzigd. Een nette operatie hangt van het besturingssysteem af';
+
+  @override
+  String get bmcPowerUnsupported =>
+      'Deze service ondersteunt dit type bewerking niet.';
+
+  @override
+  String get bmcUnauthorized => 'De BMC heeft het account geweigerd';
+
+  @override
+  String get bmcAccountMissing => 'Er is geen account ingesteld voor deze BMC';
+
+  @override
+  String get bmcPowerOn => 'Ingeschakeld';
+
+  @override
+  String get bmcPowerOff => 'Uitgeschakeld';
+
+  @override
+  String get bmcCertRejected =>
+      'Certificaat geweigerd — controleer het in de serverinstellingen';
+
+  @override
+  String get bmcNotAService => 'Geen Redfish-service op dit adres';
+
+  @override
+  String get bmcNoSystem =>
+      'De service heeft geen systeeminformatie gerapporteerd.';
+
+  @override
+  String get bmcSensorsTruncated => 'Alleen de eerste sensoren worden getoond';
+
+  @override
+  String get bmcMultipleSystems => 'Alleen het eerste systeem wordt getoond';
+
+  @override
+  String get bmcTip =>
+      'De BMC is een aparte computer op het moederbord, bereikbaar wanneer het besturingssysteem van de host dat niet is. Hier ingesteld meldt hij de voedingsstatus en hardwaresensoren terwijl de server uit staat of vastloopt. Vereist Redfish, aanwezig op de meeste zakelijke hardware vanaf ongeveer 2016.';
+
+  @override
+  String get bmcCert => 'Certificaat';
+
+  @override
+  String get bmcCertPinned => 'Gecontroleerd en vastgezet';
+
+  @override
+  String get bmcCertUnreviewed =>
+      'Nog niet beoordeeld — tik om het certificaat te zien';
+
+  @override
+  String get bmcCertReview =>
+      'Een zelfondertekend certificaat. Vergelijk het voor je accepteert. Daarna wordt alleen dit vertrouwd.';
+
+  @override
+  String get bmcCertChanged =>
+      'Het certificaat komt niet overeen. Controleer het.';
+
+  @override
+  String get bmcCertExpired => 'Verlopen.';
+
+  @override
+  String bmcCertWas(String fingerprint) {
+    return 'Eerder geaccepteerd: $fingerprint';
+  }
+
+  @override
+  String get bmcAddrInvalid =>
+      'Het BMC-adres moet een URL zijn, bijv. https://10.0.0.9';
+
+  @override
+  String get proxyCommandSandboxed =>
+      'Deze versie draait in een sandbox. Opdrachten krijgen een lege home-map in plaats van die van jou, waardoor opdrachten die ~/.ssh nodig hebben mislukken. De DMG-versie heeft deze beperking niet.';
+
+  @override
+  String privateKeyFileUnreadable(String path, String reason) {
+    return 'Privésleutelbestand $path kan niet worden gelezen: $reason';
+  }
+
+  @override
+  String privateKeyFileSandboxed(String path) {
+    return 'Deze build kan geen bestanden buiten de eigen container lezen, dus de sleutel op $path is onbereikbaar. Importeer de sleutel in Instellingen of gebruik de DMG-versie.';
+  }
+
+  @override
+  String get pushToken => 'Push-token';
+
+  @override
+  String get liveActivity => 'Live activiteit';
+
+  @override
+  String get liveActivityTip =>
+      'Toon terminalsessies op het toegangsscherm en in Dynamic Island. De servernaam en verbindingsstatus zijn daar zichtbaar zonder het apparaat te ontgrendelen.';
+
+  @override
+  String get liveActivitySystemDisabled =>
+      'iOS staat dit niet toe. De schakelaars staan in Instellingen › ServerBox › Live-activiteiten en Instellingen › Face ID en toegangscode › Live-activiteiten.';
+
+  @override
+  String get proxyCommandNeedsLinux =>
+      'ProxyCommand draait in de Linux-omgeving van dit apparaat. Installeer eerst een Linux-systeem.';
+
+  @override
+  String get proxyCommandMobileTip =>
+      'Op een telefoon draait de opdracht in het geselecteerde Linux-systeem. Installeer daar eerst de hulpmiddelen die hij gebruikt (nc, socat, …).';
+
+  @override
+  String get pveIgnoreCertTip =>
+      'Schakel deze optie in als PVE het standaard zelfondertekende certificaat gebruikt. Dit brengt wel een beveiligingsrisico met zich mee.';
+
+  @override
+  String get pvePasswordRequired =>
+      'Het PVE-wachtwoord is vereist. Stel het in bij de serverinstellingen.';
+
+  @override
+  String get pveOtpRequired =>
+      'Op deze PVE-server staat tweestapsverificatie aan. Voer de OTP-code in.';
+
+  @override
+  String get pveOtpCodeRequired => 'OTP-code is vereist.';
+
+  @override
+  String get pveOtpVerificationFailed =>
+      'OTP-verificatie mislukt. Probeer het opnieuw met een nieuwe code.';
+
+  @override
+  String get pveOtpTitle => 'OTP-verificatie';
+
+  @override
+  String get pveOtpLabel => 'OTP-code';
+
+  @override
+  String get pveInvalidResponseBody =>
+      'De PVE-aanmelding gaf een ongeldige antwoordinhoud terug.';
+
+  @override
+  String get pveInvalidResponseData =>
+      'Het PVE-aanmeldantwoord bevat geen geldig data-veld.';
+
+  @override
+  String get pveMissingAuthTicket =>
+      'De PVE-aanmelding is gelukt, maar er is geen authenticatieticket teruggegeven.';
+
+  @override
+  String get pveLoadingConnect => 'Verbinden...';
+
+  @override
+  String get pvePassword => 'PVE-wachtwoord';
+
+  @override
+  String get pvePasswordHint =>
+      'Ook vereist wanneer je SSH-sleutelauthenticatie gebruikt.';
+
+  @override
+  String get read => 'Lezen';
+
+  @override
+  String get recentConnections => 'Recente verbindingen';
+
+  @override
+  String get rememberPwdInMem => 'Wachtwoord onthouden in geheugen';
+
+  @override
+  String get rememberPwdInMemTip =>
+      'Dit wachtwoord is nodig voor containerbeheer, hervatten en vergelijkbare bewerkingen.';
+
+  @override
+  String get remotePath => 'Extern pad';
+
+  @override
+  String rootfsUpdateTip(
+    String distro,
+    String installed,
+    String latest,
+    String pm,
+  ) {
+    return '$distro $installed is geïnstalleerd. Je kunt bijwerken naar $latest. Daarbij wordt de volledige container opnieuw gedownload en vervangen, waardoor gegevens in $pm verloren gaan.';
+  }
+
+  @override
+  String linuxSystemInUse(String name) {
+    return 'Sluit de terminals op $name voordat je het verwijdert';
+  }
+
+  @override
+  String get rootfsSubtitle => 'Een Linux-userland op dit apparaat';
+
+  @override
+  String rootfsInstallTip(String distro, String version, int size) {
+    return 'Downloadt $distro $version (ongeveer $size MB) en pakt het uit op dit apparaat.';
+  }
+
+  @override
+  String get sameIdServerExist => 'Er bestaat al een server met dezelfde ID.';
+
+  @override
+  String get second => 's';
+
+  @override
+  String get serverFilesUnavailableTip =>
+      'Maak verbinding met deze server via SSH, of installeer Monitor en schakel de File API in.';
+
+  @override
+  String get back => 'Terug';
+
+  @override
+  String get history => 'Geschiedenis';
+
+  @override
+  String get homeDir => 'Home';
+
+  @override
+  String selected(int count) {
+    return '$count geselecteerd';
+  }
+
+  @override
+  String get sendTo => 'Verzenden naar…';
+
+  @override
+  String get serverFuncBtns => 'Server functieknoppen';
+
+  @override
+  String get serverOrder => 'Servervolgorde';
+
+  @override
+  String get serverOverview => 'Serveroverzicht';
+
+  @override
+  String get serverOverviewTip =>
+      'Toont het overzicht bovenaan de serverlijst en de serverbalk boven een geopende server';
+
+  @override
+  String get serverTabEmpty => 'Nog geen servers';
+
+  @override
+  String get serverTabConnBadge => 'Aantal verbindingen op het servertabblad';
+
+  @override
+  String get serverTabConnBadgeTip =>
+      'Aantal verbonden servers, bijvoorbeeld 2/4.';
+
+  @override
+  String get serverTabRequired => 'Servertabblad kan niet worden verwijderd';
+
+  @override
+  String get shareCodeHint =>
+      'Geef deze cijfers afzonderlijk door aan de ontvanger. Ze staan niet in de QR-code.';
+
+  @override
+  String get shareCodePrompt => '6-cijferige code';
+
+  @override
+  String get shareCodeTitle => 'Eenmalige code';
+
+  @override
+  String get shareExpired => 'Deze share is verlopen. Vraag om een nieuwe.';
+
+  @override
+  String get shareImportFile => 'Uit een gedeeld bestand';
+
+  @override
+  String get shareImportTitle => 'Gedeelde server importeren';
+
+  @override
+  String get shareIncludesKey => 'De share bevat de privésleutel.';
+
+  @override
+  String get shareOmittedBmc =>
+      'De BMC-inloggegevens. Het adres is inbegrepen, maar de inloggegevens niet.';
+
+  @override
+  String get shareOmittedJump =>
+      'De jumpserver, omdat deze op dit apparaat als afzonderlijke server is opgeslagen.';
+
+  @override
+  String get shareOmittedKeyPath =>
+      'Het sleutelbestand, omdat het pad alleen geldig is op dit apparaat.';
+
+  @override
+  String get shareOmittedMissingKey =>
+      'De privésleutel, omdat deze niet in de sleutelopslag van dit apparaat staat.';
+
+  @override
+  String get shareOmittedTip =>
+      'Niet inbegrepen; de ontvanger moet het volgende instellen:';
+
+  @override
+  String get sharePassphraseTip =>
+      'Deze wachtwoordzin versleutelt het bestand. De ontvanger heeft deze nodig om de server te importeren; herstellen is niet mogelijk.';
+
+  @override
+  String shareQrTip(int minutes) {
+    return 'De verbindingsgegevens in deze QR-code zijn versleuteld. De share verloopt over $minutes minuten.';
+  }
+
+  @override
+  String get shareScanQr => 'QR-code scannen';
+
+  @override
+  String shareServerExists(String name) {
+    return '‘$name’ op dit apparaat gebruikt dit adres al. Toch importeren?';
+  }
+
+  @override
+  String get shareTooBigForQr =>
+      'Te groot voor een QR-code. Deel het in plaats daarvan als bestand.';
+
+  @override
+  String get shareTooNew =>
+      'Deze share is gemaakt met een nieuwere versie van ServerBox. Werk de app bij om deze te openen.';
+
+  @override
+  String get shareUnreadable => 'Dit zijn geen geldige ServerBox-deelgegevens.';
+
+  @override
+  String get shareVia => 'Delen via';
+
+  @override
+  String get sftpDlPrepare => 'Voorbereiden om verbinding te maken...';
+
+  @override
+  String get sftpEditorTip =>
+      'Laat leeg om de ingebouwde editor van de app te gebruiken. Je kunt ook een editor opgeven, zoals `vim` (bij voorkeur ingesteld via de omgevingsvariabele `EDITOR`).';
+
+  @override
+  String get sftpRmrDirSummary =>
+      'Gebruik `rm -r` om een map te verwijderen in SFTP.';
+
+  @override
+  String get sftpSSHConnected => 'SFTP Verbonden';
+
+  @override
+  String get sftpShowFoldersFirst => 'Mappen eerst weergeven';
+
+  @override
+  String get sftpUnavailableUseScp =>
+      'Heeft deze host geen SFTP-subsysteem, zoals veel embedded apparaten, zet de bestandsoverdracht dan op SCP in de serverinstellingen.';
+
+  @override
+  String get sshFileTransportTip =>
+      'SFTP past bij alles wat actueel is. Kies SCP voor een oude of embedded host waarvan de SSH-server geen SFTP-subsysteem heeft: die heeft het commando `scp` nodig en een shell met ook de gebruikelijke bestandstools (`find`, `stat`, `mv`, `chmod`).';
+
+  @override
+  String get specifyDev => 'Apparaat specificeren';
+
+  @override
+  String get specifyDevTip =>
+      'Netwerkverkeer telt standaard alle apparaten; noem er hier één';
+
+  @override
+  String get tempIsCelsiusTip =>
+      'Indien ingeschakeld worden temperaturen als graden Celsius gelezen in plaats van duizendsten van een graad. Schakel dit alleen in als de temperatuur verkeerd wordt weergegeven (bijvoorbeeld 0,1 °C in plaats van 58 °C).';
+
+  @override
+  String get diskCountsNetwork =>
+      'Netwerkbestandssystemen meetellen in het totaal';
+
+  @override
+  String get diskCountsNetworkTip =>
+      'Netwerkkoppelingen zoals NFS en SMB blijven altijd in de lijst staan. Hun opslagruimte hoort bij een andere computer en telt standaard niet mee in het schijftotaal. Dit geldt alleen wanneer status via SSH wordt opgehaald; via Monitor bepaalt de eigen instelling van Monitor dit.';
+
+  @override
+  String get diskCountsNetworkAgentTip =>
+      'Netwerkkoppelingen zoals NFS en SMB blijven altijd in de lijst staan. Hun opslagruimte hoort bij een andere computer en telt standaard niet mee in het schijftotaal — het totaal dat Monitor in zijn historie opslaat en waartegen het schijfmeldingen controleert.';
+
+  @override
+  String spentTime(String time) {
+    return 'Gebruikte tijd: $time';
+  }
+
+  @override
+  String sshConfigAllExist(int duplicateCount) {
+    return 'Alle servers bestaan al ($duplicateCount duplicaten gevonden)';
+  }
+
+  @override
+  String sshConfigDuplicatesSkipped(int duplicateCount) {
+    return '$duplicateCount duplicaten worden overgeslagen';
+  }
+
+  @override
+  String get sshConfigFound => 'SSH-configuratie gevonden op het systeem.';
+
+  @override
+  String sshConfigFoundServers(int totalCount) {
+    return '$totalCount servers gevonden';
+  }
+
+  @override
+  String get sshConfigImport => 'SSH Configuratie Importeren';
+
+  @override
+  String get sshConfigImportPermission =>
+      'Mag de app ~/.ssh/config lezen en de serverinstellingen daaruit automatisch importeren?';
+
+  @override
+  String get sshConfigImportTip =>
+      'Prompt om ~/.ssh/config te lezen bij het aanmaken van de eerste server';
+
+  @override
+  String sshConfigImported(int count) {
+    return '$count servers geïmporteerd uit SSH-configuratie.';
+  }
+
+  @override
+  String sshHostKeyChangedDesc(String serverName) {
+    return 'De SSH-hostsleutel van $serverName is gewijzigd. Ga alleen verder als je deze server vertrouwt.';
+  }
+
+  @override
+  String get sshHostKeyType => 'Type SSH-hostsleutel';
+
+  @override
+  String get sshKnownHostKeys => 'Bekende hosts';
+
+  @override
+  String get sshKnownHostKeysTip =>
+      'De hostsleutels die deze app heeft geaccepteerd';
+
+  @override
+  String sshHostKeyNewDesc(String serverName) {
+    return 'Een nieuwe SSH-hostsleutel ontvangen van $serverName. Controleer de fingerprint voordat je deze vertrouwt.';
+  }
+
+  @override
+  String sshHostKeyStoredFingerprint(String fingerprint) {
+    return 'Opgeslagen vingerafdruk: $fingerprint';
+  }
+
+  @override
+  String get sshVerificationCode => 'Verificatiecode';
+
+  @override
+  String get sshConfigManualSelect =>
+      'Wilt u het SSH-configuratiebestand handmatig selecteren?';
+
+  @override
+  String get sshConfigNoServers => 'Geen servers gevonden in SSH-configuratie';
+
+  @override
+  String get sshConfigPermissionDenied =>
+      'Kan geen toegang krijgen tot SSH-configuratiebestand vanwege macOS-rechten.';
+
+  @override
+  String sshConfigServersToImport(int importCount) {
+    return '$importCount servers worden geïmporteerd';
+  }
+
+  @override
+  String get sshTermHelp =>
+      'Wanneer het terminal scrollbaar is, kan horizontaal slepen tekst selecteren. Klikken op de toetsenbordknop schakelt het toetsenbord aan/uit. Het bestandsicoon opent de huidige pad SFTP. De klembordknop kopieert de inhoud wanneer tekst is geselecteerd en plakt inhoud van het klembord in de terminal wanneer geen tekst is geselecteerd en er inhoud op het klembord staat. Het code-icoon plakt codefragmenten in de terminal en voert ze uit.';
+
+  @override
+  String get sshVirtualKeyAutoOff =>
+      'Automatisch schakelen van virtuele toetsen';
+
+  @override
+  String get supportFmtArgs =>
+      'De volgende opmaakparameters worden ondersteund:';
+
+  @override
+  String get suspendTip => 'Voor suspend zijn rootrechten en systemd vereist.';
+
+  @override
+  String switchTo(String val) {
+    return 'Overschakelen naar $val';
+  }
+
+  @override
+  String get syncAppSettings => 'App-instellingen synchroniseren';
+
+  @override
+  String get syncAppSettingsTip =>
+      'Thema, indeling, editor, terminal en andere apparaatvoorkeuren meenemen in de automatische synchronisatie.';
+
+  @override
+  String get termFontSizeTip =>
+      'Deze instelling heeft invloed op de terminalgrootte (breedte en hoogte). U kunt inzoomen op de terminalpagina om de lettergrootte van de huidige sessie aan te passen.';
+
+  @override
+  String get textScalerTip =>
+      '1.0 => 100% (oorspronkelijke grootte), werkt alleen op het gedeelte van de serverpagina van het lettertype, niet aanbevolen om te wijzigen.';
+
+  @override
+  String get times => 'Keer';
+
+  @override
+  String get trySudo => 'Probeer sudo te gebruiken';
+
+  @override
+  String get sudoPromptNotFound => 'Er is geen sudo-wachtwoordprompt actief.';
+
+  @override
+  String get updateServerStatusInterval =>
+      'Interne server status bijwerking interval';
+
+  @override
+  String get useNoPwd => 'Geen wachtwoord gebruiken';
+
+  @override
+  String get usePodmanByDefault => 'Valt terug op Podman';
+
+  @override
+  String get used => 'Gebruikt';
+
+  @override
+  String get viewDetails => 'Details bekijken';
+
+  @override
+  String get virtKeyHelpIME => 'Toetsenbord aan/uit zetten';
+
+  @override
+  String get virtKeyHelpSFTP => 'Huidige map openen in SFTP.';
+
+  @override
+  String get virtKeyHelpSnippet =>
+      'Kies een snippet en voer het uit in deze terminal.';
+
+  @override
+  String get virtKeyHelpTmux => 'Wissel tussen tmux-sessies en -vensters.';
+
+  @override
+  String get virtKeyIntroActions => 'Snelkoppelingen';
+
+  @override
+  String get virtKeyIntroActionsTip =>
+      'Deze toetsen typen niets, ze openen iets. Houd er een ingedrukt om te lezen wat hij doet.';
+
+  @override
+  String get virtKeyIntroCustomizeTip =>
+      'In de terminalinstellingen kun je ze herschikken, meer aanzetten (bestanden, sudo, F1–F12…) of verbergen wat je nooit gebruikt.';
+
+  @override
+  String get virtKeyIntroModifiers => 'Modificatietoetsen';
+
+  @override
+  String get virtKeyIntroModifiersTip =>
+      'Tik er een aan om hem in te schakelen en tik daarna een letter op het toetsenbord. Hij geldt voor die ene toets.';
+
+  @override
+  String get virtKeyIntroNav => 'Navigatie';
+
+  @override
+  String get virtKeyIntroNavTip =>
+      'Deze toetsen verplaatsen de cursor. Houd een pijltoets ingedrukt om hem te herhalen.';
+
+  @override
+  String get virtKeyIntroSelect =>
+      'Zolang de terminal iets te scrollen heeft, selecteer je tekst door opzij te slepen.';
+
+  @override
+  String get virtKeyRows => 'Rijen tegelijk zichtbaar';
+
+  @override
+  String get virtKeyRowsTip =>
+      'De rest staat op een eigen pagina, die je opzij veegt.';
+
+  @override
+  String get waitConnection =>
+      'Wacht alstublieft tot de verbinding tot stand is gebracht.';
+
+  @override
+  String get wakeLock => 'Wakker houden';
+
+  @override
+  String get watchNotPaired => 'Geen gekoppelde Apple Watch';
+
+  @override
+  String get webdavSettingEmpty => 'Webdav-instelling is leeg';
+
+  @override
+  String get whenOpenApp => 'Bij het openen van de app';
+
+  @override
+  String get wolTip =>
+      'Na het configureren van WOL (Wake-on-LAN), wordt elke keer dat de server wordt verbonden een WOL-verzoek verzonden.';
+
+  @override
+  String get write => 'Schrijven';
+
+  @override
+  String get writeScriptFailTip =>
+      'Het schrijven naar het script is mislukt, mogelijk door gebrek aan rechten of omdat de map niet bestaat.';
+
+  @override
+  String get writeScriptTip =>
+      'Na het verbinden met de server wordt een script geschreven naar `~/.config/server_box` \n | `/tmp/server_box` om de systeemstatus te monitoren. U kunt de inhoud van het script controleren.';
+
+  @override
+  String get menuGitHubRepository => 'GitHub-repository';
+
+  @override
+  String get podmanDockerEmulationDetected =>
+      'Podman Docker-emulatie gedetecteerd. Schakel over naar Podman in de instellingen.';
+
+  @override
+  String get betaTip =>
+      'Deze functie is nog in bèta. De werking wordt niet gegarandeerd.';
+
+  @override
+  String get portForward_startPrompt =>
+      'Voeg een poortdoorstuurregel toe om te beginnen';
+
+  @override
+  String get portForward_localHost => 'Lokale host';
+
+  @override
+  String get portForward_localPort => 'Lokale poort';
+
+  @override
+  String get portForward_remoteHost => 'Externe host';
+
+  @override
+  String get portForward_remotePort => 'Externe poort';
+
+  @override
+  String portForward_deleteConfirmFmt(String name) {
+    return '$name verwijderen?';
+  }
+
+  @override
+  String get sponsor => 'Sponsor';
+
+  @override
+  String get sortByJoinTime => 'Op moment van toevoegen';
+
+  @override
+  String get tmuxAutoAttach => 'tmux automatisch koppelen';
+
+  @override
+  String get tmuxAuto => 'tmux automatisch';
+
+  @override
+  String get tmuxAutoTip =>
+      'tmux automatisch starten of koppelen bij verbinden via SSH';
+
+  @override
+  String get tmuxSessionSelector => 'Sessiekiezer';
+
+  @override
+  String get tmuxSessionSelectorTip =>
+      'De sessiekiezer tonen bij het verbinden';
+
+  @override
+  String get tmuxDefaultSessionName => 'Standaard sessienaam';
+
+  @override
+  String get tmuxSessionName => 'Sessienaam';
+
+  @override
+  String get tmuxNewSession => 'Nieuwe sessie';
+
+  @override
+  String get tmuxNewWindow => 'Nieuw venster';
+
+  @override
+  String get tmuxNoWindowsFound => 'Geen vensters gevonden';
+
+  @override
+  String tmuxWindowCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count vensters',
+      one: '1 venster',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get tmuxAttached => 'Gekoppeld';
+
+  @override
+  String get tmuxSkip => 'Overslaan';
+
+  @override
+  String get tmuxNotAvailable => 'tmux is niet beschikbaar';
+
+  @override
+  String containerSegmentsMismatch(int count) {
+    return 'Onverwacht aantal segmenten in containerrespons: $count';
+  }
+
+  @override
+  String get containerOperationInProgress =>
+      'Er wordt al een andere containerbewerking uitgevoerd';
+
+  @override
+  String processCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count processen',
+      one: '1 proces',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get processParseUnsupportedOutput =>
+      'De indeling van de proceslijst wordt niet ondersteund.';
+
+  @override
+  String get processParseInvalidRows =>
+      'Sommige procesvermeldingen konden niet worden gelezen.';
+
+  @override
+  String get processParseInvalidWindowsJson =>
+      'Het Windows-procesantwoord kon niet worden gelezen.';
+
+  @override
+  String get processParseInvalidWindowsRows =>
+      'Sommige Windows-procesvermeldingen konden niet worden gelezen.';
+
+  @override
+  String get processKillTargetChanged =>
+      'Het proces is gewijzigd of beëindigd. Vernieuw de lijst en probeer het opnieuw.';
+
+  @override
+  String get processSearchHint => 'Naam, gebruiker of PID';
+
+  @override
+  String processShowKernelThreads(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count kernelthreads tonen',
+      one: '1 kernelthread tonen',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get processForceKill => 'Force kill';
+
+  @override
+  String get processStarted => 'Started';
+
+  @override
+  String get processThreads => 'Threads';
+
+  @override
+  String get watchServers => 'Servers op de watch';
+
+  @override
+  String get watchServersTip =>
+      'Het horloge haalt de gegevens zelf bij de Monitor op, dus alleen servers met de Monitor zijn kiesbaar.';
+
+  @override
+  String get watchNoMonitorServer => 'Er is geen server ingesteld met Monitor.';
+
+  @override
+  String get legacyStatusGoneTitle => 'Status-URL\'s werken niet meer';
+
+  @override
+  String get legacyStatusGoneBody =>
+      'De Watch-app en de widgets lazen een handmatig ingevoerd `/status`-adres. Dat eindpunt is verdwenen: het kon alleen actuele waarden als tekst teruggeven, en daarom was er nooit een grafiek mogelijk.\n\nZe lezen nu de geverifieerde API van Monitor, tekenen trendlijnen en blijven zelf gelijk met de app. Stel de server één keer in de app in, dan pikt elke watch en widget hem op.';
+
+  @override
+  String get services => 'Diensten';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get enable => 'Inschakelen';
+
+  @override
+  String get disable => 'Uitschakelen';
+
+  @override
+  String get starting => 'Bezig met starten';
+
+  @override
+  String get stopping => 'Bezig met stoppen';
+
+  @override
+  String get serviceManagerUnsupported => 'Niet-ondersteunde servicebeheerder';
+
+  @override
+  String get serviceManagerUnsupportedTip =>
+      'Deze server gebruikt een servicebeheerder die ServerBox nog niet ondersteunt. systemd, procd en OpenRC worden ondersteund.';
+
+  @override
+  String serviceManagerFmt(String manager) {
+    return 'Beheerd door $manager';
+  }
+
+  @override
+  String get serviceListFailed => 'Kon diensten niet tonen';
+
+  @override
+  String get serviceDetailsUnavailable =>
+      'Sommige servicedetails zijn niet beschikbaar';
+
+  @override
+  String get serviceDetailsUnavailableTip =>
+      'De lijst is bruikbaar, maar de beheerder gaf niet alle status- of opstartinformatie terug.';
+
+  @override
+  String get systemdUserScopeMissing => 'Gebruikers-units worden niet getoond';
+
+  @override
+  String get systemdUserScopeMissingTip =>
+      'Dit account heeft geen gebruikerssessiebus op de server, dus alleen systeem-units worden getoond.';
+
+  @override
+  String get serviceSearchHint => 'Unit name';
+
+  @override
+  String get serviceNeedsAttention => 'Needs attention';
+
+  @override
+  String serviceOtherUnits(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count andere units',
+      one: '1 andere unit',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get serviceUnit => 'Unit';
+
+  @override
+  String get serviceUnitType => 'Type';
+
+  @override
+  String get serviceScope => 'Scope';
+
+  @override
+  String get serviceStartup => 'Startup';
+
+  @override
+  String serviceUpFor(String duration) {
+    return 'Actief gedurende $duration';
+  }
+
+  @override
+  String serviceDownFor(String duration) {
+    return 'Gestopt gedurende $duration';
+  }
+
+  @override
+  String serviceNextIn(String duration) {
+    return 'Volgende uitvoering over $duration';
+  }
+
+  @override
+  String serviceStoppedAgo(String duration) {
+    return '$duration geleden gestopt';
+  }
+
+  @override
+  String serviceExitStatus(int code) {
+    return 'afsluitstatus $code';
+  }
+
+  @override
+  String get serviceFullJournal => 'Full journal';
+
+  @override
+  String get serviceUnitFile => 'Unit file';
+
+  @override
+  String serviceJournalRecent(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Laatste $count regels',
+      one: 'Laatste regel',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get serviceJournalUnreadable =>
+      'Dit account kan het journal niet lezen';
+
+  @override
+  String get serverUnreachable => 'Kon geen opdracht uitvoeren op deze server';
+
+  @override
+  String get containerNoRuntime => 'Geen container-runtime hier';
+
+  @override
+  String get containerNoRuntimeTip =>
+      'Noch `docker` noch `podman` reageerde op deze machine. Als er één voor een ander account is geïnstalleerd, schakel dan \"Probeer sudo te gebruiken\" in bij Instellingen.';
+
+  @override
+  String get containerUnreadable =>
+      'De container-runtime antwoordde in een onverwachte vorm';
+
+  @override
+  String get power => 'Energie';
+
+  @override
+  String get fan => 'Ventilator';
+
+  @override
+  String get clockSpeed => 'Klok';
+
+  @override
+  String get vendor => 'Fabrikant';
+
+  @override
+  String get continueInTerminal => 'Doorgaan in terminal';
+
+  @override
+  String get askAiRiskUnknown => 'Niet ingedeeld';
+
+  @override
+  String get agentLocalExec => 'Opdrachten op dit apparaat uitvoeren';
+
+  @override
+  String get agentLocalExecTip =>
+      'Laat de Agent werken op de machine waarop ServerBox draait. Ook alleen-lezen commando’s worden beoordeeld';
+
+  @override
+  String get agentLocalExecRootfsTip =>
+      'Laat de Agent lokaal werken, beperkt tot de Linux-container die ServerBox installeerde';
+
+  @override
+  String macDmgImportedPartly(String path) {
+    return 'De gegevens van de eerder geïnstalleerde versie zijn geïmporteerd. Gedownloade bestanden zijn achtergebleven in $path.';
+  }
+
+  @override
+  String get bmcAccount => 'Account';
+
+  @override
+  String get bmcAccountUnset =>
+      'Geen gekozen — tik om er een te kiezen of aan te maken';
+
+  @override
+  String bmcAccountShared(int count) {
+    return 'Gebruikt door $count servers';
+  }
+
+  @override
+  String get bmcAccounts => 'BMC-accounts';
+
+  @override
+  String get bmcAccountSharedTip =>
+      'Dit bewerken verandert wat ze allemaal gebruiken.';
+
+  @override
+  String bmcAccountInUse(int count) {
+    return '$count servers gebruiken het. Ze houden hun adres en verliezen het account.';
+  }
+
+  @override
+  String get bmcStaleWrite =>
+      'De BMC is gewijzigd tijdens het schrijven. Probeer opnieuw.';
+
+  @override
+  String get privacyBlur => 'Privacy op de achtergrond';
+
+  @override
+  String get privacyBlurTip => 'Verberg de app-inhoud in de app-switcher';
+
+  @override
+  String get floatReturnToTab => 'Terug naar tabblad';
+
+  @override
+  String get termInFloatWindow => 'Deze terminal staat in het zwevende venster';
+
+  @override
+  String get globeEnabledTip =>
+      'Servers op een globe tekenen, waar hun adressen zijn. Uit verwijdert de knop en stopt elke opzoeking.';
+
+  @override
+  String get geoShardsConsentAttribution =>
+      'IP-geolocatie door [DB-IP](https://db-ip.com), CC BY 4.0.';
+
+  @override
+  String get geoMissPrivate => 'Privéadres';
+
+  @override
+  String get geoMissNoData => 'Geen locatiegegevens';
+
+  @override
+  String get globeGuide =>
+      'Tik hier om je servers op een globe te zien, waar hun adressen liggen.';
+
+  @override
+  String get publicIp => 'Openbaar IP';
+
+  @override
+  String get geoData => 'Gegevens op stadsniveau';
+
+  @override
+  String get geoDataTip =>
+      'Na het downloaden gebruiken alle locatiebepalingen gegevens die op dit apparaat zijn opgeslagen. Er worden geen serveradressen of opzoekactiviteiten naar de downloadservice verzonden.';
+
+  @override
+  String get geoDataMissing => 'Niet gedownload';
+
+  @override
+  String get geoDataUnreachable => 'Kon de gegevens niet ophalen.';
+
+  @override
+  String get geoDataRemoveFailed => 'Kon de gegevens niet verwijderen.';
+
+  @override
+  String geoDataCurrent(String month) {
+    return '$month is al geïnstalleerd.';
+  }
+
+  @override
+  String geoDataConsent(String download, String disk) {
+    return '**Download: $download · Opslag op het apparaat: $disk.** De volledige gegevensset wordt op dit apparaat opgeslagen en alle latere locatiebepalingen worden lokaal uitgevoerd. Er worden geen serveradressen of opzoekactiviteiten naar de downloadservice verzonden.\n\nMaandelijks bijgewerkt. Een nieuwere versie vervangt de geïnstalleerde gegevens zonder een extra kopie te bewaren. Je kunt de gegevens op elk moment verwijderen.';
+  }
+
+  @override
+  String get benchmark => 'Benchmark';
+
+  @override
+  String get benchmarkIntro =>
+      'Voert Yet Another Bench Script uit op deze server om schijf, netwerk en CPU te testen. Een volledige test duurt 10–20 minuten en gaat door als je deze pagina verlaat of de app sluit.';
+
+  @override
+  String get benchmarkNoRuns => 'Nog geen benchmarks.';
+
+  @override
+  String get benchmarkRunning => 'Benchmark wordt uitgevoerd';
+
+  @override
+  String get benchmarkStartFailed => 'Kon de benchmark niet starten';
+
+  @override
+  String get benchmarkCancelConfirm =>
+      'Deze benchmark stoppen? Alle metingen tot nu toe gaan verloren.';
+
+  @override
+  String get benchmarkDeleteConfirm => 'Dit benchmarkresultaat verwijderen?';
+
+  @override
+  String get benchmarkNothingSelected =>
+      'Alle testfasen zijn uitgeschakeld. Alleen systeeminformatie wordt verzameld; dit duurt enkele seconden.';
+
+  @override
+  String get benchmarkDiskTip =>
+      'fio met vier blokgroottes; ongeveer 3 minuten. Schrijft een testbestand van 2 GB naar de werkmap en heeft evenveel vrije ruimte nodig.';
+
+  @override
+  String get benchmarkNetworkTip =>
+      'iperf3 tegen openbare servers; ongeveer 4 minuten.';
+
+  @override
+  String get benchmarkReducedNetwork => 'Minder locaties';
+
+  @override
+  String benchmarkReducedNetworkTip(String full, String reduced) {
+    return 'Drie locaties in plaats van zeven. Het geschatte dataverkeer daalt van $full naar $reduced.';
+  }
+
+  @override
+  String get benchmarkCpuTip =>
+      'Downloadt Geekbench, een propriëtair programma, en **publiceert het resultaat op een openbare pagina op geekbench.com**, inclusief CPU-model, aantal kernen en geheugen.';
+
+  @override
+  String get benchmarkSensitiveOptions =>
+      'De onderstaande opties downloaden en voeren software van derden uit op deze server, of sturen serverinformatie naar derden. Ze staan standaard uit.';
+
+  @override
+  String get benchmarkIpInfoTip =>
+      'Stuurt het openbare adres van deze server via onbeveiligde HTTP naar ip-api.com.';
+
+  @override
+  String get benchmarkIpInfo => 'Eigenaar van IP opzoeken';
+
+  @override
+  String get benchmarkPreferBin => 'fio en iperf3 downloaden';
+
+  @override
+  String get benchmarkPreferBinTip =>
+      'Downloadt ze van GitHub in plaats van de pakketten van de host te gebruiken. Schakel dit alleen in als geen van beide op de host is geïnstalleerd.';
+
+  @override
+  String get benchmarkWorkDir => 'Werkmap';
+
+  @override
+  String get benchmarkWorkDirTip =>
+      'Bepaalt welk bestandssysteem door de schijftest wordt gemeten. Leeg gebruikt de thuismap van het aanmeldaccount.';
+
+  @override
+  String benchmarkEstimatedTime(int minutes) {
+    return 'Ongeveer $minutes min.';
+  }
+
+  @override
+  String benchmarkEstimatedTraffic(String size) {
+    return 'Ongeveer $size dataverkeer';
+  }
+
+  @override
+  String get benchmarkPhaseSystem => 'Systeeminformatie lezen';
+
+  @override
+  String get benchmarkPhaseDisk => 'Schijf testen';
+
+  @override
+  String get benchmarkPhaseNetwork => 'Netwerk testen';
+
+  @override
+  String get benchmarkPhaseCpu => 'CPU testen';
+
+  @override
+  String get benchmarkPhaseDone => 'Afronden';
+
+  @override
+  String get benchmarkResultUnreadable =>
+      'Dit resultaat kon niet als JSON worden gelezen. De onbewerkte tekst staat hieronder.';
+
+  @override
+  String get benchmarkViewOnGeekbench => 'Bekijken op Geekbench';
+
+  @override
+  String get benchmarkGeekbenchPublic =>
+      'Dit resultaat is openbaar gepubliceerd via de bovenstaande link.';
+
+  @override
+  String get benchmarkSingleCore => 'Eén kern';
+
+  @override
+  String get benchmarkMultiCore => 'Meerdere kernen';
+
+  @override
+  String get benchmarkIops => 'IOPS';
+
+  @override
+  String get benchmarkSend => 'Upload';
+
+  @override
+  String get benchmarkRecv => 'Download';
+
+  @override
+  String get benchmarkLatency => 'Latentie';
+
+  @override
+  String get benchmarkVirt => 'Virtualisatie';
+
+  @override
+  String get benchmarkRawLog => 'Uitvoeringslogboek';
+
+  @override
+  String benchmarkUpstream(String version) {
+    return 'Mogelijk gemaakt door Yet Another Bench Script ($version)';
+  }
+
+  @override
+  String get benchmarkPhaseStarting => 'Starten';
+
+  @override
+  String get benchmarkNoOutputYet =>
+      'Nog geen uitvoer. Voordat de eerste regel verschijnt, controleert YABS of google.com en icanhazip.com bereikbaar zijn. Op netwerken die een van beide sites blokkeren, kan dit enkele minuten duren.';
+
+  @override
+  String get tagsEmptyTip =>
+      'Nog geen tags. Voeg er een toe tijdens het bewerken van een server; deze verschijnt hier.';
+
+  @override
+  String get benchmarkNoServers =>
+      'Voeg eerst een server toe en kom daarna terug om een benchmark uit te voeren.';
+
+  @override
+  String get schemaTooNewTitle => 'Deze gegevens zijn nieuwer dan de app';
+
+  @override
+  String schemaTooNewBody(int stored, int supported) {
+    return 'Ze zijn geschreven door een nieuwere versie van ServerBox (opslag v$stored); deze versie kan tot en met v$supported lezen. Er is niets gewijzigd.';
+  }
+
+  @override
+  String get schemaTooNewReinstall =>
+      'Installeer die nieuwere versie opnieuw; alles wordt dan weer geopend zoals voorheen.';
+
+  @override
+  String get schemaTooNewExportPlain => 'Exporteren zonder wachtwoord';
+
+  @override
+  String get schemaTooNewPlainWarn =>
+      'Het bestand bevat alle privésleutels voor SSH, serverwachtwoorden en API-sleutels als platte tekst. Iedereen die het bestand krijgt, krijgt toegang tot al deze gegevens.';
+
+  @override
+  String get schemaTooNewWipe => 'Alle gegevens verwijderen';
+
+  @override
+  String get schemaTooNewWipeConfirm =>
+      'Alle servers, sleutels, snippets en instellingen op dit apparaat worden verwijderd. Dit kan niet ongedaan worden gemaakt. Een hier geëxporteerde back-up zou de enige overgebleven kopie zijn.';
+
+  @override
+  String get schemaTooNewWipeDone =>
+      'Gegevens verwijderd. Open de app opnieuw om opnieuw te beginnen.';
+
+  @override
+  String get schemaTooNewWipeFailed =>
+      'Sommige gegevens konden niet worden verwijderd en deze versie kan de resterende gegevens nog steeds niet openen. Installeer de nieuwere versie opnieuw om erbij te kunnen.';
+
+  @override
+  String get systemUsers => 'Users';
+
+  @override
+  String get userManagerLinuxOnly =>
+      'Beheer van systeemgebruikers wordt momenteel alleen ondersteund op Linux-servers.';
+
+  @override
+  String get userRegularAccount => 'Regular';
+
+  @override
+  String get userCurrentAccount => 'Current account';
+
+  @override
+  String get userSystemAccount => 'System account';
+
+  @override
+  String get userUid => 'UID';
+
+  @override
+  String get userLoginStatus => 'Status';
+
+  @override
+  String get userLoginEnabled => 'Login enabled';
+
+  @override
+  String get userDetailAccount => 'Account';
+
+  @override
+  String get userDetailSecurity => 'Security';
+
+  @override
+  String get userSshKeys => 'SSH keys';
+
+  @override
+  String get userExpires => 'Expires';
+
+  @override
+  String get userNever => 'Never';
+
+  @override
+  String get userPasswordSet => 'Set';
+
+  @override
+  String get userPasswordLocked => 'Locked';
+
+  @override
+  String get userPasswordNone => 'None';
+
+  @override
+  String get userSuperuser => 'Superuser';
+
+  @override
+  String get userOpenShell => 'Open shell';
+
+  @override
+  String get userRootChangesWarning =>
+      'Wijzigingen aan root worden meteen in alle sessies van kracht.';
+
+  @override
+  String get userComment => 'Comment';
+
+  @override
+  String get userPrimaryGroup => 'Primary group';
+
+  @override
+  String get userSupplementaryGroups => 'Aanvullende groepen';
+
+  @override
+  String get userLoginShell => 'Login shell';
+
+  @override
+  String get userCreateHome => 'Persoonlijke map maken';
+
+  @override
+  String get userMoveHome =>
+      'Bestaande persoonlijke map verplaatsen wanneer het pad verandert';
+
+  @override
+  String get userRemoveHome => 'Persoonlijke map verwijderen';
+
+  @override
+  String get userPasswordCreateTip =>
+      'Laat het wachtwoord leeg om een account te maken waarop aanmelden met een wachtwoord is geblokkeerd.';
+
+  @override
+  String get userPasswordEditTip =>
+      'Laat het wachtwoord leeg om het bestaande wachtwoord te behouden.';
+
+  @override
+  String funcUnavailableFmt(String func) {
+    return '$func is niet beschikbaar via de verbinding van deze server.';
+  }
+
+  @override
+  String get rangeLive => 'Live';
+
+  @override
+  String get diskIo => 'Schijf-I/O';
+
+  @override
+  String get peak => 'piek';
+
+  @override
+  String get hardware => 'Hardware';
+
+  @override
+  String get cores => 'Kernen';
+
+  @override
+  String get historyNoStored =>
+      'Alleen Monitor slaat historie op. Deze verbinding bewaart wat de app sinds het verbinden heeft gezien.';
+
+  @override
+  String get noHistoryYet => 'Nog niets gemeten';
+
+  @override
+  String get noData => 'geen gegevens';
+
+  @override
+  String get from => 'Van';
+
+  @override
+  String get to => 'Tot';
+
+  @override
+  String get beyondRetention => 'Buiten wat deze Monitor heeft bewaard';
+
+  @override
+  String agentRetentionFmt(String kept) {
+    return 'Monitor bewaart $kept';
+  }
+
+  @override
+  String get agentServerTools => 'Serverhulpmiddelen';
+
+  @override
+  String get agentServerToolsTip =>
+      'Voer opdrachten uit op de server, lees en schrijf bestanden, maak via SSH verbinding met andere hosts en gebruik ServerBox-functies.';
+
+  @override
+  String get agentTerminalTools => 'Terminal';
+
+  @override
+  String get agentTerminalToolsTip =>
+      'Lees de terminalweergave en voer opdrachten uit op de bijbehorende server.';
+
+  @override
+  String get agentToolTerminalScreen => 'Scherm lezen';
+
+  @override
+  String get agentProviders => 'Providers';
+
+  @override
+  String get agentProvidersTip =>
+      'API-sleutels, modellen en het model van een nieuwe chat';
+
+  @override
+  String get agentTools => 'Hulpmiddelen';
+
+  @override
+  String get agentToolsTip => 'Wat de Agent mag gebruiken, en zijn MCP-servers';
+
+  @override
+  String get agentSnippetToolsTip =>
+      'Snippets weergeven, toevoegen, bewerken en verwijderen.';
+
+  @override
+  String get agentVirtToolsTip =>
+      'De VM’s en containers lezen die het tabblad Virtualisatie heeft geladen.';
+
+  @override
+  String get agentBenchmarkToolsTip =>
+      'Benchmarkresultaten lezen; met je goedkeuring een benchmark starten of stoppen.';
+
+  @override
+  String get agentRemoteDesktopToolsTip =>
+      'Profielen voor extern bureaublad weergeven; met je goedkeuring verbinden of verbreken.';
+
+  @override
+  String get agentSkills => 'Skills';
+
+  @override
+  String get agentSkillsTip =>
+      'Instructies voor bepaalde taken, geïnstalleerd vanaf GitHub of een link';
+
+  @override
+  String get agentPermissions => 'Machtigingen';
+
+  @override
+  String get agentEmptyHint => 'Voer bewerkingen uit op de server.';
+
+  @override
+  String get agentTerminalEmptyHint =>
+      'Lees de huidige terminal en voer hier opdrachten uit.';
+
+  @override
+  String oldestSampleFmt(String time) {
+    return 'oudste meting $time';
+  }
+
+  @override
+  String get rangeEndsBeforeItStarts =>
+      'Het einde van het bereik moet na het begin liggen.';
+
+  @override
+  String get samples => 'metingen';
+
+  @override
+  String get unavailable => 'niet beschikbaar';
+
+  @override
+  String get metricUnavailableTip =>
+      'De rest van deze pagina is niet beïnvloed. Controleer op de host het commando waar deze meting vandaan komt.';
+
+  @override
+  String get waitingFirstSample => 'Wachten op de eerste meting';
+
+  @override
+  String atTimeFmt(String time) {
+    return 'om $time';
+  }
+
+  @override
+  String get stored => 'opgeslagen';
+
+  @override
+  String lastSampleFmt(String ago) {
+    return 'Laatste meting: $ago';
+  }
+
+  @override
+  String staleSinceFmt(String ago, String time) {
+    return 'Alles hieronder komt van $time, $ago.';
+  }
+
+  @override
+  String noDataBeforeFmt(String time) {
+    return 'geen gegevens van vóór $time';
+  }
+
+  @override
+  String loadingRangeFmt(String range) {
+    return '$range laden…';
+  }
+
+  @override
+  String noStoredHistoryFor(String metric) {
+    return 'Geen opgeslagen geschiedenis voor $metric';
+  }
+
+  @override
+  String devicesFmt(int count) {
+    return '$count apparaten';
+  }
+
+  @override
+  String devicesBusiestFmt(int count, String name) {
+    return '$count apparaten · $name is het drukst';
+  }
+
+  @override
+  String devicesPlottedFmt(int plotted, int total) {
+    return '$plotted van $total apparaten';
+  }
+
+  @override
+  String sensorsHottestFmt(int count, String name) {
+    return '$count sensoren · $name het heetst';
+  }
+
+  @override
+  String get oneDeviceAtLeast =>
+      'Ten minste één apparaat blijft in de grafiek.';
+
+  @override
+  String showAllFmt(int count) {
+    return 'Alle $count tonen';
+  }
+
+  @override
+  String shownOfFmt(int shown, int total, String what) {
+    return '$shown van $total $what';
+  }
+
+  @override
+  String countOfFmt(int count, String what) {
+    return '$count $what';
+  }
+
+  @override
+  String get filesystems => 'Bestandssystemen';
+
+  @override
+  String get blockDevices => 'Blokapparaten';
+
+  @override
+  String get notMounted => 'Niet aangekoppeld';
+
+  @override
+  String get unitDevices => 'apparaten';
+
+  @override
+  String get unitSensors => 'sensoren';
+
+  @override
+  String get unitBatteries => 'accu\'s';
+
+  @override
+  String get unitCommands => 'opdrachten';
+
+  @override
+  String get unitReadings => 'metingen';
+
+  @override
+  String get unitGpus => 'GPU\'s';
+
+  @override
+  String get hottest => 'het heetst';
+
+  @override
+  String get oldest => 'het oudst';
+
+  @override
+  String get notApplicable => 'niet van toepassing';
+
+  @override
+  String get attributes => 'attributen';
+
+  @override
+  String get powerOnHours => 'Bedrijfsuren';
+
+  @override
+  String get powerCycles => 'Inschakelingen';
+
+  @override
+  String get lifeLeft => 'Resterende levensduur';
+
+  @override
+  String get lifetimeWrite => 'Totaal geschreven';
+
+  @override
+  String get lifetimeRead => 'Totaal gelezen';
+
+  @override
+  String get averageErase => 'Gemiddeld gewist';
+
+  @override
+  String get unsafeShutdowns => 'Onveilige afsluitingen';
+
+  @override
+  String get diskAllPassed => 'alle PASSED';
+
+  @override
+  String diskWarningFmt(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count waarschuwingen',
+      one: '1 waarschuwing',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String diskWrongOfFmt(int total, int wrong) {
+    return '$wrong van $total apparaten';
+  }
+
+  @override
+  String get diskSmartSortedTip => 'Slechtste eerst';
+
+  @override
+  String readAgoFmt(String ago) {
+    return 'gelezen $ago';
+  }
+
+  @override
+  String processesFmt(int count) {
+    return '$count processen';
+  }
+
+  @override
+  String diskFailingFmt(int count) {
+    return '$count defect';
+  }
+
+  @override
+  String get diskSmartOpenTip => 'Tik voor de attributen';
+
+  @override
+  String get cycle => 'Cycli';
+
+  @override
+  String get window => 'venster';
+
+  @override
+  String ofFmt(String total) {
+    return 'van $total';
+  }
+
+  @override
+  String get serverDetailCards => 'Kaarten op de detailpagina';
+
+  @override
+  String get connection => 'Verbinding';
+
+  @override
+  String get connectionTip =>
+      'Beide kunnen tegelijk aan staan. De volgorde is de volgorde waarin ze worden gebeld.';
+
+  @override
+  String get transportNoneOn =>
+      'Beide staan uit — deze server kan niet worden verbonden.';
+
+  @override
+  String get thisDevice => 'Dit apparaat';
+
+  @override
+  String get localServerTip =>
+      'Leest dit apparaat rechtstreeks uit door het statusscript hier uit te voeren. SSH en Monitor worden niet gebruikt; hun instellingen blijven bewaard.';
+
+  @override
+  String get localServerUnsupported =>
+      'Dit platform kan dit apparaat niet als server uitlezen. Linux, Windows en de macOS-DMG-versie kunnen dat wel.';
+
+  @override
+  String get remoteDesktopIntro =>
+      'Opent het RDP- of VNC-bureaublad van een server in de app. De verbinding loopt via de SSH-verbinding van de server of via zijn Monitor, dus de bureaubladpoort hoeft niet bereikbaar te zijn vanaf het netwerk.';
+
+  @override
+  String get remoteDesktopIntroProfiles =>
+      'Sla per bureaublad een profiel op via de knop Extern bureaublad van een server of via het tabblad Extern bureaublad.';
+
+  @override
+  String get localServerIntro =>
+      'Voegt het apparaat waarop ServerBox draait toe als server. Status, processen, services, containers, de terminal en bestanden werken zonder SSH of Monitor.';
+
+  @override
+  String get localServerAdd => 'Dit apparaat toevoegen';
+
+  @override
+  String get localServerIntroFooter =>
+      'Dit kan ook later worden ingeschakeld, op de bewerkpagina van een server onder Verbinding.';
+
+  @override
+  String get transportSectionOff =>
+      'Uit. De velden hieronder blijven bewaard voor wanneer u het weer aanzet.';
+
+  @override
+  String get monitorAgent => 'Monitor';
+
+  @override
+  String get plainHttpEditTip =>
+      'Inloggegevens en metingen gaan onversleuteld over het netwerk. Houd het bij een LAN of een Tailscale-adres, of zet Monitor achter TLS.';
+
+  @override
+  String get behaviour => 'Gedrag';
+
+  @override
+  String get optional => 'Optioneel';
+
+  @override
+  String get sshAdvanced => 'SSH geavanceerd';
+
+  @override
+  String get sshAdvancedTip =>
+      'Uitwijkbestemming, ProxyCommand, springserver, bestandstransport, extern pad';
+
+  @override
+  String get sshLegacyAlgorithms => 'Verouderde algoritmen';
+
+  @override
+  String get sshLegacyAlgorithmsTip =>
+      'Voor oude SSH-servers, zoals routers of switches, die alleen een SHA-1-`ssh-rsa`-hostsleutel of SHA-1-sleuteluitwisseling aanbieden. Minder veilig; schakel dit alleen in voor hosts die het nodig hebben.';
+
+  @override
+  String get appearanceAndPlace => 'Weergave en locatie';
+
+  @override
+  String get appearanceAndPlaceTip => 'Logo, coördinaten';
+
+  @override
+  String get statusCollection => 'Statusverzameling';
+
+  @override
+  String get statusCollectionTip =>
+      'Welke opdrachten draaien, eigen opdrachten, welk apparaat wordt gelezen';
+
+  @override
+  String get tagAllTags => 'Alle tags';
+
+  @override
+  String get tagMatching => 'Overeenkomsten';
+
+  @override
+  String get tagNewHint => 'Nieuwe tag';
+
+  @override
+  String tagCreateFmt(String tag) {
+    return '#$tag maken';
+  }
+
+  @override
+  String get tagOnThisServer => 'op deze server';
+
+  @override
+  String tagServersFmt(int count) {
+    return '$count servers';
+  }
+
+  @override
+  String tagOnThisServerFmt(int count) {
+    return '$count op deze server';
+  }
+
+  @override
+  String get tagMatchesTyped => 'komt overeen met je invoer';
+
+  @override
+  String get tagEditorTip =>
+      'Typen filtert de lijst; de knop maakt de tag en zet hem in één stap op deze server. Het potlood hernoemt hem op elke server die hem draagt. Een tag die geen enkele server draagt, verdwijnt bij het opslaan.';
+
+  @override
+  String get tagRenamesOnSave => 'Hernoemingen worden bij opslaan toegepast';
+
+  @override
+  String get scheduledTasks => 'Scheduled tasks';
+
+  @override
+  String get scheduledTaskLinuxOnly =>
+      'Beheer van geplande taken wordt momenteel alleen ondersteund op Linux-servers.';
+
+  @override
+  String get scheduledTaskUnavailable =>
+      'crontab is niet beschikbaar op deze server.';
+
+  @override
+  String get scheduledTaskPreserveTip =>
+      'Opmerkingen, omgevingsvariabelen en niet-herkende regels in deze crontab blijven behouden.';
+
+  @override
+  String get scheduledTaskSchedule => 'Schedule';
+
+  @override
+  String get scheduledTaskAdd => 'Add task';
+
+  @override
+  String get scheduledTaskNextRun => 'Next run';
+
+  @override
+  String scheduledTaskNextInFmt(String time) {
+    return 'in $time';
+  }
+
+  @override
+  String get scheduledTaskEnabled => 'Enabled';
+
+  @override
+  String get scheduledTaskCommentedOut => 'Commented out';
+
+  @override
+  String scheduledTaskSummaryFmt(int enabled, int total) {
+    String _temp0 = intl.Intl.pluralLogic(
+      total,
+      locale: localeName,
+      other: '$total taken',
+      one: '1 taak',
+    );
+    return '$_temp0 · $enabled ingeschakeld';
+  }
+
+  @override
+  String get scheduledTaskFilterHint => 'Filter tasks';
+
+  @override
+  String get scheduledTaskPreserved => 'Preserved lines';
+
+  @override
+  String get scheduledTaskRaw => 'Raw crontab';
+
+  @override
+  String get scheduledTaskEnableNow => 'Enable now';
+
+  @override
+  String get scheduledTaskEnableNowTip =>
+      'Als dit uitstaat, wordt de regel als commentaar opgeslagen.';
+
+  @override
+  String scheduledTaskEmptyFmt(String user) {
+    return 'Geen geplande taken voor $user. Wat je hier toevoegt, wordt in de crontab van dit account geschreven.';
+  }
+
+  @override
+  String get scheduledTaskFieldMinute => 'Minute';
+
+  @override
+  String get scheduledTaskFieldHour => 'Hour';
+
+  @override
+  String get scheduledTaskFieldDayOfMonth => 'Dag van de maand';
+
+  @override
+  String get scheduledTaskFieldMonth => 'Month';
+
+  @override
+  String get scheduledTaskFieldDayOfWeek => 'Dag van de week';
+
+  @override
+  String get cronErrScheduleEmpty => 'Een planning is vereist.';
+
+  @override
+  String get cronErrCommandEmpty => 'Een opdracht is vereist.';
+
+  @override
+  String get cronErrLineBreak =>
+      'Een crontab-regel mag geen regeleinden bevatten.';
+
+  @override
+  String get cronErrMacro => 'Een macro bestaat uit één woord, zoals @reboot.';
+
+  @override
+  String get cronErrFieldCount =>
+      'Een cron-planning heeft vijf velden, of een macro zoals @reboot.';
+
+  @override
+  String get cronAtBoot => 'At boot';
+
+  @override
+  String get cronEveryMin => 'Every minute';
+
+  @override
+  String cronEveryMinsFmt(int minutes) {
+    return 'Elke $minutes minuten';
+  }
+
+  @override
+  String cronHourlyAtFmt(String minute) {
+    return 'Elk uur op minuut $minute';
+  }
+
+  @override
+  String cronEveryHoursFmt(int hours) {
+    return 'Elke $hours uur';
+  }
+
+  @override
+  String cronEveryHoursAtFmt(int hours, String minute) {
+    return 'Elke $hours uur op minuut $minute';
+  }
+
+  @override
+  String cronDailyAtFmt(String time) {
+    return 'Elke dag om $time';
+  }
+
+  @override
+  String cronWeekdaysAtFmt(String time) {
+    return 'Op werkdagen om $time';
+  }
+
+  @override
+  String cronWeekdayAtFmt(String day, String time) {
+    return 'Elke $day om $time';
+  }
+
+  @override
+  String cronMonthlyAtFmt(int day, String time) {
+    return 'Elke maand op dag $day om $time';
+  }
+
+  @override
+  String get monitorSettings => 'Monitor-instellingen';
+
+  @override
+  String get monitorAgentDefault => 'Standaard van Monitor';
+
+  @override
+  String get monitorNeedsRestart =>
+      'Wordt van kracht nadat Monitor opnieuw is gestart';
+
+  @override
+  String get monitorCollection => 'Collection';
+
+  @override
+  String get extendedInterval => 'Interval van uitgebreide cyclus';
+
+  @override
+  String get idlePause => 'Pauzeren wanneer niemand meekijkt';
+
+  @override
+  String get idlePauseTip =>
+      'De uitgebreide cyclus voert smartctl, sensors en amd-smi uit. Door deze te pauzeren wanneer geen client gegevens opvraagt, wordt een schijf niet gewekt voor gegevens die niemand leest.';
+
+  @override
+  String get idlePauseThreshold => 'Idle after';
+
+  @override
+  String get monitorAlerts => 'Alerts';
+
+  @override
+  String get monitoringRules => 'Alert rules';
+
+  @override
+  String get ruleMonitorType => 'Metric';
+
+  @override
+  String get ruleThreshold => 'Threshold';
+
+  @override
+  String get ruleMatcher => 'Matcher';
+
+  @override
+  String get ruleTip =>
+      'Metriek: cpu / memory / swap / disk / network / temperature. Matcher: cpu0 voor één kern, used / free / avail voor geheugen en rx / tx voor netwerk; bij schijf en temperatuur wordt deze genegeerd. Drempel: een vergelijkingsoperator en een waarde, zoals >=80%, >=70c of >10m/s.';
+
+  @override
+  String get pushChannels => 'Meldingskanalen';
+
+  @override
+  String get pushType => 'Type';
+
+  @override
+  String get pushRate => 'Rate limit';
+
+  @override
+  String get pushHeaders => 'Headers';
+
+  @override
+  String get pushSecretSet => 'Ingesteld in Monitor; niet weergegeven.';
+
+  @override
+  String get pushSecretKeep => 'Leeg laten om te behouden';
+
+  @override
+  String get pushTestTip =>
+      'Stuurt één melding via dit kanaal met de huidige instellingen, ongeacht of ze zijn opgeslagen.';
+
+  @override
+  String get pushTestSent => 'Het kanaal heeft de melding geaccepteerd';
+
+  @override
+  String get pushTestFailed => 'Het kanaal heeft de melding geweigerd';
+
+  @override
+  String get pushTestMessage => 'Testmelding van ServerBox Monitor';
+
+  @override
+  String get pushUnknownType =>
+      'Deze Monitor heeft geen verzender voor dit kanaaltype, dus de instellingen worden niet getoond. Verwijder het hier of bewerk het in de config.toml van Monitor.';
+
+  @override
+  String get pushJsonInvalid => 'is geen geldige JSON';
+
+  @override
+  String get dataRetention => 'Data retention';
+
+  @override
+  String get dataRetentionTip =>
+      'Uit betekent dat Monitor nooit iets verwijdert en de database onbeperkt groeit.';
+
+  @override
+  String get retentionMetrics => 'Keep metrics';
+
+  @override
+  String get retentionAlerts => 'Keep alerts';
+
+  @override
+  String get retentionCleanup => 'Opschoning uitvoeren om de';
+
+  @override
+  String get retentionMaxDbSize => 'Limiet voor databasegrootte';
+
+  @override
+  String get corsOrigins => 'Toegestane CORS-origins';
+
+  @override
+  String get corsOriginsTip =>
+      'Origins van waaruit een browserpaneel deze Monitor mag aanroepen. Leeg betekent alleen dezelfde origin.';
+
+  @override
+  String get monitorNoRemoteAccess =>
+      'Deze Monitor weigert via onversleutelde HTTP alles behalve monitoring. Maak verbinding via HTTPS of sta HTTP toe op zowel de Monitor als deze app.';
+
+  @override
+  String get monitorAgentTooOld =>
+      'Deze Monitor is ouder dan deze versie van ServerBox ondersteunt. Werk Monitor op de server bij.';
+
+  @override
+  String get monitorClientTooOld =>
+      'Deze Monitor ondersteunt deze versie van ServerBox niet meer. Werk de app bij.';
+
+  @override
+  String get alerts => 'Waarschuwingen';
+
+  @override
+  String get online => 'online';
+
+  @override
+  String get densityCards => 'Kaarten';
+
+  @override
+  String get densityRows => 'Rijen';
+
+  @override
+  String get densityGrid => 'Raster';
+
+  @override
+  String get connect => 'Verbinden';
+
+  @override
+  String get disconnect => 'Verbinding verbreken';
+
+  @override
+  String get searchServerTip =>
+      'Zoekt in namen en adressen — de twee dingen waar de editor eerst om vraagt.';
+
+  @override
+  String get addServerTip =>
+      'Vul er een in, scan een QR-code of importeer een bestand dat iemand heeft gedeeld.';
+
+  @override
+  String get move => 'Verplaatsen';
+
+  @override
+  String get moveToTop => 'Naar boven verplaatsen';
+
+  @override
+  String get moveToBottom => 'Naar onderen verplaatsen';
+
+  @override
+  String get groupByTag => 'Groeperen op tag';
+
+  @override
+  String get groupByTagTip => 'Tags stel je in in de editor van de server.';
+
+  @override
+  String get connecting => 'Verbinden…';
+
+  @override
+  String get authShort => 'Auth';
+
+  @override
+  String get remoteDesktopFitToWindow => 'Aan venster aanpassen';
+
+  @override
+  String get remoteDesktopActualSize => 'Ware grootte';
+
+  @override
+  String get remoteDesktopZoom => 'Inzoomen';
+
+  @override
+  String get remoteDesktopViewOnly => 'Alleen bekijken';
+
+  @override
+  String get remoteDesktopDisableViewOnly => 'Alleen bekijken uitschakelen';
+
+  @override
+  String get remoteDesktopSendClipboardText => 'Klembordtekst verzenden';
+
+  @override
+  String get remoteDesktopShowKeyboard => 'Toetsenbord tonen';
+
+  @override
+  String get remoteDesktopMoreControls => 'Meer bedieningselementen';
+
+  @override
+  String get remoteDesktopUseDirectPointer => 'Directe aanwijzer gebruiken';
+
+  @override
+  String get remoteDesktopUseTouchpadPointer => 'Touchpad-aanwijzer gebruiken';
+
+  @override
+  String get remoteDesktopSendCtrlAltDelete => 'Ctrl+Alt+Delete verzenden';
+
+  @override
+  String get remoteDesktopReconnect => 'Opnieuw verbinden';
+
+  @override
+  String get remoteDesktopFullScreen => 'Volledig scherm';
+
+  @override
+  String get remoteDesktopExitFullScreen => 'Volledig scherm afsluiten';
+
+  @override
+  String get remoteDesktopCloseSession => 'Sessie sluiten';
+
+  @override
+  String get remoteDesktopConnected => 'Verbonden';
+
+  @override
+  String get remoteDesktopConnecting => 'Verbinden';
+
+  @override
+  String get remoteDesktopReconnecting => 'Opnieuw verbinden';
+
+  @override
+  String get remoteDesktopDisconnected => 'Verbinding verbroken';
+
+  @override
+  String get remoteDesktopGuideTouch => 'Touchpad';
+
+  @override
+  String get remoteDesktopGuideTouchTip =>
+      'Eén vinger beweegt de aanwijzer als een touchpad en tikken klikt. Tik met twee vingers voor rechtsklikken, sleep met twee om te scrollen en knijp om te zoomen. Tik twee keer en houd je vinger neer om te slepen.';
+
+  @override
+  String get remoteDesktopGuideKeyboardTip =>
+      'Opent het schermtoetsenbord. Wat je typt, wordt naar het externe bureaublad gestuurd.';
+
+  @override
+  String get remoteDesktopGuideViewOnlyTip =>
+      'Stopt met het verzenden van aanwijzer en toetsen, zodat je kunt kijken zonder per ongeluk te klikken.';
+
+  @override
+  String get remoteDesktopGuideMoreTip =>
+      'Ctrl+Alt+Del, opnieuw verbinden en volledig scherm staan hier.';
+
+  @override
+  String get remoteDesktopGuidePointerTip =>
+      'Net als de directe aanwijzer, waarbij een vinger klikt waar hij tikt.';
+
+  @override
+  String get remoteDesktopVncClipboardLatin1Only =>
+      'Het VNC-klembord ondersteunt alleen Latin-1-tekst.';
+
+  @override
+  String get remoteDesktopAddProfile => 'Profiel toevoegen';
+
+  @override
+  String get remoteDesktopNoProfiles => 'Geen profielen voor extern bureaublad';
+
+  @override
+  String get remoteDesktopAdd => 'Extern bureaublad toevoegen';
+
+  @override
+  String get remoteDesktopEdit => 'Extern bureaublad bewerken';
+
+  @override
+  String get remoteDesktopTargetTip =>
+      'Het doel wordt opgelost via de SSH-server of Monitor. localhost verwijst naar die machine.';
+
+  @override
+  String get remoteDesktopDomain => 'Domein (optioneel)';
+
+  @override
+  String get remoteDesktopPassword => 'Wachtwoord (optioneel)';
+
+  @override
+  String get remoteDesktopSavePassword => 'Wachtwoord opslaan';
+
+  @override
+  String get remoteDesktopSavePasswordTip =>
+      'Opgeslagen in de versleutelde database. Back-ups bevatten opgeslagen wachtwoorden en worden alleen versleuteld als er een back-upwachtwoord is ingesteld.';
+
+  @override
+  String get remoteDesktopShareSession => 'Sessie delen';
+
+  @override
+  String get remoteDesktopProtocol => 'Protocol';
+
+  @override
+  String get remoteDesktopUniqueName =>
+      'Profielnamen moeten uniek zijn voor deze server.';
+
+  @override
+  String get remoteDesktopNameRequired => 'Voer een profielnaam in.';
+
+  @override
+  String get remoteDesktopHostRequired => 'Voer een doelhost in.';
+
+  @override
+  String get remoteDesktopPortRequired => 'Voer een geldige poort in.';
+
+  @override
+  String get remoteDesktopUsernameRequired => 'Voer de RDP-gebruikersnaam in.';
+
+  @override
+  String get remoteDesktopNameInvalid =>
+      'De profielnaam mag maximaal 64 tekens bevatten en geen regeleinden.';
+
+  @override
+  String get remoteDesktopHostInvalid =>
+      'De doelhost mag geen spaties of regeleinden bevatten.';
+
+  @override
+  String get remoteDesktopCredentialInvalid =>
+      'Gebruikersnaam en domein mogen maximaal 256 tekens bevatten en geen regeleinden.';
+
+  @override
+  String get remoteDesktopVncPasswordHint =>
+      'Klassieke VNC gebruikt alleen de eerste 8 tekens';
+
+  @override
+  String get remoteDesktopVncPasswordAscii =>
+      'Klassieke VNC-wachtwoorden mogen alleen ASCII-tekens bevatten.';
+
+  @override
+  String get remoteDesktopCertificateRequired =>
+      'Bevestiging van certificaat vereist';
+
+  @override
+  String get remoteDesktopWaiting => 'Wachten op bureaublad…';
+
+  @override
+  String get remoteDesktopFailStandardRdpSecurityOnly =>
+      'De server biedt alleen Standard RDP Security (RC4) aan, wat niet wordt ondersteund. Stel in xrdp.ini security_layer=tls (of negotiate) in en zorg dat xrdp zijn TLS-certificaat kan lezen.';
+
+  @override
+  String get remoteDesktopFailServerCertificateMissing =>
+      'De server heeft geen TLS-certificaat. Installeer er een op de server; stel voor xrdp certificate en key_file in xrdp.ini in.';
+
+  @override
+  String get remoteDesktopFailClientCertificateRequired =>
+      'De server vereist een clientcertificaat (aanmelden met smartcard), wat niet wordt ondersteund.';
+
+  @override
+  String get remoteDesktopFailWrongCredentials =>
+      'Onjuiste gebruikersnaam of onjuist wachtwoord.';
+
+  @override
+  String get remoteDesktopFailAccountLockedOut =>
+      'Het account is vergrendeld. Probeer het later opnieuw of vraag een beheerder het te ontgrendelen.';
+
+  @override
+  String get remoteDesktopFailAccountDisabled =>
+      'Het account is uitgeschakeld.';
+
+  @override
+  String get remoteDesktopFailAccountExpired => 'Het account is verlopen.';
+
+  @override
+  String get remoteDesktopFailPasswordExpired =>
+      'Het wachtwoord is verlopen of moet worden gewijzigd. Wijzig het eerst op de server.';
+
+  @override
+  String get remoteDesktopFailLogonRestricted =>
+      'Het account mag zich op dit moment of vanaf dit apparaat niet aanmelden, of het lege wachtwoord is niet toegestaan voor aanmelden op afstand.';
+
+  @override
+  String get remoteDesktopFailRemoteLogonDenied =>
+      'Het account mag zich niet aanmelden via Extern bureaublad. Voeg het op de server toe aan de groep Remote Desktop Users.';
+
+  @override
+  String get remoteDesktopFailFreshCredentialsRequired =>
+      'De server accepteert geen opgeslagen aanmeldgegevens. Voer het wachtwoord opnieuw in.';
+
+  @override
+  String get remoteDesktopFailIdleTimeout =>
+      'De sessie is verbroken na de inactiviteitslimiet van de server.';
+
+  @override
+  String get remoteDesktopFailSessionTimeLimit =>
+      'De sessie heeft de tijdslimiet van de server bereikt.';
+
+  @override
+  String get remoteDesktopFailReplacedByOtherConnection =>
+      'Een andere verbinding heeft deze sessie overgenomen.';
+
+  @override
+  String get remoteDesktopFailDisconnectedOnServer =>
+      'De sessie is op de server verbroken.';
+
+  @override
+  String get remoteDesktopFailLoggedOffByAdministrator =>
+      'Een beheerder heeft de sessie afgemeld.';
+
+  @override
+  String get remoteDesktopFailLoggedOff => 'De sessie is afgemeld.';
+
+  @override
+  String get remoteDesktopFailServerShutdown => 'De server wordt afgesloten.';
+
+  @override
+  String get remoteDesktopFailServerReboot =>
+      'De server wordt opnieuw opgestart.';
+
+  @override
+  String get remoteDesktopFailServerDeniedConnection =>
+      'De server heeft de verbinding geweigerd.';
+
+  @override
+  String get remoteDesktopFailLicensingFailed =>
+      'De licentieverlening voor Extern bureaublad is mislukt op de server. Controleer de licentieserver en de clienttoegangslicenties (CAL\'s).';
+
+  @override
+  String get remoteDesktopFailVncSecurityUnsupported =>
+      'De VNC-server biedt geen ondersteund beveiligingstype; alleen een VNC-wachtwoord of geen wordt ondersteund. Stel voor TigerVNC SecurityTypes=VncAuth in.';
+
+  @override
+  String get remoteDesktopFailPasswordRequired =>
+      'De VNC-server vereist een wachtwoord.';
+
+  @override
+  String get tcpTargetUnreachable =>
+      'De server kon geen verbinding maken met dit adres. Controleer of de dienst draait en op die poort luistert.';
+
+  @override
+  String get sshTcpForwardingProhibited =>
+      'De SSH-server weigerde deze verbinding door te sturen. Controleer AllowTcpForwarding en PermitOpen in zijn sshd_config, en een eventuele no-port-forwarding- of permitopen-optie bij de sleutel in authorized_keys.';
+
+  @override
+  String get monitorRelayForbidden =>
+      'De Monitor heeft deze verbinding geweigerd: het wachtwoord is gewijzigd of verbindingen via onversleutelde HTTP worden niet geaccepteerd. Meld je opnieuw aan of maak verbinding via HTTPS.';
+
+  @override
+  String get remoteDesktopCertificateChanged =>
+      'Certificaat van extern bureaublad is gewijzigd';
+
+  @override
+  String get remoteDesktopTrustCertificate => 'Certificaat vertrouwen?';
+
+  @override
+  String get remoteDesktopCertificateChangedTip =>
+      'De vingerafdruk van het certificaat komt niet meer overeen met de opgeslagen waarde. Controleer de nieuwe vingerafdruk voordat u het vertrouwen vervangt.';
+
+  @override
+  String get remoteDesktopCertificateUnverifiedTip =>
+      'Het systeem kon dit certificaat niet verifiëren. Controleer de SHA-256-vingerafdruk voordat u doorgaat.';
+
+  @override
+  String get remoteDesktopReplaceTrust => 'Vertrouwen vervangen';
+
+  @override
+  String get remoteDesktopTrustReconnect => 'Vertrouwen en opnieuw verbinden';
+
+  @override
+  String remoteDesktopDeleteProfile(String name) {
+    return 'Profiel “$name” voor extern bureaublad verwijderen?';
+  }
+
+  @override
+  String remoteDesktopReconnectAttempt(int attempt) {
+    return 'Opnieuw verbinden ($attempt/3)…';
+  }
+
+  @override
+  String remoteDesktopPreviousCertificate(String fingerprint) {
+    return 'Eerder vertrouwd\n$fingerprint';
+  }
+
+  @override
+  String remoteDesktopCertificateSubject(String subject) {
+    return 'Onderwerp: $subject';
+  }
+
+  @override
+  String remoteDesktopCertificateIssuer(String issuer) {
+    return 'Uitgever: $issuer';
+  }
+
+  @override
+  String remoteDesktopCertificateValidity(String start, String end) {
+    return 'Geldig: $start – $end';
+  }
+
+  @override
+  String get pveAuthToken => 'API-token';
+
+  @override
+  String get pveVersionLow =>
+      'Deze functie bevindt zich momenteel in de testfase en is alleen getest op PVE 8+. Gebruik het met voorzichtigheid.';
+
+  @override
+  String get pveTokenId => 'Token-ID';
+
+  @override
+  String get pveTokenSecret => 'Tokengeheim';
+
+  @override
+  String get pveTokenTip =>
+      'Maak er een aan in PVE onder Datacenter → Rechten → API Tokens. Het heeft VM.Audit, VM.PowerMgmt, VM.Console, VM.Snapshot, VM.Snapshot.Rollback, Datastore.Audit en Sys.Audit nodig op de paden die getoond worden; met privilegescheiding aan moeten ze aan het token zelf worden toegekend.';
+
+  @override
+  String pveTokenNoPrivileges(String account, String command) {
+    return 'Token $account mag op deze host niets zien. Een token met rechtenscheiding heeft niet de rechten van zijn gebruiker; ken ze toe op de PVE-host:\n$command\nof zet \"Privilege Separation\" uit voor het token.';
+  }
+
+  @override
+  String pveUserNoPrivileges(String account, String command) {
+    return '$account mag op deze host niets zien. Ken rechten toe op de PVE-host:\n$command';
+  }
+
+  @override
+  String get pveTokenIdInvalid =>
+      'Het token-ID moet de vorm user@realm!tokenid hebben';
+
+  @override
+  String get pvePasswordAuthTip =>
+      'Meldt aan als de SSH-gebruiker in de PAM-realm, met het SSH-wachtwoord, of met het PVE-wachtwoord hieronder als SSH een sleutel gebruikt. Een tweefactorcode wordt gevraagd wanneer nodig.';
+
+  @override
+  String get pveCertUnpinned =>
+      'Nog niets bevestigd. Tenzij een vertrouwde CA het heeft ondertekend, toont de volgende verbinding het certificaat ter bevestiging.';
+
+  @override
+  String get pveCertForget => 'Certificaat vergeten';
+
+  @override
+  String get pveCertForgetTip =>
+      'De volgende verbinding toont het PVE-certificaat opnieuw ter bevestiging.';
+
+  @override
+  String get virtualization => 'Virtualisatie';
+
+  @override
+  String get virtIntro =>
+      'Beheer virtuele machines en containers op Proxmox VE- en libvirt/KVM-hosts: hun status, energieacties en consoles.';
+
+  @override
+  String get virtIntroPveMoved =>
+      'Proxmox VE is van de serverpagina naar dit tabblad verhuisd. De PVE-kaart van een server opent het hier.';
+
+  @override
+  String get virtIntroLibvirt =>
+      'Een server met virsh van libvirt geïnstalleerd verschijnt als host, met zijn QEMU/KVM-VM\'s.';
+
+  @override
+  String get virtIntroTransports =>
+      'Beide werken via SSH, via Monitor of op dit apparaat.';
+
+  @override
+  String get virtIntroTokens =>
+      'PVE kan aanmelden met een API-token in plaats van een wachtwoord. Stel het in op de bewerkpagina van een server, onder PVE.';
+
+  @override
+  String get virtIntroInBar => 'Het is aan de tabbalk toegevoegd.';
+
+  @override
+  String get virtIntroInMore =>
+      'Het staat onder Meer. Home-tabbladen in de instellingen kan het naar de tabbalk verplaatsen.';
+
+  @override
+  String get virtGuests => 'Virtuele machines';
+
+  @override
+  String get virtHosts => 'Hosts';
+
+  @override
+  String get virtCheckServer => 'Deze server controleren';
+
+  @override
+  String get virtCheckAll => 'Alle servers controleren';
+
+  @override
+  String get virtProbeNotChecked => 'Nog niet gecontroleerd';
+
+  @override
+  String get virtProbeAbsent => 'Geen host';
+
+  @override
+  String virtProbeContainer(String kind) {
+    return '$kind-container';
+  }
+
+  @override
+  String get virtProbeContainerTip =>
+      'Deze server draait in een container en is dus een gast, geen host. Hij wordt beheerd vanaf de host waarop hij draait.';
+
+  @override
+  String get virtProbePve => 'PVE, niet ingesteld';
+
+  @override
+  String virtPveSetupTip(String version) {
+    return 'Op deze server draait $version. Vul de API-toegang in bij de serverinstellingen (een API-token wordt aanbevolen) om de virtuele machines en containers hier te beheren.';
+  }
+
+  @override
+  String get virtNoHosts => 'Geen virtualisatiehosts';
+
+  @override
+  String get virtNoHostsTip =>
+      'Een server met Proxmox VE en ingevulde API-toegang is een host, net als een server waarop virsh antwoordt. De overige servers kun je controleren via de hostwisselaar.';
+
+  @override
+  String get virtNoGuests => 'Geen virtuele machines of containers';
+
+  @override
+  String get virtPaused => 'Gepauzeerd';
+
+  @override
+  String get virtStarting => 'Starten…';
+
+  @override
+  String get virtStopping => 'Stoppen…';
+
+  @override
+  String get virtRebooting => 'Herstarten…';
+
+  @override
+  String get virtMigrating => 'Migreren…';
+
+  @override
+  String get virtBackingUp => 'Back-up maken…';
+
+  @override
+  String get virtResume => 'Hervatten';
+
+  @override
+  String get virtOverview => 'Overzicht';
+
+  @override
+  String get virtConsole => 'Console';
+
+  @override
+  String get virtConsoleNone => 'Voor deze gast is geen console ingesteld';
+
+  @override
+  String get virtConsoleGraphical => 'Grafisch';
+
+  @override
+  String get virtVncPasswordNeeded => 'Dit scherm vraagt om een wachtwoord';
+
+  @override
+  String get virtConsoleSerialTip =>
+      'Opent de seriële console van de gast met virsh op de host. Verbreken, of Ctrl+], keert terug naar de shell van de host.';
+
+  @override
+  String virtConsoleVia(String transport) {
+    return 'via $transport';
+  }
+
+  @override
+  String get virtConsoleEnterTip => 'Geen uitvoer? Druk op Enter';
+
+  @override
+  String virtConsoleAutoEnter(int seconds) {
+    String _temp0 = intl.Intl.pluralLogic(
+      seconds,
+      locale: localeName,
+      other: '$seconds seconden',
+      one: '1 seconde',
+    );
+    return 'Over $_temp0 wordt Enter gedrukt om de prompt te tonen';
+  }
+
+  @override
+  String get virtConsoleEnterNow => 'Nu';
+
+  @override
+  String get virtOffTip =>
+      'Start deze om hier live CPU, geheugen, schijf en netwerk te zien.';
+
+  @override
+  String get virtAllocated => 'Toegewezen';
+
+  @override
+  String virtRunningCount(int running, int total) {
+    return '$running actief · $total in totaal';
+  }
+
+  @override
+  String get virtTemplate => 'Sjabloon';
+
+  @override
+  String get virtAutostart => 'Start met de host';
+
+  @override
+  String get virtErrUnreachable => 'Deze host is niet bereikbaar';
+
+  @override
+  String get virtErrNotConfigured =>
+      'De PVE-instellingen van deze server zijn onvolledig';
+
+  @override
+  String get virtErrNotConfiguredTip =>
+      'Controleer het adres en het wachtwoord of API-token in de instellingen van de server.';
+
+  @override
+  String get virtErrAuthFailed => 'De host heeft de aanmelding geweigerd';
+
+  @override
+  String get virtErrCertUnconfirmed => 'Bevestig het certificaat van de host';
+
+  @override
+  String get virtErrCertChanged => 'Het certificaat van de host is gewijzigd';
+
+  @override
+  String get virtErrRelayNotGranted =>
+      'De Monitor opent via deze verbinding geen TCP-verbindingen vanaf de server.';
+
+  @override
+  String get virtErrExecNotGranted => 'Monitor voert geen opdrachten uit';
+
+  @override
+  String get virtErrNotInstalled =>
+      'virsh is niet geïnstalleerd op deze server';
+
+  @override
+  String get virtErrServerRemoved => 'Deze server bestaat niet meer';
+
+  @override
+  String get virtErrSudoRequired =>
+      'sudo heeft een wachtwoord nodig voor libvirt';
+
+  @override
+  String get virtErrSudoRejected => 'sudo heeft het wachtwoord geweigerd';
+
+  @override
+  String get virtErrInvalidResponse =>
+      'De host antwoordde in een onverwachte vorm';
+
+  @override
+  String get virtErrActionFailed => 'De host heeft de actie geweigerd';
+
+  @override
+  String get remoteSessionIdleTimeout => 'Sluiten na verlaten';
+
+  @override
+  String get remoteSessionIdleTimeoutTip =>
+      'De verbinding blijft enige tijd open nadat je de externe desktop of VM-console verlaat. Er verschijnt een melding voordat deze wordt gesloten; je hebt 10 seconden om de verbinding open te houden.';
+
+  @override
+  String get remoteSessionKeepAlive => 'Openhouden';
+
+  @override
+  String get remoteSessionClosedAway => 'Gesloten wegens inactiviteit';
+
+  @override
+  String remoteSessionClosingIn(int seconds) {
+    return 'Sluit over $seconds s';
+  }
+
+  @override
+  String get virtSnapshots => 'Snapshots';
+
+  @override
+  String get virtSnapshotCreate => 'Snapshot maken';
+
+  @override
+  String get virtSnapshotNone => 'Nog geen snapshots';
+
+  @override
+  String get virtSnapshotWithMemory => 'Schijven en geheugen';
+
+  @override
+  String get virtSnapshotDiskOnly => 'Alleen schijven';
+
+  @override
+  String get virtSnapshotParent => 'Bovenliggend';
+
+  @override
+  String get virtSnapshotRevert => 'Terugzetten';
+
+  @override
+  String get virtSnapshotMemory => 'Geheugen opnemen';
+
+  @override
+  String get virtSnapshotMemoryTip =>
+      'Terugzetten hervat de gast vanaf dit moment.';
+
+  @override
+  String get virtSnapshotMemoryAlways =>
+      'Hier bevat een snapshot van een draaiende gast altijd het geheugen.';
+
+  @override
+  String get virtSnapshotMemoryOff =>
+      'De gast draait niet, dus alleen de schijven worden opgeslagen.';
+
+  @override
+  String get virtSnapshotNameInvalid =>
+      'Eerst een letter, dan letters, cijfers, - of _; 2 tot 40 tekens.';
+
+  @override
+  String get virtSnapshotNameTaken =>
+      'Er bestaat al een snapshot met deze naam.';
+
+  @override
+  String get virtSnapshotRevertTip =>
+      'Terugzetten verwijdert alle wijzigingen sinds de snapshot.';
+
+  @override
+  String virtSnapshotRevertAsk(String guest, String snapshot) {
+    return '$guest terugzetten naar $snapshot? Alle wijzigingen sindsdien gaan verloren.';
+  }
+
+  @override
+  String virtSnapshotRevertStops(String guest) {
+    return 'Deze snapshot heeft geen geheugen: $guest wordt gestopt.';
+  }
+
+  @override
+  String get virtSnapshotStartAfter => 'Daarna starten';
+
+  @override
+  String get virtVolumes => 'Volumes';
+
+  @override
+  String get virtNoPools => 'Geen opslagpools';
+
+  @override
+  String get virtNoNetworks => 'Geen netwerken';
+
+  @override
+  String get virtPoolInactive =>
+      'De pool is niet actief, dus de volumes kunnen niet worden weergegeven.';
+
+  @override
+  String get virtShared => 'Gedeeld tussen nodes';
+
+  @override
+  String get virtBackingFile => 'Basisbestand';
+
+  @override
+  String get virtNetIsolated => 'Geïsoleerd';
+
+  @override
+  String get virtNetBridged => 'Gebrugd';
+
+  @override
+  String get virtNetRouted => 'Gerouteerd';
+
+  @override
+  String get virtBridge => 'Bridge';
+
+  @override
+  String get virtPorts => 'Poorten';
+
+  @override
+  String get virtAttachedGuests => 'Gasten erop';
+
+  @override
+  String get virtNoAttachedGuests => 'Geen gasten erop';
+
+  @override
+  String get virtCreateVm => 'Nieuwe virtuele machine';
+
+  @override
+  String get virtCreateLxc => 'Nieuwe container';
+
+  @override
+  String get virtCreateGuest => 'Nieuwe virtuele machine of container';
+
+  @override
+  String get virtKindVm => 'Virtuele machine';
+
+  @override
+  String get virtKindLxc => 'Container';
+
+  @override
+  String get virtHostname => 'Hostnaam';
+
+  @override
+  String get virtInstallMedia => 'Installatiemedium';
+
+  @override
+  String get virtNoIsos => 'Geen ISO-images op deze host';
+
+  @override
+  String get virtNoTemplates =>
+      'Geen containersjablonen op deze host. Via CT-sjablonen van een opslag in PVE kun je er een downloaden.';
+
+  @override
+  String get virtNoDiskStorage =>
+      'Geen opslag op deze host neemt een nieuwe schijf aan';
+
+  @override
+  String get virtStartAfterCreate => 'Na aanmaken starten';
+
+  @override
+  String get virtUnprivileged => 'Niet-geprivilegieerde container';
+
+  @override
+  String get virtUnprivilegedTip =>
+      'Zijn root is een gewone gebruiker op de host.';
+
+  @override
+  String get virtSshKeys => 'Openbare SSH-sleutels';
+
+  @override
+  String get virtCredentialsTip =>
+      'Een root-wachtwoord, SSH-sleutels of beide.';
+
+  @override
+  String virtCreated(String name) {
+    return '$name aangemaakt';
+  }
+
+  @override
+  String virtCreatedNotStarted(String name) {
+    return '$name is aangemaakt maar niet gestart';
+  }
+
+  @override
+  String get virtErrExists => 'Er bestaat al een gast of schijf met deze naam';
+
+  @override
+  String get virtCreateNameInvalidLibvirt =>
+      'Letters, cijfers, ., _ en -, beginnend met een letter of cijfer; tot 63 tekens.';
+
+  @override
+  String get virtCreateNameInvalidPve =>
+      'Letters, cijfers en -, in delen gescheiden door punten; tot 63 tekens.';
+
+  @override
+  String get virtCreateNameTaken => 'Er bestaat al een gast met deze naam.';
+
+  @override
+  String get virtCreateVmidTaken => 'Deze VMID is bezet.';
+
+  @override
+  String get virtCreateCoresInvalid => 'Meer cores dan deze host toestaat.';
+
+  @override
+  String get virtCreateMemoryInvalid => 'Onvoldoende beschikbaar geheugen.';
+
+  @override
+  String get virtCreateStorageMissing =>
+      'Kies waar de schijf wordt opgeslagen.';
+
+  @override
+  String get virtCreateDiskInvalid => 'Van 1 GiB tot 64 TiB.';
+
+  @override
+  String get virtCreateTemplateMissing => 'Kies een sjabloon.';
+
+  @override
+  String get virtCreateCredentialsMissing =>
+      'Stel een rootwachtwoord of een SSH-public key in.';
+
+  @override
+  String virtCreatePasswordShort(int min) {
+    return 'Minstens $min tekens.';
+  }
+
+  @override
+  String get virtCreateSshKeysInvalid =>
+      'Eén openbare OpenSSH-sleutel per regel.';
+
+  @override
+  String get virtDeleteDisks => 'Ook de schijven verwijderen';
+
+  @override
+  String get virtDeleteDisksPve =>
+      'De schijven worden mee verwijderd; installatiemedium blijft behouden.';
+
+  @override
+  String virtDeleted(String name) {
+    return '$name verwijderd';
+  }
+
+  @override
+  String get pveTokenTipCreate =>
+      'Gasten aanmaken en verwijderen vraagt ook VM.Allocate, VM.Config.*, Datastore.AllocateSpace en SDN.Use.';
+
+  @override
+  String get pveTokenTipHardware =>
+      'Hardware bewerken vereist VM.Config.CPU, VM.Config.Memory, VM.Config.Disk, VM.Config.CDROM, VM.Config.Network en VM.Config.Options; nieuwe schijven en interfaces vereisen ook Datastore.AllocateSpace en SDN.Use. De videokaart en USB- en PCI-apparaten vereisen ook VM.Config.HWType; een apparaat via een resourcekoppeling vereist Mapping.Use daarop, en Mapping.Audit om koppelingen te tonen.';
+
+  @override
+  String get pveTokenTipBackup =>
+      'Klonen vereist VM.Clone, back-uppen en herstellen VM.Backup, en het omzetten naar een sjabloon VM.Allocate; back-uptaken vereisen ook Sys.Audit om ze te lezen en Sys.Modify op / om ze te maken, te bewerken en te verwijderen, met Datastore.AllocateSpace waar de kopie of de back-up heen gaat.';
+
+  @override
+  String get virtErrConflict => 'Elders gewijzigd';
+
+  @override
+  String get virtErrConflictTip =>
+      'Iemand heeft deze configuratie gewijzigd nadat die hier is gelezen, dus er is niets gewijzigd. Hij is opnieuw gelezen: voer de wijziging opnieuw uit als die nog nodig is.';
+
+  @override
+  String get virtHardware => 'Hardware';
+
+  @override
+  String get virtHwAddDisk => 'Schijf toevoegen';
+
+  @override
+  String get virtHwAddMount => 'Koppelpunt toevoegen';
+
+  @override
+  String get virtHwAddNic => 'Netwerkinterface toevoegen';
+
+  @override
+  String get virtHwAppliesOnRestart =>
+      'Opgeslagen. Van kracht bij de volgende start.';
+
+  @override
+  String get virtHwAutostart => 'Starten met de host';
+
+  @override
+  String get virtHwAutostartPve => 'onboot · gestart in VMID-volgorde';
+
+  @override
+  String get virtHwBalloonLibvirt => 'Huidig geheugen';
+
+  @override
+  String get virtHwBalloonNote =>
+      'Laat de host ongebruikt geheugen van de gast terugnemen als het krap wordt';
+
+  @override
+  String get virtHwBoot => 'Opstarten';
+
+  @override
+  String get virtHwBootOrder => 'Opstartvolgorde';
+
+  @override
+  String get virtHwBootTip =>
+      'De pijlen verplaatsen een apparaat; tikken zet opstarten ervan aan of uit.';
+
+  @override
+  String get virtHwCdrom => 'Cd-rom';
+
+  @override
+  String get virtHwConfigFile => 'Configuratiebestand';
+
+  @override
+  String get virtHwCores => 'Kernen';
+
+  @override
+  String get virtHwCpuTypeDefault => 'Standaard';
+
+  @override
+  String get virtHwDeleteVolume => 'Ook het volume verwijderen';
+
+  @override
+  String get virtHwDetach => 'Loskoppelen';
+
+  @override
+  String get virtHwDiskHotplug =>
+      'Hot-plug: ook toe te voegen terwijl hij draait';
+
+  @override
+  String get virtHwDisksLxc => 'Rootschijf en koppelpunten';
+
+  @override
+  String get virtHwEject => 'Uitwerpen';
+
+  @override
+  String get virtHwEmpty => 'Geen medium';
+
+  @override
+  String get virtHwFirewall => 'Firewall';
+
+  @override
+  String virtHwFree(String size) {
+    return '$size vrij';
+  }
+
+  @override
+  String get virtHwGrow => 'Vergroten';
+
+  @override
+  String get virtHwGrowNote => 'Schijven worden alleen groter.';
+
+  @override
+  String get virtHwGrowNoteRunning =>
+      'Schijven worden alleen groter. Vergroot terwijl hij draait, moet de partitie in de gast worden vergroot.';
+
+  @override
+  String get virtHwGuestUsed => 'Gebruikt door de gast';
+
+  @override
+  String virtHwHostCpus(int threads, int allocated) {
+    return 'Host $threads threads · $allocated toegewezen';
+  }
+
+  @override
+  String virtHwHostMem(String total, String allocated) {
+    return 'Host $total · $allocated toegewezen';
+  }
+
+  @override
+  String get virtHwHotplugNow => 'Hot-plug: direct van kracht.';
+
+  @override
+  String get virtHwIssueBootEmpty => 'Vink minstens één apparaat aan';
+
+  @override
+  String virtHwIssueCpuCount(int max) {
+    return 'In totaal 1 tot $max vCPU\'s';
+  }
+
+  @override
+  String get virtHwIssueCpuOnline => 'Actieve vCPU\'s: van 1 tot het totaal';
+
+  @override
+  String get virtHwIssueDiskShrink =>
+      'Groter dan nu: schijven worden alleen groter';
+
+  @override
+  String get virtHwIssueDiskSize => 'Van 1 tot 65536 GiB';
+
+  @override
+  String virtHwIssueMemory(int min, int max) {
+    return 'Van $min tot $max MiB';
+  }
+
+  @override
+  String get virtHwIssueMemoryMin => 'Niet meer dan het geheugen';
+
+  @override
+  String get virtHwIssueMountPoint => 'Een absoluut pad, zoals /data';
+
+  @override
+  String get virtHwIssueStorageSpace => 'Meer dan de opslag vrij heeft';
+
+  @override
+  String get virtHwLater => 'Van kracht na herstart';
+
+  @override
+  String get virtHwLess => 'Minder';
+
+  @override
+  String get virtHwLinkDown => 'Verbroken';
+
+  @override
+  String get virtHwLinkNote =>
+      'Uit ziet de gast een losgetrokken kabel; geen herstart nodig';
+
+  @override
+  String get virtHwLinkUp => 'Verbonden';
+
+  @override
+  String get virtHwMac => 'MAC-adres';
+
+  @override
+  String get virtHwModel => 'Model';
+
+  @override
+  String get virtHwMore => 'Meer';
+
+  @override
+  String get virtHwMountFromPool =>
+      'Koppelpunten worden direct uit een opslag toegewezen';
+
+  @override
+  String get virtHwMountPoint => 'Koppelpunt';
+
+  @override
+  String get virtHwMoveDown => 'Omlaag';
+
+  @override
+  String get virtHwMoveUp => 'Omhoog';
+
+  @override
+  String get virtHwNewDisk => 'Nieuwe schijf';
+
+  @override
+  String get virtHwNewMount => 'Nieuw koppelpunt';
+
+  @override
+  String get virtHwNewNic => 'Nieuwe netwerkinterface';
+
+  @override
+  String get virtHwNicHotplug => 'virtio-interfaces zijn hot-plug';
+
+  @override
+  String get virtHwNics => 'Netwerkinterfaces';
+
+  @override
+  String get virtHwNoMedia => 'Geen medium';
+
+  @override
+  String get virtHwNoNetworks => 'Geen netwerken of bridges hier';
+
+  @override
+  String get virtHwNoStorage => 'Geen opslag hier neemt schijven aan';
+
+  @override
+  String get virtHwOnline => 'Actieve vCPU\'s';
+
+  @override
+  String get virtHwPendingBanner =>
+      'Sommige hardwarewijzigingen gelden na een herstart';
+
+  @override
+  String get virtHwPickNet => 'Kies een netwerk';
+
+  @override
+  String get virtHwPickPool => 'Kies een opslag en een grootte';
+
+  @override
+  String get virtHwProcessor => 'Processor';
+
+  @override
+  String get virtHwRemove => 'Verwijderen';
+
+  @override
+  String get virtHwRemoveCdrom => 'Cd-rom verwijderen';
+
+  @override
+  String virtHwRemoveDiskAsk(String disk, String guest) {
+    return '$disk verwijderen uit $guest?';
+  }
+
+  @override
+  String virtHwRemoveNicAsk(String nic, String guest) {
+    return '$nic verwijderen uit $guest?';
+  }
+
+  @override
+  String get virtHwResources => 'Middelen';
+
+  @override
+  String get virtHwRestartNow => 'Nu herstarten';
+
+  @override
+  String get virtHwRevert => 'Terugdraaien';
+
+  @override
+  String get virtHwRevertAll => 'Alles terugdraaien';
+
+  @override
+  String get virtSetRenameStopped =>
+      'Zet de gast uit om hem te hernoemen: libvirt hernoemt alleen een gast die niet draait.';
+
+  @override
+  String virtSetIssueDescription(int max) {
+    return 'Hoogstens $max bytes (UTF-8), zonder stuurtekens.';
+  }
+
+  @override
+  String get virtSetManualStart => 'Handmatig gestart';
+
+  @override
+  String get virtSetProtection => 'Beveiliging';
+
+  @override
+  String get virtSetProtectionNote =>
+      'Voorkomt het verwijderen van de gast en wijzigingen aan zijn schijven';
+
+  @override
+  String get virtSetIrreversible => 'Kan niet ongedaan worden gemaakt';
+
+  @override
+  String get virtSetDeleteStopFirst => 'Zet hem uit voordat je hem verwijdert.';
+
+  @override
+  String get virtSetDeleteProtected =>
+      'Beveiliging staat aan: zet die eerst uit onder Algemeen.';
+
+  @override
+  String get virtSetDeleteAgain => 'Druk nogmaals om te bevestigen';
+
+  @override
+  String virtSetDeleteConfirm(String name) {
+    return '$name verwijderen';
+  }
+
+  @override
+  String get virtSetDeleteVm => 'Virtuele machine verwijderen';
+
+  @override
+  String get virtSetDeleteLxc => 'Container verwijderen';
+
+  @override
+  String get virtHwSockets => 'Sockets';
+
+  @override
+  String get virtHwSource => 'Bron';
+
+  @override
+  String get virtHwSwap => 'Swap';
+
+  @override
+  String get virtHwTopology => 'Sockets × kernen';
+
+  @override
+  String virtHwTopologyValue(int sockets, int cores, int threads) {
+    return '$sockets sockets × $cores kernen × $threads threads';
+  }
+
+  @override
+  String virtHwTotal(String size) {
+    return '$size totaal';
+  }
+
+  @override
+  String get virtHwVolumeKept =>
+      'De schijfconfiguratie is verwijderd, maar de actieve VM gebruikt de schijf nog. Daarom blijft het volume behouden totdat het bij de volgende start wordt losgekoppeld.';
+
+  @override
+  String get virtHwBus => 'Bus';
+
+  @override
+  String get virtHwCache => 'Cache';
+
+  @override
+  String get virtHwBusStopped =>
+      'De bus verandert alleen als de gast is gestopt.';
+
+  @override
+  String get virtHwMacGenerate => 'Genereren';
+
+  @override
+  String get virtHwIssueMac =>
+      'Moet een unicast-MAC-adres zijn, zoals 52:54:00:12:34:56';
+
+  @override
+  String get virtHwIssueStopFirst => 'Stop eerst de gast';
+
+  @override
+  String get virtHwIssueStorageMissing => 'Kies eerst een opslag';
+
+  @override
+  String get virtHwIssueDevice => 'Kies eerst een apparaat';
+
+  @override
+  String get virtHwDevices => 'Cd-rom en passthrough';
+
+  @override
+  String get virtHwDevicesEmpty => 'USB- en PCI-passthrough, cd-rom, TPM';
+
+  @override
+  String get virtHwAddDevice => 'Apparaat toevoegen';
+
+  @override
+  String get virtHwNewDevice => 'Nieuw apparaat';
+
+  @override
+  String get virtHwUsbHotplug => 'USB-passthrough is hot-pluggable.';
+
+  @override
+  String get virtHwPci => 'PCI-passthrough';
+
+  @override
+  String get virtHwIommuOffTitle => 'De host heeft geen IOMMU';
+
+  @override
+  String get virtHwIommuOffBody =>
+      'Zet eerst VT-d of AMD-Vi aan in de BIOS van de host en IOMMU in de kernel. Tot dan start een gast met een PCI-apparaat niet.';
+
+  @override
+  String get virtHwPciTitle => 'Vereist IOMMU op de host';
+
+  @override
+  String get virtHwPciBody =>
+      'Eenmaal doorgegeven kan de host het apparaat niet gebruiken en kan de gast niet live migreren.';
+
+  @override
+  String virtHwIommuGroup(int group) {
+    return 'IOMMU-groep $group';
+  }
+
+  @override
+  String virtHwIommuShared(int count) {
+    return '$count apparaten delen de IOMMU-groep en gaan samen door';
+  }
+
+  @override
+  String get virtHwNoHostDevices =>
+      'Geen apparaten om door te geven op deze host';
+
+  @override
+  String get virtHwMappingsOnly =>
+      'Hier zijn alleen resourcekoppelingen mogelijk: PVE laat alleen root@pam met wachtwoord een ruw apparaat doorgeven. Maak koppelingen onder Datacenter → Resourcekoppelingen.';
+
+  @override
+  String get virtHwTpmNote => 'Windows 11 vereist TPM 2.0.';
+
+  @override
+  String get virtHwDisplay => 'Weergave';
+
+  @override
+  String get virtHwProtocol => 'Protocol';
+
+  @override
+  String get virtHwListen => 'Luisteren';
+
+  @override
+  String get virtHwGpu => 'Videokaart';
+
+  @override
+  String get virtHwListenAllTitle => 'De console staat open voor het netwerk';
+
+  @override
+  String get virtHwListenAllBody =>
+      'Luisteren op alle adressen laat iedereen die de host bereikt de console openen. Houd 127.0.0.1 en verbind via een SSH-tunnel.';
+
+  @override
+  String get virtHwFirmware => 'Firmware';
+
+  @override
+  String get virtHwUefiSub =>
+      'OVMF · ondersteunt Secure Boot, vereist door Windows 11';
+
+  @override
+  String get virtHwBiosSub => 'SeaBIOS · oudere systemen en MBR-schijven';
+
+  @override
+  String get virtHwSecureBootNote =>
+      'Start alleen ondertekende kernels en bootloaders';
+
+  @override
+  String get virtHwFirmwareWarnTitle =>
+      'Wissel de firmware van een geïnstalleerd systeem niet';
+
+  @override
+  String get virtHwFirmwareWarnBody =>
+      'Wisselen tussen UEFI en BIOS maakt een geïnstalleerd systeem onopstartbaar.';
+
+  @override
+  String get virtHwFirmwareStopped =>
+      'De firmware verandert alleen als de gast is gestopt.';
+
+  @override
+  String get virtHwSecureBootVars =>
+      'Secure Boot in- of uitschakelen maakt de EFI-variabelen opnieuw aan; opgeslagen opstartitems gaan verloren.';
+
+  @override
+  String get virtHwEfiStorage => 'Waar de EFI-variabelen komen';
+
+  @override
+  String virtHwSwitchFirmwareAsk(String guest, String firmware) {
+    return '$guest omzetten naar $firmware?';
+  }
+
+  @override
+  String get virtCloneName => 'Nieuwe naam';
+
+  @override
+  String get virtCloneFull => 'Volledige kloon';
+
+  @override
+  String get virtCloneCopyDisks => 'Schijfinhoud kopiëren';
+
+  @override
+  String get virtCloneLinkedNote =>
+      'Uit: een gekoppelde kloon, afhankelijk van de schijven van de sjabloon';
+
+  @override
+  String get virtCloneFullOnly =>
+      'Alleen een sjabloon kan als gekoppelde kloon worden gekloond';
+
+  @override
+  String get virtCloneEmptyNote =>
+      'Uit: nieuwe lege schijven van dezelfde grootte';
+
+  @override
+  String get virtCloneStopFirst => 'Sluit hem af voordat je kloont.';
+
+  @override
+  String get virtCloneFullShort => 'Volledig';
+
+  @override
+  String get virtCloneLinkedShort => 'Gekoppeld';
+
+  @override
+  String get virtCloneEmptyShort => 'Lege schijven';
+
+  @override
+  String get virtCloning => 'Klonen…';
+
+  @override
+  String virtCloned(String name) {
+    return 'Gekloond als $name';
+  }
+
+  @override
+  String get virtBackupPlan => 'Planning';
+
+  @override
+  String get virtBackupPlanWhere => 'Datacenter → Back-up';
+
+  @override
+  String get virtBackupNoPlanShort => 'Geen planning';
+
+  @override
+  String get virtBackupNoPlan =>
+      'Geen geplande back-uptaak neemt deze gast mee.';
+
+  @override
+  String get virtBackupKeep => 'Bewaren';
+
+  @override
+  String get virtBackupJobDisabled => 'Deze taak is uitgeschakeld.';
+
+  @override
+  String virtBackupCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count back-ups',
+      one: '1 back-up',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String virtSnapshotCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count snapshots',
+      one: '1 snapshot',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get virtBackupNoStorage =>
+      'Geen opslag op deze node bewaart back-ups.';
+
+  @override
+  String get virtBackupLiveTip =>
+      'Back-up maken terwijl de VM draait met snapshotmodus, zonder onderbreking.';
+
+  @override
+  String get virtBackupStoppedTip => 'Uit: wordt geback-upt zoals hij is';
+
+  @override
+  String get virtBackupNow => 'Nu back-uppen';
+
+  @override
+  String get virtBackupNotes => 'Notities';
+
+  @override
+  String get virtBackupProtected =>
+      'Beveiligd: kan pas worden verwijderd als de beveiliging in PVE is opgeheven.';
+
+  @override
+  String virtBackupVerified(String state) {
+    return 'Verificatie: $state';
+  }
+
+  @override
+  String get virtBackupRestoreOverwrites =>
+      'Herstellen overschrijft de huidige schijven';
+
+  @override
+  String get virtBackupStopFirst => 'Sluit hem af voordat je herstelt.';
+
+  @override
+  String get virtBackupRestoreAgain =>
+      'De schijven en configuratie van de gast worden vervangen door die van de back-up.';
+
+  @override
+  String get virtBackupDeleteConfirm => 'Back-up verwijderen';
+
+  @override
+  String get virtBackupRestoreNew => 'Als nieuw herstellen';
+
+  @override
+  String get virtBackupRestoreConfirm => 'Eroverheen herstellen';
+
+  @override
+  String get virtBackupDone => 'Back-up voltooid';
+
+  @override
+  String get virtBackupDeleted => 'Back-up verwijderd';
+
+  @override
+  String virtBackupRestored(String time) {
+    return 'Hersteld van $time';
+  }
+
+  @override
+  String pveNeedsPrivilege(
+    String account,
+    String privilege,
+    String path,
+    String command,
+  ) {
+    return '$account mist $privilege op $path. Verleen het op de PVE-host:\n$command';
+  }
+
+  @override
+  String get virtCanDelete => 'Kan worden verwijderd';
+
+  @override
+  String get virtInUse => 'In gebruik';
+
+  @override
+  String get virtOps => 'Bewerkingen';
+
+  @override
+  String get virtPool => 'Opslagpool';
+
+  @override
+  String get virtPoolNew => 'Nieuwe opslagpool';
+
+  @override
+  String get virtStorageAdd => 'Opslag toevoegen';
+
+  @override
+  String virtPoolUsedPct(String pct) {
+    return '$pct% gebruikt';
+  }
+
+  @override
+  String get virtPoolInUse =>
+      'Een VM gebruikt hier een volume; de pool kan niet worden gestopt of verwijderd.';
+
+  @override
+  String get virtPoolDelete => 'Pool verwijderen';
+
+  @override
+  String get virtStorageRemove => 'Opslag verwijderen';
+
+  @override
+  String virtPoolDeleteAsk(String name) {
+    return 'Pool $name verwijderen? De definitie verdwijnt; de volumes blijven waar ze zijn.';
+  }
+
+  @override
+  String virtStorageRemoveAsk(String name) {
+    return 'Opslag $name uit de PVE-configuratie verwijderen? Wat erop staat, blijft.';
+  }
+
+  @override
+  String virtPoolDeleteKeepsVolumes(int count) {
+    return 'De $count volumes blijven op de schijf.';
+  }
+
+  @override
+  String get virtPoolDeleteStorage =>
+      'Ook de map verwijderen (alleen als die leeg is)';
+
+  @override
+  String virtPoolStopAsk(String name) {
+    return 'Pool $name stoppen? Tot hij weer start, kunnen er geen volumes worden getoond of gemaakt.';
+  }
+
+  @override
+  String get virtStorageClusterWide =>
+      'Dit geldt voor elke node van het cluster die deze opslag heeft.';
+
+  @override
+  String get virtStorageDisable => 'Uitschakelen';
+
+  @override
+  String get virtStorageEnable => 'Inschakelen';
+
+  @override
+  String virtStorageDisableAsk(String name) {
+    return 'Opslag $name uitschakelen? VM\'s met schijven erop starten pas weer als die is ingeschakeld.';
+  }
+
+  @override
+  String get virtPoolLogicalNote =>
+      'Een bestaande volumegroep wordt gebruikt zoals die is; er wordt niets geformatteerd.';
+
+  @override
+  String get virtPoolMountPoint => 'Koppelpunt';
+
+  @override
+  String get virtPoolSourceNfs => 'Bron (host:/pad)';
+
+  @override
+  String get virtPoolSourceVg => 'Volumegroep';
+
+  @override
+  String get virtPoolSourceThin => 'Volumegroep / thin pool';
+
+  @override
+  String get virtPoolSourceZfs => 'ZFS-pool';
+
+  @override
+  String get virtPoolTypeVg => 'LVM-volumegroep';
+
+  @override
+  String get virtResNameEmpty => 'Voer een naam in';
+
+  @override
+  String get virtResNotFound => 'Staat niet meer op deze host';
+
+  @override
+  String get virtResUnsupported => 'Deze host ondersteunt dat niet';
+
+  @override
+  String get virtResNameInvalid =>
+      'Geen naam die deze host accepteert (letters, cijfers, . _ -)';
+
+  @override
+  String get virtResSourceInvalid => 'Geen geldig pad of bron';
+
+  @override
+  String get virtResTargetInvalid => 'Een absoluut pad';
+
+  @override
+  String get virtResCidrInvalid => 'Een adres met prefix, bv. 192.168.150.1/24';
+
+  @override
+  String get virtResDhcpInvalid =>
+      'Twee adressen in het netwerk, op volgorde, zonder dat van de host';
+
+  @override
+  String get virtResSubnetTaken => 'Een ander netwerk hier zit op dit subnet';
+
+  @override
+  String get virtResBridgeInvalid => 'Geen interfacenaam';
+
+  @override
+  String get virtResFormat => 'Deze pool ondersteunt dat formaat niet';
+
+  @override
+  String get virtVolNew => 'Nieuw volume';
+
+  @override
+  String virtVolCount(int count) {
+    return '$count volumes';
+  }
+
+  @override
+  String get virtVolNone => 'Deze pool heeft nog geen volumes.';
+
+  @override
+  String get virtVolEmptyAttach =>
+      'Een nieuw volume kan later aan elke VM worden gekoppeld';
+
+  @override
+  String get virtVolEmptyUpload => 'Een ISO kan ook direct worden geüpload';
+
+  @override
+  String get virtVolPveName =>
+      'PVE geeft een volume de naam van zijn VM: vm-<VMID>-disk-<N>';
+
+  @override
+  String get virtVolUsers => 'Gebruikt door';
+
+  @override
+  String get virtVolAllocated => 'Toegewezen';
+
+  @override
+  String get virtVolGrowFromGuest =>
+      'Een VM gebruikt het: vergroot het in de hardwareweergave van die VM';
+
+  @override
+  String get virtVolInUse => 'Een VM gebruikt dit volume';
+
+  @override
+  String virtVolBackingOf(String names) {
+    return 'Basisbestand van $names';
+  }
+
+  @override
+  String get virtVolIsBase =>
+      'Andere volumes zijn hierop gebaseerd; verwijderen zou ze beschadigen';
+
+  @override
+  String get virtVolAttach => 'Aan VM koppelen';
+
+  @override
+  String get virtVolAttachNote =>
+      'Gekoppeld als nieuwe schijf, op de bus van de eerste schijf';
+
+  @override
+  String virtVolAttached(String name) {
+    return 'Gekoppeld aan $name';
+  }
+
+  @override
+  String get virtVolInsert => 'In cd-rom plaatsen';
+
+  @override
+  String virtVolInserted(String name) {
+    return 'In de cd-romspeler van $name geplaatst';
+  }
+
+  @override
+  String virtVolNoCdrom(String name) {
+    return '$name heeft geen cd-romspeler';
+  }
+
+  @override
+  String virtVolDeleteAsk(String name, String pool) {
+    return 'Volume $name uit $pool verwijderen? De inhoud is voorgoed weg.';
+  }
+
+  @override
+  String get virtUploadIso => 'ISO uploaden';
+
+  @override
+  String virtUploadTo(String pool) {
+    return 'Uploaden naar $pool';
+  }
+
+  @override
+  String virtUploadDone(String name) {
+    return '$name geüpload';
+  }
+
+  @override
+  String get virtNetConfig => 'Configuratie';
+
+  @override
+  String get virtNetConfigFile => 'Configuratiebestand';
+
+  @override
+  String get virtNetInternal => 'Intern';
+
+  @override
+  String get virtNetBridgePorts => 'Bridgepoorten';
+
+  @override
+  String get virtNetHostBridge => 'Hostbridge';
+
+  @override
+  String get virtNetPortsHint => 'eno2; leeg voor een interne bridge';
+
+  @override
+  String get virtNetDhcpRange => 'DHCP-bereik';
+
+  @override
+  String get virtNetDhcpTip => 'dnsmasq geeft de VM\'s hun adressen';
+
+  @override
+  String get virtNetVlanTip => 'NIC\'s van VM\'s mogen een VLAN-tag dragen';
+
+  @override
+  String get virtNetNatTip =>
+      'Via de host: VM\'s kunnen naar buiten, van buiten kan niets naar binnen';
+
+  @override
+  String get virtNetRoutedTip =>
+      'Door de host gerouteerd zonder NAT: het LAN heeft een route terug nodig';
+
+  @override
+  String get virtNetIsolatedTip => 'Alleen de VM\'s en de host bereiken elkaar';
+
+  @override
+  String get virtNetBridgedTip =>
+      'VM\'s komen op een bridge van de host, in het fysieke netwerk';
+
+  @override
+  String get virtNetNew => 'Nieuw netwerk';
+
+  @override
+  String get virtNetNewBridge => 'Nieuwe Linux-bridge';
+
+  @override
+  String get virtNetVirtual => 'Virtueel netwerk';
+
+  @override
+  String get virtNetDelete => 'Netwerk verwijderen';
+
+  @override
+  String virtNetDeleteAsk(String name) {
+    return 'Netwerk $name verwijderen? Het wordt gestopt en de definitie verwijderd.';
+  }
+
+  @override
+  String virtNetDeleteAskPve(String name, String node) {
+    return 'Bridge $name van $node verwijderen? Die verdwijnt nu uit de wachtende configuratie, en van de host zodra die wordt toegepast.';
+  }
+
+  @override
+  String virtNetInUse(int count) {
+    return 'VM\'s erop: $count. Het kan niet worden verwijderd.';
+  }
+
+  @override
+  String virtNetStopAsk(String name, int count) {
+    return '$name stoppen? De $count VM\'s erop verliezen hun netwerk tot het weer start.';
+  }
+
+  @override
+  String get virtNetInactivePve =>
+      'Niet actief: een nieuwe bridge wacht in de wachtende configuratie tot die wordt toegepast.';
+
+  @override
+  String get virtNetPveApplyNote =>
+      'Opgeslagen als wachtende wijziging: van kracht zodra de configuratie wordt toegepast (ifreload -a).';
+
+  @override
+  String get virtNetPendingSaved =>
+      'Opgeslagen als wachtend: pas de configuratie toe om het te laten werken';
+
+  @override
+  String virtNetPendingTitle(String node) {
+    return 'Wachtende netwerkwijzigingen op $node';
+  }
+
+  @override
+  String get virtNetPendingTip =>
+      'PVE bewaart netwerkwijzigingen in interfaces.new tot ze worden toegepast.';
+
+  @override
+  String get virtNetPendingShow => 'Wijzigingen tonen';
+
+  @override
+  String get virtNetApply => 'Configuratie toepassen';
+
+  @override
+  String virtNetApplyAsk(String node) {
+    return 'Wachtende netwerkconfiguratie op $node toepassen? PVE herlaadt het netwerk van de host (ifreload -a): een fout kan de host afsluiten.';
+  }
+
+  @override
+  String virtNetRevertAsk(String node) {
+    return 'Wachtende netwerkconfiguratie op $node weggooien?';
+  }
+
+  @override
+  String get pveTokenTipStorage =>
+      'Opslagbeheer vereist Datastore.Allocate op /storage (toevoegen, uitschakelen, verwijderen), Datastore.AllocateSpace (volumes) en Datastore.AllocateTemplate (uploads); Linux-bridges en het toepassen van de netwerkconfiguratie vereisen Sys.Modify op de node.';
+
+  @override
+  String get virtCreateUnnamed => 'Naamloos';
+
+  @override
+  String get virtCreateNotChosen => 'Niet gekozen';
+
+  @override
+  String get virtCreateKindVmSub => 'qm · een volledige KVM-VM';
+
+  @override
+  String get virtCreateKindLxcSub =>
+      'pct · deelt de kernel van de host, lichter';
+
+  @override
+  String get virtCloudImage => 'Cloud-image';
+
+  @override
+  String get virtCloudImageTip =>
+      'Dit is een schijfimage met een geïnstalleerd besturingssysteem. Bij het maken van een VM wordt het image gekopieerd en uitgebreid tot de opgegeven opslaggrootte; cloud-init configureert het bij de eerste start. Het origineel blijft ongewijzigd.';
+
+  @override
+  String get virtNoCloudImagesLibvirt =>
+      'Geen cloudimages beschikbaar. Upload een qcow2- of raw-image naar de opslagpool en zorg dat geen VM het gebruikt.';
+
+  @override
+  String get virtNoCloudImagesPve =>
+      'Geen cloudimages beschikbaar. Upload een qcow2-, raw- of vmdk-image naar opslag met het inhoudstype Import (PVE 8.2 of hoger vereist).';
+
+  @override
+  String get virtCreateWindowsTitle => 'Windows 11 vereist UEFI en TPM 2.0';
+
+  @override
+  String get virtCreateWindowsBody => 'Kies hierboven UEFI en zet de TPM aan.';
+
+  @override
+  String get virtCreateWindowsNoTpm =>
+      'Deze host heeft geen software-TPM (swtpm): installeer die om de VM er een te geven.';
+
+  @override
+  String virtCreateImageSize(String size) {
+    return 'De image is $size: de schijf moet minstens zo groot zijn.';
+  }
+
+  @override
+  String get virtCreateImageMissing => 'Kies een cloud-image.';
+
+  @override
+  String get virtCreateIncomplete =>
+      'Vul eerst alle oranje gemarkeerde velden in.';
+
+  @override
+  String virtCreateOn(String host) {
+    return 'Wordt aangemaakt op $host';
+  }
+
+  @override
+  String get virtCiTip =>
+      'Maak een account met sudo-rechten. Aanmelden kan met een wachtwoord, SSH-sleutel of beide.';
+
+  @override
+  String get virtCiUserInvalid =>
+      'Kleine letters, cijfers, _ en -, beginnend met een letter of _';
+
+  @override
+  String get virtCiCredentialsMissing =>
+      'Stel een wachtwoord of een SSH-sleutel in.';
+
+  @override
+  String get virtCiHostnamePve => 'De hostnaam is de naam van de VM.';
+
+  @override
+  String get virtCiStatic => 'Statisch';
+
+  @override
+  String get virtCiAddressInvalid =>
+      'Een IPv4-adres met prefix, zoals 10.0.0.5/24';
+
+  @override
+  String get virtCiGatewayInvalid => 'Een IPv4-adres, zoals 10.0.0.1';
+
+  @override
+  String get virtCiDnsFromDhcp => 'Leeg: via DHCP';
+
+  @override
+  String get virtCiDnsInvalid =>
+      'IP-adressen, gescheiden door spaties of komma\'s';
+
+  @override
+  String get virtCiSearch => 'Zoekdomein';
+
+  @override
+  String get virtCiSeedNote =>
+      'De instellingen worden opgeslagen in een klein ISO-bestand dat als cd-rom wordt gekoppeld. Het bestand wordt verwijderd wanneer de VM wordt verwijderd. Alleen de hash van het wachtwoord wordt opgeslagen.';
+
+  @override
+  String get virtCiNoToolTitle =>
+      'Geen hulpmiddel op de host voor de cloud-init-gegevens';
+
+  @override
+  String virtCiNoToolBody(String tools) {
+    return 'Installeer een van $tools op de host. Anders kan cloud-init geen configuratie maken en is er na het starten geen account om mee aan te melden.';
+  }
+
+  @override
+  String get virtHwCloudInitNote =>
+      'Wat cloud-init bij de eerste start leest. Geen installatiemedium: hier wordt niets geplaatst.';
+
+  @override
+  String get virtHwCdromLater =>
+      'Terwijl ze draait, wordt het station bij de volgende start toegevoegd (SATA en IDE nemen er live geen).';
+
+  @override
+  String virtCreateDiskKept(String size) {
+    return 'De schijf bleef $size, de grootte van de image zelf, meer dan gevraagd: een schijf wordt nooit kleiner gemaakt dan het systeem erop.';
+  }
+
+  @override
+  String get virtCiEditTip =>
+      'Configureer de cloud-init-instellingen van deze VM, waaronder een account met sudo-rechten, de aanmeldmethode, hostnaam en het adres.';
+
+  @override
+  String get virtCiForeignTitle => 'Deze seed bevat meer dan deze app schrijft';
+
+  @override
+  String get virtCiForeignBody =>
+      'Instellingen die door andere tools zijn toegevoegd, zoals pakketten, opdrachten en andere accounts, worden hier niet getoond. Bij opslaan wordt de seed vervangen door de instellingen op deze pagina.';
+
+  @override
+  String get virtCiPasswordKept => 'Ingesteld. Leeg laten om het te houden';
+
+  @override
+  String get virtCiRemovePassword => 'Wachtwoord verwijderen';
+
+  @override
+  String get virtCiRemovePasswordNote => 'Alleen aanmelden met een SSH-sleutel';
+
+  @override
+  String get virtCiKeysAdded =>
+      'Sleutels worden aan het account toegevoegd. Als je hier een sleutel verwijdert, blijft deze op het systeem staan; verwijder hem daar apart. Een gewijzigde gebruikersnaam maakt een nieuw account aan en laat het oude bestaan.';
+
+  @override
+  String get virtCiEffectTitle => 'Werkt bij de volgende start';
+
+  @override
+  String get virtCiEffectLibvirt =>
+      'Opslaan schrijft een nieuwe seed met een nieuwe instantie-ID.';
+
+  @override
+  String get virtCiEffectPve =>
+      'PVE herschrijft de cloud-init-schijf onmiddellijk. De instance-ID wordt op basis van deze instellingen gegenereerd, dus elke wijziging maakt een nieuwe ID.';
+
+  @override
+  String get virtCiNewInstance =>
+      'Bij de volgende start behandelt cloud-init het systeem als een nieuwe instantie: het stelt de hostnaam opnieuw in, maakt het account als het ontbreekt, zet het wachtwoord, voegt de sleutels toe en schrijft de netwerkconfiguratie opnieuw. Het maakt ook nieuwe SSH-hostsleutels, dus SSH-clients waarschuwen dat de hostsleutel is veranderd. Vóór die start verandert er niets.';
+
+  @override
+  String get virtCiSaved => 'Opgeslagen. Werkt bij de volgende start.';
+
+  @override
+  String get virtSnapshotExternal => 'Alleen schijven tijdens bedrijf';
+
+  @override
+  String get virtSnapshotExternalTip =>
+      'De VM blijft draaien. Voor elke schijf wordt een qcow2-overlay in de gekozen opslagpool gemaakt; de VM blijft daarna deze snapshotketen gebruiken.';
+
+  @override
+  String get virtSnapshotFormInternal => 'Intern (in de image)';
+
+  @override
+  String get virtSnapshotOverlayPool => 'Overlay-pool';
+
+  @override
+  String get virtSnapshotOverlayBeside => 'Naast elke schijf';
+
+  @override
+  String get virtSnapshotExternalNoMemory =>
+      'Een externe snapshot bevat nooit het geheugen: de gast wordt niet gestopt.';
+
+  @override
+  String get virtSnapshotChain => 'Schijfketen';
+
+  @override
+  String virtSnapshotChainDepth(String count) {
+    return '$count lagen';
+  }
+
+  @override
+  String get virtSnapshotChainFile => 'Bestand';
+
+  @override
+  String get virtSnapshotChainActive => 'Nu in gebruik';
+
+  @override
+  String get virtSnapshotChainBase => 'Basis-image';
+
+  @override
+  String get virtSnapshotNoSupport =>
+      'De opslag van de gast ondersteunt geen snapshots, dus er kan geen worden gemaakt.';
+
+  @override
+  String get virtSnapshotRevertChain =>
+      'Een snapshot in de keten herstellen voegt de actieve overlay samen met de image en maakt nieuwere snapshots onbruikbaar. Alleen de nieuwste snapshot kan worden hersteld.';
+
+  @override
+  String get virtSnapshotRevertHasChildren =>
+      'Geweigerd zolang een latere snapshot op deze rust.';
+
+  @override
+  String get virtSnapshotDiff => 'Verschillen met nu';
+
+  @override
+  String get virtSnapshotDiffNone =>
+      'De configuratie is onveranderd sinds deze snapshot.';
+
+  @override
+  String get virtSnapshotDiffShow => 'Vergelijk met nu';
+
+  @override
+  String get virtSnapshotDiffGroupCpu => 'Processor';
+
+  @override
+  String get virtSnapshotDiffGroupMemory => 'Geheugen';
+
+  @override
+  String get virtSnapshotDiffGroupDisks => 'Schijven';
+
+  @override
+  String get virtSnapshotDiffGroupNic => 'Interfaces';
+
+  @override
+  String get virtSnapshotDiffGroupFirmware => 'Firmware';
+
+  @override
+  String get virtSnapshotDiffGroupBoot => 'Opstarten';
+
+  @override
+  String get virtSnapshotDiffGroupOther => 'Overig';
+
+  @override
+  String virtSnapshotDiffValue(String after, String before) {
+    return '$before → $after';
+  }
+
+  @override
+  String get virtSnapshotDiffRemoved => 'verwijderd';
+
+  @override
+  String get virtSnapshotDiffAdded => 'toegevoegd';
+
+  @override
+  String virtSnapshotDiffAsk(String snapshot) {
+    return 'Wat er verandert als u terugzet naar $snapshot:';
+  }
+
+  @override
+  String virtSnapshotDiffHost(String error) {
+    return 'De host kon niet zeggen wat verschilt: $error';
+  }
+
+  @override
+  String virtSnapshotExternalExists(String count) {
+    return 'De gast staat al op $count lagen; deze snapshot voegt er één toe.';
+  }
+
+  @override
+  String get virtToTemplate => 'Als sjabloon gebruiken';
+
+  @override
+  String get virtToTemplateNote =>
+      'Een sjabloon kan niet worden gestart en niet terug in een gast worden omgezet. De schijven worden basis-images, die een gekoppelde kloon deelt.';
+
+  @override
+  String virtToTemplateConfirm(String name) {
+    return '$name als sjabloon gebruiken?';
+  }
+
+  @override
+  String get virtToTemplateIrreversible =>
+      'Dit kan niet ongedaan worden gemaakt: een sjabloon kan niet terug in een gast worden omgezet.';
+
+  @override
+  String get virtToTemplateStopped => 'Schakel het eerst uit.';
+
+  @override
+  String get virtToTemplateSnapshots =>
+      'Een gast met snapshots kan geen sjabloon worden.';
+
+  @override
+  String virtTemplateCreated(String name) {
+    return '$name is nu een sjabloon';
+  }
+
+  @override
+  String get virtTemplateTip => 'Een sjabloon draait pas als het is gekloond.';
+
+  @override
+  String get virtCloneStorageSame => 'Zelfde als de bron';
+
+  @override
+  String get virtCloneNodeSame => 'Zelfde als de bron';
+
+  @override
+  String get virtCloneStorageContent => 'Deze opslag bevat geen VM-schijven.';
+
+  @override
+  String get virtCloneStorageShared =>
+      'Kopiëren naar een ander knooppunt vereist gedeelde opslag.';
+
+  @override
+  String get virtCloneNodeUnknown => 'Deze host heeft die knooppunt niet.';
+
+  @override
+  String get virtCloneLinkedTarget =>
+      'Een gekoppelde kloon deelt de schijven van het sjabloon en kan dus geen opslag of knooppunt noemen.';
+
+  @override
+  String get virtBackupJobs => 'Back-uptaken';
+
+  @override
+  String get virtBackupJobsNone =>
+      'Geen geplande back-uptaak. Voeg er een toe om gasten volgens schema te back-uppen.';
+
+  @override
+  String get virtBackupJobNew => 'Nieuwe taak';
+
+  @override
+  String get virtBackupJobRun => 'Nu uitvoeren';
+
+  @override
+  String get virtBackupJobRunAsk => 'Deze back-uptaak nu starten?';
+
+  @override
+  String virtBackupJobDeleteAsk(String id) {
+    return 'Back-uptaak $id verwijderen? De gemaakte back-ups blijven.';
+  }
+
+  @override
+  String get virtBackupJobSaved => 'Taak opgeslagen';
+
+  @override
+  String get virtBackupJobDeleted => 'Taak verwijderd';
+
+  @override
+  String get virtBackupJobStarted => 'Back-uptaak gestart';
+
+  @override
+  String get virtBackupSchedule => 'Schema';
+
+  @override
+  String get virtBackupScheduleHelp =>
+      'Een subset van systemd-kalendergebeurtenissen: 02:30, mon..fri 02:30, sat 03:00, daily, hourly, */15.';
+
+  @override
+  String get virtBackupScheduleInvalid => 'Geen schema dat de host accepteert.';
+
+  @override
+  String virtBackupScheduleNext(String times) {
+    return 'Volgende uitvoeringen: $times';
+  }
+
+  @override
+  String get virtBackupSelection => 'Gasten';
+
+  @override
+  String get virtBackupSelectionAll => 'Alle gasten';
+
+  @override
+  String get virtBackupSelectionList => 'Geselecteerde gasten';
+
+  @override
+  String get virtBackupSelectionNone => 'Kies minstens één gast.';
+
+  @override
+  String get virtBackupMail => 'Melding';
+
+  @override
+  String get virtBackupNotesTemplate => 'Back-upnotities';
+
+  @override
+  String virtBackupNotesTemplateTip(String vars) {
+    return 'De notities worden aan elke back-up van de taak toegevoegd. Vervangen worden: $vars.';
+  }
+
+  @override
+  String get virtBackupPrune => 'Bewaring';
+
+  @override
+  String get virtBackupPruneTip =>
+      'PVE-bewaaropties, bv. keep-last=7,keep-daily=4. Leeg: die van de opslag of het knooppunt.';
+
+  @override
+  String get virtBackupJobNode => 'Knooppunt';
+
+  @override
+  String get virtBackupJobNodeAny => 'Elk knooppunt';
+
+  @override
+  String get virtBackupEnabled => 'Ingeschakeld';
+
+  @override
+  String get virtBackupOptions => 'Opties';
+
+  @override
+  String get virtBackupProtect => 'Beschermen';
+
+  @override
+  String get virtBackupProtectTip =>
+      'Een beschermde back-up wordt niet opgeruimd en kan niet worden verwijderd zolang de bescherming geldt.';
+
+  @override
+  String get virtBackupEditNotes => 'Notities';
+
+  @override
+  String get virtBackupSaveNotes => 'Opslaan';
+
+  @override
+  String get virtBackupEdited => 'Back-up bijgewerkt';
+
+  @override
+  String get virtBackupRestoreStorage => 'Herstellen naar opslag';
+
+  @override
+  String get virtBackupRestoreStorageSame => 'Zoals in de back-up';
+
+  @override
+  String get virtCloneStorageMissing =>
+      'Geen opslag op dit knooppunt bevat VM-schijven.';
+
+  @override
+  String get virtBackupCompress => 'Compressie';
+
+  @override
+  String get virtBackupUnprotect => 'Bescherming opheffen';
+
+  @override
+  String get virtBackupModeStops =>
+      'suspend en stop onderbreken een draaiende gast tijdens het kopiëren.';
+
+  @override
+  String get virtBackupScheduleValidate => 'Bij de host controleren';
+
+  @override
+  String virtBackupSelected(int count) {
+    return '$count geselecteerd';
+  }
+
+  @override
+  String get virtBackupExcludeTip =>
+      'Alle gasten op het knooppunt worden meegenomen. Zet er een uit om die over te slaan.';
+
+  @override
+  String virtNetEditAsk(int count) {
+    return 'Wijzigingen aan het actieve netwerk gaan pas in na een herstart. Daardoor verliezen $count verbonden VM’s tijdelijk hun netwerkverbinding.';
+  }
+
+  @override
+  String get virtNetEditAskNoGuest =>
+      'Wijzigingen aan het actieve netwerk gaan pas in na een herstart.';
+
+  @override
+  String get virtNetEditRestart => 'Herstarten om nu toe te passen';
+
+  @override
+  String get virtNetEditRestartNote =>
+      'De VM\'s erop verliezen hun netwerk tijdens de herstart.';
+
+  @override
+  String get virtNetEditPending =>
+      'De definitie bevat een wijziging die het draaiende netwerk nog niet heeft.';
+
+  @override
+  String get virtNetRestart => 'Herstarten';
+
+  @override
+  String virtNetRestartAsk(String name, int count) {
+    return '$name herstarten? De VM\'s erop ($count) verliezen hun netwerk tot het terug is.';
+  }
+
+  @override
+  String virtNetRestartAskNone(String name) {
+    return '$name herstarten? Er zit niets op.';
+  }
+
+  @override
+  String get virtNetHosts => 'Statische adressen';
+
+  @override
+  String get virtNetHostAdd => 'Adres toevoegen';
+
+  @override
+  String get virtNetHostMac => 'MAC';
+
+  @override
+  String get virtNetHostIp => 'Adres';
+
+  @override
+  String get virtNetHostName => 'Naam (optioneel)';
+
+  @override
+  String get virtNetHostEmpty =>
+      'Er is geen vast IP-adres toegewezen aan een MAC-adres. Alle VM’s krijgen een adres uit het DHCP-bereik.';
+
+  @override
+  String get virtNetHostOthers =>
+      'Elke andere VM krijgt er een uit het DHCP-bereik.';
+
+  @override
+  String get virtNetHostInvalid =>
+      'Een MAC, adres of naam die de host zou weigeren, of dezelfde MAC twee keer.';
+
+  @override
+  String get virtNetManagementIface =>
+      'Deze interface draagt het eigen adres van de host. Bewerken of toepassen zou de verbinding met de host verbreken.';
+
+  @override
+  String get virtNetManagementTip =>
+      'Deze interface draagt beheerverkeer van de host of is een onderliggende interface daarvan. De app past deze niet aan.';
+
+  @override
+  String get virtNetPhysicalTip =>
+      'Een fysieke interface is van de host zelf: de app bewerkt alleen bridges.';
+
+  @override
+  String get virtNetVlanAware => 'VLAN-aware';
+
+  @override
+  String get virtCiExpire => 'Wachtwoord verloopt';
+
+  @override
+  String get virtCiExpireNote =>
+      'Bij de eerste aanmelding ermee moet een nieuw worden ingesteld. Alleen libvirt: PVE schrijft \"expire: false\" en heeft er geen optie voor.';
+
+  @override
+  String get virtCiSearchHint => 'lab.example dev.lab.example';
+
+  @override
+  String get virtCiSearchTip =>
+      'Meerdere, gescheiden door een spatie; resolv.conf houdt de eerste paar.';
+
+  @override
+  String virtCiNicsTip(int count) {
+    return '$count NIC\'s in de netwerkconfiguratie van de seed; het formulier bewerkt de eerste.';
+  }
+
+  @override
+  String get virtUsbByVendor => 'Op leverancier en product';
+
+  @override
+  String get virtUsbByAddress => 'Op adres';
+
+  @override
+  String get virtUsbAddressTip =>
+      'Het apparaat volgt dit adres: wat daar is aangesloten, gaat naar de VM. libvirt benoemt een USB-hostdev met bus- en apparaatnummer.';
+
+  @override
+  String virtUsbPortNote(int bus, String port) {
+    return 'bus $bus · poort $port';
+  }
+
+  @override
+  String get virtSbUnsupported =>
+      'De firmwaredescriptors van de host hebben geen Secure Boot-firmware met ingeschreven sleutels, dus een domein ermee kan niet starten.';
+
+  @override
+  String get virtCreateSecureBoot => 'Secure Boot';
+
+  @override
+  String get virtCreateSecureBootNote =>
+      'Alleen ondertekende kernels en bootloaders worden gestart.';
+
+  @override
+  String virtUsbAddressNote(int bus, int device) {
+    return 'bus $bus · apparaat $device';
+  }
+
+  @override
+  String get virtHwRevertPendingTitle => 'Wachtende wijzigingen verwerpen';
+
+  @override
+  String virtHwRevertPendingBody(String name) {
+    return '$name wordt teruggezet op wat het draait: de definitie wordt opnieuw geschreven vanuit de draaiende, en de volgende start krijgt precies wat deze heeft. Het NVRAM-bestand en de firmware blijven zoals ze zijn.';
+  }
+
+  @override
+  String virtHwRevertAllAsk(String name) {
+    return 'Alle wijzigingen verwerpen die wachten op de volgende start van $name?';
+  }
+
+  @override
+  String get virtBackupPlanNew => 'Nieuw plan';
+
+  @override
+  String get virtBackupPlanNewTip =>
+      'Een schema dat alleen deze gast back-upt.';
+
+  @override
+  String virtBackupPlanOthers(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Back-upt ook $count andere gasten',
+      one: 'Back-upt ook 1 andere gast',
+      zero: 'Geen andere gast',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reduceMotion => 'Beperk beweging';
+
+  @override
+  String get copyLink => 'Link kopiëren';
+
+  @override
+  String funcNeedsAgentHttps(String func) {
+    return 'Voor $func is een HTTPS-verbinding met deze Monitor vereist. Je kunt ook HTTP toestaan in zowel Monitor als de app.';
+  }
+
+  @override
+  String get monitorAccess => 'Toegang';
+
+  @override
+  String get monitorChangePassword => 'Wachtwoord wijzigen';
+
+  @override
+  String get monitorNewPassword => 'Nieuw wachtwoord';
+
+  @override
+  String get monitorCurrentPassword => 'Je huidige wachtwoord';
+
+  @override
+  String get monitorPasswordTooShort => 'Minstens 8 tekens';
+
+  @override
+  String get monitorPasswordMismatch => 'De wachtwoorden komen niet overeen';
+
+  @override
+  String get monitorErrReauth => 'Je wachtwoord was onjuist.';
+
+  @override
+  String get monitorPasswordNotSaved =>
+      'Het wachtwoord is op Monitor gewijzigd, maar de app kon het niet opslaan. Werk het Monitor-wachtwoord bij in de instellingen van deze server.';
+
+  @override
+  String get firewall => 'Firewall';
+
+  @override
+  String get firewallLinuxOnly =>
+      'Firewallbeheer ondersteunt Linux-servers met ufw of firewalld.';
+
+  @override
+  String get firewallNeedsRoot =>
+      'Voor het lezen van de firewallregels is root nodig. Voer het sudo-wachtwoord in om door te gaan.';
+
+  @override
+  String get firewallIncoming => 'Inkomend';
+
+  @override
+  String get firewallOutgoing => 'Uitgaand';
+
+  @override
+  String get firewallRouted => 'Doorgestuurd';
+
+  @override
+  String get firewallDefaultPolicy => 'Standaardbeleid';
+
+  @override
+  String get firewallLogging => 'Logboek';
+
+  @override
+  String get firewallRules => 'Regels';
+
+  @override
+  String get firewallRule => 'Regel';
+
+  @override
+  String get firewallAddRule => 'Regel toevoegen';
+
+  @override
+  String get firewallAnywhere => 'Overal';
+
+  @override
+  String firewallFromFmt(String source) {
+    return 'van $source';
+  }
+
+  @override
+  String get firewallFrom => 'Van';
+
+  @override
+  String get firewallTo => 'Naar';
+
+  @override
+  String get firewallProtocol => 'Protocol';
+
+  @override
+  String get firewallInterface => 'Interface';
+
+  @override
+  String get firewallComment => 'Opmerking';
+
+  @override
+  String get firewallAppProfile => 'App-profiel';
+
+  @override
+  String get firewallPrepend => 'Vóór alle andere regels plaatsen';
+
+  @override
+  String get firewallIpv6Off =>
+      'IPv6 staat uit (IPV6=no): v6-regels worden niet geladen.';
+
+  @override
+  String get firewallReload => 'Opnieuw laden';
+
+  @override
+  String get firewallNothingMatched =>
+      'Voer een poort, een app-profiel, een adres of een interface in.';
+
+  @override
+  String get firewallInvalidPort =>
+      'Ongeldige poort. Gebruik 22, 80,443 of 6000:6010.';
+
+  @override
+  String get firewallTooManyPorts =>
+      'Maximaal 15 poorten; een bereik telt als twee.';
+
+  @override
+  String get firewallPortsNeedProtocol =>
+      'Een poortlijst of poortbereik vereist tcp of udp.';
+
+  @override
+  String get firewallInvalidAddress =>
+      'Ongeldig adres. Gebruik een IP-adres of een netwerk zoals 192.168.1.0/24.';
+
+  @override
+  String get firewallMixedIpVersions =>
+      'Van en Naar moeten beide IPv4 of beide IPv6 zijn.';
+
+  @override
+  String get firewallInvalidInterface => 'Ongeldige interfacenaam.';
+
+  @override
+  String get firewallInvalidComment =>
+      'De opmerking mag geen \' of regeleinden bevatten.';
+
+  @override
+  String get firewallInvalidProtocol => 'Protocol niet ondersteund.';
+
+  @override
+  String get firewallInterfaceIn => 'Inkomende interface';
+
+  @override
+  String get firewallInterfaceOut => 'Uitgaande interface';
+
+  @override
+  String get firewallSourcePort => 'Bronpoort';
+
+  @override
+  String get firewallMoreOptions => 'Meer opties';
+
+  @override
+  String get firewallNoneInstalled =>
+      'ufw noch firewalld is op deze server geïnstalleerd. Installeer er een met de pakketbeheerder van het systeem, bijvoorbeeld `apt install ufw` of `dnf install firewalld`.';
+
+  @override
+  String get firewallKeepAccess => 'Eerst de poorten van deze app open houden';
+
+  @override
+  String firewallWillRefuseFmt(String access) {
+    return '$access: nieuwe verbindingen van deze app worden geweigerd. De huidige verbinding blijft bestaan tot die wegvalt.';
+  }
+
+  @override
+  String firewallMayRefuseFmt(String access) {
+    return '$access: nieuwe verbindingen met deze app kunnen worden geweigerd, afhankelijk van het bron-IP-adres of de inkomende netwerkinterface. De app kan dit niet vooraf bepalen.';
+  }
+
+  @override
+  String firewallRateLimitedFmt(String access) {
+    return '$access: verbindingen worden beperkt. Een adres dat er binnen 30 seconden 6 of meer opent, wordt geweigerd, en deze app maakt mogelijk zo vaak opnieuw verbinding.';
+  }
+
+  @override
+  String get firewallConflict =>
+      'ufw en firewalld staan allebei aan. Beide schrijven de regels van de kernel, en wat het laatst is geladen beslist wat doorkomt.';
+
+  @override
+  String get firewallDefaultZone => 'Standaardzone';
+
+  @override
+  String get firewallZone => 'Zone';
+
+  @override
+  String get firewallTarget => 'Target';
+
+  @override
+  String get firewallMasquerade => 'Masquerade';
+
+  @override
+  String get firewallServices => 'Services';
+
+  @override
+  String get firewallPorts => 'Poorten';
+
+  @override
+  String get firewallSources => 'Bronnen';
+
+  @override
+  String get firewallInterfaces => 'Interfaces';
+
+  @override
+  String get firewallRichRules => 'Rich rules';
+
+  @override
+  String get firewallForwardPorts => 'Doorgestuurde poorten';
+
+  @override
+  String get firewallRuntimeOnly => 'alleen runtime';
+
+  @override
+  String get firewallPermanentOnly => 'alleen permanent';
+
+  @override
+  String get firewallThisConnection => 'deze verbinding';
+
+  @override
+  String get firewallDefaultTag => 'standaard';
+
+  @override
+  String get firewallDrift =>
+      'Wat nu geldt, wijkt af van wat is opgeslagen. Een reload of herstart vervangt het door de opgeslagen configuratie.';
+
+  @override
+  String firewallDriftLockoutFmt(String access) {
+    return 'Na een reload of herstart wordt $access geweigerd: de opgeslagen configuratie laat het niet door.';
+  }
+
+  @override
+  String get firewallSaveRuntime => 'Opslaan als permanent';
+
+  @override
+  String get firewallReloadLoses =>
+      'Wijzigingen die niet als permanent zijn opgeslagen, gaan verloren.';
+
+  @override
+  String get firewallPanic =>
+      'De panic-modus staat aan: elk pakket wordt verworpen.';
+
+  @override
+  String get firewallPanicOff => 'panic-modus uitzetten';
+
+  @override
+  String get firewallStoppedNote =>
+      'firewalld is gestopt. Wijzigingen worden opgeslagen en gelden zodra het start.';
+
+  @override
+  String get firewallInvalidSource =>
+      'Ongeldige bron. Gebruik een adres, een netwerk zoals 192.168.1.0/24, ipset:NAAM of een MAC-adres.';
+
+  @override
+  String get firewallInvalidRichRule =>
+      'Een rich rule begint met \"rule\" en past op één regel.';
+
+  @override
+  String get firewallInvalidForwardPort =>
+      'Gebruik port=80:proto=tcp:toport=8080, met toport, toaddr of beide.';
+
+  @override
+  String get monitorSyncNeedsServer =>
+      'Kies de server waarvan Monitor de back-up opslaat.';
+
+  @override
+  String get monitorBackupUnsupported =>
+      'Deze Monitor kan geen back-ups opslaan. Werk Monitor bij.';
+
+  @override
+  String monitorBackupTooLarge(String max) {
+    return 'De back-up is groter dan Monitor accepteert ($max).';
+  }
+
+  @override
+  String get monitorBackupTooMany =>
+      'Monitor bewaart al het maximale aantal back-ups. Verwijder er eerst een.';
+
+  @override
+  String get virtCreateVmidInvalid => 'Een VMID van 100 tot 999999999.';
+
+  @override
+  String get virtCreateNodeOffline => 'Die node is niet online.';
+
+  @override
+  String get virtCreateMediaMissing =>
+      'Dat installatiemedium staat niet op deze host.';
+
+  @override
+  String get virtCreateNetworkMissing =>
+      'Een nieuwe gast kan dat netwerk niet gebruiken.';
+
+  @override
+  String get virtCreateNotOffered =>
+      'Deze host biedt dat niet aan voor een nieuwe VM.';
+
+  @override
+  String get virtCreateSecureBootNeedsUefi => 'Secure Boot vereist UEFI.';
+
+  @override
+  String get virtGuestNotStopped => 'Sluit het eerst af.';
+
+  @override
+  String get virtGuestIsTemplate => 'Het is al een sjabloon.';
+
+  @override
+  String get virtCreateImageBigger =>
+      'De image is groter dan de schijf: maak de schijf minstens even groot.';
+
+  @override
+  String get virtBackupIssueStorage =>
+      'Die opslag bevat op deze node geen back-ups.';
+
+  @override
+  String get virtBackupIssueOption =>
+      'Geen modus of compressie die PVE accepteert.';
+
+  @override
+  String get virtBackupIssueNodeOffline =>
+      'De node van de taak is niet online.';
+
+  @override
+  String get programWaiting => 'Wacht op je actie';
+
+  @override
+  String get programWaitingPermission => 'Wacht op je toestemming';
+
+  @override
+  String get programWaitingQuestion => 'Wacht op je antwoord';
+
+  @override
+  String get programWaitingAuth => 'Wacht tot je bent aangemeld.';
+
+  @override
+  String get programStatus => 'Programmastatus';
+
+  @override
+  String get programIdle => 'Inactief';
+
+  @override
+  String get programThisShell => 'Deze shell';
+
+  @override
+  String get programProgress => 'Voortgang';
+
+  @override
+  String get programCommandRunning => 'Er wordt een opdracht uitgevoerd';
+
+  @override
+  String get programCommandSucceeded => 'De laatste opdracht is geslaagd';
+
+  @override
+  String programCommandFailed(int code) {
+    return 'De laatste opdracht is beëindigd met code $code';
+  }
+
+  @override
+  String get programStatusAlerts =>
+      'Melden wanneer een programma je nodig heeft';
+
+  @override
+  String get programStatusAlertsTip =>
+      'Voor een terminal buiten beeld: wanneer een programma meldt dat het op je wacht, is voltooid of is mislukt (OSC 7501, OSC 9;4), of wanneer een opdracht eindigt die minstens 30 seconden draaide (OSC 133).';
+
+  @override
+  String get termLineHeight => 'Regelhoogte';
+
+  @override
+  String get termLineHeightTip =>
+      'De ruimte die een terminalregel inneemt, als veelvoud van de tekengrootte van 1,0 tot 2,0. Net als de tekengrootte bepaalt dit hoeveel regels er passen.';
+
+  @override
+  String get termFontTip =>
+      'Zonder geselecteerd lettertypebestand gebruikt de terminal het monospace-lettertype van het systeem en daarna lettertypen met CJK- en emoji-glyphs voor wat daarin ontbreekt.';
+
+  @override
+  String get netSpeed => 'Netwerksnelheid';
+
+  @override
+  String get inRange => 'in periode';
+
+  @override
+  String threadsFmt(int count) {
+    return '$count threads';
+  }
+
+  @override
+  String get workspace => 'Werkruimte';
+
+  @override
+  String get workspaceTroubleshoot => 'Probleemoplossing';
+
+  @override
+  String workspaceNotConnected(String server) {
+    return '$server is niet verbonden';
+  }
+
+  @override
+  String get workspaceConnectHint =>
+      'Deze server is ingesteld om niet te verbinden bij het opstarten.';
+
+  @override
+  String workspaceAllTabs(int count) {
+    return 'Alle tabbladen ($count)';
+  }
+
+  @override
+  String get workspaceAsleep => 'Niet verbonden';
+
+  @override
+  String workspaceClosed(String what) {
+    return '$what gesloten';
+  }
+
+  @override
+  String get workspaceClosePane => 'Paneel sluiten';
+
+  @override
+  String get workspaceClosePaneHint =>
+      'Sluit alle tabbladen erin; kan ongedaan worden gemaakt';
+
+  @override
+  String get workspaceDropLeft => 'Links';
+
+  @override
+  String get workspaceDropRight => 'Rechts';
+
+  @override
+  String get workspaceDropTop => 'Boven';
+
+  @override
+  String get workspaceDropBottom => 'Onder';
+
+  @override
+  String get workspaceDropMerge => 'Bij dit paneel voegen';
+
+  @override
+  String get workspaceEmpty => 'Lege werkruimte';
+
+  @override
+  String get workspaceEmptyTemplate =>
+      'Een lege werkruimte heeft geen indeling om op te slaan';
+
+  @override
+  String workspaceFromTemplate(String template, String server) {
+    return 'Nieuwe werkruimte uit “$template” op $server';
+  }
+
+  @override
+  String get workspaceHidden => 'Verborgen';
+
+  @override
+  String get workspaceMaximize => 'Maximaliseren';
+
+  @override
+  String workspaceMaximized(int pane, int hidden) {
+    return 'Paneel $pane gemaximaliseerd, $hidden verborgen';
+  }
+
+  @override
+  String workspaceMaximizeHint(String keys) {
+    return '$keys, of dubbelklik op de tabbalk';
+  }
+
+  @override
+  String get workspaceNewEmpty => 'Nieuwe lege werkruimte';
+
+  @override
+  String get workspaceNewPane => 'Nieuw paneel';
+
+  @override
+  String get workspaceNewTab => 'Nieuw tabblad';
+
+  @override
+  String get workspaceNewTabFocused => 'Nieuw tabblad · in het actieve paneel';
+
+  @override
+  String get workspaceNoMatch => 'Geen resultaten';
+
+  @override
+  String get workspaceNothingToReopen => 'Niets om opnieuw te openen';
+
+  @override
+  String workspacePane(int index) {
+    return 'Paneel $index';
+  }
+
+  @override
+  String get workspacePaneActions => 'Paneelacties';
+
+  @override
+  String workspacePaneCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count panelen',
+      one: '1 paneel',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get workspacePanes => 'Panelen';
+
+  @override
+  String workspacePanesHead(String workspace) {
+    return '$workspace · twee panelen worden getoond; het aangetikte krijgt de focus';
+  }
+
+  @override
+  String workspacePaneTabs(int index) {
+    return 'Tabbladen van paneel $index';
+  }
+
+  @override
+  String workspacePickView(String server) {
+    return 'Nieuw tabblad op $server · kies een weergave';
+  }
+
+  @override
+  String get workspaceQuickOpen => 'Snel openen';
+
+  @override
+  String get workspaceQuickOpenHead => 'Snel openen · Enter opent het eerste';
+
+  @override
+  String get workspaceQuickOpenHint =>
+      'Servers, weergaven, tabbladen of werkruimtes, bijv. db docker';
+
+  @override
+  String get workspaceRestore => 'Herstellen';
+
+  @override
+  String get workspaceSaveTemplate => 'Indeling opslaan als sjabloon';
+
+  @override
+  String get workspaceSeamTip =>
+      'Sleep om het formaat te wijzigen, dubbelklik om gelijk te verdelen';
+
+  @override
+  String get workspaceSplitDown => 'Naar beneden splitsen';
+
+  @override
+  String get workspaceSplitRight => 'Naar rechts splitsen';
+
+  @override
+  String get workspaceSwitchTo => 'Overschakelen naar';
+
+  @override
+  String get workspaceSwitchWorkspace => 'Werkruimte wisselen';
+
+  @override
+  String workspaceSyncBar(int count) {
+    return 'Invoer synchroniseren: getypte tekst gaat naar de $count terminals van deze werkruimte';
+  }
+
+  @override
+  String get workspaceSyncOff => 'Invoer niet meer synchroniseren';
+
+  @override
+  String get workspaceSyncOn => 'Invoer naar alle terminals synchroniseren';
+
+  @override
+  String get workspaceSyncOnToast =>
+      'Invoersynchronisatie aan: typen in een terminal gaat naar alle terminals van deze werkruimte';
+
+  @override
+  String get workspaceSyncOffToast => 'Invoersynchronisatie uit';
+
+  @override
+  String workspaceTemplateOf(String workspace) {
+    return 'Indeling van $workspace';
+  }
+
+  @override
+  String workspaceTemplateSaved(String name) {
+    return 'Sjabloon “$name” opgeslagen';
+  }
+
+  @override
+  String get workspaceTemplatesHead =>
+      'Indelingssjablonen · nieuwe werkruimte op de server van het actieve paneel';
+
+  @override
+  String get workspaceMoveTo =>
+      'Naar werkruimte verplaatsen, verbinding blijft';
+
+  @override
+  String workspaceMoved(String server, String workspace) {
+    return 'Terminal $server verplaatst naar “$workspace”, nog steeds verbonden';
+  }
+
+  @override
+  String get workspaceNew => 'Nieuwe werkruimte';
+
+  @override
+  String get workspaceIntoFocused => 'In het actieve paneel';
+
+  @override
+  String get keybindings => 'Sneltoetsen';
+
+  @override
+  String get kbSearchHint => 'Zoek opdrachten, toetsen of bereiken';
+
+  @override
+  String get kbOnlyModified => 'Alleen gewijzigd';
+
+  @override
+  String get kbResetAll => 'Alles terugzetten naar standaard';
+
+  @override
+  String get kbResetAllAsk =>
+      'Alle sneltoetsen op dit platform terugzetten naar standaard?';
+
+  @override
+  String get kbResetDone => 'Standaardsneltoetsen hersteld';
+
+  @override
+  String get kbResetOne => 'Terugzetten naar standaard';
+
+  @override
+  String get kbUnassigned => 'Niet toegewezen';
+
+  @override
+  String get kbFixed => 'Vast';
+
+  @override
+  String get kbModified => 'Gewijzigd';
+
+  @override
+  String get kbDefault => 'Standaard';
+
+  @override
+  String get kbFixedHint => 'Deze toetsen kunnen niet worden gewijzigd';
+
+  @override
+  String get kbNote =>
+      'Een terminal in een werkruimte laat de combinaties van de werkruimte en de globale combinaties aan de app over; de andere combinaties hier bereiken de shell. Opdrachten met verschillende bereiken kunnen dezelfde combinatie delen.';
+
+  @override
+  String kbCurrent(String keys, String scope) {
+    return 'Huidig: $keys · Bereik: $scope';
+  }
+
+  @override
+  String get kbPress => 'Druk op een toetscombinatie';
+
+  @override
+  String get kbRecordHint =>
+      'Enter om te bevestigen, Esc om te annuleren. Als de focus wegvalt, tik op het vak hierboven en druk opnieuw.';
+
+  @override
+  String kbConflict(String name, String scope) {
+    return 'Conflict met “$name” ($scope)';
+  }
+
+  @override
+  String get kbConflictNote =>
+      'Bij bevestigen wordt deze combinatie van de conflicterende opdracht verwijderd.';
+
+  @override
+  String get kbRemove => 'Sneltoets verwijderen';
+
+  @override
+  String kbChanged(String name, String keys) {
+    return '“$name” is nu $keys';
+  }
+
+  @override
+  String get kbScopeGlobal => 'Globaal';
+
+  @override
+  String get kbScopeSettings => 'Instellingenpagina';
+
+  @override
+  String get kbScopeServerTab => 'Servertabblad';
+
+  @override
+  String get kbWsSplitRight => 'Werkruimte: naar rechts splitsen';
+
+  @override
+  String get kbWsSplitDown => 'Werkruimte: naar beneden splitsen';
+
+  @override
+  String get kbWsFocusLeft => 'Werkruimte: focus op het linkerpaneel';
+
+  @override
+  String get kbWsFocusRight => 'Werkruimte: focus op het rechterpaneel';
+
+  @override
+  String get kbWsFocusUp => 'Werkruimte: focus op het paneel erboven';
+
+  @override
+  String get kbWsFocusDown => 'Werkruimte: focus op het paneel eronder';
+
+  @override
+  String get kbWsNewTab => 'Werkruimte: nieuw tabblad';
+
+  @override
+  String get kbWsCloseTab => 'Werkruimte: tabblad sluiten';
+
+  @override
+  String get kbWsNextTab => 'Werkruimte: volgend tabblad';
+
+  @override
+  String get kbWsPrevTab => 'Werkruimte: vorig tabblad';
+
+  @override
+  String get kbWsTabs => 'Werkruimte: tabbladen van het actieve paneel';
+
+  @override
+  String get kbWsReopenTab => 'Werkruimte: gesloten tabblad heropenen';
+
+  @override
+  String get kbWsMaximize => 'Werkruimte: paneel maximaliseren of herstellen';
+
+  @override
+  String get kbWsSync =>
+      'Werkruimte: invoer naar alle terminals synchroniseren';
+
+  @override
+  String get kbWsQuickOpen => 'Werkruimte: snel openen';
+
+  @override
+  String get kbWsSwitcher => 'Werkruimte: werkruimte wisselen';
+
+  @override
+  String get kbHomeTab => 'Start: naar tabblad 1–9';
+
+  @override
+  String get kbAppSettings => 'Instellingen openen';
+
+  @override
+  String get kbSettingsSearch => 'Instellingen: zoeken';
+
+  @override
+  String get kbServerPrev => 'Servers: vorige server';
+
+  @override
+  String get kbServerNext => 'Servers: volgende server';
+
+  @override
+  String get kbServerList => 'Servers: serverlijst';
+
+  @override
+  String get kbServerClose => 'Servers: details sluiten';
+
+  @override
+  String get storageTitle => 'Opslag';
+
+  @override
+  String get storageLinuxOnly =>
+      'Storage management currently supports Linux servers.';
+
+  @override
+  String get storageDisks => 'Schijven';
+
+  @override
+  String get storageRaid => 'RAID-array';
+
+  @override
+  String get storagePools => 'ZFS-pools';
+
+  @override
+  String get storageNoFilesystem => 'Geen bestandssysteem';
+
+  @override
+  String storageUsage(Object total, Object used) {
+    return '$used van $total';
+  }
+
+  @override
+  String storageFree(Object size) {
+    return '$size free';
+  }
+
+  @override
+  String get storageBusyMounted => 'In gebruik';
+
+  @override
+  String get storageBusySwap => 'Wisselgeheugen';
+
+  @override
+  String get storageBusyRaid => 'In een RAID-array';
+
+  @override
+  String get storageBusyPool => 'In een pool';
+
+  @override
+  String get storageBusyVolume => 'Bevat een volume';
+
+  @override
+  String get storageBusyReadOnly => 'Alleen-lezen';
+
+  @override
+  String get storageBusySystem => 'Systeempartitie';
+
+  @override
+  String get storageSystemMount =>
+      'Het systeem gebruikt dit koppelpunt; het blijft gekoppeld.';
+
+  @override
+  String get storageNotMounted => 'Daar is niets meer aangekoppeld.';
+
+  @override
+  String get storageMount => 'Koppelen';
+
+  @override
+  String get storageUnmount => 'Ontkoppelen';
+
+  @override
+  String get storageFormat => 'Formatteren';
+
+  @override
+  String get storageInitialize => 'Initialiseren';
+
+  @override
+  String get storageSmartTest => 'SMART-test';
+
+  @override
+  String get storageFilesystem => 'Bestandssysteem';
+
+  @override
+  String get storageLabel => 'Volumelabel';
+
+  @override
+  String get storageMountpoint => 'Koppelpunt';
+
+  @override
+  String get storageMountPersist =>
+      'Bij elke start opnieuw koppelen (/etc/fstab)';
+
+  @override
+  String get storageMountOwn =>
+      'ServerBox hier laten schrijven (voor back-ups)';
+
+  @override
+  String get storageName => 'Naam';
+
+  @override
+  String get storageLevel => 'Niveau';
+
+  @override
+  String get storageLayout => 'Indeling';
+
+  @override
+  String storagePickDevices(Object count) {
+    return 'Kies ten minste $count apparaten. De inhoud gaat verloren.';
+  }
+
+  @override
+  String get storageCreateRaid => 'RAID-array maken';
+
+  @override
+  String storageCreateRaidBody(Object devices, Object level, Object name) {
+    return 'Maakt /dev/$name (RAID $level) van $devices. Alle gegevens erop gaan verloren.';
+  }
+
+  @override
+  String get storageCreatePool => 'Pool maken';
+
+  @override
+  String storageCreatePoolBody(Object devices, Object layout, Object name) {
+    return 'Maakt pool $name ($layout) van $devices. Alle gegevens erop gaan verloren.';
+  }
+
+  @override
+  String storageFormatBody(Object device) {
+    return 'Maakt een nieuw bestandssysteem op $device. Alle gegevens gaan verloren.';
+  }
+
+  @override
+  String storageInitializeBody(Object device) {
+    return 'Wist $device en maakt één partitie voor de hele schijf. Alle gegevens gaan verloren.';
+  }
+
+  @override
+  String storageMountBody(Object device, Object mountpoint) {
+    return 'Koppelt $device aan $mountpoint.';
+  }
+
+  @override
+  String storageUnmountBody(Object mountpoint) {
+    return 'Ontkoppelt $mountpoint en stopt het koppelen bij het starten.';
+  }
+
+  @override
+  String storageSmartTestBody(Object device) {
+    return 'Start een korte zelftest op $device. Dit duurt enkele minuten; de voortgang en het resultaat verschijnen hier.';
+  }
+
+  @override
+  String get storageAddMember => 'Schijf toevoegen';
+
+  @override
+  String storageAddMemberBody(Object array, Object device) {
+    return 'Voegt $device toe aan /dev/$array: het vervangt een defect lid of wacht als reserve. De inhoud gaat verloren.';
+  }
+
+  @override
+  String get storageRemoveMember => 'Verwijderen';
+
+  @override
+  String storageRemoveMemberBody(Object array, Object device) {
+    return 'Markeert $device als defect en haalt het uit /dev/$array. De array blijft draaien; als het een actief lid was, is de array gedegradeerd.';
+  }
+
+  @override
+  String get storageDeleteRaid => 'RAID-array verwijderen';
+
+  @override
+  String storageDeleteRaidBody(Object array) {
+    return 'Stopt /dev/$array en wist de RAID-signaturen van de leden. De gegevens gaan verloren.';
+  }
+
+  @override
+  String get storageDestroyPool => 'Pool vernietigen';
+
+  @override
+  String storageDestroyPoolBody(Object name) {
+    return 'Vernietigt pool $name en alles erin.';
+  }
+
+  @override
+  String get storageScrub => 'Controleren en herstellen';
+
+  @override
+  String storageScrubBody(Object name) {
+    return 'Leest pool $name volledig uit en herstelt wat mogelijk is. Dit gebeurt op de achtergrond.';
+  }
+
+  @override
+  String get storageState => 'Status';
+
+  @override
+  String get storageHealthy => 'Gezond';
+
+  @override
+  String get storageDegraded => 'Gedegradeerd';
+
+  @override
+  String storageSync(Object action) {
+    return 'Synchronisatie ($action)';
+  }
+
+  @override
+  String get storageFaulty => 'Defect';
+
+  @override
+  String get storageSpare => 'Reserve';
+
+  @override
+  String get storageActive => 'Actief';
+
+  @override
+  String get storageScan => 'Laatste scan';
+
+  @override
+  String storageErrors(Object count) {
+    return '$count fouten';
+  }
+
+  @override
+  String get storageNoDisks => 'Geen schijven';
+
+  @override
+  String get storageNoArrays => 'Geen arrays';
+
+  @override
+  String get storageNoPools => 'Geen pools';
+
+  @override
+  String get storageNoMdadm =>
+      'mdadm is niet geïnstalleerd: arrays kunnen hier niet worden gemaakt of gewijzigd.';
+
+  @override
+  String get storageNoZfs => 'ZFS (zfsutils) is niet geïnstalleerd.';
+
+  @override
+  String storageTypeToConfirm(Object word) {
+    return 'Typ $word om te bevestigen';
+  }
+
+  @override
+  String get storageConfirmationMismatch =>
+      'The confirmation text did not match.';
+
+  @override
+  String storageInUse(Object device) {
+    return '$device is in gebruik.';
+  }
+
+  @override
+  String get storageBusy =>
+      'Er wordt al een andere schijfwijziging uitgevoerd.';
+
+  @override
+  String get storageHealthRead => 'Schijfstatus lezen';
+
+  @override
+  String get storageHealthWearing => 'Slijtage';
+
+  @override
+  String get storageHealthFailing => 'Defect';
+
+  @override
+  String get storageHealthAsleep => 'In slaapstand';
+
+  @override
+  String get storageHealthUnsupported => 'Geen SMART';
+
+  @override
+  String storageTemperature(Object value) {
+    return '$value °C';
+  }
+
+  @override
+  String storagePowerOn(Object hours) {
+    return '$hours uur ingeschakeld';
+  }
+
+  @override
+  String storageBadSectors(Object count) {
+    return '$count slechte sectoren';
+  }
+
+  @override
+  String storageTesting(Object percent) {
+    return 'Zelftest: nog $percent%';
+  }
+
+  @override
+  String get storageGrowPartition => 'Partitie vergroten';
+
+  @override
+  String storageGrowPartitionBody(Object device) {
+    return 'Vergroot $device in de vrije ruimte erachter. Vergroot daarna het bestandssysteem.';
+  }
+
+  @override
+  String get storageEncrypt => 'Versleutelen (LUKS)';
+
+  @override
+  String get storagePassphrase => 'Wachtwoordzin';
+
+  @override
+  String get storagePassphraseAgain => 'Nogmaals invoeren';
+
+  @override
+  String get storagePassphraseHint =>
+      'Minstens 8 tekens. Zonder deze zin zijn de gegevens onleesbaar: bewaar hem veilig.';
+
+  @override
+  String get storageInvalidPassphrase =>
+      'De wachtwoordzin moet 8 tot 512 tekens bevatten op één regel.';
+
+  @override
+  String get storagePassphrasesDiffer =>
+      'De wachtwoordzinnen komen niet overeen.';
+
+  @override
+  String get storageEncrypted => 'Versleuteld';
+
+  @override
+  String get storageLocked => 'Vergrendeld';
+
+  @override
+  String get storageUnlock => 'Ontgrendelen';
+
+  @override
+  String storageUnlockBody(Object device) {
+    return 'Opent $device met de wachtwoordzin.';
+  }
+
+  @override
+  String get storageLock => 'Vergrendelen';
+
+  @override
+  String storageLockBody(Object device) {
+    return 'Sluit $device. Koppel het bestandssysteem eerst af.';
+  }
+
+  @override
+  String get storageReplace => 'Vervangen';
+
+  @override
+  String storageReplaceBody(Object name, Object old, Object replacement) {
+    return 'Vervangt $old in pool $name door $replacement. De pool kopieert de gegevens; de inhoud van $replacement gaat verloren.';
+  }
+
+  @override
+  String get storageAttach => 'Spiegelen';
+
+  @override
+  String storageAttachBody(Object existing, Object replacement) {
+    return 'Spiegelt $existing naar $replacement. De inhoud van $replacement gaat verloren.';
+  }
+
+  @override
+  String get storageAddSpare => 'Reserve toevoegen';
+
+  @override
+  String storageAddSpareBody(Object devices, Object name) {
+    return 'Voegt $devices als reserve toe aan pool $name. De inhoud gaat verloren.';
+  }
+
+  @override
+  String get storageRemoveDevice => 'Verwijderen';
+
+  @override
+  String storageRemoveDeviceBody(Object device, Object name) {
+    return 'Haalt $device uit pool $name.';
+  }
+
+  @override
+  String get storageOnline => 'Online brengen';
+
+  @override
+  String storageOnlineBody(Object device, Object name) {
+    return 'Voegt $device weer toe aan pool $name en vergroot deze tot de hele schijf.';
+  }
+
+  @override
+  String get storageDetails => 'Details';
+
+  @override
+  String get storageAttributes => 'Kenmerken';
+
+  @override
+  String get storageAttrValue => 'Waarde';
+
+  @override
+  String get storageAttrWorst => 'Slechtste';
+
+  @override
+  String get storageAttrThresh => 'Drempel';
+
+  @override
+  String get storageSelfTests => 'Zelftests';
+
+  @override
+  String get storageTestShort => 'Kort';
+
+  @override
+  String get storageTestLong => 'Lang';
+
+  @override
+  String get storageTestPassed => 'Geslaagd';
+
+  @override
+  String get storageTestFailed => 'Mislukt';
+
+  @override
+  String get storageTestAborted => 'Gestopt';
+
+  @override
+  String storageAtHours(Object hours) {
+    return 'na $hours u';
+  }
+
+  @override
+  String get storageNothingToShow => 'Niets om weer te geven';
+
+  @override
+  String get storageLongTest => 'Lange test';
+
+  @override
+  String storageSmartLongTestBody(Object device) {
+    return 'Start een lange zelftest op $device. De hele schijf wordt gelezen; een grote schijf kan uren duren.';
+  }
+
+  @override
+  String get storageMountedInside => 'Koppel eerst het bestandssysteem af.';
+
+  @override
+  String get storageNotRemovable =>
+      'Alleen reserve- of cacheapparaten kunnen hier worden verwijderd.';
+
+  @override
+  String get storageNotGrowable => 'This device cannot be grown here.';
+
+  @override
+  String get storageOverlapping => 'Choose devices that do not overlap.';
+
+  @override
+  String get storageInvalidDevice =>
+      'The device is invalid or no longer available.';
+
+  @override
+  String get storageInvalidMountpoint => 'The mount point is invalid.';
+
+  @override
+  String get storageInvalidName => 'The name is invalid.';
+
+  @override
+  String get storageInvalidFilesystem => 'The filesystem is not supported.';
+
+  @override
+  String get storageInvalidLabel => 'The label is invalid.';
+
+  @override
+  String get storageInvalidLevel => 'The RAID level or pool layout is invalid.';
+
+  @override
+  String get storageTooFewDevices => 'Not enough valid devices were selected.';
+
+  @override
+  String get storageExpand => 'Uitbreiden';
+
+  @override
+  String storageExpandBody(Object device) {
+    return 'Vergroot het bestandssysteem op $device tot de volledige apparaatgrootte. Het blijft gekoppeld.';
+  }
+
+  @override
+  String get storageGrowRaid => 'Vergroten';
+
+  @override
+  String storageGrowRaidBody(Object array, Object device) {
+    return 'Voegt $device als extra actief lid toe aan /dev/$array. RAID 1 krijgt een extra spiegel; RAID 5 en 6 krijgen meer ruimte zodra de herindeling klaar is. Dat kan uren duren. Breid daarna het bestandssysteem uit. De inhoud van $device gaat verloren.';
+  }
+
+  @override
+  String get storageAddToPool => 'Schijven toevoegen';
+
+  @override
+  String storageAddToPoolBody(Object devices, Object layout, Object name) {
+    return 'Voegt $devices met indeling $layout toe aan pool $name voor meer ruimte. Ze kunnen niet meer worden verwijderd en de inhoud gaat verloren.';
+  }
+
+  @override
+  String get sharingTitle => 'Gedeelde mappen';
+
+  @override
+  String get sharingSmb => 'SMB';
+
+  @override
+  String get sharingNfs => 'NFS';
+
+  @override
+  String get sharingService => 'Service';
+
+  @override
+  String get sharingRunning => 'Actief';
+
+  @override
+  String get sharingStopped => 'Gestopt';
+
+  @override
+  String get sharingNfsServer => 'NFS-server';
+
+  @override
+  String get sharingNoSamba =>
+      'Samba is niet geïnstalleerd. Windows, macOS en Linux kunnen SMB-mappen openen.';
+
+  @override
+  String get sharingNoNfs =>
+      'De NFS-server is niet geïnstalleerd. Linux en macOS kunnen NFS-exports koppelen.';
+
+  @override
+  String get sharingInstallSamba => 'Samba installeren';
+
+  @override
+  String get sharingInstallSambaBody =>
+      'Installeert Samba met de pakketbeheerder van de machine.';
+
+  @override
+  String get sharingInstallNfs => 'NFS-server installeren';
+
+  @override
+  String get sharingInstallNfsBody =>
+      'Installeert de NFS-server met de pakketbeheerder van de machine.';
+
+  @override
+  String get sharingAddShare => 'Gedeelde map toevoegen';
+
+  @override
+  String get sharingAddExport => 'Export toevoegen';
+
+  @override
+  String get sharingEdit => 'Bewerken';
+
+  @override
+  String get sharingRemove => 'Verwijderen';
+
+  @override
+  String get sharingSave => 'Opslaan';
+
+  @override
+  String sharingSaveSmbBody(Object name, Object path) {
+    return 'Deelt $path via SMB als $name en laadt Samba daarna opnieuw.';
+  }
+
+  @override
+  String sharingSaveNfsBody(Object path) {
+    return 'Exporteert $path via NFS en laadt de exports daarna opnieuw.';
+  }
+
+  @override
+  String sharingRemoveSmbBody(Object name) {
+    return 'Stopt het delen van $name. De map en bestanden blijven behouden.';
+  }
+
+  @override
+  String sharingRemoveNfsBody(Object path) {
+    return 'Stopt het exporteren van $path. De map en bestanden blijven behouden.';
+  }
+
+  @override
+  String get sharingElsewhere => 'Buiten ServerBox instellen';
+
+  @override
+  String get sharingNoShares => 'Geen SMB-mappen';
+
+  @override
+  String get sharingNoExports => 'Geen NFS-exports';
+
+  @override
+  String get sharingReadOnly => 'Alleen lezen';
+
+  @override
+  String get sharingReadWrite => 'Lezen en schrijven';
+
+  @override
+  String get sharingGuest => 'Gasten';
+
+  @override
+  String get sharingGuestLabel =>
+      'Iedereen op het netwerk zonder account toegang geven';
+
+  @override
+  String get sharingUsersHint =>
+      'Toegestane accounts (niets aangevinkt: alle accounts met een SMB-wachtwoord):';
+
+  @override
+  String get sharingFolder => 'Map';
+
+  @override
+  String get sharingFolderHint =>
+      'Een map op de server, bijvoorbeeld een schijf die in Opslag is gekoppeld.';
+
+  @override
+  String get sharingComment => 'Beschrijving';
+
+  @override
+  String get sharingPasswords => 'SMB-wachtwoorden';
+
+  @override
+  String get sharingPasswordsBody =>
+      'Samba beheert eigen wachtwoorden: stel er een in voor elk account dat verbinding maakt.';
+
+  @override
+  String get sharingSetPassword => 'Wachtwoord instellen';
+
+  @override
+  String get sharingNewPassword => 'Nieuw SMB-wachtwoord';
+
+  @override
+  String get sharingNewPasswordAgain => 'Nogmaals invoeren';
+
+  @override
+  String get sharingPasswordsDiffer => 'De wachtwoorden zijn verschillend.';
+
+  @override
+  String get sharingClientsHint =>
+      'Wie mag koppelen: * voor iedereen, een host, adres of netwerk zoals 192.168.1.0/24.';
+
+  @override
+  String get sharingClient => 'Client';
+
+  @override
+  String get sharingAddClient => 'Client toevoegen';
+
+  @override
+  String get sharingSquashRoot => 'root wordt nobody';
+
+  @override
+  String get sharingSquashAll => 'Iedereen wordt nobody';
+
+  @override
+  String get sharingSquashNone => 'root blijft root';
+
+  @override
+  String sharingNotAFolder(Object path) {
+    return '$path is geen map op de server.';
+  }
+
+  @override
+  String sharingRefused(Object detail) {
+    return 'De configuratie is geweigerd en de vorige is teruggezet: $detail';
+  }
+
+  @override
+  String get sharingDuplicate =>
+      'Een andere gedeelde map gebruikt deze naam of map al.';
+
+  @override
+  String get sharingInvalidName =>
+      'Een naam mag letters, cijfers en _ . - bevatten (maximaal 32 tekens).';
+
+  @override
+  String get sharingInvalidPath =>
+      'De map moet een absoluut pad zijn zonder aanhalingstekens, backslashes of ..';
+
+  @override
+  String get sharingInvalidClient =>
+      'Een client is *, een host, een adres of een netwerk.';
+
+  @override
+  String get sharingInvalidPassword =>
+      'Dit wachtwoord kan niet worden gebruikt.';
+
+  @override
+  String get sharingTimeMachineOption => 'Time Machine-reservekopieën (Mac)';
+
+  @override
+  String get sharingRecycleOption =>
+      'Verwijderde bestanden bewaren in .recycle';
+
+  @override
+  String get sharingTimeMachine => 'Time Machine';
+
+  @override
+  String get sharingRecycle => 'Prullenbak';
+
+  @override
+  String get sharingConnectedNow => 'Nu verbonden';
+
+  @override
+  String get sharingNobodyConnected => 'Niemand is verbonden';
+
+  @override
+  String get sharingShowConnections => 'Verbindingen tonen';
+
+  @override
+  String get sharingShowConnectionsBody => 'Leest als root wie verbonden is.';
+
+  @override
+  String get sharingConnectionsLinuxOnly =>
+      'Sharing management currently supports Linux servers.';
+
+  @override
+  String get agentThisDevice => 'Dit apparaat';
+
+  @override
+  String get agentSource => 'Bron';
+
+  @override
+  String agentDeleteRemoteTip(String server) {
+    return 'De taak wordt verwijderd op $server.';
+  }
+
+  @override
+  String get agentPlan => 'Plan';
+
+  @override
+  String get agentRemoteGone => 'Deze taak staat niet meer op de server.';
+
+  @override
+  String agentRemoteReplyHint(String server) {
+    return 'Antwoorden op de taak op $server';
+  }
+
+  @override
+  String agentRemoteStatus(String server, String status) {
+    String _temp0 = intl.Intl.selectLogic(status, {
+      'queued': 'In wachtrij',
+      'running': 'Wordt uitgevoerd',
+      'waiting': 'Wacht op je reactie',
+      'done': 'Voltooid',
+      'failed': 'Mislukt',
+      'cancelled': 'Gestopt',
+      'other': '',
+    });
+    return '$server · $_temp0';
+  }
+
+  @override
+  String agentRemoteAlways(String rule) {
+    return '$rule altijd toestaan';
+  }
+
+  @override
+  String agentRemoteTypeToRun(String name) {
+    return 'Typ $name om uit te voeren';
+  }
+
+  @override
+  String get agentRemoteRunAnyway => 'Toch uitvoeren';
+
+  @override
+  String agentRemoteSudoFor(String user) {
+    return 'Wachtwoord van $user';
+  }
+
+  @override
+  String get agentRemoteSudoWrong => 'Onjuist wachtwoord';
+
+  @override
+  String get agentRemoteSudoRemember => '15 minuten onthouden';
+
+  @override
+  String agentNewOn(String place) {
+    return 'Nieuw gesprek: $place';
+  }
+
+  @override
+  String agentRemoteNewHint(String server) {
+    return 'Stel de agent op $server een vraag of geef hem een taak.';
+  }
+
+  @override
+  String get agentPermissionMode => 'Machtigingsmodus';
+
+  @override
+  String get agentModeAuto => 'Automatisch';
+
+  @override
+  String get agentModeManual => 'Handmatig';
+
+  @override
+  String get agentModeBypass => 'Alles toestaan';
+
+  @override
+  String get agentModeBypassOff => 'Uitgeschakeld op deze server';
+
+  @override
+  String get agentModeBypassWarn =>
+      'Alles toestaan: verwijderen, opnieuw starten en configuratiewijzigingen worden zonder bevestiging uitgevoerd.';
+
+  @override
+  String get webApps => 'Webapps';
+
+  @override
+  String get webAppUnhealthy => 'Ongezond';
+
+  @override
+  String get webAppDown => 'Uitgevallen';
+
+  @override
+  String get webAppInstalling => 'Wordt geïnstalleerd';
+
+  @override
+  String get webAppsEmpty =>
+      'Nog geen webapps. Installeer ze via de App Store van het Monitor-paneel.';
+
+  @override
+  String get deskAppOpensInPanel => 'Opent in het paneel';
+
+  @override
+  String get webAppVersion => 'Versie';
+
+  @override
+  String get webAppHomepage => 'Website';
+
+  @override
+  String webAppUpdate(String version) {
+    return 'Versie $version is beschikbaar. Werk deze bij via het Monitor-paneel.';
+  }
+
+  @override
+  String noticeStackDown(String app) {
+    return '$app is gestopt';
+  }
+
+  @override
+  String noticeStackDownBody(String services) {
+    return 'Niet actief: $services.';
+  }
+
+  @override
+  String get noticeStackDownBodyEmpty => 'Er draait geen container.';
+
+  @override
+  String noticeStackUnhealthy(String app) {
+    return '$app werkt niet goed';
+  }
+
+  @override
+  String noticeStackUnhealthyBody(String services) {
+    return 'Gezondheidscontrole mislukt: $services.';
+  }
+
+  @override
+  String noticeStackBack(String app) {
+    return '$app draait weer';
+  }
+
+  @override
+  String get noticeStackBackBody => 'Alle containers zijn actief.';
+
+  @override
+  String noticeStackUpdate(String app) {
+    return 'Er is een update voor $app';
+  }
+
+  @override
+  String noticeStackUpdateBody(String project, String version, String current) {
+    return '$project $version kan worden geïnstalleerd (huidig: $current).';
+  }
+
+  @override
+  String noticeStorageArrayDegraded(String array) {
+    return '/dev/$array is gedegradeerd';
+  }
+
+  @override
+  String get noticeStorageArrayDegradedBody =>
+      'Een lid is defect of ontbreekt; de array werkt zonder redundantie.';
+
+  @override
+  String noticeStorageArrayBack(String array) {
+    return '/dev/$array is weer gezond';
+  }
+
+  @override
+  String get noticeStorageArrayBackBody => 'Alle leden werken.';
+
+  @override
+  String noticeStoragePoolUnhealthy(String pool, String health) {
+    return 'Pool $pool is $health';
+  }
+
+  @override
+  String get noticeStoragePoolUnhealthyBody =>
+      'Open Opslag om te zien om welk apparaat het gaat.';
+
+  @override
+  String noticeStoragePoolBack(String pool) {
+    return 'Pool $pool is weer online';
+  }
+
+  @override
+  String get noticeStoragePoolBackBody => 'Alle apparaten werken.';
+
+  @override
+  String noticeStorageDiskFailing(String device) {
+    return '$device is defect';
+  }
+
+  @override
+  String get noticeStorageDiskFailingBody =>
+      'De SMART-controle of zelftest is mislukt: kopieer de inhoud ergens anders heen en vervang de schijf.';
+
+  @override
+  String noticeStorageDiskSectors(String device, int count) {
+    return '$device heeft $count slechte sectoren';
+  }
+
+  @override
+  String noticeStorageDiskSectorsBody(int was) {
+    return 'Eerder waren dat er $was. Een schijf met steeds meer slechte sectoren valt vaak snel uit.';
+  }
+
+  @override
+  String noticeStorageMaintenanceFailed(String task) {
+    return 'Opslagonderhoud is niet uitgevoerd: $task';
+  }
+
+  @override
+  String get storageTaskScrub => 'Pools opschonen en arrays controleren';
+
+  @override
+  String get storageTaskSmartShort => 'Korte SMART-test';
+
+  @override
+  String get storageTaskSmartLong => 'Lange SMART-test';
+
+  @override
+  String get storageNeedsSudo =>
+      'sudo vroeg om een wachtwoord: voer de Monitor uit als root of sta de bovenstaande opdrachten toe.';
+
+  @override
+  String get monitorTab => 'Monitor';
+
+  @override
+  String get monitorOverview => 'Overzicht';
+
+  @override
+  String get monitorNotices => 'Meldingen';
+
+  @override
+  String get monitorAudit => 'Auditlogboek';
+
+  @override
+  String get monitorLive => 'Sessies en apparaten';
+
+  @override
+  String get monitorNoAgents =>
+      'Nog geen server wordt via een Monitor bereikt.';
+
+  @override
+  String get monitorNotOffered =>
+      'Deze Monitorversie biedt dit niet. Werk de Monitor bij.';
+
+  @override
+  String get monitorAlertsNotOffered =>
+      'Deze Monitorversie meldt geen waarschuwingen.';
+
+  @override
+  String get monitorAlertsNone => 'Geen regel slaat aan.';
+
+  @override
+  String monitorFiringFor(String duration) {
+    return 'al $duration actief';
+  }
+
+  @override
+  String monitorAgentVersion(String version) {
+    return 'Monitor $version';
+  }
+
+  @override
+  String monitorAgentUpdate(String version) {
+    return '$version beschikbaar';
+  }
+
+  @override
+  String monitorUnread(int count) {
+    return '$count ongelezen';
+  }
+
+  @override
+  String monitorAppsUnwell(int count) {
+    return 'Apps met problemen: $count';
+  }
+
+  @override
+  String monitorAppsUpdates(int count) {
+    return 'App-updates: $count';
+  }
+
+  @override
+  String get monitorUpdatesOnly => 'Alleen updates';
+
+  @override
+  String get monitorNoUpdates => 'Geen app heeft een update.';
+
+  @override
+  String get monitorNoticesEmpty => 'Geen meldingen.';
+
+  @override
+  String get monitorMarkAllRead => 'Alles als gelezen markeren';
+
+  @override
+  String get monitorAuditExec => 'Opdrachten';
+
+  @override
+  String get monitorAuditMachine => 'Machinebeheer';
+
+  @override
+  String get monitorAuditListen => 'Luisterende poorten';
+
+  @override
+  String get monitorAuditTicket => 'Verbindingstickets';
+
+  @override
+  String get monitorAuditPush => 'Meldingskanalen';
+
+  @override
+  String get monitorAuditAdmin => 'Account';
+
+  @override
+  String get monitorAuditDenied => 'Geweigerd';
+
+  @override
+  String get monitorLoadMore => 'Meer laden';
+
+  @override
+  String get monitorLiveSessions => 'Terminalsessies';
+
+  @override
+  String get monitorLiveConnections => 'Verbindingen';
+
+  @override
+  String get monitorLiveWatchTokens => 'Horloge- en widgettokens';
+
+  @override
+  String get monitorLiveDevices => 'Aangemelde apparaten';
+
+  @override
+  String get monitorLiveDevicesTip =>
+      'Een vergeten apparaat telt bij de volgende aanmelding mee voor de accountbrede limiet op mislukte pogingen. Het wordt niet afgemeld: een apparaat met het wachtwoord meldt zich opnieuw aan. Wijzig het wachtwoord om een apparaat buiten te houden.';
+
+  @override
+  String get monitorLiveAttached => 'Gekoppeld';
+
+  @override
+  String get monitorLiveDetached => 'Losgekoppeld';
+
+  @override
+  String get monitorLiveEnd => 'Beëindigen';
+
+  @override
+  String get monitorLiveRevoke => 'Intrekken';
+
+  @override
+  String get monitorLiveForget => 'Vergeten';
+
+  @override
+  String monitorLiveEndSessionConfirm(String name) {
+    return 'Terminalsessie \"$name\" beëindigen? Wat erin draait, stopt.';
+  }
+
+  @override
+  String monitorLiveEndConnectionConfirm(String name) {
+    return 'Verbinding met $name beëindigen?';
+  }
+
+  @override
+  String monitorLiveRevokeConfirm(String name) {
+    return 'Token van $name intrekken? Het wordt niet meer bijgewerkt tot het opnieuw is ingesteld.';
+  }
+
+  @override
+  String monitorLiveForgetConfirm(String name) {
+    return '$name vergeten?';
+  }
+
+  @override
+  String monitorLiveExpires(String time) {
+    return 'Verloopt $time';
+  }
+
+  @override
+  String get monitorLiveStream => 'Doorgegeven verbinding';
+
+  @override
+  String get monitorLiveAccepted => 'Doorgestuurde verbinding';
+
+  @override
+  String get monitorLiveConsole => 'Console';
+
+  @override
+  String monitorAgentsCount(int count) {
+    return '$count Monitors';
+  }
+
+  @override
+  String get monitorStatOnline => 'Online';
+
+  @override
+  String get monitorStatFiring => 'Actieve waarschuwingen';
+
+  @override
+  String get monitorStatUnread => 'Ongelezen';
+
+  @override
+  String get monitorStatUpdates => 'App-updates';
+
+  @override
+  String get monitorAuditEmpty => 'Geen vermelding komt overeen.';
+
+  @override
+  String get monitorLiveNoSessions => 'Er is geen terminalsessie open.';
+
+  @override
+  String get monitorLiveNoConnections => 'Er wordt niets doorgestuurd.';
+
+  @override
+  String get monitorLiveNoTokens => 'Er is geen horloge of widget gekoppeld.';
+
+  @override
+  String get monitorLiveNoDevices => 'Er heeft zich geen apparaat aangemeld.';
+
+  @override
+  String get monitorUpdateAgent => 'Monitor bijwerken';
+
+  @override
+  String get monitorAgentTooOldTip =>
+      'Het Monitor-tabblad beschrijft hoe u hem bijwerkt.';
+
+  @override
+  String get monitorAgentTooOldBody =>
+      'Deze Monitor is van vóór het ene wachtwoord; de app kan niet aanmelden. Na de update is het wachtwoord dat van het oudste beheerdersaccount.';
+
+  @override
+  String monitorAgentOutdatedBody(String latest, String running) {
+    return '$latest is uit; deze Monitor draait $running.';
+  }
+
+  @override
+  String get monitorUpdateRunHint =>
+      'Voer dit op de server uit, met het account waarmee de Monitor is geïnstalleerd:';
+
+  @override
+  String get monitorUpdateSshHint =>
+      'De terminal voert het uit. Is de Monitor systeembreed geïnstalleerd en loopt de terminal via SSH, dan vraagt sudo daar om het wachtwoord.';
+
+  @override
+  String get monitorUpdateNoSsh =>
+      'De app kan op deze server geen terminal openen: voer het daar zelf uit.';
+
+  @override
+  String get monitorUpdateDocker =>
+      'In Docker? Haal de nieuwe image op en maak de container opnieuw aan.';
+
+  @override
+  String get monitorUpdateAfter =>
+      'Ververs na de herstart het Monitor-tabblad.';
+
+  @override
+  String get monitorUpdateInTerminal => 'In een terminal uitvoeren';
+
+  @override
+  String get monitorHowToUpdate => 'Zo werkt u bij';
+
+  @override
+  String get monitorUpdateNix =>
+      'Geïnstalleerd met de NixOS-module: werk hem bij via je systeemconfiguratie en bouw opnieuw.';
+
+  @override
+  String get noticeAgentUpdate => 'Er is een update voor de Monitor';
+
+  @override
+  String get monitorUpdateLegacyUser => 'Accountnaam';
+
+  @override
+  String get monitorUpdateLegacyHint =>
+      'Deze Monitor meldt zich nog aan met een accountnaam en wachtwoord: de naam die deze app eerder gebruikte (vaak admin) en het opgeslagen wachtwoord.';
+
+  @override
+  String get monitorUpdateNow => 'Nu bijwerken';
+
+  @override
+  String get monitorUpdating => 'Bijwerken…';
+
+  @override
+  String get monitorUpdateRestarting =>
+      'De Monitor herstart; de verbinding is binnen enkele seconden terug…';
+
+  @override
+  String monitorUpdateDone(String version) {
+    return 'Bijgewerkt: de Monitor draait $version.';
+  }
+
+  @override
+  String get monitorUpdateFailed =>
+      'Het bijwerken is mislukt. De uitvoer staat hierboven.';
+
+  @override
+  String get monitorUpdateAgentHint =>
+      'De Monitor voert het installatiescript los van zichzelf uit, dus zijn herstart stopt de update niet. De verbinding valt intussen enkele seconden weg; dit venster volgt de update door de herstart heen.';
+
+  @override
+  String get monitorUpdateSudoPassword => 'sudo-wachtwoord';
+
+  @override
+  String get monitorUpdateSudoHint =>
+      'Het installatiescript heeft hier root nodig (een OpenRC-service). Het wachtwoord wordt één keer gebruikt en niet opgeslagen.';
+
+  @override
+  String get monitorUpdateSudoRefused =>
+      'sudo accepteerde dit wachtwoord niet.';
+
+  @override
+  String get monitorUpdateNoAnswer =>
+      'De Monitor is niet teruggekomen. Controleer hem op de server.';
+
+  @override
+  String get keyArrowDown => 'Pijl omlaag';
+
+  @override
+  String get keyArrowLeft => 'Pijl links';
+
+  @override
+  String get keyArrowRight => 'Pijl rechts';
+
+  @override
+  String get keyArrowUp => 'Pijl omhoog';
+
+  @override
+  String get keyControl => 'Control';
+
+  @override
+  String get keyEscape => 'Escape';
+
+  @override
+  String get keyPageDown => 'Pagina omlaag';
+
+  @override
+  String get keyPageUp => 'Pagina omhoog';
+
+  @override
+  String get termTextView => 'Als tekst bekijken';
+
+  @override
+  String termTextLetGo(int count) {
+    return 'Eerdere regels niet meer bewaard: $count';
+  }
+
+  @override
+  String get systemGroups => 'Groepen';
+
+  @override
+  String get userGid => 'GID';
+
+  @override
+  String get userGroupMembers => 'Leden';
+
+  @override
+  String get userPrimaryMembers => 'Primaire leden';
+
+  @override
+  String get userSystemGroup => 'Systeemgroep';
+
+  @override
+  String get userMembersHint => 'alice,bob';
+
+  @override
+  String get userRegularGroup => 'Regular';
+
+  @override
+  String get termMetricsBar => 'Servermetingen onder de terminal';
+
+  @override
+  String get termMetricsBarTip =>
+      'CPU, geheugen, netwerk en schijf, zoals op de serverkaart. Op een telefoon boven de virtuele toetsen.';
+
+  @override
+  String get termSideMetrics => 'Server readings in a side panel';
+
+  @override
+  String get termSideMetricsTip =>
+      'Stays put while the terminal scrolls, so the readings are always in view.';
+
+  @override
+  String get termFilePanel => 'Files under the terminal';
+
+  @override
+  String get termFilePanelTip =>
+      'Upload, download, rename and delete on the server while the session stays open. Drag its top edge to resize; the arrow folds it away.';
+
+  @override
+  String get termBgColor => 'Terminal background';
+
+  @override
+  String get termFgColor => 'Terminal text colour';
+
+  @override
+  String get barColor => 'Panel colour';
+
+  @override
+  String get filePanelOpacity => 'Panel opacity';
+
+  @override
+  String get uiAccentColor => 'Accent colour';
+
+  @override
+  String get uiTextColor => 'Text colour';
+
+  @override
+  String get sftpFiles => 'Files';
+
+  @override
+  String get sftpTunnels => 'Tunnels';
+
+  @override
+  String get sftpModified => 'Modified';
+
+  @override
+  String get sftpPermissions => 'Permissions';
+
+  @override
+  String get sftpLoading => 'Loading…';
+
+  @override
+  String get sftpEmptyDir => 'Empty directory';
+
+  @override
+  String get sftpNoUploads => 'No uploads yet';
+
+  @override
+  String get sftpUploads => 'Uploads';
+
+  @override
+  String get sftpUploadDone => 'Done';
+
+  @override
+  String get sftpUploadFailed => 'Failed';
+
+  @override
+  String get sftpNewFolder => 'New folder';
+
+  @override
+  String get sftpDirectoryTree => 'Directory tree';
+
+  @override
+  String sftpItems(int count) {
+    return '$count items';
+  }
+
+  @override
+  String sftpDeleteConfirm(String name) {
+    return 'Delete \"$name\"?';
+  }
+
+  @override
+  String get swap => 'Swap';
+
+  @override
+  String get copied => 'Copied';
+
+  @override
+  String get localResources => 'Resources';
+
+  @override
+  String get freeTotal => 'Free/Total';
+
+  @override
+  String get processes => 'Processes';
+
+  @override
+  String get ipAddress => 'IP';
+
+  @override
+  String get localNotAdded => 'This device is not added as a server';
+
+  @override
+  String get launchFailedTitle => 'ServerBox kon niet starten';
+
+  @override
+  String get launchFailedBody =>
+      'Kopieer de fout hieronder en meld die in een GitHub-issue, samen met de logbestanden.';
+
+  @override
+  String launchFailedLogs(String path) {
+    return 'Logs: $path';
+  }
+
+  @override
+  String get reconnect => 'Opnieuw verbinden';
+
+  @override
+  String get reconnectEndsShell =>
+      'Er is geen tmux-sessie om opnieuw aan te koppelen, dus opnieuw verbinden beëindigt deze shell en alles wat er nog in draait, en wist de uitvoer van het scherm.';
+
+  @override
+  String get handedness => 'Voorkeurshand';
+
+  @override
+  String get handednessLeft => 'Linkerhand';
+
+  @override
+  String get handednessRight => 'Rechterhand';
+
+  @override
+  String get handednessTip =>
+      'Aan de kant van de hand waarmee je het toestel vasthoudt, staan de tabs in de kolom naast de statusbalk, zoals de balken van het systeem.';
+
+  @override
+  String get storeUnreadableTitle =>
+      'De vorige gegevens konden niet worden geopend';
+
+  @override
+  String get storeUnreadableKeyLost =>
+      'De sleutel waarmee de gegevens van ServerBox zijn versleuteld, staat niet meer in de sleutelopslag van het systeem. Dat gebeurt als het systeem de sleutelopslag reset, als de sleutelhangerdienst niet beschikbaar is, of als de app-gegevens van een ander apparaat zijn gekopieerd, bijvoorbeeld met een overzettool. Zonder die sleutel kunnen de gegevens niet worden ontsleuteld, dus ServerBox is zonder gegevens gestart.';
+
+  @override
+  String get storeUnreadableKeyRejected =>
+      'De sleutel in de sleutelopslag van het systeem opent de gegevens van ServerBox niet: ze zijn met een andere sleutel versleuteld, of het bestand is beschadigd. ServerBox is zonder gegevens gestart.';
+
+  @override
+  String storeUnreadableKept(String path) {
+    return 'Het oude bestand staat nog op:\n$path\nZet een back-up terug om je servers terug te krijgen.';
+  }
+
+  @override
+  String get storeKeyLostAsk =>
+      'De sleutel waarmee de gegevens van ServerBox zijn versleuteld, staat niet in de sleutelopslag van het systeem. Is de sleutelopslag of sleutelbos alleen nu niet beschikbaar, bijvoorbeeld nog niet ontgrendeld, probeer het dan opnieuw. Anders kan ServerBox zonder gegevens starten; het oude bestand blijft bewaard.';
+
+  @override
+  String get storeKeyLostStartEmpty => 'Starten zonder gegevens';
+
+  @override
+  String get storeVaultFailedAsk =>
+      'De sleutelopslag van het systeem kon de sleutel waarmee de gegevens van ServerBox zijn versleuteld niet ontsleutelen. Was dit een eenmalige fout, probeer het dan opnieuw, zo nodig na het herstarten van het apparaat. Gebeurt het elke keer, dan kunnen de gegevens niet worden ontsleuteld en kan ServerBox zonder gegevens starten; het oude bestand blijft bewaard. Starten zonder gegevens wist ook het back-upwachtwoord, de WebDAV- en GitHub-inloggegevens en de opgeslagen sudo-wachtwoorden.';
+
+  @override
+  String get storeVaultFailedRootHint =>
+      'Op een geroot apparaat veroorzaakt een module die de sleutelopslag onderschept (zoals TrickyStore) deze fout. Verwijder deze app uit de doellijst van de module en start daarna zonder gegevens.';
+
+  @override
+  String get storeUnreadableVaultFailed =>
+      'De sleutelopslag van het systeem kon de sleutel waarmee de gegevens van ServerBox zijn versleuteld niet ontsleutelen. ServerBox heeft daarom zijn items in de sleutelopslag gereset en is zonder gegevens gestart. Het back-upwachtwoord, de WebDAV- en GitHub-inloggegevens en de opgeslagen sudo-wachtwoorden moeten opnieuw worden ingevoerd.';
+
+  @override
+  String get hostCertAuthorities => 'Hostcertificaatautoriteiten';
+
+  @override
+  String get hostCertAuthoritiesTip =>
+      'Een host waarvan het certificaat door een van deze is ondertekend, wordt zonder vragen vertrouwd, zoals met @cert-authority van OpenSSH; andere hosts worden zoals voorheen bij de eerste verbinding gevraagd. Hosts zijn door komma\'s gescheiden patronen met * en ?, en ! om uit te sluiten; een andere poort dan 22 wordt vergeleken als [host]:port.';
+
+  @override
+  String get hostCertAuthorityInvalid =>
+      'Geen ondersteunde openbare SSH-sleutel (ssh-ed25519, ssh-rsa of ecdsa-sha2-*)';
+
+  @override
+  String get hostCertAuthorityNoHosts =>
+      'Vul de hosts in waarvoor ze instaat, bijvoorbeeld *';
+
+  @override
+  String get hostCertAuthorityExists => 'Staat al in de lijst';
+
+  @override
+  String get addToHomeScreen => 'Toevoegen aan startscherm';
+
+  @override
+  String transfersActive(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count overdrachten',
+      one: '1 overdracht',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get syncKeyRotate => 'Synchronisatiesleutel vervangen';
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Widget strings only. Everything the Flutter side owns stays in its
+    ARB files; these are drawn by native code in a process the Flutter
+    engine may never have started in, so `l10n` is not reachable.
+
+    Indonesian is `values-in`, not `values-id`: resource qualifiers use
+    the legacy ISO code, which is what `Locale.getLanguage()` returns
+    on every Android version.
+-->
+<resources>
+    <string name="widget_configure_title">Widget</string>
+    <string name="widget_configure_server">Server</string>
+    <string name="widget_configure_metric">Belangrijkste meting</string>
+    <string name="widget_configure_save">Bewaren</string>
+    <string name="widget_configure_empty">Je hebt ServerBox Monitor nog niet ingesteld op een server.\nVoeg een server toe in ServerBox en kom daarna terug.</string>
+    <string name="widget_metric_cpu">CPU</string>
+    <string name="widget_metric_memory">Geheugen</string>
+    <string name="widget_metric_disk">Schijf</string>
+    <string name="widget_metric_network">Netwerk</string>
+    <string name="widget_err_not_configured">Tik om een server te kiezen</string>
+    <string name="widget_err_no_token">Aanmeldgegevens ontbreken — open ServerBox</string>
+    <string name="widget_err_insecure">HTTPS vereist</string>
+    <string name="widget_err_network">Netwerkfout</string>
+    <string name="widget_err_timeout">Time-out</string>
+    <string name="widget_chart_desc">Statusgrafieken</string>
+    <string name="widget_refresh_desc">Vernieuwen</string>
+    <string name="widget_small_label">Serverwaarden</string>
+    <string name="widget_medium_label">Servergrafieken</string>
+    <string name="widget_label">Serverstatus</string>
+    <string name="widget_description">Bekijk CPU, geheugen, schijf en netwerk in één oogopslag. Vergroot de widget voor meer details.</string>
+
+    <string name="process_text_label">Als codefragment opslaan</string>
+    <string name="tile_no_sessions">Er zijn geen actieve sessies</string>
+    <plurals name="tile_sessions">
+        <item quantity="one">%d sessie</item>
+        <item quantity="other">%d sessies</item>
+    </plurals>
+    <string name="channel_transfers">Bestandsoverdrachten</string>
+    <string name="incoming_failed">Gedeelde bestanden konden niet worden ontvangen</string>
+    <string name="shortcut_server_gone">Server verwijderd</string>
+</resources>

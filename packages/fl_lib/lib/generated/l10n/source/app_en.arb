@@ -1,0 +1,1892 @@
+{
+  "@@locale": "en",
+  "about": "About",
+  "@about": {
+    "description": "Label for about."
+  },
+  "actionAndAction": "{action1} and then {action2}?",
+  "@actionAndAction": {
+    "description": "Message template for action and action.",
+    "placeholders": {
+      "action1": {
+        "type": "Object"
+      },
+      "action2": {
+        "type": "Object"
+      }
+    }
+  },
+  "active": "Active",
+  "@active": {
+    "description": "Label for active."
+  },
+  "add": "Add",
+  "@add": {
+    "description": "Label for add."
+  },
+  "addr": "Address",
+  "@addr": {
+    "description": "Label for addr."
+  },
+  "agoFmt": "{time} ago",
+  "@agoFmt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    },
+    "description": "Message template for ago fmt."
+  },
+  "ai": "AI",
+  "@ai": {
+    "description": "Abbreviated text for ai."
+  },
+  "all": "All",
+  "@all": {
+    "description": "Label for all."
+  },
+  "anonLoseDataTip": "Currently logged in anonymously, continuing operations will result in data loss.",
+  "@anonLoseDataTip": {
+    "description": "Message shown for anon lose data tip."
+  },
+  "apiEndpoint": "API Endpoint",
+  "@apiEndpoint": {
+    "description": "Label for api endpoint."
+  },
+  "apiKey": "API Key",
+  "@apiKey": {
+    "description": "Label for api key."
+  },
+  "apiProtocol": "API protocol",
+  "@apiProtocol": {
+    "description": "Label for api protocol."
+  },
+  "app": "Application",
+  "@app": {
+    "description": "Label for app."
+  },
+  "ascending": "Ascending",
+  "@ascending": {
+    "description": "Label for ascending."
+  },
+  "askAiModel": "Model",
+  "@askAiModel": {
+    "description": "Label for ask ai model."
+  },
+  "askContinue": "{msg}. Continue?",
+  "@askContinue": {
+    "description": "Message template for ask continue.",
+    "placeholders": {
+      "msg": {
+        "type": "Object"
+      }
+    }
+  },
+  "attention": "Attention",
+  "@attention": {
+    "description": "Label for attention."
+  },
+  "authRequired": "Authentication required",
+  "@authRequired": {
+    "description": "Label for auth required."
+  },
+  "auto": "Auto",
+  "@auto": {
+    "description": "Label for auto."
+  },
+  "available": "Available",
+  "@available": {
+    "description": "Label for available."
+  },
+  "background": "Background",
+  "@background": {
+    "description": "Label for background."
+  },
+  "backup": "Backup",
+  "@backup": {
+    "description": "Label for backup."
+  },
+  "battery": "Battery",
+  "@battery": {
+    "description": "Label for battery."
+  },
+  "bioAuth": "Biometric authentication",
+  "@bioAuth": {
+    "description": "Label for bio auth."
+  },
+  "blurRadius": "Blur Radius",
+  "@blurRadius": {
+    "description": "Label for blur radius."
+  },
+  "bright": "Bright",
+  "@bright": {
+    "description": "Label for bright."
+  },
+  "browsing": "Browsing",
+  "@browsing": {
+    "description": "Label for browsing."
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Label for cancel."
+  },
+  "cancelled": "Cancelled",
+  "@cancelled": {
+    "description": "Label for cancelled."
+  },
+  "capacity": "Capacity",
+  "@capacity": {
+    "description": "Label for capacity."
+  },
+  "checkUpdate": "Check for updates",
+  "@checkUpdate": {
+    "description": "Label for check update."
+  },
+  "clear": "Clear",
+  "@clear": {
+    "description": "Label for clear."
+  },
+  "clearHistory": "Clear history",
+  "@clearHistory": {
+    "description": "Label for clear history."
+  },
+  "click": "Click",
+  "@click": {
+    "description": "Label for click."
+  },
+  "clipboard": "Clipboard",
+  "@clipboard": {
+    "description": "Label for clipboard."
+  },
+  "clone": "Clone",
+  "@clone": {
+    "description": "Label for clone: make a copy (of a virtual machine, a volume)."
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Label for close."
+  },
+  "cmd": "Command",
+  "@cmd": {
+    "description": "Label for cmd."
+  },
+  "configured": "Configured",
+  "@configured": {
+    "description": "Label for configured."
+  },
+  "confirm": "Confirm",
+  "@confirm": {
+    "description": "Label for confirm."
+  },
+  "conn": "Connection",
+  "@conn": {
+    "description": "Label for conn."
+  },
+  "container": "Container",
+  "@container": {
+    "description": "Label for container."
+  },
+  "content": "Content",
+  "@content": {
+    "description": "Label for content."
+  },
+  "convert": "Convert",
+  "@convert": {
+    "description": "Label for convert."
+  },
+  "copy": "Copy",
+  "@copy": {
+    "description": "Label for copy."
+  },
+  "create": "Create",
+  "@create": {
+    "description": "Action: create something new."
+  },
+  "current": "Current",
+  "@current": {
+    "description": "Label for current."
+  },
+  "custom": "Custom",
+  "@custom": {
+    "description": "Label for custom."
+  },
+  "defaultLabel": "Default",
+  "@defaultLabel": {
+    "description": "The choice left as it came, such as the default theme."
+  },
+  "customCmdDocUrl": "https://github.com/lollipopkit/flutter_server_box/wiki#custom-commands",
+  "@customCmdDocUrl": {
+    "description": "URL for custom cmd doc url."
+  },
+  "cut": "Cut",
+  "@cut": {
+    "description": "Label for cut."
+  },
+  "dark": "Dark",
+  "@dark": {
+    "description": "Label for dark."
+  },
+  "day": "Days",
+  "@day": {
+    "description": "Label for day."
+  },
+  "decode": "Decode",
+  "@decode": {
+    "description": "Label for decode."
+  },
+  "decompress": "Decompress",
+  "@decompress": {
+    "description": "Label for decompress."
+  },
+  "delFmt": "Delete {type}({id})?",
+  "@delFmt": {
+    "description": "Message template for del fmt.",
+    "placeholders": {
+      "id": {
+        "type": "Object"
+      },
+      "type": {
+        "type": "Object"
+      }
+    }
+  },
+  "delay": "Delay",
+  "@delay": {
+    "description": "Label for delay."
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Label for delete."
+  },
+  "descending": "Descending",
+  "@descending": {
+    "description": "Label for descending."
+  },
+  "description": "Description",
+  "@description": {
+    "description": "Label for description."
+  },
+  "device": "Device",
+  "@device": {
+    "description": "Label for device."
+  },
+  "disabled": "Disabled",
+  "@disabled": {
+    "description": "Label for disabled."
+  },
+  "enabled": "Enabled",
+  "@enabled": {
+    "description": "Label for a setting that is on: the counterpart of disabled."
+  },
+  "disconnected": "Disconnected",
+  "@disconnected": {
+    "description": "Label for disconnected."
+  },
+  "disk": "Disk",
+  "@disk": {
+    "description": "Label for disk."
+  },
+  "doc": "Documentation",
+  "@doc": {
+    "description": "Label for doc."
+  },
+  "done": "Done",
+  "@done": {
+    "description": "Label for done."
+  },
+  "dontShowAgain": "Don't show again",
+  "@dontShowAgain": {
+    "description": "Label for dont show again."
+  },
+  "download": "Download",
+  "@download": {
+    "description": "Label for download."
+  },
+  "duration": "Duration",
+  "@duration": {
+    "description": "Label for duration."
+  },
+  "edit": "Edit",
+  "@edit": {
+    "description": "Label for edit."
+  },
+  "editor": "Editor",
+  "@editor": {
+    "description": "Label for editor."
+  },
+  "empty": "Empty",
+  "@empty": {
+    "description": "Label for empty."
+  },
+  "emulator": "Emulator",
+  "@emulator": {
+    "description": "Label for emulator."
+  },
+  "encode": "Encode",
+  "@encode": {
+    "description": "Label for encode."
+  },
+  "error": "Error",
+  "@error": {
+    "description": "Label for error."
+  },
+  "example": "Example",
+  "@example": {
+    "description": "Label for example."
+  },
+  "execute": "Execute",
+  "@execute": {
+    "description": "Label for execute."
+  },
+  "exit": "Exit",
+  "@exit": {
+    "description": "Label for exit."
+  },
+  "exitConfirmTip": "Press back again to exit",
+  "@exitConfirmTip": {
+    "description": "Label for exit confirm tip."
+  },
+  "exitDirectly": "Exit directly",
+  "@exitDirectly": {
+    "description": "Label for exit directly."
+  },
+  "experimentalFeature": "Experimental Feature",
+  "@experimentalFeature": {
+    "description": "Label for experimental feature."
+  },
+  "export": "Export",
+  "@export": {
+    "description": "Label for export."
+  },
+  "fail": "Failure",
+  "@fail": {
+    "description": "Label for fail."
+  },
+  "feedback": "Feedback",
+  "@feedback": {
+    "description": "Label for feedback."
+  },
+  "file": "File",
+  "@file": {
+    "description": "Label for file."
+  },
+  "fold": "Fold",
+  "@fold": {
+    "description": "Label for fold."
+  },
+  "folder": "Folder",
+  "@folder": {
+    "description": "Label for folder."
+  },
+  "followSystem": "Follow system",
+  "@followSystem": {
+    "description": "Label for follow system."
+  },
+  "font": "Font",
+  "@font": {
+    "description": "Label for font."
+  },
+  "fontSize": "Font size",
+  "@fontSize": {
+    "description": "Label for font size."
+  },
+  "force": "Force",
+  "@force": {
+    "description": "Label for force."
+  },
+  "foregroundService": "Foreground Service",
+  "@foregroundService": {
+    "description": "Label for foreground service."
+  },
+  "format": "Format",
+  "@format": {
+    "description": "Label for format."
+  },
+  "found": "Found",
+  "@found": {
+    "description": "Label for found."
+  },
+  "gateway": "Gateway",
+  "@gateway": {
+    "description": "Label for gateway."
+  },
+  "general": "General",
+  "@general": {
+    "description": "Label for general."
+  },
+  "goBackQ": "Go back?",
+  "@goBackQ": {
+    "description": "Message shown for go back q."
+  },
+  "goto": "Go to",
+  "@goto": {
+    "description": "Label for goto."
+  },
+  "hideTitleBar": "Hide title bar",
+  "@hideTitleBar": {
+    "description": "Label for hide title bar."
+  },
+  "highlight": "Code highlighting",
+  "@highlight": {
+    "description": "Label for highlight."
+  },
+  "host": "Host",
+  "@host": {
+    "description": "Label for host."
+  },
+  "hour": "Hours",
+  "@hour": {
+    "description": "Label for hour."
+  },
+  "image": "Image",
+  "@image": {
+    "description": "Label for image."
+  },
+  "import": "Import",
+  "@import": {
+    "description": "Label for import."
+  },
+  "inactive": "Inactive",
+  "@inactive": {
+    "description": "Label for inactive."
+  },
+  "init": "Initialize",
+  "@init": {
+    "description": "Label for init."
+  },
+  "inner": "Inner",
+  "@inner": {
+    "description": "Label for inner."
+  },
+  "install": "Install",
+  "@install": {
+    "description": "Label for install."
+  },
+  "invalid": "Invalid",
+  "@invalid": {
+    "description": "Label for invalid."
+  },
+  "invalidUrl": "Invalid URL",
+  "@invalidUrl": {
+    "description": "Label for invalid url."
+  },
+  "justNow": "Just now",
+  "@justNow": {
+    "description": "Label for just now."
+  },
+  "key": "Key",
+  "@key": {
+    "description": "Label for key."
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Label for language."
+  },
+  "license": "License",
+  "@license": {
+    "description": "Label for license."
+  },
+  "lkcAccount": "Account",
+  "@lkcAccount": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitBackups": "Backups",
+  "@lkcBenefitBackups": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitBackupsAppBytes": "up to {size} per app",
+  "@lkcBenefitBackupsAppBytes": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcBenefitBackupsDetail": "{kept}, {limit}",
+  "@lkcBenefitBackupsDetail": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "kept": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcBenefitBackupsLatest": "Latest one per app",
+  "@lkcBenefitBackupsLatest": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitBackupsNoLimit": "no size limit",
+  "@lkcBenefitBackupsNoLimit": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitBackupsRolling": "{count, plural, =1{1 rolling} other{{count} rolling}} per app",
+  "@lkcBenefitBackupsRolling": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lkcBenefitBackupsRollingUnlimited": "Unlimited rolling per app",
+  "@lkcBenefitBackupsRollingUnlimited": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitBackupsTotalBytes": "{size} shared by all apps",
+  "@lkcBenefitBackupsTotalBytes": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcBenefitRelay": "Relay, tailnet and push",
+  "@lkcBenefitRelay": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitRelayDetail": "Unlimited traffic, {rate}, no availability guarantee",
+  "@lkcBenefitRelayDetail": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcBenefitRelayUnlimited": "Unlimited traffic and speed, no availability guarantee",
+  "@lkcBenefitRelayUnlimited": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitShareLinks": "Share links",
+  "@lkcBenefitShareLinks": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitShareLinksDetail": "With expiry",
+  "@lkcBenefitShareLinksDetail": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitStorageDetail": "Files up to {file} each",
+  "@lkcBenefitStorageDetail": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "file": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcBenefitSync": "Sync",
+  "@lkcBenefitSync": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitSyncDetail": "Real-time, end-to-end encrypted",
+  "@lkcBenefitSyncDetail": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitUptime": "Downtime checks",
+  "@lkcBenefitUptime": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitUptimeDetail": "Every {minutes, plural, =1{minute} other{{minutes} minutes}}, up to {count, plural, =1{1 target} other{{count} targets}}",
+  "@lkcBenefitUptimeDetail": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lkcBenefitUptimeTargets": "Up to {count, plural, =1{1 target} other{{count} targets}}",
+  "@lkcBenefitUptimeTargets": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lkcBenefitUptimeTargetsUnlimited": "Unlimited targets",
+  "@lkcBenefitUptimeTargetsUnlimited": {
+    "description": "LK Cloud account page."
+  },
+  "lkcBenefitUptimeUnlimited": "Every {minutes, plural, =1{minute} other{{minutes} minutes}}, unlimited targets",
+  "@lkcBenefitUptimeUnlimited": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "lkcCancelsOn": "Cancels on {date}",
+  "@lkcCancelsOn": {
+    "description": "LK Cloud account page: a paid plan the user canceled.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcConduitConcurrency": "Concurrency",
+  "@lkcConduitConcurrency": {
+    "description": "LK Cloud account page."
+  },
+  "lkcConduitConcurrencyDetail": "{count, plural, =1{1 request} other{{count} requests}} in flight",
+  "@lkcConduitConcurrencyDetail": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lkcConduitCredit": "Credit",
+  "@lkcConduitCredit": {
+    "description": "LK Cloud account page."
+  },
+  "lkcConduitCreditMonthly": "{credit} per month",
+  "@lkcConduitCreditMonthly": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "credit": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcConduitCreditWeekly": "{credit} per week",
+  "@lkcConduitCreditWeekly": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "credit": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcDeleteAccount": "Delete account",
+  "@lkcDeleteAccount": {
+    "description": "LK Cloud account page."
+  },
+  "lkcDeleteAccountConfirm": "{name} and its subscriptions are removed. This can’t be undone.",
+  "@lkcDeleteAccountConfirm": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcEndsOn": "Ends on {date}",
+  "@lkcEndsOn": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcFileCount": "{count, plural, =1{1 file} other{{count} files}}",
+  "@lkcFileCount": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lkcFiles": "Files",
+  "@lkcFiles": {
+    "description": "LK Cloud account page."
+  },
+  "lkcFreeTier": "Free",
+  "@lkcFreeTier": {
+    "description": "LK Cloud account page."
+  },
+  "lkcManageSubscriptions": "Manage subscriptions",
+  "@lkcManageSubscriptions": {
+    "description": "LK Cloud account page."
+  },
+  "lkcNoEndDate": "No end date",
+  "@lkcNoEndDate": {
+    "description": "LK Cloud account page."
+  },
+  "lkcNotSignedIn": "Not logged in",
+  "@lkcNotSignedIn": {
+    "description": "LK Cloud account page."
+  },
+  "lkcPastDue": "Payment past due",
+  "@lkcPastDue": {
+    "description": "LK Cloud account page."
+  },
+  "lkcPaused": "Paused",
+  "@lkcPaused": {
+    "description": "LK Cloud account page."
+  },
+  "lkcPerMonth": "{price} / month",
+  "@lkcPerMonth": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcPerYear": "{price} / year",
+  "@lkcPerYear": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcReasonAlreadySubscribed": "Already subscribed",
+  "@lkcReasonAlreadySubscribed": {
+    "description": "LK Cloud rejection `already_subscribed`."
+  },
+  "lkcReasonBadPurchaseToken": "Invalid purchase token",
+  "@lkcReasonBadPurchaseToken": {
+    "description": "LK Cloud rejection `bad_purchase_token`."
+  },
+  "lkcReasonBadPushToken": "Invalid push token",
+  "@lkcReasonBadPushToken": {
+    "description": "LK Cloud rejection `bad_push_token`."
+  },
+  "lkcReasonBadQuery": "Invalid query",
+  "@lkcReasonBadQuery": {
+    "description": "LK Cloud rejection `bad_query`."
+  },
+  "lkcReasonBadSignature": "Invalid signature",
+  "@lkcReasonBadSignature": {
+    "description": "LK Cloud rejection `bad_signature`."
+  },
+  "lkcReasonBadTransaction": "Invalid transaction",
+  "@lkcReasonBadTransaction": {
+    "description": "LK Cloud rejection `bad_transaction`."
+  },
+  "lkcReasonBenefitInvalid": "A benefit is listed twice, of a tier that doesn't have it, or of no owner",
+  "@lkcReasonBenefitInvalid": {
+    "description": "LK Cloud rejection `benefit_invalid`."
+  },
+  "lkcReasonCodeCheckout": "The code can't be used with this checkout",
+  "@lkcReasonCodeCheckout": {
+    "description": "LK Cloud rejection `code_checkout`."
+  },
+  "lkcReasonCodeCurrency": "The code's currency doesn't match the price",
+  "@lkcReasonCodeCurrency": {
+    "description": "LK Cloud rejection `code_currency`."
+  },
+  "lkcReasonCodeCurrencyNeeded": "A fixed amount needs its currency",
+  "@lkcReasonCodeCurrencyNeeded": {
+    "description": "LK Cloud rejection `code_currency_needed`."
+  },
+  "lkcReasonCodeDiscountPeriods": "A discount grants no periods",
+  "@lkcReasonCodeDiscountPeriods": {
+    "description": "LK Cloud rejection `code_discount_periods`."
+  },
+  "lkcReasonCodeDuration": "Pick which payments the discount covers",
+  "@lkcReasonCodeDuration": {
+    "description": "LK Cloud rejection `code_duration`."
+  },
+  "lkcReasonCodeExpired": "The code has expired",
+  "@lkcReasonCodeExpired": {
+    "description": "LK Cloud rejection `code_expired`."
+  },
+  "lkcReasonCodeFormat": "A code is 4 to 32 letters, digits or dashes",
+  "@lkcReasonCodeFormat": {
+    "description": "LK Cloud rejection `code_format`."
+  },
+  "lkcReasonCodeGrantOff": "A grant has no discount",
+  "@lkcReasonCodeGrantOff": {
+    "description": "LK Cloud rejection `code_grant_off`."
+  },
+  "lkcReasonCodeGrantPeriods": "A grant lasts 1 to 120 periods",
+  "@lkcReasonCodeGrantPeriods": {
+    "description": "LK Cloud rejection `code_grant_periods`."
+  },
+  "lkcReasonCodeGrantPlan": "A grant is of one plan",
+  "@lkcReasonCodeGrantPlan": {
+    "description": "LK Cloud rejection `code_grant_plan`."
+  },
+  "lkcReasonCodeInactive": "The code is no longer valid",
+  "@lkcReasonCodeInactive": {
+    "description": "LK Cloud rejection `code_inactive`."
+  },
+  "lkcReasonCodeIsDiscount": "The code is a discount, enter it when subscribing",
+  "@lkcReasonCodeIsDiscount": {
+    "description": "LK Cloud rejection `code_is_discount`."
+  },
+  "lkcReasonCodeIsGrant": "The code grants a plan, redeem it instead",
+  "@lkcReasonCodeIsGrant": {
+    "description": "LK Cloud rejection `code_is_grant`."
+  },
+  "lkcReasonCodeKind": "A code's kind can't change",
+  "@lkcReasonCodeKind": {
+    "description": "LK Cloud rejection `code_kind`."
+  },
+  "lkcReasonCodeLimit": "The redemption limit must be positive",
+  "@lkcReasonCodeLimit": {
+    "description": "LK Cloud rejection `code_limit`."
+  },
+  "lkcReasonCodeLineHeld": "You already have a subscription in this line",
+  "@lkcReasonCodeLineHeld": {
+    "description": "LK Cloud rejection `code_line_held`."
+  },
+  "lkcReasonCodeMonths": "A repeating discount lasts 1 to 36 months",
+  "@lkcReasonCodeMonths": {
+    "description": "LK Cloud rejection `code_months`."
+  },
+  "lkcReasonCodeNewOnly": "The code is for new subscribers only",
+  "@lkcReasonCodeNewOnly": {
+    "description": "LK Cloud rejection `code_new_only`."
+  },
+  "lkcReasonCodeNotStarted": "The code is not valid yet",
+  "@lkcReasonCodeNotStarted": {
+    "description": "LK Cloud rejection `code_not_started`."
+  },
+  "lkcReasonCodeOff": "A discount is a percentage (1 to 100) or a fixed amount",
+  "@lkcReasonCodeOff": {
+    "description": "LK Cloud rejection `code_off`."
+  },
+  "lkcReasonCodePlan": "The code doesn't apply to this plan",
+  "@lkcReasonCodePlan": {
+    "description": "LK Cloud rejection `code_plan`."
+  },
+  "lkcReasonCodePlans": "Pick the plans the code applies to",
+  "@lkcReasonCodePlans": {
+    "description": "LK Cloud rejection `code_plans`."
+  },
+  "lkcReasonCodeRedeemed": "The code has been redeemed, deactivate it instead",
+  "@lkcReasonCodeRedeemed": {
+    "description": "LK Cloud rejection `code_redeemed`."
+  },
+  "lkcReasonCodeTaken": "The code exists already",
+  "@lkcReasonCodeTaken": {
+    "description": "LK Cloud rejection `code_taken`."
+  },
+  "lkcReasonCodeTries": "Too many tries, try again later",
+  "@lkcReasonCodeTries": {
+    "description": "LK Cloud rejection `code_tries`."
+  },
+  "lkcReasonCodeUnknown": "No such code",
+  "@lkcReasonCodeUnknown": {
+    "description": "LK Cloud rejection `code_unknown`."
+  },
+  "lkcReasonCodeUsed": "You have used this code",
+  "@lkcReasonCodeUsed": {
+    "description": "LK Cloud rejection `code_used`."
+  },
+  "lkcReasonCodeUsedUp": "The code has been used up",
+  "@lkcReasonCodeUsedUp": {
+    "description": "LK Cloud rejection `code_used_up`."
+  },
+  "lkcReasonCodeWindow": "The code must start before it expires",
+  "@lkcReasonCodeWindow": {
+    "description": "LK Cloud rejection `code_window`."
+  },
+  "lkcReasonDeleteAdmin": "Remove the admin role at the IdP before deleting an admin",
+  "@lkcReasonDeleteAdmin": {
+    "description": "LK Cloud rejection `delete_admin`."
+  },
+  "lkcReasonDeleteSelf": "Delete your own account from the account page",
+  "@lkcReasonDeleteSelf": {
+    "description": "LK Cloud rejection `delete_self`."
+  },
+  "lkcReasonFileExists": "A file of this name exists",
+  "@lkcReasonFileExists": {
+    "description": "LK Cloud rejection `file_exists`."
+  },
+  "lkcReasonFileName": "Not a valid file or directory name",
+  "@lkcReasonFileName": {
+    "description": "LK Cloud rejection `file_name`."
+  },
+  "lkcReasonFileQuota": "The files would exceed the storage quota",
+  "@lkcReasonFileQuota": {
+    "description": "LK Cloud rejection `file_quota`."
+  },
+  "lkcReasonSyncUnavailable": "The plan has no sync",
+  "@lkcReasonSyncUnavailable": {
+    "description": "LK Cloud rejection `sync_unavailable`."
+  },
+  "lkcReasonSyncQuota": "The synced files would exceed the plan's space",
+  "@lkcReasonSyncQuota": {
+    "description": "LK Cloud rejection `sync_quota`."
+  },
+  "lkcReasonSyncDailyLimit": "Today's sync allowance is used up; it resets tomorrow",
+  "@lkcReasonSyncDailyLimit": {
+    "description": "LK Cloud rejection `sync_daily_limit`."
+  },
+  "lkcReasonFileTooLarge": "The file is too large",
+  "@lkcReasonFileTooLarge": {
+    "description": "LK Cloud rejection `file_too_large`."
+  },
+  "lkcReasonForeignTransaction": "Transaction of another app or environment",
+  "@lkcReasonForeignTransaction": {
+    "description": "LK Cloud rejection `foreign_transaction`."
+  },
+  "lkcReasonGrantGone": "No such live manual subscription",
+  "@lkcReasonGrantGone": {
+    "description": "LK Cloud rejection `grant_gone`."
+  },
+  "lkcReasonGrantHeld": "The user has a manual subscription in this line, change it instead",
+  "@lkcReasonGrantHeld": {
+    "description": "LK Cloud rejection `grant_held`."
+  },
+  "lkcReasonGrantInPast": "The grant must end in the future",
+  "@lkcReasonGrantInPast": {
+    "description": "LK Cloud rejection `grant_in_past`."
+  },
+  "lkcReasonManualProvider": "Manual is not a provider",
+  "@lkcReasonManualProvider": {
+    "description": "LK Cloud rejection `manual_provider`."
+  },
+  "lkcReasonNoCustomer": "No subscription to manage",
+  "@lkcReasonNoCustomer": {
+    "description": "LK Cloud rejection `no_customer`."
+  },
+  "lkcReasonNoSwitch": "No web subscription in this line to switch",
+  "@lkcReasonNoSwitch": {
+    "description": "LK Cloud rejection `no_switch`."
+  },
+  "lkcReasonNoUser": "No such user",
+  "@lkcReasonNoUser": {
+    "description": "LK Cloud rejection `no_user`."
+  },
+  "lkcReasonPriceArchived": "A sold price is archived at its provider",
+  "@lkcReasonPriceArchived": {
+    "description": "LK Cloud rejection `price_archived`."
+  },
+  "lkcReasonPriceMissing": "A sold price doesn't exist at its provider",
+  "@lkcReasonPriceMissing": {
+    "description": "LK Cloud rejection `price_missing`."
+  },
+  "lkcReasonPriceNotFixed": "A sold price has no fixed amount",
+  "@lkcReasonPriceNotFixed": {
+    "description": "LK Cloud rejection `price_not_fixed`."
+  },
+  "lkcReasonPricePeriod": "A sold price doesn't bill its plan's period",
+  "@lkcReasonPricePeriod": {
+    "description": "LK Cloud rejection `price_period`."
+  },
+  "lkcReasonProductId": "Empty or padded product id",
+  "@lkcReasonProductId": {
+    "description": "LK Cloud rejection `product_id`."
+  },
+  "lkcReasonProductInUse": "A product of live subscriptions keeps its plan",
+  "@lkcReasonProductInUse": {
+    "description": "LK Cloud rejection `product_in_use`."
+  },
+  "lkcReasonProductPlans": "A product maps to one plan only",
+  "@lkcReasonProductPlans": {
+    "description": "LK Cloud rejection `product_plans`."
+  },
+  "lkcReasonPurchaseAccount": "Purchase belongs to another account",
+  "@lkcReasonPurchaseAccount": {
+    "description": "LK Cloud rejection `purchase_account`."
+  },
+  "lkcReasonPushAccount": "Unexpected push account",
+  "@lkcReasonPushAccount": {
+    "description": "LK Cloud rejection `push_account`."
+  },
+  "lkcReasonSamePlan": "Already on this plan",
+  "@lkcReasonSamePlan": {
+    "description": "LK Cloud rejection `same_plan`."
+  },
+  "lkcReasonSoldTwice": "One sold price per plan and provider",
+  "@lkcReasonSoldTwice": {
+    "description": "LK Cloud rejection `sold_twice`."
+  },
+  "lkcReasonSwitchSync": "Saved, but Stripe's plan switching couldn't be updated; save again",
+  "@lkcReasonSwitchSync": {
+    "description": "LK Cloud rejection `switch_sync`."
+  },
+  "lkcReasonTestPurchase": "Test purchases are not accepted",
+  "@lkcReasonTestPurchase": {
+    "description": "LK Cloud rejection `test_purchase`."
+  },
+  "lkcReasonTransactionAccount": "Transaction belongs to another account",
+  "@lkcReasonTransactionAccount": {
+    "description": "LK Cloud rejection `transaction_account`."
+  },
+  "lkcReasonUnavailable": "Not available",
+  "@lkcReasonUnavailable": {
+    "description": "LK Cloud rejection `unavailable`."
+  },
+  "lkcReasonUnknownPackage": "Unknown package",
+  "@lkcReasonUnknownPackage": {
+    "description": "LK Cloud rejection `unknown_package`."
+  },
+  "lkcReasonUploadSize": "The uploaded file is missing or not of the announced size",
+  "@lkcReasonUploadSize": {
+    "description": "LK Cloud rejection `upload_size`."
+  },
+  "lkcReasonUploadUnknown": "No such upload, or it expired",
+  "@lkcReasonUploadUnknown": {
+    "description": "LK Cloud rejection `upload_unknown`."
+  },
+  "lkcReasonUserGone": "The user no longer exists",
+  "@lkcReasonUserGone": {
+    "description": "LK Cloud rejection `user_gone`."
+  },
+  "lkcRenewsOn": "Renews on {date}",
+  "@lkcRenewsOn": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "lkcStoreSubscriptionTip": "You have a subscription billed by the App Store or Google Play. Cancel it in the store first: deleting the account doesn’t stop it.",
+  "@lkcStoreSubscriptionTip": {
+    "description": "LK Cloud account page."
+  },
+  "lkcSubscribe": "Subscribe",
+  "@lkcSubscribe": {
+    "description": "LK Cloud account page."
+  },
+  "lkcUnlimited": "Unlimited",
+  "@lkcUnlimited": {
+    "description": "LK Cloud account page."
+  },
+  "lkcUsageOf": "{used} of {quota}",
+  "@lkcUsageOf": {
+    "description": "LK Cloud account page.",
+    "placeholders": {
+      "used": {
+        "type": "String"
+      },
+      "quota": {
+        "type": "String"
+      }
+    }
+  },
+  "loadingEllipsis": "...",
+  "@loadingEllipsis": {
+    "description": "Abbreviated text for loading ellipsis."
+  },
+  "local": "Local",
+  "@local": {
+    "description": "Label for local."
+  },
+  "location": "Location",
+  "@location": {
+    "description": "Label for location."
+  },
+  "log": "Log",
+  "@log": {
+    "description": "Label for log."
+  },
+  "login": "Log in",
+  "@login": {
+    "description": "Label for login."
+  },
+  "loginTip": "No registration required, free to use.",
+  "@loginTip": {
+    "description": "Message shown for login tip."
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Label for logout."
+  },
+  "logs": "Logs",
+  "@logs": {
+    "description": "Label for logs."
+  },
+  "loss": "loss",
+  "@loss": {
+    "description": "Label for loss."
+  },
+  "manual": "Manual",
+  "@manual": {
+    "description": "Label for manual."
+  },
+  "max": "Maximum",
+  "@max": {
+    "description": "Label for max."
+  },
+  "memory": "Memory",
+  "@memory": {
+    "description": "Label for memory."
+  },
+  "menuHelp": "Help",
+  "@menuHelp": {
+    "description": "Label for menu help."
+  },
+  "menuInfo": "Info",
+  "@menuInfo": {
+    "description": "Label for menu info."
+  },
+  "menuNavigate": "Navigate",
+  "@menuNavigate": {
+    "description": "Label for menu navigate."
+  },
+  "menuQuit": "Quit",
+  "@menuQuit": {
+    "description": "Label for menu quit."
+  },
+  "menuSettings": "Setting",
+  "@menuSettings": {
+    "description": "Label for menu settings."
+  },
+  "menuWiki": "Wiki",
+  "@menuWiki": {
+    "description": "Label for menu wiki."
+  },
+  "migrateCfg": "Configuration migration",
+  "@migrateCfg": {
+    "description": "Label for migrate cfg."
+  },
+  "migrateCfgTip": "To adapt to the required new configuration",
+  "@migrateCfgTip": {
+    "description": "Label for migrate cfg tip."
+  },
+  "milliseconds": "Milliseconds",
+  "@milliseconds": {
+    "description": "Label for milliseconds."
+  },
+  "min": "Minimum",
+  "@min": {
+    "description": "Label for min."
+  },
+  "minute": "Minutes",
+  "@minute": {
+    "description": "Label for minute."
+  },
+  "mission": "Mission",
+  "@mission": {
+    "description": "Label for mission."
+  },
+  "mode": "Mode",
+  "@mode": {
+    "description": "Label for mode."
+  },
+  "more": "More",
+  "@more": {
+    "description": "Label for more."
+  },
+  "moveDown": "Move Down",
+  "@moveDown": {
+    "description": "Label for move down."
+  },
+  "moveUp": "Move Up",
+  "@moveUp": {
+    "description": "Label for move up."
+  },
+  "ms": "ms",
+  "@ms": {
+    "description": "Abbreviated text for ms."
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Label for name."
+  },
+  "net": "Network",
+  "@net": {
+    "description": "Label for net."
+  },
+  "network": "Network",
+  "@network": {
+    "description": "Label for network."
+  },
+  "next": "Next",
+  "@next": {
+    "description": "Label for next."
+  },
+  "node": "Node",
+  "@node": {
+    "description": "Label for node."
+  },
+  "none": "None",
+  "@none": {
+    "description": "Choice meaning nothing of the kind."
+  },
+  "notAvailable": "Unavailable",
+  "@notAvailable": {
+    "description": "Label for not available."
+  },
+  "notExistFmt": "{file} not exist",
+  "@notExistFmt": {
+    "description": "Message template for not exist fmt.",
+    "placeholders": {
+      "file": {
+        "type": "Object"
+      }
+    }
+  },
+  "note": "Note",
+  "@note": {
+    "description": "Label for note."
+  },
+  "ok": "Okay",
+  "@ok": {
+    "description": "Label for ok."
+  },
+  "opacity": "Opacity",
+  "@opacity": {
+    "description": "Label for opacity."
+  },
+  "open": "Open",
+  "@open": {
+    "description": "Label for open."
+  },
+  "optional": "Optional",
+  "@optional": {
+    "description": "Marks a field that may be left empty."
+  },
+  "paste": "Paste",
+  "@paste": {
+    "description": "Label for paste."
+  },
+  "path": "Path",
+  "@path": {
+    "description": "Label for path."
+  },
+  "permission": "Permission",
+  "@permission": {
+    "description": "Label for permission."
+  },
+  "permissionDenied": "Permission denied.",
+  "@permissionDenied": {
+    "description": "Message shown for permission denied."
+  },
+  "pingAvg": "Avg:",
+  "@pingAvg": {
+    "description": "Label for ping avg."
+  },
+  "pkg": "Pkg",
+  "@pkg": {
+    "description": "Abbreviated text for pkg."
+  },
+  "port": "Port",
+  "@port": {
+    "description": "Label for port."
+  },
+  "portForward": "Port Forward",
+  "@portForward": {
+    "description": "Label for port forward."
+  },
+  "preview": "Preview",
+  "@preview": {
+    "description": "Label for preview."
+  },
+  "previous": "Previous",
+  "@previous": {
+    "description": "Label for previous."
+  },
+  "primaryColorSeed": "Primary color seed",
+  "@primaryColorSeed": {
+    "description": "Label for primary color seed."
+  },
+  "process": "Process",
+  "@process": {
+    "description": "Label for process."
+  },
+  "prune": "Prune",
+  "@prune": {
+    "description": "Label for prune."
+  },
+  "pwd": "Password",
+  "@pwd": {
+    "description": "Label for pwd."
+  },
+  "pwdTip": "Length 6-32, can be English letters, numbers, and punctuation",
+  "@pwdTip": {
+    "description": "Label for pwd tip."
+  },
+  "read": "Read",
+  "@read": {
+    "description": "Label for read."
+  },
+  "ready": "Ready",
+  "@ready": {
+    "description": "Label for ready."
+  },
+  "reboot": "Reboot",
+  "@reboot": {
+    "description": "Label for reboot."
+  },
+  "reconnecting": "Reconnecting...",
+  "@reconnecting": {
+    "description": "Message shown for reconnecting."
+  },
+  "redo": "Redo",
+  "@redo": {
+    "description": "Label for redo."
+  },
+  "refresh": "Refresh",
+  "@refresh": {
+    "description": "Label for refresh."
+  },
+  "register": "Sign up",
+  "@register": {
+    "description": "Label for register."
+  },
+  "remote": "Remote",
+  "@remote": {
+    "description": "Label for remote."
+  },
+  "rename": "Rename",
+  "@rename": {
+    "description": "Label for rename."
+  },
+  "replace": "Replace",
+  "@replace": {
+    "description": "Label for replace."
+  },
+  "replaceAll": "Replace all",
+  "@replaceAll": {
+    "description": "Label for replace all."
+  },
+  "reset": "Reset",
+  "@reset": {
+    "description": "Label for reset."
+  },
+  "restart": "Restart",
+  "@restart": {
+    "description": "Label for restart."
+  },
+  "restore": "Restore",
+  "@restore": {
+    "description": "Label for restore."
+  },
+  "result": "Result",
+  "@result": {
+    "description": "Label for result."
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Label for retry."
+  },
+  "route": "Routing",
+  "@route": {
+    "description": "Label for route."
+  },
+  "run": "Run",
+  "@run": {
+    "description": "Label for run."
+  },
+  "running": "Running",
+  "@running": {
+    "description": "Label for running."
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Label for save."
+  },
+  "saveFailed": "Save failed",
+  "@saveFailed": {
+    "description": "Label for save failed."
+  },
+  "saved": "Saved",
+  "@saved": {
+    "description": "Label for saved."
+  },
+  "search": "Search",
+  "@search": {
+    "description": "Label for search."
+  },
+  "second": "Seconds",
+  "@second": {
+    "description": "Label for second."
+  },
+  "select": "Select",
+  "@select": {
+    "description": "Label for select."
+  },
+  "sensors": "Sensor",
+  "@sensors": {
+    "description": "Label for sensors."
+  },
+  "sequence": "Sequence",
+  "@sequence": {
+    "description": "Label for sequence."
+  },
+  "server": "Server",
+  "@server": {
+    "description": "Label for server."
+  },
+  "servers": "Servers",
+  "@servers": {
+    "description": "Label for servers."
+  },
+  "setting": "Settings",
+  "@setting": {
+    "description": "Label for setting."
+  },
+  "share": "Share",
+  "@share": {
+    "description": "Label for share."
+  },
+  "shutdown": "Shutdown",
+  "@shutdown": {
+    "description": "Label for shutdown."
+  },
+  "size": "Size",
+  "@size": {
+    "description": "Label for size."
+  },
+  "sizeTooLargeOnlyPrefix": "Content too large, displaying only the first {bytes}",
+  "@sizeTooLargeOnlyPrefix": {
+    "description": "Message template for size too large only prefix.",
+    "placeholders": {
+      "bytes": {
+        "type": "Object"
+      }
+    }
+  },
+  "snippet": "Snippet",
+  "@snippet": {
+    "description": "Label for snippet."
+  },
+  "softWrap": "Soft wrap",
+  "@softWrap": {
+    "description": "Label for soft wrap."
+  },
+  "sort": "Sort",
+  "@sort": {
+    "description": "Label for sort."
+  },
+  "sortByName": "By name",
+  "@sortByName": {
+    "description": "Label for sort by name."
+  },
+  "source": "Source",
+  "@source": {
+    "description": "Label for source."
+  },
+  "speed": "Speed",
+  "@speed": {
+    "description": "Label for speed."
+  },
+  "start": "Start",
+  "@start": {
+    "description": "Label for start."
+  },
+  "stat": "Statistics",
+  "@stat": {
+    "description": "Label for stat."
+  },
+  "stats": "Statistics",
+  "@stats": {
+    "description": "Label for stats."
+  },
+  "stop": "Stop",
+  "@stop": {
+    "description": "Label for stop."
+  },
+  "stopped": "Stopped",
+  "@stopped": {
+    "description": "Label for stopped."
+  },
+  "storage": "Storage",
+  "@storage": {
+    "description": "Label for storage."
+  },
+  "success": "Success",
+  "@success": {
+    "description": "Label for success."
+  },
+  "sudoPassword": "sudo password",
+  "@sudoPassword": {
+    "description": "Label for sudo password."
+  },
+  "sudoPwdTitle": "sudo {pwd}",
+  "@sudoPwdTitle": {
+    "description": "Message template for sudo pwd title.",
+    "placeholders": {
+      "pwd": {
+        "type": "Object"
+      }
+    }
+  },
+  "suspend": "Suspend",
+  "@suspend": {
+    "description": "Label for suspend."
+  },
+  "switch_": "Switch",
+  "@switch_": {
+    "description": "Label for switch ."
+  },
+  "switcher": "Switcher",
+  "@switcher": {
+    "description": "Label for switcher."
+  },
+  "sync": "Synchronize",
+  "@sync": {
+    "description": "Label for sync."
+  },
+  "system": "System",
+  "@system": {
+    "description": "Label for system."
+  },
+  "tag": "Tag",
+  "@tag": {
+    "description": "Label for tag."
+  },
+  "tapToAuth": "Click to verify",
+  "@tapToAuth": {
+    "description": "Label for tap to auth."
+  },
+  "temperature": "Temperature",
+  "@temperature": {
+    "description": "Label for temperature."
+  },
+  "terminal": "Terminal",
+  "@terminal": {
+    "description": "Label for terminal."
+  },
+  "test": "Test",
+  "@test": {
+    "description": "Label for test."
+  },
+  "textScaler": "Text scaler",
+  "@textScaler": {
+    "description": "Label for text scaler."
+  },
+  "theme": "Theme",
+  "@theme": {
+    "description": "Label for theme."
+  },
+  "themeMode": "Theme mode",
+  "@themeMode": {
+    "description": "Label for theme mode."
+  },
+  "thinking": "Thinking",
+  "@thinking": {
+    "description": "Label for thinking."
+  },
+  "time": "Time",
+  "@time": {
+    "description": "Label for time."
+  },
+  "timedOut": "Timed out",
+  "@timedOut": {
+    "description": "Label for timed out."
+  },
+  "timeout": "Timeout",
+  "@timeout": {
+    "description": "Label for timeout."
+  },
+  "times": "Times",
+  "@times": {
+    "description": "Label for times."
+  },
+  "total": "Total",
+  "@total": {
+    "description": "Label for total."
+  },
+  "totalAttempts": "Total",
+  "@totalAttempts": {
+    "description": "Label for total attempts."
+  },
+  "traffic": "Traffic",
+  "@traffic": {
+    "description": "Label for traffic."
+  },
+  "ttl": "TTL",
+  "@ttl": {
+    "description": "Abbreviated text for ttl."
+  },
+  "type": "Type",
+  "@type": {
+    "description": "Label for type."
+  },
+  "undo": "Undo",
+  "@undo": {
+    "description": "Label for undo."
+  },
+  "unknown": "Unknown",
+  "@unknown": {
+    "description": "Label for unknown."
+  },
+  "unsupported": "Not supported",
+  "@unsupported": {
+    "description": "Label for unsupported."
+  },
+  "update": "Update",
+  "@update": {
+    "description": "Label for update."
+  },
+  "upload": "Upload",
+  "@upload": {
+    "description": "Label for upload."
+  },
+  "uptime": "Uptime",
+  "@uptime": {
+    "description": "Label for uptime."
+  },
+  "used": "Used",
+  "@used": {
+    "description": "Label for used."
+  },
+  "user": "User",
+  "@user": {
+    "description": "Label for user."
+  },
+  "valid": "Valid",
+  "@valid": {
+    "description": "Label for valid."
+  },
+  "value": "Value",
+  "@value": {
+    "description": "Label for value."
+  },
+  "versionHasUpdate": "Found: v1.0.{build}, click to update",
+  "@versionHasUpdate": {
+    "description": "Message template for version has update.",
+    "placeholders": {
+      "build": {
+        "type": "Object"
+      }
+    }
+  },
+  "versionUnknownUpdate": "Current: v1.0.{build}, click to check updates",
+  "@versionUnknownUpdate": {
+    "description": "Message template for version unknown update.",
+    "placeholders": {
+      "build": {
+        "type": "Object"
+      }
+    }
+  },
+  "versionUpdated": "Current: v1.0.{build}, is up to date",
+  "@versionUpdated": {
+    "description": "Message template for version updated.",
+    "placeholders": {
+      "build": {
+        "type": "Object"
+      }
+    }
+  },
+  "view": "View",
+  "@view": {
+    "description": "Label for view."
+  },
+  "viewErr": "See error",
+  "@viewErr": {
+    "description": "Label for view err."
+  },
+  "write": "Write",
+  "@write": {
+    "description": "Label for write."
+  },
+  "yesterday": "Yesterday",
+  "@yesterday": {
+    "description": "Label for yesterday."
+  },
+  "durationDays": "{count, plural, one{1 day} other{{count} days}}",
+  "@durationDays": {
+    "description": "A length of time in whole days.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHours": "{count, plural, one{1 hour} other{{count} hours}}",
+  "@durationHours": {
+    "description": "A length of time in whole hours.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutes": "{count, plural, one{1 minute} other{{count} minutes}}",
+  "@durationMinutes": {
+    "description": "A length of time in whole minutes.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "durationSeconds": "{count, plural, one{1 second} other{{count} seconds}}",
+  "@durationSeconds": {
+    "description": "A length of time in whole seconds.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appearanceSettings": "Appearance",
+  "@appearanceSettings": {
+    "description": "User-facing label or message for appearance settings."
+  },
+  "appearancePreset": "Theme preset",
+  "@appearancePreset": {
+    "description": "User-facing label or message for appearance preset."
+  },
+  "appearanceThemeSchemaRange": "Supported theme schema",
+  "@appearanceThemeSchemaRange": {
+    "description": "User-facing label or message for appearance theme schema range."
+  },
+  "appearanceThemeInstall": "Install theme",
+  "@appearanceThemeInstall": {
+    "description": "User-facing label or message for appearance theme install."
+  },
+  "appearanceThemeStore": "Theme store",
+  "@appearanceThemeStore": {
+    "description": "User-facing label or message for appearance theme store."
+  },
+  "appearanceInvalidTheme": "Invalid theme package or catalog",
+  "@appearanceInvalidTheme": {
+    "description": "User-facing label or message for appearance invalid theme."
+  },
+  "themeStoreRefreshFailed": "Could not read the theme catalog.",
+  "@themeStoreRefreshFailed": {
+    "description": "Shown when a manual refresh of the theme store could not read the catalog or any of its repositories."
+  },
+  "themeStoreDeleteTheme": "Delete “{name}”? Its files are removed from this device. If it is the theme in use, the app returns to the default theme.",
+  "@themeStoreDeleteTheme": {
+    "description": "Confirm dialog for deleting one installed theme. It also names what happens when that theme is the one in use.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "themeStoreUpdatedFmt": "updated {ago}",
+  "@themeStoreUpdatedFmt": {
+    "description": "How long ago the catalog on screen was read, under the repository names. {ago} is a phrase such as \"5 minutes ago\".",
+    "placeholders": {
+      "ago": {
+        "type": "String"
+      }
+    }
+  },
+  "themeStoreUpdatedJustNow": "updated just now",
+  "@themeStoreUpdatedJustNow": {
+    "description": "How long ago the catalog on screen was read, when that was under a minute. Spelled out rather than composed with themeStoreUpdatedFmt because \"just now\" is a sentence of its own in every language."
+  },
+  "themeStoreSortInUse": "In use first",
+  "@themeStoreSortInUse": {
+    "description": "Sort option for the theme store: the theme in use, then the themes on this device, then what only the catalog offers."
+  },
+  "themeStoreMakeOwnFmt": "Want to make your own theme? [How to author one]({doc}) — thank you for contributing!",
+  "@themeStoreMakeOwnFmt": {
+    "description": "At the end of the theme store's list, under the last theme. Markdown: the document is a link rather than an address the reader has to copy.",
+    "placeholders": {
+      "doc": {
+        "type": "String"
+      }
+    }
+  },
+  "appearanceThemeNeedsNewerApp": "Needs a newer app: {version}",
+  "@appearanceThemeNeedsNewerApp": {
+    "description": "Shown when a selected theme requires a newer app version. {version} is the required version.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "appearanceFontFamilies": "UI font families",
+  "@appearanceFontFamilies": {
+    "description": "User-facing label or message for appearance font families."
+  },
+  "appearanceFontFamiliesTip": "One name per line; fonts are tried in order.",
+  "@appearanceFontFamiliesTip": {
+    "description": "Help text for the appearance font families setting or action."
+  },
+  "appearanceFontImport": "Import UI font file",
+  "@appearanceFontImport": {
+    "description": "User-facing label or message for appearance font import."
+  },
+  "appearanceIcons": "In-app icons",
+  "@appearanceIcons": {
+    "description": "User-facing label or message for appearance icons."
+  },
+  "appearanceCorners": "Corners",
+  "@appearanceCorners": {
+    "description": "User-facing label or message for appearance corners."
+  },
+  "appearanceCardCorners": "Card corners",
+  "@appearanceCardCorners": {
+    "description": "User-facing label or message for appearance card corners."
+  },
+  "appearanceTileCorners": "Tile corners",
+  "@appearanceTileCorners": {
+    "description": "User-facing label or message for appearance tile corners."
+  },
+  "appearanceButtonCorners": "Button corners",
+  "@appearanceButtonCorners": {
+    "description": "User-facing label or message for appearance button corners."
+  },
+  "appearanceThemeModeLocked": "This theme only supports {mode}. Select another theme to change the mode.",
+  "@appearanceThemeModeLocked": {
+    "description": "User-facing label or message for appearance theme mode locked.",
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "caseSensitive": "Case sensitive",
+  "@caseSensitive": {
+    "description": "A find option: matching respects upper and lower case."
+  },
+  "flashlight": "Flashlight",
+  "@flashlight": {
+    "description": "The camera's light, switched on and off while scanning."
+  },
+  "regex": "Regular expression",
+  "@regex": {
+    "description": "A find option: the query is a regular expression."
+  },
+  "showPwd": "Show password",
+  "@showPwd": {
+    "description": "A toggle on a password field: show the password as plain text."
+  },
+  "existsFmt": "{name} already exists",
+  "@existsFmt": {
+    "description": "Refusing a name or key that is already taken. {name} is that name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "tooLargeFmt": "Larger than {size}",
+  "@tooLargeFmt": {
+    "description": "Refusing something larger than a limit. {size} is the limit, formatted, e.g. 64 MB.",
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "appearanceIconPack": "Icon pack",
+  "@appearanceIconPack": {
+    "description": "Settings row and sheet title: the icon pack drawn over the theme, chosen apart from it."
+  },
+  "appearanceIconPackTheme": "Theme's icons",
+  "@appearanceIconPackTheme": {
+    "description": "The choice of no icon pack: the theme's own icons are drawn."
+  },
+  "themeStoreThemes": "Themes",
+  "@themeStoreThemes": {
+    "description": "Theme store tab listing themes."
+  },
+  "themeStoreIconPacks": "Icon packs",
+  "@themeStoreIconPacks": {
+    "description": "Theme store tab listing icon packs."
+  },
+  "themeStoreDeleteIconPack": "Delete “{name}”? Its files are removed from this device. If it is the icon pack in use, the app returns to the theme's icons.",
+  "@themeStoreDeleteIconPack": {
+    "description": "Confirm dialog for deleting one installed icon pack, and what happens when it is the one in use.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  }
+}

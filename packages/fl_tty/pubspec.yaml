@@ -1,0 +1,45 @@
+name: fl_tty
+description: A shell on the device the app runs on — a pty and processes on desktop, an Alpine userland under proot on Android and under ish-arm64 on iOS.
+version: 0.1.0
+publish_to: none
+repository: https://github.com/lollipopkit/fl_tty
+
+environment:
+  sdk: ">=3.11.0 <4.0.0"
+  flutter: ">=3.47.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  fl_lib:
+    git:
+      url: https://github.com/lollipopkit/fl_lib
+      ref: main
+  archive: ^4.5.2
+  crypto: ^3.0.0
+  dio: ^5.11.1
+  ffi: ^2.2.0
+  meta: ^1.18.0
+  path: ^1.9.1
+  path_provider: ^2.1.6
+  pinenacl: ^0.6.0
+
+  # `hook/build.dart` builds the native library; real dependencies, since the
+  # hook runs in the app's solve.
+  # 2.x too: an app whose other hooks are on it (rage through fl_lib) must
+  # resolve; the only change in 2.0 (`OS`/`Architecture` as const map keys)
+  # is not used here.
+  code_assets: '>=1.0.0 <3.0.0'
+  hooks: ^2.0.0
+  native_toolchain_c: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  ffigen: ^21.0.0
+  flutter_lints: ^6.0.0
+
+# No `flutter.plugin`: the native code is a code asset from `hook/build.dart`.
+flutter:
+  assets:
+    - assets/rootfs_manifest.json

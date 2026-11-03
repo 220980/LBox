@@ -1,0 +1,7362 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'l10n.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Turkish (`tr`).
+class AppLocalizationsTr extends AppLocalizations {
+  AppLocalizationsTr([String locale = 'tr']) : super(locale);
+
+  @override
+  String get crashCollect => 'Tanılama verileri';
+
+  @override
+  String get crashCollectIntro =>
+      'ServerBox, sorunları araştırıp çözmeye yardımcı olmak için çalışma sırasında bilgi kaydeder.';
+
+  @override
+  String get crashCollectNone => 'Hiçbir şey';
+
+  @override
+  String get crashCollectNoneTip =>
+      'Rapor yalnızca bu cihazda saklanır. Çökmeden sonra elle gönderebilirsiniz.';
+
+  @override
+  String get crashCollectBasic => 'Temel bilgiler';
+
+  @override
+  String get crashCollectBasicTip =>
+      'Yalnızca çökme bilgilerini içerir; günlükleri veya performans verilerini içermez. **Uygulamayı iyileştirmeye ve hataları düzeltmeye yardımcı olur.**';
+
+  @override
+  String get crashCollectFooter =>
+      'Seçilen düzey ne olursa olsun, bilinen sunucu adları, adresler ve kullanıcı adları kaydedilirken yer tutucularla değiştirilir. Toplama düzeyini daha sonra Ayarlar’dan değiştirebilirsiniz.';
+
+  @override
+  String get privacy => 'Gizlilik';
+
+  @override
+  String get privacyPolicy => 'Gizlilik politikası';
+
+  @override
+  String get crashLastRunFailed =>
+      'ServerBox son çalıştırmada beklenmedik şekilde kapandı.';
+
+  @override
+  String get crashReportTitle => 'Çökme raporu';
+
+  @override
+  String get crashReportHint =>
+      'Bu, önceki çalıştırmanın günlüğüdür. Bilinen sunucu adları ve adresleri yer tutucularla değiştirilmiştir, ancak başka ayrıntılar kalmış olabilir. Göndermeden önce dikkatlice okuyun.';
+
+  @override
+  String get crashReportSubmit => 'Kopyala ve bildir';
+
+  @override
+  String get preReleaseUpdates => 'Ön sürüm güncellemelerini al';
+
+  @override
+  String get addSystemPrivateKeyTip =>
+      'Şu anda özel anahtarlar mevcut değil, sistemle birlikte gelen anahtarı (~/.ssh/id_rsa) eklemek ister misiniz?';
+
+  @override
+  String get added2List => 'Görev listesine eklendi';
+
+  @override
+  String get askAi => 'Yapay zekaya sor';
+
+  @override
+  String get askAiInsertTerminal => 'Terminale ekle';
+
+  @override
+  String get remoteDesktop => 'Uzak masaüstü';
+
+  @override
+  String get askAiRiskReadOnly => 'Salt okunur';
+
+  @override
+  String get askAiRiskCaution => 'Sistemi değiştirir';
+
+  @override
+  String get askAiRiskUnvetted => 'Doğrulanmamış sunucu';
+
+  @override
+  String get askAiRiskDestructive => 'Yüksek risk';
+
+  @override
+  String get askAiAutoRunSafeCommands =>
+      'Salt okunur komutları otomatik çalıştır';
+
+  @override
+  String get askAiAutoRunSafeCommandsTip =>
+      'Yalnızca hem model hem yerel kontrol salt okunur derse çalışır';
+
+  @override
+  String get askAiHistory => 'Konuşma geçmişi';
+
+  @override
+  String get askAiNewConversation => 'Yeni konuşma';
+
+  @override
+  String get askAiUntitledConversation => 'Adsız';
+
+  @override
+  String get askAiRenameConversation => 'Konuşmayı yeniden adlandır';
+
+  @override
+  String get askAiDeleteConversationTitle => 'Bu konuşma silinsin mi?';
+
+  @override
+  String get askAiDeleteConversationTip => 'Bu cihazdan siler. Geri alınamaz.';
+
+  @override
+  String get agentNoHistory => 'Kayıtlı genel Agent konuşması yok';
+
+  @override
+  String get agentClearHistoryTitle => 'Genel Agent geçmişi temizlensin mi?';
+
+  @override
+  String get agentClearHistoryTip =>
+      'Tüm genel Agent konuşmaları bu cihazdan kaldırılır.';
+
+  @override
+  String get agentCommandMayStillRun =>
+      'Durdurulan komut sunucuda hâlâ çalışıyor olabilir.';
+
+  @override
+  String get agentToolShell => 'Shell';
+
+  @override
+  String get agentToolReadFile => 'Dosya oku';
+
+  @override
+  String get agentToolWriteFile => 'Dosya yaz';
+
+  @override
+  String get floatOverTabs => 'Diğer sekmelerin üzerinde yüzsün';
+
+  @override
+  String get agentToolSshConnect => 'SSH bağlan';
+
+  @override
+  String get agentToolSshDisconnect => 'SSH bağlantısını kes';
+
+  @override
+  String get agentSshConnectTitle => 'Yeni bir sunucuya bağlan';
+
+  @override
+  String get agentAuthMethod => 'Kimlik doğrulama';
+
+  @override
+  String get agentSshConnectTip =>
+      'Agent bir SSH bağlantısı istedi. Parolayı buraya girin.';
+
+  @override
+  String get agentAdHocSessions => 'Geçici bağlantılar';
+
+  @override
+  String get agentSaveServerTitle => 'Sunucu olarak kaydet';
+
+  @override
+  String get agentSaveServerTip =>
+      'Bu ana bilgisayara ait bilgiler ve girdiğiniz parola bu cihazda saklanır.';
+
+  @override
+  String get agentMonitorOptional => 'Monitor (isteğe bağlı)';
+
+  @override
+  String get authFailTip => 'Kimlik doğrulama başarısız. Bilgileri kontrol et';
+
+  @override
+  String get autoBackupConflict =>
+      'Aynı anda yalnızca bir otomatik yedekleme açık olabilir.';
+
+  @override
+  String get autoConnect => 'Otomatik bağlan';
+
+  @override
+  String get autoRun => 'Otomatik çalıştır';
+
+  @override
+  String get autoUpdateHomeWidget => 'Ana ekran bileşenini otomatik güncelle';
+
+  @override
+  String get availableTabs => 'Mevcut Sekmeler';
+
+  @override
+  String get backupEncrypted => 'Yedekleme şifrelenmiş';
+
+  @override
+  String get backupNotEncrypted => 'Yedekleme şifreli değil';
+
+  @override
+  String get backupPassword => 'Yedekleme parolası';
+
+  @override
+  String get backupPasswordRemoveSynced =>
+      'Bu, yedekleme parolasını aynı iCloud Anahtar Zinciri\'ni kullanan tüm cihazlardan kaldırır. Yeniden bir parola ayarlanana kadar bu cihazların eşitlemesi durur.';
+
+  @override
+  String get backupPasswordRemoved => 'Yedekleme parolası kaldırıldı';
+
+  @override
+  String get backupPasswordSet => 'Yedekleme parolası ayarlandı';
+
+  @override
+  String get backupPasswordTip =>
+      'Yedekleme dosyalarını şifrelemek için bir parola belirleyin. Şifrelemeyi devre dışı bırakmak için boş bırakın.';
+
+  @override
+  String get backupPasswordWrong => 'Yanlış yedekleme parolası';
+
+  @override
+  String get connectAll => 'Tümünü bağla';
+
+  @override
+  String get disconnectAll => 'Tümünün bağlantısını kes';
+
+  @override
+  String get distIcon => 'Dağıtım işaretleri';
+
+  @override
+  String get distIconIntroLegal =>
+      'Bir işaret yalnızca bu cihazın uzak sistemden okuduğunu belirtir; bu bilgi yanlış veya güncel olmayabilir ve bir türevi, yeniden derlemeyi ya da belirli bir sürümü göstermez. Belirlenemediğinde sade bir simge çizilir.\n\nHer işaret ilgili sahibinin ticari markasıdır ve burada yalnızca işaret ettiği sistemi belirtmek için kullanılır.';
+
+  @override
+  String get distIconTip =>
+      'Her sunucunun yanında, üzerinde çalıştığı görünen sistemin küçük bir işaretini göster';
+
+  @override
+  String get distNameMap => 'Ad eşleştirme';
+
+  @override
+  String get distNameMapTip =>
+      'Yalnızca dağıtım simgesi dosyasının ana bilgisayardaki adı uygulamanın kullandığı addan farklıysa ayarlayın. Anahtar olarak uygulamadaki adı, değer olarak gerçek dosya adını kullanın. Eksik simge yoksa boş bırakın.';
+
+  @override
+  String get logoUrl => 'Logo adresi';
+
+  @override
+  String get logoUrlTip =>
+      'Bir sunucunun kendi sayfasının üstündeki büyük görsel, kendi renkleriyle.';
+
+  @override
+  String get globe => 'Küre';
+
+  @override
+  String get locationTip =>
+      'Bu sunucunun küre üzerinde çizileceği yer. Önce enlem, sonra boylam, derece cinsinden — örneğin 39.9042, 116.4074.';
+
+  @override
+  String get markUrl => 'İşaret adresi';
+
+  @override
+  String get markUrlTip =>
+      'Listelerde sunucu adının yanındaki küçük işaret. Boşsa hiçbiri çizilmez.\n\nLogoyla aynı görsel değil';
+
+  @override
+  String get navTabMenuTip =>
+      'Bir sekmeye basılı tutun veya sağ tıklayın; o sekmedeki tüm sunucuları tek seferde bağlayabilir ya da bağlantılarını kesebilirsiniz.';
+
+  @override
+  String nTags(int count) {
+    return '$count etiket';
+  }
+
+  @override
+  String get remoteBackupPasswordRequired =>
+      'Uzak yedeklemeler için boş olmayan bir yedekleme parolası gerekir';
+
+  @override
+  String get monitorHttpsRequired =>
+      'Uzak bir Monitor, HTTP’ye izin verilmediyse HTTPS ister.';
+
+  @override
+  String get monitorAllowInsecureHttp => 'HTTP’ye izin ver';
+
+  @override
+  String get plainHttpTitle => 'Bu Monitor şifrelenmemiş HTTP kullanıyor.';
+
+  @override
+  String get plainHttpTip =>
+      'Parolalar ve uygulamanın istediği tüm veriler şifrelenmeden gönderilir. Bağlantıya izin verene kadar hiçbir veri gönderilmez.';
+
+  @override
+  String get allowForThisServer => 'Bu sunucu için izin ver';
+
+  @override
+  String get viewError => 'Hatayı gör';
+
+  @override
+  String get monitorAllowInsecureHttpTip =>
+      'Yalnızca taşımayı kendisi şifreleyen güvenilir özel ağlarda, örneğin Tailscale';
+
+  @override
+  String monitorHttpTip(String url) {
+    return 'Komutları SSH üzerinden çalıştırmak yerine bu sunucunun durumunu **Monitor**’ün HTTP API’sinden okuyun.\n\nMonitor’ün önce sunucuya yüklenmesi gerekir; grafikler, Watch uygulaması ve ana ekran widget’ları onun sayesinde çalışır.\n\n[Monitor nasıl kurulur]($url)';
+  }
+
+  @override
+  String get backupThemesNotRestored =>
+      'Bu temalar dışında geri yüklendi. Temaları tema mağazasından veya geldikleri dosyadan yeniden yükleyin.';
+
+  @override
+  String get backupTip =>
+      'Dışa aktarılan veriler parola ile şifrelenebilir. \nLütfen güvenli bir şekilde saklayın.';
+
+  @override
+  String get icloudBackupStatusTitle => 'Yedekleme durumu';
+
+  @override
+  String get icloudBackupStatusLoading =>
+      'iCloud yedekleme durumu yükleniyor...';
+
+  @override
+  String get icloudBackupStatusError =>
+      'iCloud yedekleme meta verileri okunamıyor';
+
+  @override
+  String get icloudBackupStatusEmpty =>
+      'Henüz bir iCloud yedekleme dosyası bulunamadı';
+
+  @override
+  String get icloudBackupStateUploading => 'Yükleniyor';
+
+  @override
+  String get icloudBackupStateConflict => 'Çakışma algılandı';
+
+  @override
+  String get icloudBackupStateUploaded => 'Yüklendi';
+
+  @override
+  String get icloudBackupStateWaiting => 'iCloud bekleniyor';
+
+  @override
+  String icloudBackupStatusSummary(String lastModified, String remoteState) {
+    return 'Son yedekleme: $lastModified\nDurum: $remoteState';
+  }
+
+  @override
+  String get bgRun => 'Arka planda çalıştır';
+
+  @override
+  String get bgRunTip =>
+      'Bu anahtar yalnızca programın arka planda çalışmayı deneyeceği anlamına gelir. Arka planda çalışıp çalışamayacağı, iznin etkinleştirilip etkinleştirilmediğine bağlıdır. AOSP tabanlı Android ROM\'lar için lütfen bu uygulamada \"Pil Optimizasyonu\"nu devre dışı bırakın. MIUI / HyperOS için lütfen güç tasarrufu politikasını \"Sınırsız\" olarak değiştirin.';
+
+  @override
+  String get trayReadings => 'Değerler';
+
+  @override
+  String get trayChart => 'Grafik';
+
+  @override
+  String get trayChartNone => 'Yok';
+
+  @override
+  String get trayCompact => 'Sıkıştırılmış satırlar';
+
+  @override
+  String get trayCompactTip =>
+      'Grafik olmadan sunucu başına bir satır. Linux, panel menüsü özel bir düzen yerine etiket taşıyan D-Bus üzerinden gönderildiği için her zaman tek satırlı bir düzen kullanır; ancak seçilen grafiği görüntü olarak içerebilir.';
+
+  @override
+  String get trayKeepRunning => 'Tepside çalışmaya devam et';
+
+  @override
+  String get trayKeepRunningTip =>
+      'Pencere kapatıldığında uygulama menü çubuğunda veya bildirim alanında kalır ve sunucularınızı izlemeye devam eder. Kapat düğmesinin uygulamayı sonlandırması için bunu devre dışı bırakın.';
+
+  @override
+  String get bgRunNeedsNotification =>
+      'Arka planda çalışmak kalıcı bir bildirim gerektirir ve bu uygulamanın bildirim izni yok. İzin vermek için dokunun.';
+
+  @override
+  String get clearAllStatsContent =>
+      'Tüm sunucu bağlantı istatistiklerini temizlemek istediğinizden emin misiniz? Bu işlem geri alınamaz.';
+
+  @override
+  String get clearAllStatsTitle => 'Tüm İstatistikleri Temizle';
+
+  @override
+  String get clearAllSettings => 'Tüm ayarları temizle';
+
+  @override
+  String clearServerStatsContent(String serverName) {
+    return '\"$serverName\" sunucusu için bağlantı istatistiklerini temizlemek istediğinizden emin misiniz? Bu işlem geri alınamaz.';
+  }
+
+  @override
+  String clearServerStatsTitle(String serverName) {
+    return '$serverName İstatistiklerini Temizle';
+  }
+
+  @override
+  String get clearThisServerStats => 'Bu Sunucu İstatistiklerini Temizle';
+
+  @override
+  String get closeAfterSave => 'Kaydet ve kapat';
+
+  @override
+  String get collapseUITip =>
+      'Arayüzde uzun listelerin varsayılan olarak daraltılıp daraltılmayacağı';
+
+  @override
+  String get connectionDetails => 'Bağlantı Detayları';
+
+  @override
+  String get connectionStats => 'Bağlantı İstatistikleri';
+
+  @override
+  String get connectionStatsDesc =>
+      'Sunucu bağlantı başarı oranını ve geçmişi görüntüle';
+
+  @override
+  String get containerTrySudoTip =>
+      'Örneğin uygulamadaki kullanıcı adı aaa ise ancak Docker root kullanıcısıyla kurulduysa bu seçeneği etkinleştirin.';
+
+  @override
+  String get containerSudoPasswordRequired =>
+      'Docker erişimi için sudo parolası gerekir. Parolayı girin.';
+
+  @override
+  String get containerSudoPasswordIncorrect =>
+      'sudo parolası yanlış veya bu hesabın sudo kullanma izni yok. Yeniden deneyin.';
+
+  @override
+  String get copyPath => 'Yolu kopyala';
+
+  @override
+  String get customCmd => 'Özel komutlar';
+
+  @override
+  String get deleteServers => 'Sunucuları toplu sil';
+
+  @override
+  String get deleteDirRecursive => 'Klasörü ve içindeki her şeyi sil';
+
+  @override
+  String get dirEmpty => 'Klasörün boş olduğundan emin olun.';
+
+  @override
+  String get discoverSshServers => 'SSH sunucularını bul';
+
+  @override
+  String get discoveryFailed => 'Keşif başarısız';
+
+  @override
+  String get discoverySettings => 'Keşif Ayarları';
+
+  @override
+  String get distro => 'Dağıtım';
+
+  @override
+  String get diskHealth => 'Disk sağlığı';
+
+  @override
+  String dl2Local(String fileName) {
+    return '$fileName dosyasını yerel cihaza indir?';
+  }
+
+  @override
+  String get dockerEmptyRunningItems =>
+      'Çalışan konteyner yok.\nBunun nedeni şunlar olabilir:\n- Docker kurulum kullanıcısı, uygulamada yapılandırılan kullanıcı adıyla aynı değil.\n- DOCKER_HOST ortam değişkeni doğru okunmadı. Terminalde `echo \$DOCKER_HOST` komutunu çalıştırarak kontrol edebilirsiniz.';
+
+  @override
+  String get dockerProjectOther => 'Diğer';
+
+  @override
+  String get dockerPruneTip =>
+      'Disk alanını boşaltmak için kullanılmayan verileri kaldırın';
+
+  @override
+  String get dockerStatistics => 'Docker İstatistikleri';
+
+  @override
+  String get editVirtKeys => 'Sanal tuşlar';
+
+  @override
+  String get editorHighlightTip =>
+      'Mevcut kod vurgulama performansı ideal değil ve isteğe bağlı olarak kapatılabilir.';
+
+  @override
+  String get enableMdns => 'mDNS\'yi Etkinleştir';
+
+  @override
+  String get enableMdnsDesc =>
+      'SSH hizmetlerini keşfetmek için mDNS/Bonjour kullan';
+
+  @override
+  String get envVars => 'Ortam değişkeni';
+
+  @override
+  String get extraArgs => 'Ek argümanlar';
+
+  @override
+  String get fallbackSshDest => 'Yedek SSH hedefi';
+
+  @override
+  String get fdroidReleaseTip =>
+      'Bu uygulamayı F-Droid\'den indirdiyseniz, bu seçeneği kapatmanız önerilir.';
+
+  @override
+  String fileTooLarge(String file, String size, String sizeMax) {
+    return '“$file” dosyası $size boyutunda ve $sizeMax sınırını aşıyor.';
+  }
+
+  @override
+  String fileChangedOverwrite(String file) {
+    return '\'$file\' açıldıktan sonra sunucuda değişti. Üzerine yazılsın mı?';
+  }
+
+  @override
+  String get fileDirGone => 'Bu klasör artık burada değil';
+
+  @override
+  String get fileDirGoneTip => 'Silinmiş ya da adı değişmiş';
+
+  @override
+  String get fullScreen => 'Tam ekran';
+
+  @override
+  String get fullScreenJitter => 'Tam ekran titreşim';
+
+  @override
+  String get fullScreenJitterHelp => 'Ekran yanmasını önlemek için';
+
+  @override
+  String get fullScreenTip =>
+      'Cihaz yatay moda döndürüldüğünde tam ekran modu etkinleştirilsin mi? Bu seçenek yalnızca sunucu sekmesi için geçerlidir.';
+
+  @override
+  String get githubGistIdOptional => 'Gist kimliği (isteğe bağlı)';
+
+  @override
+  String get githubGistToken => 'GitHub Gist belirteci';
+
+  @override
+  String get githubGistTokenEmpty => 'Belirteç boş';
+
+  @override
+  String get githubGistIdInvalid =>
+      'Bu, Gist kimliği de Gist bağlantısı da değil. Gist adresinin son bölümünü kullanın (https://gist.github.com/<user>/<ID>) veya ilk yedeklemede yeni bir gizli gist oluşturulması için boş bırakın.';
+
+  @override
+  String get githubGistNotFound =>
+      'GitHub, bu tokenin okuyabileceği bu kimliğe sahip bir gist bulamadı: kimlik yanlış olabilir, gist silinmiş olabilir veya başka bir hesaba ait olabilir. İlk yedeklemede yeni bir gizli gist oluşturulması için kimliği boş bırakın.';
+
+  @override
+  String get githubGistTokenRejected =>
+      'GitHub bu tokeni reddetti: token yanlış, süresi dolmuş veya iptal edilmiş olabilir ya da gist izni eksik olabilir (classic token: \"gist\" scope; fine-grained token: Gists read and write).';
+
+  @override
+  String get goto => 'Git';
+
+  @override
+  String get homeTabs => 'Ana Sayfa Sekmeleri';
+
+  @override
+  String get homeTabsCustomizeDesc =>
+      'Ana sayfada görünecek sekmeleri ve sıralarını özelleştirin';
+
+  @override
+  String get ignoreCert => 'Sertifikayı yok say';
+
+  @override
+  String get image => 'Görüntü';
+
+  @override
+  String get macDmgBody =>
+      'App Store bu uygulamanın kum havuzunda çalışmasını ister ve kum havuzu terminal açamaz. DMG sürümü açabilir.\n\nApp Store sürümü ileride güncellenmeyebilir.';
+
+  @override
+  String get macDmgImportDenied => 'macOS önceki sürümün verisini okutmadı';
+
+  @override
+  String get macDmgImported => 'Önceki sürümün verisi içe aktarıldı';
+
+  @override
+  String get macDmgImportFailed => 'Önceki sürümün verisi okunamadı';
+
+  @override
+  String get macDmgTip =>
+      'DMG sürümü yerel terminali ve kod snippet’lerini yerel olarak çalıştırmayı destekler.';
+
+  @override
+  String get macDmgTitle => 'DMG sürümü';
+
+  @override
+  String get showHiddenFiles => 'Gizli dosyaları göster';
+
+  @override
+  String get sshKeyAlgorithm => 'Algoritma';
+
+  @override
+  String get sshKeyComment => 'Açıklama';
+
+  @override
+  String get sshKeyGenerate => 'Anahtar çifti oluştur';
+
+  @override
+  String get sshKeyGenerating => 'Oluşturuluyor…';
+
+  @override
+  String sshKeyLockedFmt(String name) {
+    return '[$name] özel anahtarının kilidi açılmadı.';
+  }
+
+  @override
+  String get sshKeyPassphraseTip =>
+      'İsteğe bağlı. Parola belirlenen anahtar şifreli saklanır ve bir bağlantı anahtarı ilk kez kullandığında parola sorulur.';
+
+  @override
+  String get sshKeyPassphraseWrong => 'Parola yanlış.';
+
+  @override
+  String get sshKeyPublicKey => 'Genel anahtar';
+
+  @override
+  String get sshKeyPublicKeyTip =>
+      'Bu satırı sunucudaki ~/.ssh/authorized_keys dosyasına ekleyin.';
+
+  @override
+  String get sshKeyRecommended => 'Önerilen';
+
+  @override
+  String get rememberKeyPassphrase => 'Anahtar parolalarını hatırla';
+
+  @override
+  String get rememberKeyPassphraseTip =>
+      'Şifreli özel anahtarların parolalarını bu cihazın sistem anahtar zincirinde saklar, böylece yeniden başlatmadan sonra tekrar sorulmaz. Yedeklerde anahtarlar şifreli kalır. Kapatıldığında kayıtlı parolalar silinir.';
+
+  @override
+  String sshKeyUnlockTip(String name) {
+    return '[$name] özel anahtarının parolasını girin.';
+  }
+
+  @override
+  String get ungrouped => 'Gruplandırılmamış';
+
+  @override
+  String get containerReclaimable => 'Reclaimable';
+
+  @override
+  String get unused => 'Kullanılmıyor';
+
+  @override
+  String get dangling => 'Askıda';
+
+  @override
+  String get pruneUnusedImages => 'Kullanılmayan görüntüleri temizle';
+
+  @override
+  String get pruneDanglingImages => 'Askıdaki görüntüleri temizle';
+
+  @override
+  String get pruneImages => 'Görüntüleri temizle';
+
+  @override
+  String get unusedTaggedImages => 'Kullanılmayan etiketliler';
+
+  @override
+  String get pruneDanglingImagesTip => 'Yalnızca boşta kalan imajları siler.';
+
+  @override
+  String get pruneUnusedImagesTip =>
+      'Hiçbir konteyner tarafından kullanılmayan etiketli görüntüleri de kaldırır.';
+
+  @override
+  String get includeUnusedVolumesTip =>
+      'Hiçbir konteyner tarafından kullanılmayan birimleri de kaldırır.';
+
+  @override
+  String get pruneCommandPreview => 'Komut önizlemesi';
+
+  @override
+  String get pruneForceSshTip =>
+      '-f etkileşimli onayı atlar ve SSH yürütmesinde her zaman etkindir.';
+
+  @override
+  String get pruneVolumes => 'Birimleri temizle';
+
+  @override
+  String get pruneUnusedData => 'Kullanılmayan verileri temizle';
+
+  @override
+  String get pull => 'Çek';
+
+  @override
+  String get invalidHostFormat =>
+      'Geçersiz ana makine biçimi. Yalnızca IPv4, IPv6 ve alan adı karakterlerine izin verilir.';
+
+  @override
+  String get jumpServer => 'Atlama sunucusu';
+
+  @override
+  String jumpServersNotFoundFmt(String serverName, String jumpIds) {
+    return '$serverName için atlama sunucuları bulunamadı: $jumpIds';
+  }
+
+  @override
+  String nameAlreadyExistsFmt(String name) {
+    return '\"$name\" zaten mevcut';
+  }
+
+  @override
+  String get noJumpServerAvailable => 'Kullanılabilir atlama sunucusu yok.';
+
+  @override
+  String get jumpServerAndProxyCommandCannotBeUsedTogether =>
+      'Atlama sunucusu ile ProxyCommand birlikte kullanılamaz.';
+
+  @override
+  String get noConnectionMethod =>
+      'SSH, Monitor veya her ikisini yapılandırın.';
+
+  @override
+  String get keepForeground => 'Uygulamayı ön planda tut!';
+
+  @override
+  String get keepStatusWhenErr => 'Son sunucu durumunu koru';
+
+  @override
+  String get keepStatusWhenErrTip =>
+      'Yalnızca betik yürütülmesi sırasında bir hata olduğunda';
+
+  @override
+  String get keyAuth => 'Anahtar Kimlik Doğrulama';
+
+  @override
+  String get lastFailure => 'Son Başarısızlık';
+
+  @override
+  String get lastSuccess => 'Son Başarı';
+
+  @override
+  String get letterCache => 'Normal klavye girişi';
+
+  @override
+  String get letterCacheTip =>
+      'Etkinleştirildiğinde giriş normal IME üzerinden yapılır; bu da bazı sistemlerde terminalde güvenli klavye istemlerini önleyebilir.';
+
+  @override
+  String get linuxShellTip =>
+      'Terminalin hangi kabukla açılacağı. Boş bırakınca /bin/sh’a döner.';
+
+  @override
+  String get linuxNetTip =>
+      'DNS sunucusu. Varsayılanı kullanmak için boş bırakın.';
+
+  @override
+  String madeWithLove(String myGithub) {
+    return '$myGithub tarafından ❤️ ile yapıldı';
+  }
+
+  @override
+  String get maxConcurrency => 'Maksimum Eşzamanlılık';
+
+  @override
+  String get maxRetryCount =>
+      'Sunucuya yeniden bağlanma denemelerinin üst sınırı';
+
+  @override
+  String get mirror => 'Yansı';
+
+  @override
+  String get needRestart => 'Uygulamanın yeniden başlatılması gerekiyor';
+
+  @override
+  String get newContainer => 'Yeni konteyner';
+
+  @override
+  String get noConnectionStatsData => 'Bağlantı istatistik verisi yok';
+
+  @override
+  String get noPrivateKeyTip =>
+      'Özel anahtar mevcut değil, silinmiş olabilir veya yapılandırma hatası vardır.';
+
+  @override
+  String get noPromptAgain => 'Tekrar sorma';
+
+  @override
+  String get openLastPath => 'Son yolu aç';
+
+  @override
+  String get openLastPathTip =>
+      'Farklı sunucular farklı günlükler tutar ve günlük, çıkış yoludur';
+
+  @override
+  String get parseContainerStatsTip =>
+      'Docker\'ın doluluk durumunu ayrıştırmak oldukça yavaş.';
+
+  @override
+  String get privateKey => 'Özel Anahtar';
+
+  @override
+  String privateKeyNotFoundFmt(String keyId) {
+    return 'Özel anahtar [$keyId] bulunamadı.';
+  }
+
+  @override
+  String get bmcPowerOnAction => 'Aç';
+
+  @override
+  String get bmcShutdown => 'Kapat';
+
+  @override
+  String get bmcForceOff => 'Zorla kapat';
+
+  @override
+  String get restart => 'Yeniden başlat';
+
+  @override
+  String get bmcPowerCycle => 'Güç döngüsü';
+
+  @override
+  String bmcPowerConfirm(String server, String resetType) {
+    return '$server için gönderilsin mi? Servise \"$resetType\" istenecek';
+  }
+
+  @override
+  String get bmcPowerDone => 'Güç durumu değişti';
+
+  @override
+  String get bmcPowerAccepted =>
+      'Kabul edildi ama güç durumu değişmedi. Nazik işlem işletim sistemine bağlı';
+
+  @override
+  String get bmcPowerUnsupported => 'Bu hizmet bu işlem türünü desteklemiyor.';
+
+  @override
+  String get bmcUnauthorized => 'BMC hesabı reddetti';
+
+  @override
+  String get bmcAccountMissing => 'Bu BMC için hesap ayarlanmamış';
+
+  @override
+  String get bmcPowerOn => 'Açık';
+
+  @override
+  String get bmcPowerOff => 'Kapalı';
+
+  @override
+  String get bmcCertRejected =>
+      'Sertifika reddedildi — sunucu ayarlarından inceleyin';
+
+  @override
+  String get bmcNotAService => 'Bu adreste Redfish hizmeti yok';
+
+  @override
+  String get bmcNoSystem => 'Hizmet herhangi bir sistem bilgisi bildirmedi.';
+
+  @override
+  String get bmcSensorsTruncated => 'Yalnızca ilk sensörler gösteriliyor';
+
+  @override
+  String get bmcMultipleSystems => 'Yalnızca ilk sistem gösteriliyor';
+
+  @override
+  String get bmcTip =>
+      'BMC, anakart üzerindeki ayrı bir bilgisayardır ve ana makinenin işletim sistemine ulaşılamadığında da erişilebilir. Burada yapılandırıldığında, sunucu kapalıyken ya da takılıyken güç durumunu ve donanım sensörlerini bildirir. Redfish gerektirir; yaklaşık 2016\'dan sonraki kurumsal donanımların çoğunda bulunur.';
+
+  @override
+  String get bmcCert => 'Sertifika';
+
+  @override
+  String get bmcCertPinned => 'İncelendi ve sabitlendi';
+
+  @override
+  String get bmcCertUnreviewed =>
+      'Henüz incelenmedi — sertifikayı görmek için dokun';
+
+  @override
+  String get bmcCertReview =>
+      'Kendinden imzalı bir sertifika. Kabul etmeden önce karşılaştır. Sonrasında yalnızca bu güvenilir.';
+
+  @override
+  String get bmcCertChanged => 'Sertifika eşleşmiyor. Kontrol et.';
+
+  @override
+  String get bmcCertExpired => 'Süresi dolmuş.';
+
+  @override
+  String bmcCertWas(String fingerprint) {
+    return 'Daha önce kabul edilen: $fingerprint';
+  }
+
+  @override
+  String get bmcAddrInvalid =>
+      'BMC adresi bir URL olmalı, örneğin https://10.0.0.9';
+
+  @override
+  String get proxyCommandSandboxed =>
+      'Bu sürüm sandbox içinde çalışır. Komutlara sizin home dizininiz yerine boş bir home dizini verilir; bu nedenle ~/.ssh gerektiren komutlar başarısız olur. DMG sürümünde bu kısıtlama yoktur.';
+
+  @override
+  String privateKeyFileUnreadable(String path, String reason) {
+    return 'Özel anahtar dosyası $path okunamadı: $reason';
+  }
+
+  @override
+  String privateKeyFileSandboxed(String path) {
+    return 'Bu sürüm kendi kapsayıcısı dışındaki dosyaları okuyamıyor, bu yüzden $path konumundaki anahtara erişilemiyor. Anahtarı Ayarlar\'dan içe aktarın ya da DMG sürümünü kullanın.';
+  }
+
+  @override
+  String get pushToken => 'Push belirteci';
+
+  @override
+  String get liveActivity => 'Canlı Etkinlik';
+
+  @override
+  String get liveActivityTip =>
+      'Terminal oturumlarını Kilitli Ekran\'da ve Dynamic Island\'da gösterir. Cihazın kilidi açılmadan sunucu adı ve bağlantı durumu görülebilir.';
+
+  @override
+  String get liveActivitySystemDisabled =>
+      'iOS buna izin vermiyor. Anahtarlar Ayarlar › ServerBox › Canlı Etkinlikler ve Ayarlar › Face ID ve Parola › Canlı Etkinlikler bölümlerinde.';
+
+  @override
+  String get proxyCommandNeedsLinux =>
+      'ProxyCommand bu cihazın Linux ortamında çalışır. Önce bir Linux sistemi kurun.';
+
+  @override
+  String get proxyCommandMobileTip =>
+      'Telefonda komut seçili Linux sisteminde çalışır. Kullandığı araçları (nc, socat, …) önce oraya kurun.';
+
+  @override
+  String get pveIgnoreCertTip =>
+      'PVE varsayılan self-signed sertifikasını kullanıyorsa bu seçeneği etkinleştirin. Bunun güvenlik riski oluşturduğunu unutmayın.';
+
+  @override
+  String get pvePasswordRequired =>
+      'PVE parolası gerekli. Lütfen sunucu ayarlarında belirle.';
+
+  @override
+  String get pveOtpRequired =>
+      'Bu PVE sunucusunda iki adımlı doğrulama açık. Lütfen OTP kodunu gir.';
+
+  @override
+  String get pveOtpCodeRequired => 'OTP kodu gerekli.';
+
+  @override
+  String get pveOtpVerificationFailed =>
+      'OTP doğrulaması başarısız. Lütfen yeni bir kodla tekrar dene.';
+
+  @override
+  String get pveOtpTitle => 'OTP doğrulaması';
+
+  @override
+  String get pveOtpLabel => 'OTP kodu';
+
+  @override
+  String get pveInvalidResponseBody =>
+      'PVE oturum açma isteği geçersiz bir yanıt gövdesi döndürdü.';
+
+  @override
+  String get pveInvalidResponseData =>
+      'PVE oturum açma yanıtında geçerli bir data alanı yok.';
+
+  @override
+  String get pveMissingAuthTicket =>
+      'PVE oturumu açıldı ancak kimlik doğrulama bileti döndürülmedi.';
+
+  @override
+  String get pveLoadingConnect => 'Bağlanıyor...';
+
+  @override
+  String get pvePassword => 'PVE parolası';
+
+  @override
+  String get pvePasswordHint =>
+      'SSH anahtarıyla kimlik doğrularken de gereklidir.';
+
+  @override
+  String get read => 'Oku';
+
+  @override
+  String get recentConnections => 'Son Bağlantılar';
+
+  @override
+  String get rememberPwdInMem => 'Şifreyi bellekte hatırla';
+
+  @override
+  String get rememberPwdInMemTip =>
+      'Bu parola kapsayıcı yönetimi, askıya alma ve benzeri işlemler için gerekir.';
+
+  @override
+  String get remotePath => 'Uzak yol';
+
+  @override
+  String rootfsUpdateTip(
+    String distro,
+    String installed,
+    String latest,
+    String pm,
+  ) {
+    return '$distro $installed yüklü; $latest sürümüne güncellenebilir. Güncelleme tüm kapsayıcıyı yeniden indirip değiştirir ve $pm içindeki verileri siler.';
+  }
+
+  @override
+  String linuxSystemInUse(String name) {
+    return 'Silmeden önce $name üzerindeki terminalleri kapat';
+  }
+
+  @override
+  String get rootfsSubtitle => 'Bu cihazdaki bir Linux kullanıcı alanı';
+
+  @override
+  String rootfsInstallTip(String distro, String version, int size) {
+    return '$distro $version (yaklaşık $size MB) indirir ve bu cihaza açar.';
+  }
+
+  @override
+  String get sameIdServerExist => 'Aynı ID’ye sahip bir sunucu zaten var.';
+
+  @override
+  String get second => 's';
+
+  @override
+  String get serverFilesUnavailableTip =>
+      'Bu sunucuya SSH ile bağlanın veya Monitor’ü yükleyip dosya API’sini etkinleştirin.';
+
+  @override
+  String get back => 'Geri';
+
+  @override
+  String get history => 'Geçmiş';
+
+  @override
+  String get homeDir => 'Ana klasör';
+
+  @override
+  String selected(int count) {
+    return '$count seçildi';
+  }
+
+  @override
+  String get sendTo => 'Şuraya gönder…';
+
+  @override
+  String get serverFuncBtns => 'Sunucu işlev düğmeleri';
+
+  @override
+  String get serverOrder => 'Sunucu sırası';
+
+  @override
+  String get serverOverview => 'Sunucu özeti';
+
+  @override
+  String get serverOverviewTip =>
+      'Sunucu listesinin üstünde özeti ve açık bir sunucunun üstünde sunucu çubuğunu gösterir';
+
+  @override
+  String get serverTabEmpty => 'Henüz sunucu yok';
+
+  @override
+  String get serverTabConnBadge =>
+      'Sunucu sekmesinde gösterilen bağlantı sayısı';
+
+  @override
+  String get serverTabConnBadgeTip => 'Bağlı sunucu sayısı; örneğin 2/4.';
+
+  @override
+  String get serverTabRequired => 'Sunucu sekmesi kaldırılamaz';
+
+  @override
+  String get shareCodeHint =>
+      'Bu rakamları alıcıya ayrıca iletin. QR koduna dahil değildir.';
+
+  @override
+  String get shareCodePrompt => '6 haneli kod';
+
+  @override
+  String get shareCodeTitle => 'Tek kullanımlık kod';
+
+  @override
+  String get shareExpired => 'Bu paylaşımın süresi doldu. Yenisini isteyin.';
+
+  @override
+  String get shareImportFile => 'Paylaşılan dosyadan';
+
+  @override
+  String get shareImportTitle => 'Paylaşılan sunucuyu içe aktar';
+
+  @override
+  String get shareIncludesKey => 'Paylaşım özel anahtarı içeriyor.';
+
+  @override
+  String get shareOmittedBmc =>
+      'BMC kimlik bilgileri. Adres dahildir ancak kimlik bilgileri değildir.';
+
+  @override
+  String get shareOmittedJump =>
+      'Atlama sunucusu; çünkü bu cihazda ayrı bir sunucu olarak kayıtlıdır.';
+
+  @override
+  String get shareOmittedKeyPath =>
+      'Anahtar dosyası; çünkü yolu yalnızca bu cihazda geçerlidir.';
+
+  @override
+  String get shareOmittedMissingKey =>
+      'Özel anahtar; çünkü bu cihazın anahtar deposunda bulunmuyor.';
+
+  @override
+  String get shareOmittedTip =>
+      'Dahil değildir; alıcının şunları yapılandırması gerekir:';
+
+  @override
+  String get sharePassphraseTip =>
+      'Bu parola dosyayı şifreler. Alıcının sunucuyu içe aktarmak için parolaya ihtiyacı vardır ve parola kurtarılamaz.';
+
+  @override
+  String shareQrTip(int minutes) {
+    return 'Bu QR kodundaki bağlantı bilgileri şifrelenmiştir. Paylaşımın süresi $minutes dakika sonra dolar.';
+  }
+
+  @override
+  String get shareScanQr => 'QR kodu tara';
+
+  @override
+  String shareServerExists(String name) {
+    return 'Bu cihazdaki “$name” zaten bu adresi kullanıyor. Yine de içe aktarılsın mı?';
+  }
+
+  @override
+  String get shareTooBigForQr =>
+      'QR kodu için çok büyük. Bunun yerine dosya olarak paylaşın.';
+
+  @override
+  String get shareTooNew =>
+      'Bu paylaşım daha yeni bir ServerBox sürümüyle oluşturuldu. Açmak için uygulamayı güncelleyin.';
+
+  @override
+  String get shareUnreadable =>
+      'Bu geçerli bir ServerBox paylaşım verisi değil.';
+
+  @override
+  String get shareVia => 'Şununla paylaş';
+
+  @override
+  String get sftpDlPrepare => 'Bağlantı hazırlanıyor...';
+
+  @override
+  String get sftpEditorTip =>
+      'Uygulamanın yerleşik düzenleyicisini kullanmak için boş bırakın. `vim` gibi bir düzenleyici de belirtebilirsiniz (`EDITOR` ortam değişkeninden ayarlanması önerilir).';
+
+  @override
+  String get sftpRmrDirSummary =>
+      'SFTP\'de bir klasörü silmek için `rm -r` kullan.';
+
+  @override
+  String get sftpSSHConnected => 'SFTP Bağlandı';
+
+  @override
+  String get sftpShowFoldersFirst => 'Önce klasörleri göster';
+
+  @override
+  String get sftpUnavailableUseScp =>
+      'Birçok gömülü cihazda olduğu gibi bu makinede SFTP alt sistemi yoksa, sunucu ayarlarından dosya aktarımını SCP yapın.';
+
+  @override
+  String get sshFileTransportTip =>
+      'Güncel her cihaz için SFTP uygundur. SSH sunucusunda SFTP alt sistemi bulunmayan eski ya da gömülü bir makine için SCP seçin: `scp` komutunun yanı sıra `find`, `stat`, `mv`, `chmod` gibi olağan dosya araçlarına sahip bir kabuk ortamı gerekir.';
+
+  @override
+  String get specifyDev => 'Cihazı belirt';
+
+  @override
+  String get specifyDevTip =>
+      'Ağ trafiği varsayılan olarak tüm aygıtları sayar; burada birini belirt';
+
+  @override
+  String get tempIsCelsiusTip =>
+      'Etkinleştirildiğinde sıcaklıklar miliderece yerine Santigrat derece olarak okunur. Yalnızca sıcaklık yanlış görünüyorsa açın (ör. 58 °C olması gerekirken 0,1 °C görünmesi).';
+
+  @override
+  String get diskCountsNetwork => 'Ağ dosya sistemlerini toplama dahil et';
+
+  @override
+  String get diskCountsNetworkTip =>
+      'NFS ve SMB gibi ağ bağlamaları listede her zaman gösterilir. Kapasiteleri başka bir makineye aittir ve varsayılan olarak disk toplamına katılmaz. Bu ayar yalnızca SSH ile durum toplandığında geçerlidir; Monitor üzerinden toplandığında Monitor’ün kendi ayarı belirleyicidir.';
+
+  @override
+  String get diskCountsNetworkAgentTip =>
+      'NFS ve SMB gibi ağ bağlamaları listede her zaman gösterilir. Kapasiteleri başka bir makineye aittir ve varsayılan olarak disk toplamına katılmaz. Monitor’ün geçmişe kaydettiği ve disk uyarılarını karşılaştırdığı değer bu toplamdır.';
+
+  @override
+  String spentTime(String time) {
+    return 'Harcanan süre: $time';
+  }
+
+  @override
+  String sshConfigAllExist(int duplicateCount) {
+    return 'Tüm sunucular zaten mevcut ($duplicateCount kopya bulundu)';
+  }
+
+  @override
+  String sshConfigDuplicatesSkipped(int duplicateCount) {
+    return '$duplicateCount kopya atlanacak';
+  }
+
+  @override
+  String get sshConfigFound => 'Sistemde SSH yapılandırması bulundu.';
+
+  @override
+  String sshConfigFoundServers(int totalCount) {
+    return '$totalCount sunucu bulundu';
+  }
+
+  @override
+  String get sshConfigImport => 'SSH Yapılandırma İçe Aktarma';
+
+  @override
+  String get sshConfigImportPermission =>
+      'Uygulamanın ~/.ssh/config dosyasını okuyup sunucu ayarlarını otomatik olarak içe aktarmasına izin verilsin mi?';
+
+  @override
+  String get sshConfigImportTip =>
+      'İlk sunucu oluşturulurken ~/.ssh/config okuma istemi';
+
+  @override
+  String sshConfigImported(int count) {
+    return 'SSH yapılandırmasından $count sunucu içe aktarıldı.';
+  }
+
+  @override
+  String sshHostKeyChangedDesc(String serverName) {
+    return '$serverName sunucusunun SSH ana bilgisayar anahtarı değişti. Yalnızca sunucuya güveniyorsanız devam edin.';
+  }
+
+  @override
+  String get sshHostKeyType => 'SSH ana bilgisayar anahtarı türü';
+
+  @override
+  String get sshKnownHostKeys => 'Bilinen ana makineler';
+
+  @override
+  String get sshKnownHostKeysTip =>
+      'Bu uygulamanın kabul ettiği host anahtarları';
+
+  @override
+  String sshHostKeyNewDesc(String serverName) {
+    return '$serverName sunucusundan yeni bir SSH ana bilgisayar anahtarı alındı. Güvenmeden önce fingerprint değerini doğrulayın.';
+  }
+
+  @override
+  String sshHostKeyStoredFingerprint(String fingerprint) {
+    return 'Kaydedilen parmak izi: $fingerprint';
+  }
+
+  @override
+  String get sshVerificationCode => 'Doğrulama kodu';
+
+  @override
+  String get sshConfigManualSelect =>
+      'SSH yapılandırma dosyasını manuel olarak seçmek ister misiniz?';
+
+  @override
+  String get sshConfigNoServers => 'SSH yapılandırmasında sunucu bulunamadı';
+
+  @override
+  String get sshConfigPermissionDenied =>
+      'macOS izinleri nedeniyle SSH yapılandırma dosyasına erişilemiyor.';
+
+  @override
+  String sshConfigServersToImport(int importCount) {
+    return '$importCount sunucu içe aktarılacak';
+  }
+
+  @override
+  String get sshTermHelp =>
+      'Terminal kaydırılabilir olduğunda, yatay olarak sürüklemek metni seçebilir. Klavye düğmesine tıklamak klavyeyi açar/kapar. Dosya simgesi mevcut yolu SFTP\'de açar. Pano düğmesi, metin seçiliyken içeriği kopyalar ve metin seçili değilken panoda içerik varsa terminale yapıştırır. Kod simgesi, kod parçacıklarını terminale yapıştırır ve yürütür.';
+
+  @override
+  String get sshVirtualKeyAutoOff => 'Sanal tuşların otomatik geçişi';
+
+  @override
+  String get supportFmtArgs =>
+      'Aşağıdaki biçimlendirme parametreleri desteklenir:';
+
+  @override
+  String get suspendTip =>
+      'suspend özelliği root yetkisi ve systemd gerektirir.';
+
+  @override
+  String switchTo(String val) {
+    return '$val\'a geç';
+  }
+
+  @override
+  String get syncAppSettings => 'Uygulama ayarlarını eşitle';
+
+  @override
+  String get syncAppSettingsTip =>
+      'Tema, düzen, düzenleyici, terminal ve diğer cihaz tercihlerini otomatik eşitlemeye dâhil et.';
+
+  @override
+  String get termFontSizeTip =>
+      'Bu ayar terminal boyutunu (genişlik ve yükseklik) etkiler. Terminal sayfasında yakınlaştırarak mevcut oturumun yazı tipi boyutunu ayarlayabilirsiniz.';
+
+  @override
+  String get textScalerTip =>
+      '1.0 => %100 (orijinal boyut), yalnızca sunucu sayfasındaki yazı tipinin bir kısmı üzerinde çalışır, değiştirilmesi önerilmez.';
+
+  @override
+  String get times => 'Kez';
+
+  @override
+  String get trySudo => 'Sudo ile dene';
+
+  @override
+  String get sudoPromptNotFound => 'Aktif bir sudo parola istemi yok.';
+
+  @override
+  String get updateServerStatusInterval => 'Sunucu durumu güncelleme aralığı';
+
+  @override
+  String get useNoPwd => 'Parola kullanma';
+
+  @override
+  String get usePodmanByDefault => 'Varsayılan olarak Podman kullan';
+
+  @override
+  String get used => 'Kullanılan';
+
+  @override
+  String get viewDetails => 'Detayları Görüntüle';
+
+  @override
+  String get virtKeyHelpIME => 'Klavyeyi aç/kapat';
+
+  @override
+  String get virtKeyHelpSFTP => 'Mevcut dizini SFTP\'de aç.';
+
+  @override
+  String get virtKeyHelpSnippet =>
+      'Bir parçacık seçip bu terminalde çalıştırır.';
+
+  @override
+  String get virtKeyHelpTmux =>
+      'tmux oturumları ve pencereleri arasında geçiş yapar.';
+
+  @override
+  String get virtKeyIntroActions => 'Kısayollar';
+
+  @override
+  String get virtKeyIntroActionsTip =>
+      'Bu tuşlar yazmaz, bir şey açar. Ne yaptığını okumak için birine basılı tutun.';
+
+  @override
+  String get virtKeyIntroCustomizeTip =>
+      'Terminal ayarlarından sıralarını değiştirebilir, daha fazlasını açabilir (dosyalar, sudo, F1–F12…) ya da hiç kullanmadıklarınızı gizleyebilirsiniz.';
+
+  @override
+  String get virtKeyIntroModifiers => 'Değiştirici tuşlar';
+
+  @override
+  String get virtKeyIntroModifiersTip =>
+      'Birine dokunup etkinleştirin, sonra klavyeden bir harfe dokunun. Yalnızca o tek tuş için geçerlidir.';
+
+  @override
+  String get virtKeyIntroNav => 'İmleç hareketi';
+
+  @override
+  String get virtKeyIntroNavTip =>
+      'Bu tuşlar imleci hareket ettirir. Yön tuşunu basılı tutarsanız yinelenir.';
+
+  @override
+  String get virtKeyIntroSelect =>
+      'Terminalde kaydırılacak bir şey olduğu sürece, yana sürükleyerek metin seçebilirsiniz.';
+
+  @override
+  String get virtKeyRows => 'Aynı anda gösterilen satır';
+
+  @override
+  String get virtKeyRowsTip =>
+      'Kalanlar yana kaydırılan ayrı bir sayfada yer alır.';
+
+  @override
+  String get waitConnection => 'Lütfen bağlantının kurulmasını bekleyin.';
+
+  @override
+  String get wakeLock => 'Uyanık tut';
+
+  @override
+  String get watchNotPaired => 'Eşleştirilmiş Apple Watch yok';
+
+  @override
+  String get webdavSettingEmpty => 'WebDav ayarı boş';
+
+  @override
+  String get whenOpenApp => 'Uygulama açıldığında';
+
+  @override
+  String get wolTip =>
+      'WOL (Wake-on-LAN) yapılandırıldıktan sonra, sunucuya her bağlanıldığında bir WOL isteği gönderilir.';
+
+  @override
+  String get write => 'Yaz';
+
+  @override
+  String get writeScriptFailTip =>
+      'Betik yazma başarısız oldu, muhtemelen izin eksikliği veya dizin mevcut değil.';
+
+  @override
+  String get writeScriptTip =>
+      'Sunucuya bağlandıktan sonra, sistem durumunu izlemek için `~/.config/server_box` \n | `/tmp/server_box` dizinine bir betik yazılacak. Betik içeriğini inceleyebilirsiniz.';
+
+  @override
+  String get menuGitHubRepository => 'GitHub deposu';
+
+  @override
+  String get podmanDockerEmulationDetected =>
+      'Podman Docker emülasyonu tespit edildi. Lütfen ayarlarda Podman\'a geçin.';
+
+  @override
+  String get betaTip =>
+      'Bu özellik hâlâ beta aşamasında. İşleyişi garanti edilmez.';
+
+  @override
+  String get portForward_startPrompt =>
+      'Başlamak için bir port yönlendirme kuralı ekle';
+
+  @override
+  String get portForward_localHost => 'Yerel ana makine';
+
+  @override
+  String get portForward_localPort => 'Yerel port';
+
+  @override
+  String get portForward_remoteHost => 'Uzak ana makine';
+
+  @override
+  String get portForward_remotePort => 'Uzak port';
+
+  @override
+  String portForward_deleteConfirmFmt(String name) {
+    return '$name silinsin mi?';
+  }
+
+  @override
+  String get sponsor => 'Sponsor';
+
+  @override
+  String get sortByJoinTime => 'Eklenme zamanına göre';
+
+  @override
+  String get tmuxAutoAttach => 'tmux\'a otomatik bağlan';
+
+  @override
+  String get tmuxAuto => 'Otomatik tmux';
+
+  @override
+  String get tmuxAutoTip =>
+      'SSH ile bağlanırken tmux\'u otomatik başlat veya ona bağlan';
+
+  @override
+  String get tmuxSessionSelector => 'Oturum seçici';
+
+  @override
+  String get tmuxSessionSelectorTip => 'Bağlanırken oturum seçiciyi göster';
+
+  @override
+  String get tmuxDefaultSessionName => 'Varsayılan oturum adı';
+
+  @override
+  String get tmuxSessionName => 'Oturum adı';
+
+  @override
+  String get tmuxNewSession => 'Yeni oturum';
+
+  @override
+  String get tmuxNewWindow => 'Yeni pencere';
+
+  @override
+  String get tmuxNoWindowsFound => 'Pencere bulunamadı';
+
+  @override
+  String tmuxWindowCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pencere',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get tmuxAttached => 'Bağlı';
+
+  @override
+  String get tmuxSkip => 'Atla';
+
+  @override
+  String get tmuxNotAvailable => 'tmux kullanılamıyor';
+
+  @override
+  String containerSegmentsMismatch(int count) {
+    return 'Konteyner yanıtındaki beklenmeyen bölüm sayısı: $count';
+  }
+
+  @override
+  String get containerOperationInProgress =>
+      'Başka bir konteyner işlemi zaten devam ediyor';
+
+  @override
+  String processCount(int count) {
+    return '$count işlem';
+  }
+
+  @override
+  String get processParseUnsupportedOutput =>
+      'İşlem listesi biçimi desteklenmiyor.';
+
+  @override
+  String get processParseInvalidRows => 'Bazı işlem girdileri okunamadı.';
+
+  @override
+  String get processParseInvalidWindowsJson =>
+      'Windows işlem yanıtı okunamadı.';
+
+  @override
+  String get processParseInvalidWindowsRows =>
+      'Bazı Windows işlem girdileri okunamadı.';
+
+  @override
+  String get processKillTargetChanged =>
+      'İşlem değişti veya sonlandı. Listeyi yenileyip tekrar deneyin.';
+
+  @override
+  String get processSearchHint => 'Ad, kullanıcı veya PID';
+
+  @override
+  String processShowKernelThreads(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count kernel iş parçacığını göster',
+      one: '1 kernel iş parçacığını göster',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get processForceKill => 'Force kill';
+
+  @override
+  String get processStarted => 'Started';
+
+  @override
+  String get processThreads => 'Threads';
+
+  @override
+  String get watchServers => 'Saatteki sunucular';
+
+  @override
+  String get watchServersTip =>
+      'Saat veriyi Monitor’dan kendisi alır, bu yüzden yalnızca Monitor’u olan sunucular seçilebilir.';
+
+  @override
+  String get watchNoMonitorServer => 'Monitor yapılandırılmış sunucu yok.';
+
+  @override
+  String get legacyStatusGoneTitle => 'Durum URL\'leri artık çalışmıyor';
+
+  @override
+  String get legacyStatusGoneBody =>
+      'Saat uygulaması ve ana ekran bileşenleri elle yazılan bir `/status` adresini okuyordu. Bu uç nokta kaldırıldı: yalnızca anlık değerleri metin olarak döndürebiliyordu, grafik gösterememelerinin nedeni buydu.\n\nArtık Monitor’ün kimlik doğrulamalı API\'sini okuyorlar; eğilimleri çiziyor ve uygulamayla kendiliğinden eşleşiyorlar. Sunucuyu uygulamada bir kez yapılandırın, her saat ve bileşen onu alsın.';
+
+  @override
+  String get services => 'Hizmetler';
+
+  @override
+  String get status => 'Durum';
+
+  @override
+  String get enable => 'Etkinleştir';
+
+  @override
+  String get disable => 'Devre dışı bırak';
+
+  @override
+  String get starting => 'Başlatılıyor';
+
+  @override
+  String get stopping => 'Durduruluyor';
+
+  @override
+  String get serviceManagerUnsupported => 'Desteklenmeyen hizmet yöneticisi';
+
+  @override
+  String get serviceManagerUnsupportedTip =>
+      'Bu sunucu ServerBox\'ın henüz desteklemediği bir hizmet yöneticisi kullanıyor. systemd, procd ve OpenRC desteklenir.';
+
+  @override
+  String serviceManagerFmt(String manager) {
+    return '$manager tarafından yönetiliyor';
+  }
+
+  @override
+  String get serviceListFailed => 'Hizmetler listelenemedi';
+
+  @override
+  String get serviceDetailsUnavailable =>
+      'Bazı hizmet ayrıntıları kullanılamıyor';
+
+  @override
+  String get serviceDetailsUnavailableTip =>
+      'Liste kullanılabilir, ancak yönetici tüm durum veya otomatik başlatma bilgilerini döndürmedi.';
+
+  @override
+  String get systemdUserScopeMissing => 'Kullanıcı unit\'leri listelenmiyor';
+
+  @override
+  String get systemdUserScopeMissingTip =>
+      'Bu hesabın sunucuda kullanıcı oturum veri yolu yok, bu yüzden yalnızca sistem unit\'leri gösteriliyor.';
+
+  @override
+  String get serviceSearchHint => 'Unit name';
+
+  @override
+  String get serviceNeedsAttention => 'Needs attention';
+
+  @override
+  String serviceOtherUnits(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count diğer unit',
+      one: '1 diğer unit',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get serviceUnit => 'Unit';
+
+  @override
+  String get serviceUnitType => 'Type';
+
+  @override
+  String get serviceScope => 'Scope';
+
+  @override
+  String get serviceStartup => 'Startup';
+
+  @override
+  String serviceUpFor(String duration) {
+    return '$duration süredir çalışıyor';
+  }
+
+  @override
+  String serviceDownFor(String duration) {
+    return '$duration süredir durmuş';
+  }
+
+  @override
+  String serviceNextIn(String duration) {
+    return 'Sonraki çalışma: $duration sonra';
+  }
+
+  @override
+  String serviceStoppedAgo(String duration) {
+    return '$duration önce durduruldu';
+  }
+
+  @override
+  String serviceExitStatus(int code) {
+    return 'çıkış durumu $code';
+  }
+
+  @override
+  String get serviceFullJournal => 'Full journal';
+
+  @override
+  String get serviceUnitFile => 'Unit file';
+
+  @override
+  String serviceJournalRecent(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Son $count satır',
+      one: 'Son satır',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get serviceJournalUnreadable =>
+      'Bu hesap journal kayıtlarını okuyamıyor';
+
+  @override
+  String get serverUnreachable => 'Bu sunucuda komut çalıştırılamadı';
+
+  @override
+  String get containerNoRuntime => 'Burada konteyner çalışma ortamı yok';
+
+  @override
+  String get containerNoRuntimeTip =>
+      'Bu makinede ne `docker` ne de `podman` yanıt verdi. Biri başka bir hesap için kuruluysa Ayarlar\'dan \"Sudo ile dene\" seçeneğini açın.';
+
+  @override
+  String get containerUnreadable =>
+      'Konteyner çalışma ortamı beklenmeyen bir biçimde yanıt verdi';
+
+  @override
+  String get power => 'Güç';
+
+  @override
+  String get fan => 'Fan';
+
+  @override
+  String get clockSpeed => 'Saat hızı';
+
+  @override
+  String get vendor => 'Üretici';
+
+  @override
+  String get continueInTerminal => 'Terminalde devam et';
+
+  @override
+  String get askAiRiskUnknown => 'Sınıflandırılmadı';
+
+  @override
+  String get agentLocalExec => 'Bu cihazda komut çalıştır';
+
+  @override
+  String get agentLocalExecTip =>
+      'Agent’ın ServerBox’ın çalıştığı makinede çalışmasına izin verir. Salt okunur komutlar da incelenir';
+
+  @override
+  String get agentLocalExecRootfsTip =>
+      'Agent’ın yerelde, ServerBox’ın kurduğu Linux konteynerinin içinde çalışmasına izin verir';
+
+  @override
+  String macDmgImportedPartly(String path) {
+    return 'Daha önce yüklü sürümün verileri içe aktarıldı. İndirilen dosyalar $path konumunda kaldı.';
+  }
+
+  @override
+  String get bmcAccount => 'Hesap';
+
+  @override
+  String get bmcAccountUnset => 'Seçilmedi — seçmek veya oluşturmak için dokun';
+
+  @override
+  String bmcAccountShared(int count) {
+    return '$count sunucuda kullanılıyor';
+  }
+
+  @override
+  String get bmcAccounts => 'BMC hesapları';
+
+  @override
+  String get bmcAccountSharedTip =>
+      'Burada düzenlemek hepsinin kullandığını değiştirir.';
+
+  @override
+  String bmcAccountInUse(int count) {
+    return '$count sunucu kullanıyor. Adresleri kalır, hesabı kaybederler.';
+  }
+
+  @override
+  String get bmcStaleWrite => 'Yazma sırasında BMC değişti. Tekrar dene.';
+
+  @override
+  String get privacyBlur => 'Arka planda gizlilik';
+
+  @override
+  String get privacyBlurTip => 'Uygulama değiştiricide içeriği gizle';
+
+  @override
+  String get floatReturnToTab => 'Sekmeye geri koy';
+
+  @override
+  String get termInFloatWindow => 'Bu terminal yüzen pencerede';
+
+  @override
+  String get globeEnabledTip =>
+      'Sunucuları adreslerinin bulunduğu yerde bir küre üzerinde gösterir. Kapalıyken düğme kaybolur ve hiçbir sorgu yapılmaz.';
+
+  @override
+  String get geoShardsConsentAttribution =>
+      'IP coğrafi konumu [DB-IP](https://db-ip.com) tarafından, CC BY 4.0.';
+
+  @override
+  String get geoMissPrivate => 'Özel adres';
+
+  @override
+  String get geoMissNoData => 'Konum verisi yok';
+
+  @override
+  String get globeGuide =>
+      'Sunucularınızı adreslerinin bulunduğu yerde bir küre üzerinde görmek için buraya dokunun.';
+
+  @override
+  String get publicIp => 'Genel IP';
+
+  @override
+  String get geoData => 'Şehir düzeyinde veri';
+
+  @override
+  String get geoDataTip =>
+      'İndirme tamamlandıktan sonra tüm konum sorguları bu cihazda saklanan verileri kullanır. Sunucu adresleri ve sorgu etkinliği indirme hizmetine gönderilmez.';
+
+  @override
+  String get geoDataMissing => 'İndirilmedi';
+
+  @override
+  String get geoDataUnreachable => 'Veri alınamadı.';
+
+  @override
+  String get geoDataRemoveFailed => 'Veriler silinemedi.';
+
+  @override
+  String geoDataCurrent(String month) {
+    return '$month zaten yüklü.';
+  }
+
+  @override
+  String geoDataConsent(String download, String disk) {
+    return '**İndirme: $download · Cihazdaki depolama alanı: $disk.** Veri kümesinin tamamı bu cihazda saklanır ve sonraki tüm konum sorguları yerel olarak gerçekleştirilir. Sunucu adresleri ve sorgu etkinliği indirme hizmetine gönderilmez.\n\nHer ay güncellenir. Yeni sürüm yüklü verilerin yerini alır ve ek bir kopya tutmaz. İstediğiniz zaman silebilirsiniz.';
+  }
+
+  @override
+  String get benchmark => 'Performans testi';
+
+  @override
+  String get benchmarkIntro =>
+      'Disk, ağ ve CPU\'yu test etmek için bu sunucuda Yet Another Bench Script\'i çalıştırır. Tam bir test 10–20 dakika sürer ve bu sayfadan ayrılsanız veya uygulamayı kapatsanız da devam eder.';
+
+  @override
+  String get benchmarkNoRuns => 'Henüz performans testi yok.';
+
+  @override
+  String get benchmarkRunning => 'Performans testi çalışıyor';
+
+  @override
+  String get benchmarkStartFailed => 'Performans testi başlatılamadı';
+
+  @override
+  String get benchmarkCancelConfirm =>
+      'Bu test durdurulsun mu? Şimdiye kadar yapılan tüm ölçümler kaybolacak.';
+
+  @override
+  String get benchmarkDeleteConfirm => 'Bu test sonucu silinsin mi?';
+
+  @override
+  String get benchmarkNothingSelected =>
+      'Tüm test aşamaları kapalı. Yalnızca sistem bilgileri toplanacak ve işlem birkaç saniye sürecek.';
+
+  @override
+  String get benchmarkDiskTip =>
+      'Dört blok boyutuyla fio; yaklaşık 3 dakika. Çalışma dizinine 2 GB\'lık bir test dosyası yazar ve bu kadar boş alan gerektirir.';
+
+  @override
+  String get benchmarkNetworkTip =>
+      'Genel sunuculara karşı iperf3; yaklaşık 4 dakika.';
+
+  @override
+  String get benchmarkReducedNetwork => 'Daha az konum';
+
+  @override
+  String benchmarkReducedNetworkTip(String full, String reduced) {
+    return 'Yedi yerine üç konum. Tahmini trafik $full yerine $reduced olur.';
+  }
+
+  @override
+  String get benchmarkCpuTip =>
+      'Tescilli bir program olan Geekbench\'i indirir ve **sonucu geekbench.com\'da herkese açık bir sayfada yayımlar**; CPU modeli, çekirdek sayısı ve bellek bilgileri de yayımlanır.';
+
+  @override
+  String get benchmarkSensitiveOptions =>
+      'Aşağıdaki seçenekler bu sunucuda üçüncü taraf yazılımları indirip çalıştırır veya sunucu bilgilerini üçüncü taraflara gönderir. Varsayılan olarak kapalıdır.';
+
+  @override
+  String get benchmarkIpInfoTip =>
+      'Bu sunucunun genel IP adresini şifrelenmemiş HTTP üzerinden ip-api.com\'a gönderir.';
+
+  @override
+  String get benchmarkIpInfo => 'IP sahibini sorgula';
+
+  @override
+  String get benchmarkPreferBin => 'fio ve iperf3\'ü indir';
+
+  @override
+  String get benchmarkPreferBinTip =>
+      'Ana makinenin paketlerini kullanmak yerine GitHub\'dan indirir. Yalnızca ana makinede ikisi de yüklü değilse açın.';
+
+  @override
+  String get benchmarkWorkDir => 'Çalışma dizini';
+
+  @override
+  String get benchmarkWorkDirTip =>
+      'Disk testinin hangi dosya sistemini ölçeceğini belirler. Boş bırakılırsa oturum açılan hesabın ana dizini kullanılır.';
+
+  @override
+  String benchmarkEstimatedTime(int minutes) {
+    return 'Yaklaşık $minutes dk.';
+  }
+
+  @override
+  String benchmarkEstimatedTraffic(String size) {
+    return 'Yaklaşık $size trafik';
+  }
+
+  @override
+  String get benchmarkPhaseSystem => 'Sistem bilgileri okunuyor';
+
+  @override
+  String get benchmarkPhaseDisk => 'Disk test ediliyor';
+
+  @override
+  String get benchmarkPhaseNetwork => 'Ağ test ediliyor';
+
+  @override
+  String get benchmarkPhaseCpu => 'CPU test ediliyor';
+
+  @override
+  String get benchmarkPhaseDone => 'Tamamlanıyor';
+
+  @override
+  String get benchmarkResultUnreadable =>
+      'Bu sonuç JSON olarak okunamadı. Ham metin aşağıdadır.';
+
+  @override
+  String get benchmarkViewOnGeekbench => 'Geekbench\'te görüntüle';
+
+  @override
+  String get benchmarkGeekbenchPublic =>
+      'Bu sonuç yukarıdaki bağlantıda herkese açık olarak yayımlanmıştır.';
+
+  @override
+  String get benchmarkSingleCore => 'Tek çekirdek';
+
+  @override
+  String get benchmarkMultiCore => 'Çok çekirdek';
+
+  @override
+  String get benchmarkIops => 'IOPS';
+
+  @override
+  String get benchmarkSend => 'Yükleme';
+
+  @override
+  String get benchmarkRecv => 'İndirme';
+
+  @override
+  String get benchmarkLatency => 'Gecikme';
+
+  @override
+  String get benchmarkVirt => 'Sanallaştırma';
+
+  @override
+  String get benchmarkRawLog => 'Çalıştırma günlüğü';
+
+  @override
+  String benchmarkUpstream(String version) {
+    return 'Yet Another Bench Script ($version) tarafından desteklenir';
+  }
+
+  @override
+  String get benchmarkPhaseStarting => 'Başlatılıyor';
+
+  @override
+  String get benchmarkNoOutputYet =>
+      'Henüz çıktı yok. YABS ilk satırı yazdırmadan önce google.com ve icanhazip.com adreslerine erişilip erişilemediğini kontrol eder. Bu sitelerden birini engelleyen ağlarda işlem birkaç dakika sürebilir.';
+
+  @override
+  String get tagsEmptyTip =>
+      'Henüz etiket yok. Bir sunucuyu düzenlerken etiket ekleyin; burada görünür.';
+
+  @override
+  String get benchmarkNoServers =>
+      'Önce bir sunucu ekleyin, ardından benchmark çalıştırmak için geri dönün.';
+
+  @override
+  String get schemaTooNewTitle => 'Bu veriler uygulamadan daha yeni';
+
+  @override
+  String schemaTooNewBody(int stored, int supported) {
+    return 'Bu veriler ServerBox’ın daha yeni bir sürümü tarafından yazılmış (depolama v$stored); bu sürüm en fazla v$supported okuyabilir. Hiçbir şey değiştirilmedi.';
+  }
+
+  @override
+  String get schemaTooNewReinstall =>
+      'Daha yeni sürümü yeniden yükleyin; her şey eskisi gibi açılır.';
+
+  @override
+  String get schemaTooNewExportPlain => 'Parolasız dışa aktar';
+
+  @override
+  String get schemaTooNewPlainWarn =>
+      'Dosya tüm SSH özel anahtarlarını, sunucu parolalarını ve API anahtarlarını düz metin olarak içerecek. Dosyayı alan kişi bunların tamamına erişebilir.';
+
+  @override
+  String get schemaTooNewWipe => 'Tüm verileri sil';
+
+  @override
+  String get schemaTooNewWipeConfirm =>
+      'Bu cihazdaki tüm sunucular, anahtarlar, snippet’ler ve ayarlar silinecek; bu işlem geri alınamaz. Burada dışa aktarılan bir yedek, geriye kalan tek kopya olur.';
+
+  @override
+  String get schemaTooNewWipeDone =>
+      'Veriler silindi. Baştan başlamak için uygulamayı yeniden açın.';
+
+  @override
+  String get schemaTooNewWipeFailed =>
+      'Bazı veriler silinemedi ve bu sürüm geriye kalanları hâlâ açamıyor. Erişmek için daha yeni sürümü yeniden yükleyin.';
+
+  @override
+  String get systemUsers => 'Users';
+
+  @override
+  String get userManagerLinuxOnly =>
+      'Sistem kullanıcı yönetimi şu anda yalnızca Linux sunucularını destekliyor.';
+
+  @override
+  String get userRegularAccount => 'Regular';
+
+  @override
+  String get userCurrentAccount => 'Current account';
+
+  @override
+  String get userSystemAccount => 'System account';
+
+  @override
+  String get userUid => 'UID';
+
+  @override
+  String get userLoginStatus => 'Status';
+
+  @override
+  String get userLoginEnabled => 'Login enabled';
+
+  @override
+  String get userDetailAccount => 'Account';
+
+  @override
+  String get userDetailSecurity => 'Security';
+
+  @override
+  String get userSshKeys => 'SSH keys';
+
+  @override
+  String get userExpires => 'Expires';
+
+  @override
+  String get userNever => 'Never';
+
+  @override
+  String get userPasswordSet => 'Set';
+
+  @override
+  String get userPasswordLocked => 'Locked';
+
+  @override
+  String get userPasswordNone => 'None';
+
+  @override
+  String get userSuperuser => 'Superuser';
+
+  @override
+  String get userOpenShell => 'Open shell';
+
+  @override
+  String get userRootChangesWarning =>
+      'root kullanıcısında yapılan değişiklikler tüm oturumlarda hemen geçerli olur.';
+
+  @override
+  String get userComment => 'Comment';
+
+  @override
+  String get userPrimaryGroup => 'Primary group';
+
+  @override
+  String get userSupplementaryGroups => 'Ek gruplar';
+
+  @override
+  String get userLoginShell => 'Login shell';
+
+  @override
+  String get userCreateHome => 'Home dizini oluştur';
+
+  @override
+  String get userMoveHome => 'Yol değiştiğinde mevcut home dizinini taşı';
+
+  @override
+  String get userRemoveHome => 'Home dizinini kaldır';
+
+  @override
+  String get userPasswordCreateTip =>
+      'Parolayla girişi kilitlenmiş bir hesap oluşturmak için parola alanını boş bırakın.';
+
+  @override
+  String get userPasswordEditTip =>
+      'Mevcut parolayı korumak için alanı boş bırakın.';
+
+  @override
+  String funcUnavailableFmt(String func) {
+    return '$func, bu sunucunun bağlantısında kullanılamıyor.';
+  }
+
+  @override
+  String get rangeLive => 'Canlı';
+
+  @override
+  String get diskIo => 'Disk G/Ç';
+
+  @override
+  String get peak => 'tepe';
+
+  @override
+  String get hardware => 'Donanım';
+
+  @override
+  String get cores => 'Çekirdek';
+
+  @override
+  String get historyNoStored =>
+      'Geçmişi yalnızca Monitor saklar. Bu bağlantıda yalnızca uygulamanın bağlandığından beri gördükleri tutulur.';
+
+  @override
+  String get noHistoryYet => 'Henüz ölçüm yok';
+
+  @override
+  String get noData => 'veri yok';
+
+  @override
+  String get from => 'Başlangıç';
+
+  @override
+  String get to => 'Bitiş';
+
+  @override
+  String get beyondRetention =>
+      'bu Monitor’ün sakladığı veri aralığının dışında';
+
+  @override
+  String agentRetentionFmt(String kept) {
+    return 'Monitor veri saklama süresi: $kept';
+  }
+
+  @override
+  String get agentServerTools => 'Sunucu araçları';
+
+  @override
+  String get agentServerToolsTip =>
+      'Sunucuda komut çalıştırın, dosyaları okuyup yazın, SSH ile diğer ana bilgisayarlara bağlanın ve ServerBox özelliklerini kullanın.';
+
+  @override
+  String get agentTerminalTools => 'Terminal';
+
+  @override
+  String get agentTerminalToolsTip =>
+      'Terminal ekranındaki içeriği okuyun ve ilgili sunucuda komut çalıştırın.';
+
+  @override
+  String get agentToolTerminalScreen => 'Ekranı oku';
+
+  @override
+  String get agentProviders => 'Sağlayıcılar';
+
+  @override
+  String get agentProvidersTip =>
+      'API anahtarları, modeller ve yeni sohbetin modeli';
+
+  @override
+  String get agentTools => 'Araçlar';
+
+  @override
+  String get agentToolsTip => 'Agent\'ın kullanabildikleri ve MCP sunucuları';
+
+  @override
+  String get agentSnippetToolsTip =>
+      'Snippet’leri listeleyin, ekleyin, düzenleyin ve silin.';
+
+  @override
+  String get agentVirtToolsTip =>
+      'Sanallaştırma sekmesinin yüklediği VM ve konteynerleri oku.';
+
+  @override
+  String get agentBenchmarkToolsTip =>
+      'Benchmark sonuçlarını oku; onayınla benchmark başlat veya durdur.';
+
+  @override
+  String get agentRemoteDesktopToolsTip =>
+      'Uzak masaüstü profillerini listele; onayınla bağlan veya bağlantıyı kes.';
+
+  @override
+  String get agentSkills => 'Skills';
+
+  @override
+  String get agentSkillsTip =>
+      'Belirli görevler için talimatlar; GitHub’dan veya bir bağlantıdan kurulur';
+
+  @override
+  String get agentPermissions => 'İzinler';
+
+  @override
+  String get agentEmptyHint => 'Sunucuda işlemler gerçekleştirin.';
+
+  @override
+  String get agentTerminalEmptyHint =>
+      'Geçerli terminal içeriğini okuyun ve burada komut çalıştırın.';
+
+  @override
+  String oldestSampleFmt(String time) {
+    return 'en eski ölçüm $time';
+  }
+
+  @override
+  String get rangeEndsBeforeItStarts =>
+      'Aralığın bitişi başlangıcından sonra olmalı.';
+
+  @override
+  String get samples => 'ölçüm';
+
+  @override
+  String get unavailable => 'kullanılamıyor';
+
+  @override
+  String get metricUnavailableTip =>
+      'Sayfanın geri kalanı etkilenmedi. Bu ölçümün geldiği komutu sunucuda kontrol edin.';
+
+  @override
+  String get waitingFirstSample => 'İlk ölçüm bekleniyor';
+
+  @override
+  String atTimeFmt(String time) {
+    return 'saat $time';
+  }
+
+  @override
+  String get stored => 'saklanan';
+
+  @override
+  String lastSampleFmt(String ago) {
+    return 'Son örnek: $ago';
+  }
+
+  @override
+  String staleSinceFmt(String ago, String time) {
+    return 'Aşağıdakilerin tamamı $time değerleri, $ago.';
+  }
+
+  @override
+  String noDataBeforeFmt(String time) {
+    return '$time öncesine ait veri yok';
+  }
+
+  @override
+  String loadingRangeFmt(String range) {
+    return '$range yükleniyor…';
+  }
+
+  @override
+  String noStoredHistoryFor(String metric) {
+    return '$metric için saklanan geçmiş yok';
+  }
+
+  @override
+  String devicesFmt(int count) {
+    return '$count aygıt';
+  }
+
+  @override
+  String devicesBusiestFmt(int count, String name) {
+    return '$count aygıt · en yoğunu $name';
+  }
+
+  @override
+  String devicesPlottedFmt(int plotted, int total) {
+    return '$total aygıttan $plotted tanesi';
+  }
+
+  @override
+  String sensorsHottestFmt(int count, String name) {
+    return '$count sensör · en sıcak $name';
+  }
+
+  @override
+  String get oneDeviceAtLeast => 'Grafikte en az bir aygıt kalır.';
+
+  @override
+  String showAllFmt(int count) {
+    return 'Tümünü göster ($count)';
+  }
+
+  @override
+  String shownOfFmt(int shown, int total, String what) {
+    return '$total $what içinden $shown';
+  }
+
+  @override
+  String countOfFmt(int count, String what) {
+    return '$count $what';
+  }
+
+  @override
+  String get filesystems => 'Dosya sistemleri';
+
+  @override
+  String get blockDevices => 'Blok aygıtları';
+
+  @override
+  String get notMounted => 'Bağlı değil';
+
+  @override
+  String get unitDevices => 'aygıt';
+
+  @override
+  String get unitSensors => 'sensör';
+
+  @override
+  String get unitBatteries => 'pil';
+
+  @override
+  String get unitCommands => 'komut';
+
+  @override
+  String get unitReadings => 'okuma';
+
+  @override
+  String get unitGpus => 'GPU';
+
+  @override
+  String get hottest => 'en sıcak';
+
+  @override
+  String get oldest => 'en eski';
+
+  @override
+  String get notApplicable => 'uygulanamaz';
+
+  @override
+  String get attributes => 'öznitelikler';
+
+  @override
+  String get powerOnHours => 'Çalışma saati';
+
+  @override
+  String get powerCycles => 'Açılma sayısı';
+
+  @override
+  String get lifeLeft => 'Kalan ömür';
+
+  @override
+  String get lifetimeWrite => 'Toplam yazma';
+
+  @override
+  String get lifetimeRead => 'Toplam okuma';
+
+  @override
+  String get averageErase => 'Ortalama silme';
+
+  @override
+  String get unsafeShutdowns => 'Güvensiz kapanma';
+
+  @override
+  String get diskAllPassed => 'tümü PASSED';
+
+  @override
+  String diskWarningFmt(int count) {
+    return '$count uyarı';
+  }
+
+  @override
+  String diskWrongOfFmt(int total, int wrong) {
+    return '$total aygıttan $wrong';
+  }
+
+  @override
+  String get diskSmartSortedTip => 'En kötüden sıralı';
+
+  @override
+  String readAgoFmt(String ago) {
+    return '$ago okundu';
+  }
+
+  @override
+  String processesFmt(int count) {
+    return '$count süreç';
+  }
+
+  @override
+  String diskFailingFmt(int count) {
+    return '$count arızalı';
+  }
+
+  @override
+  String get diskSmartOpenTip => 'Özniteliklerini görmek için dokunun';
+
+  @override
+  String get cycle => 'Çevrim';
+
+  @override
+  String get window => 'pencere';
+
+  @override
+  String ofFmt(String total) {
+    return '/ $total';
+  }
+
+  @override
+  String get serverDetailCards => 'Ayrıntı sayfası kartları';
+
+  @override
+  String get connection => 'Bağlantı';
+
+  @override
+  String get connectionTip =>
+      'İkisi aynı anda açık olabilir. Sıra, denendikleri sıradır.';
+
+  @override
+  String get transportNoneOn => 'İkisi de kapalı — bu sunucuya bağlanılamaz.';
+
+  @override
+  String get thisDevice => 'Bu cihaz';
+
+  @override
+  String get localServerTip =>
+      'Durum betiğini burada çalıştırarak bu cihazı doğrudan okur. SSH ve Monitor kullanılmaz; ayarları korunur.';
+
+  @override
+  String get localServerUnsupported =>
+      'Bu platform bu cihazı sunucu olarak okuyamaz. Linux, Windows ve macOS DMG sürümü destekler.';
+
+  @override
+  String get remoteDesktopIntro =>
+      'Bir sunucunun RDP veya VNC masaüstünü uygulama içinde açar. Bağlantı sunucunun SSH bağlantısı veya Monitor’ü üzerinden geçer; bu yüzden masaüstü bağlantı noktasının ağdan erişilebilir olması gerekmez.';
+
+  @override
+  String get remoteDesktopIntroProfiles =>
+      'Her masaüstü için bir profili, sunucudaki Uzak masaüstü düğmesinden veya Uzak masaüstü sekmesinden kaydedin.';
+
+  @override
+  String get localServerIntro =>
+      'ServerBox\'ı çalıştıran cihazı sunucu olarak ekler. Durum, işlemler, hizmetler, konteynerler, terminal ve dosyalar SSH veya Monitor olmadan çalışır.';
+
+  @override
+  String get localServerAdd => 'Bu cihazı ekle';
+
+  @override
+  String get localServerIntroFooter =>
+      'Bu, daha sonra bir sunucunun düzenleme sayfasında Bağlantı altında da açılabilir.';
+
+  @override
+  String get transportSectionOff =>
+      'Kapalı. Aşağıdaki alanlar, yeniden açtığınızda kullanılmak üzere saklanıyor.';
+
+  @override
+  String get monitorAgent => 'Monitor';
+
+  @override
+  String get plainHttpEditTip =>
+      'Kimlik bilgileri ve ölçümler ağdan şifrelenmeden geçer. Bunu bir LAN veya Tailscale adresiyle sınırlayın ya da Monitor’ü TLS arkasına alın.';
+
+  @override
+  String get behaviour => 'Davranış';
+
+  @override
+  String get optional => 'İsteğe bağlı';
+
+  @override
+  String get sshAdvanced => 'SSH gelişmiş';
+
+  @override
+  String get sshAdvancedTip =>
+      'Yedek hedef, ProxyCommand, atlama sunucusu, dosya aktarımı, uzak yol';
+
+  @override
+  String get sshLegacyAlgorithms => 'Eski algoritmalar';
+
+  @override
+  String get sshLegacyAlgorithmsTip =>
+      'Yalnızca SHA-1 `ssh-rsa` host anahtarı veya SHA-1 anahtar değişimi sunan eski SSH sunucuları (yönlendirici ya da anahtar gibi) içindir. Daha az güvenlidir; yalnızca ihtiyacı olan hostlar için etkinleştirin.';
+
+  @override
+  String get appearanceAndPlace => 'Görünüm ve konum';
+
+  @override
+  String get appearanceAndPlaceTip => 'Logo, koordinatlar';
+
+  @override
+  String get statusCollection => 'Durum toplama';
+
+  @override
+  String get statusCollectionTip =>
+      'Hangi komutlar çalışır, özel komutlar, hangi aygıt okunur';
+
+  @override
+  String get tagAllTags => 'Tüm etiketler';
+
+  @override
+  String get tagMatching => 'Eşleşenler';
+
+  @override
+  String get tagNewHint => 'Yeni etiket';
+
+  @override
+  String tagCreateFmt(String tag) {
+    return '#$tag oluştur';
+  }
+
+  @override
+  String get tagOnThisServer => 'bu sunucuda';
+
+  @override
+  String tagServersFmt(int count) {
+    return '$count sunucu';
+  }
+
+  @override
+  String tagOnThisServerFmt(int count) {
+    return 'Bu sunucuda $count';
+  }
+
+  @override
+  String get tagMatchesTyped => 'yazdığınızla eşleşiyor';
+
+  @override
+  String get tagEditorTip =>
+      'Yazmak listeyi süzer; düğme etiketi oluşturup tek adımda bu sunucuya ekler. Kalem, etiketi taşıyan her sunucuda adını değiştirir. Hiçbir sunucunun taşımadığı etiket kaydederken kaybolur.';
+
+  @override
+  String get tagRenamesOnSave => 'Yeniden adlandırmalar kaydederken uygulanır';
+
+  @override
+  String get scheduledTasks => 'Scheduled tasks';
+
+  @override
+  String get scheduledTaskLinuxOnly =>
+      'Zamanlanmış görev yönetimi şu anda yalnızca Linux sunucularını destekliyor.';
+
+  @override
+  String get scheduledTaskUnavailable => 'Bu sunucuda crontab kullanılamıyor.';
+
+  @override
+  String get scheduledTaskPreserveTip =>
+      'Bu crontab içindeki yorumlar, ortam değişkenleri ve tanınmayan satırlar korunur.';
+
+  @override
+  String get scheduledTaskSchedule => 'Schedule';
+
+  @override
+  String get scheduledTaskAdd => 'Add task';
+
+  @override
+  String get scheduledTaskNextRun => 'Next run';
+
+  @override
+  String scheduledTaskNextInFmt(String time) {
+    return 'in $time';
+  }
+
+  @override
+  String get scheduledTaskEnabled => 'Enabled';
+
+  @override
+  String get scheduledTaskCommentedOut => 'Commented out';
+
+  @override
+  String scheduledTaskSummaryFmt(int enabled, int total) {
+    return '$total görev · $enabled etkin';
+  }
+
+  @override
+  String get scheduledTaskFilterHint => 'Filter tasks';
+
+  @override
+  String get scheduledTaskPreserved => 'Preserved lines';
+
+  @override
+  String get scheduledTaskRaw => 'Raw crontab';
+
+  @override
+  String get scheduledTaskEnableNow => 'Enable now';
+
+  @override
+  String get scheduledTaskEnableNowTip =>
+      'Kapalı olduğunda satır yorum satırı olarak yazılır.';
+
+  @override
+  String scheduledTaskEmptyFmt(String user) {
+    return '$user için zamanlanmış görev yok. Buraya eklenenler bu hesabın crontab dosyasına yazılır.';
+  }
+
+  @override
+  String get scheduledTaskFieldMinute => 'Minute';
+
+  @override
+  String get scheduledTaskFieldHour => 'Hour';
+
+  @override
+  String get scheduledTaskFieldDayOfMonth => 'Ayın günü';
+
+  @override
+  String get scheduledTaskFieldMonth => 'Month';
+
+  @override
+  String get scheduledTaskFieldDayOfWeek => 'Haftanın günü';
+
+  @override
+  String get cronErrScheduleEmpty => 'Bir zamanlama gerekli.';
+
+  @override
+  String get cronErrCommandEmpty => 'Bir komut gerekli.';
+
+  @override
+  String get cronErrLineBreak => 'Bir crontab satırı satır sonu içeremez.';
+
+  @override
+  String get cronErrMacro =>
+      'Makro, @reboot gibi tek bir sözcükten oluşmalıdır.';
+
+  @override
+  String get cronErrFieldCount =>
+      'Cron zamanlaması beş alandan veya @reboot gibi bir makrodan oluşmalıdır.';
+
+  @override
+  String get cronAtBoot => 'At boot';
+
+  @override
+  String get cronEveryMin => 'Every minute';
+
+  @override
+  String cronEveryMinsFmt(int minutes) {
+    return 'Her $minutes dakikada bir';
+  }
+
+  @override
+  String cronHourlyAtFmt(String minute) {
+    return 'Her saat, $minute. dakikada';
+  }
+
+  @override
+  String cronEveryHoursFmt(int hours) {
+    return 'Her $hours saatte bir';
+  }
+
+  @override
+  String cronEveryHoursAtFmt(int hours, String minute) {
+    return 'Her $hours saatte bir, $minute. dakikada';
+  }
+
+  @override
+  String cronDailyAtFmt(String time) {
+    return 'Her gün $time saatinde';
+  }
+
+  @override
+  String cronWeekdaysAtFmt(String time) {
+    return 'Hafta içi $time saatinde';
+  }
+
+  @override
+  String cronWeekdayAtFmt(String day, String time) {
+    return 'Her $day, $time saatinde';
+  }
+
+  @override
+  String cronMonthlyAtFmt(int day, String time) {
+    return 'Her ayın $day. günü $time saatinde';
+  }
+
+  @override
+  String get monitorSettings => 'Monitor ayarları';
+
+  @override
+  String get monitorAgentDefault => 'Monitor varsayılanı';
+
+  @override
+  String get monitorNeedsRestart =>
+      'Monitor yeniden başlatıldıktan sonra geçerli olur';
+
+  @override
+  String get monitorCollection => 'Collection';
+
+  @override
+  String get extendedInterval => 'Genişletilmiş döngü aralığı';
+
+  @override
+  String get idlePause => 'İzleyen yokken duraklat';
+
+  @override
+  String get idlePauseTip =>
+      'Genişletilmiş döngü smartctl, sensors ve amd-smi komutlarını çalıştırır. Hiçbir istemci veri istemezken döngüyü duraklatmak, diskin okunmayacak veriler için uyandırılmasını önler.';
+
+  @override
+  String get idlePauseThreshold => 'Idle after';
+
+  @override
+  String get monitorAlerts => 'Alerts';
+
+  @override
+  String get monitoringRules => 'Alert rules';
+
+  @override
+  String get ruleMonitorType => 'Metric';
+
+  @override
+  String get ruleThreshold => 'Threshold';
+
+  @override
+  String get ruleMatcher => 'Matcher';
+
+  @override
+  String get ruleTip =>
+      'Metrik: cpu / memory / swap / disk / network / temperature. Eşleştirici: tek bir çekirdek için cpu0, bellek için used / free / avail, ağ için rx / tx; disk ve sıcaklık bunu yok sayar. Eşik: >=80%, >=70c veya >10m/s gibi bir karşılaştırma işleci ve değer.';
+
+  @override
+  String get pushChannels => 'Bildirim kanalları';
+
+  @override
+  String get pushType => 'Type';
+
+  @override
+  String get pushRate => 'Rate limit';
+
+  @override
+  String get pushHeaders => 'Headers';
+
+  @override
+  String get pushSecretSet => 'Monitor’de ayarlı, gösterilmiyor.';
+
+  @override
+  String get pushSecretKeep => 'Korumak için boş bırakın';
+
+  @override
+  String get pushTestTip =>
+      'Kaydedilmiş olsun ya da olmasın, kanalın buradaki mevcut ayarlarıyla bir bildirim gönderir.';
+
+  @override
+  String get pushTestSent => 'Kanal bildirimi kabul etti';
+
+  @override
+  String get pushTestFailed => 'Kanal bildirimi reddetti';
+
+  @override
+  String get pushTestMessage => 'ServerBox Monitor test bildirimi';
+
+  @override
+  String get pushUnknownType =>
+      'Bu Monitor’de bu kanal türü için gönderici olmadığından ayarları gösterilmiyor. Buradan silebilir veya Monitor’ün config.toml dosyasında düzenleyebilirsiniz.';
+
+  @override
+  String get pushJsonInvalid => 'geçerli bir JSON değil';
+
+  @override
+  String get dataRetention => 'Data retention';
+
+  @override
+  String get dataRetentionTip =>
+      'Kapalıysa Monitor hiçbir şeyi silmez ve veritabanı sınırsız büyür.';
+
+  @override
+  String get retentionMetrics => 'Keep metrics';
+
+  @override
+  String get retentionAlerts => 'Keep alerts';
+
+  @override
+  String get retentionCleanup => 'Temizleme sıklığı';
+
+  @override
+  String get retentionMaxDbSize => 'Veritabanı boyutu sınırı';
+
+  @override
+  String get corsOrigins => 'CORS için izin verilen origin\'ler';
+
+  @override
+  String get corsOriginsTip =>
+      'Tarayıcı panelinin bu Monitor’ü çağırabileceği origin\'ler. Boş bırakılırsa yalnızca aynı origin\'e izin verilir.';
+
+  @override
+  String get monitorNoRemoteAccess =>
+      'Bu Monitor şifrelenmemiş HTTP üzerinden izleme dışındaki her şeyi reddeder. HTTPS ile bağlanın veya hem Monitor’da hem de bu uygulamada HTTP’ye izin verin.';
+
+  @override
+  String get monitorAgentTooOld =>
+      'Bu Monitor, ServerBox\'ın bu sürümünün desteklediğinden daha eski. Sunucudaki Monitor’ü güncelleyin.';
+
+  @override
+  String get monitorClientTooOld =>
+      'Bu Monitor artık ServerBox\'ın bu sürümünü desteklemiyor. Uygulamayı güncelleyin.';
+
+  @override
+  String get alerts => 'Uyarılar';
+
+  @override
+  String get online => 'çevrimiçi';
+
+  @override
+  String get densityCards => 'Kartlar';
+
+  @override
+  String get densityRows => 'Satırlar';
+
+  @override
+  String get densityGrid => 'Izgara';
+
+  @override
+  String get connect => 'Bağlan';
+
+  @override
+  String get disconnect => 'Bağlantıyı kes';
+
+  @override
+  String get searchServerTip =>
+      'Adları ve adresleri arar — düzenleyicinin önce sorduğu iki bilgiyi.';
+
+  @override
+  String get addServerTip =>
+      'Birini doldurun, QR kodu tarayın veya birinin paylaştığı dosyayı içe aktarın.';
+
+  @override
+  String get move => 'Taşı';
+
+  @override
+  String get moveToTop => 'En başa taşı';
+
+  @override
+  String get moveToBottom => 'En sona taşı';
+
+  @override
+  String get groupByTag => 'Etikete göre grupla';
+
+  @override
+  String get groupByTagTip =>
+      'Etiketler sunucunun kendi düzenleme sayfasında ayarlanır.';
+
+  @override
+  String get connecting => 'Bağlanıyor…';
+
+  @override
+  String get authShort => 'Kimlik';
+
+  @override
+  String get remoteDesktopFitToWindow => 'Pencereye sığdır';
+
+  @override
+  String get remoteDesktopActualSize => 'Gerçek boyut';
+
+  @override
+  String get remoteDesktopZoom => 'Yakınlaştırma';
+
+  @override
+  String get remoteDesktopViewOnly => 'Yalnızca görüntüle';
+
+  @override
+  String get remoteDesktopDisableViewOnly => 'Yalnızca görüntülemeyi kapat';
+
+  @override
+  String get remoteDesktopSendClipboardText => 'Pano metnini gönder';
+
+  @override
+  String get remoteDesktopShowKeyboard => 'Klavyeyi göster';
+
+  @override
+  String get remoteDesktopMoreControls => 'Diğer denetimler';
+
+  @override
+  String get remoteDesktopUseDirectPointer => 'Doğrudan işaretçiyi kullan';
+
+  @override
+  String get remoteDesktopUseTouchpadPointer =>
+      'Dokunmatik yüzey işaretçisini kullan';
+
+  @override
+  String get remoteDesktopSendCtrlAltDelete => 'Ctrl+Alt+Delete gönder';
+
+  @override
+  String get remoteDesktopReconnect => 'Yeniden bağlan';
+
+  @override
+  String get remoteDesktopFullScreen => 'Tam ekran';
+
+  @override
+  String get remoteDesktopExitFullScreen => 'Tam ekrandan çık';
+
+  @override
+  String get remoteDesktopCloseSession => 'Oturumu kapat';
+
+  @override
+  String get remoteDesktopConnected => 'Bağlandı';
+
+  @override
+  String get remoteDesktopConnecting => 'Bağlanıyor';
+
+  @override
+  String get remoteDesktopReconnecting => 'Yeniden bağlanıyor';
+
+  @override
+  String get remoteDesktopDisconnected => 'Bağlantı kesildi';
+
+  @override
+  String get remoteDesktopGuideTouch => 'Dokunmatik yüzey';
+
+  @override
+  String get remoteDesktopGuideTouchTip =>
+      'Tek parmak işaretçiyi dokunmatik yüzey gibi hareket ettirir, dokunmak tıklar. Sağ tık için iki parmakla dokunun, kaydırmak için iki parmakla sürükleyin, yakınlaştırmak için sıkıştırın. Sürüklemek için iki kez dokunup parmağınızı kaldırmayın.';
+
+  @override
+  String get remoteDesktopGuideKeyboardTip =>
+      'Ekran klavyesini açar. Yazdıklarınız uzak masaüstüne gönderilir.';
+
+  @override
+  String get remoteDesktopGuideViewOnlyTip =>
+      'İşaretçi ve tuşların gönderilmesini durdurur; yanlışlıkla tıklamadan bakabilirsiniz.';
+
+  @override
+  String get remoteDesktopGuideMoreTip =>
+      'Ctrl+Alt+Delete, yeniden bağlanma ve tam ekran burada.';
+
+  @override
+  String get remoteDesktopGuidePointerTip =>
+      'Parmağın dokunduğu yeri tıklayan doğrudan işaretçi de burada.';
+
+  @override
+  String get remoteDesktopVncClipboardLatin1Only =>
+      'VNC panosu yalnızca Latin-1 metnini destekler.';
+
+  @override
+  String get remoteDesktopAddProfile => 'Profil ekle';
+
+  @override
+  String get remoteDesktopNoProfiles => 'Uzak masaüstü profili yok';
+
+  @override
+  String get remoteDesktopAdd => 'Uzak masaüstü ekle';
+
+  @override
+  String get remoteDesktopEdit => 'Uzak masaüstünü düzenle';
+
+  @override
+  String get remoteDesktopTargetTip =>
+      'Hedef, SSH sunucusu veya Monitor tarafından çözümlenir. localhost o makineyi belirtir.';
+
+  @override
+  String get remoteDesktopDomain => 'Etki alanı (isteğe bağlı)';
+
+  @override
+  String get remoteDesktopPassword => 'Parola (isteğe bağlı)';
+
+  @override
+  String get remoteDesktopSavePassword => 'Parolayı kaydet';
+
+  @override
+  String get remoteDesktopSavePasswordTip =>
+      'Şifrelenmiş veritabanında saklanır. Yedekler kaydedilmiş parolaları içerir ve yalnızca bir yedek parolası ayarlandığında şifrelenir.';
+
+  @override
+  String get remoteDesktopShareSession => 'Oturumu paylaş';
+
+  @override
+  String get remoteDesktopProtocol => 'Protokol';
+
+  @override
+  String get remoteDesktopUniqueName =>
+      'Profil adları bu sunucuda benzersiz olmalıdır.';
+
+  @override
+  String get remoteDesktopNameRequired => 'Bir profil adı girin.';
+
+  @override
+  String get remoteDesktopHostRequired => 'Bir hedef sunucu girin.';
+
+  @override
+  String get remoteDesktopPortRequired => 'Geçerli bir bağlantı noktası girin.';
+
+  @override
+  String get remoteDesktopUsernameRequired => 'RDP kullanıcı adını girin.';
+
+  @override
+  String get remoteDesktopNameInvalid =>
+      'Profil adı en fazla 64 karakter olabilir ve satır sonu içeremez.';
+
+  @override
+  String get remoteDesktopHostInvalid =>
+      'Hedef ana makine boşluk veya satır sonu içeremez.';
+
+  @override
+  String get remoteDesktopCredentialInvalid =>
+      'Kullanıcı adı ve etki alanı en fazla 256 karakter olabilir ve satır sonu içeremez.';
+
+  @override
+  String get remoteDesktopVncPasswordHint =>
+      'Klasik VNC yalnızca ilk 8 karakteri kullanır';
+
+  @override
+  String get remoteDesktopVncPasswordAscii =>
+      'Klasik VNC parolaları yalnızca ASCII karakter içerebilir.';
+
+  @override
+  String get remoteDesktopCertificateRequired => 'Sertifika onayı gerekli';
+
+  @override
+  String get remoteDesktopWaiting => 'Masaüstü bekleniyor…';
+
+  @override
+  String get remoteDesktopFailStandardRdpSecurityOnly =>
+      'Sunucu yalnızca Standard RDP Security (RC4) sunuyor ve bu desteklenmiyor. xrdp.ini dosyasında security_layer=tls (veya negotiate) ayarlayın ve xrdp\'nin TLS sertifikasını okuyabildiğinden emin olun.';
+
+  @override
+  String get remoteDesktopFailServerCertificateMissing =>
+      'Sunucunun TLS sertifikası yok. Sunucuya bir sertifika yükleyin; xrdp için xrdp.ini dosyasında certificate ve key_file ayarlayın.';
+
+  @override
+  String get remoteDesktopFailClientCertificateRequired =>
+      'Sunucu bir istemci sertifikası (akıllı kartla oturum açma) istiyor ve bu desteklenmiyor.';
+
+  @override
+  String get remoteDesktopFailWrongCredentials =>
+      'Kullanıcı adı veya parola yanlış.';
+
+  @override
+  String get remoteDesktopFailAccountLockedOut =>
+      'Hesap kilitlendi. Daha sonra tekrar deneyin veya bir yöneticiden kilidi açmasını isteyin.';
+
+  @override
+  String get remoteDesktopFailAccountDisabled => 'Hesap devre dışı.';
+
+  @override
+  String get remoteDesktopFailAccountExpired => 'Hesabın süresi doldu.';
+
+  @override
+  String get remoteDesktopFailPasswordExpired =>
+      'Parolanın süresi doldu veya değiştirilmesi gerekiyor. Önce sunucuda değiştirin.';
+
+  @override
+  String get remoteDesktopFailLogonRestricted =>
+      'Hesap bu saatte veya bu cihazdan oturum açamaz ya da boş parolasıyla uzaktan oturum açmaya izin verilmiyor.';
+
+  @override
+  String get remoteDesktopFailRemoteLogonDenied =>
+      'Hesabın Uzak Masaüstü ile oturum açmasına izin verilmiyor. Sunucuda Remote Desktop Users grubuna ekleyin.';
+
+  @override
+  String get remoteDesktopFailFreshCredentialsRequired =>
+      'Sunucu kayıtlı kimlik bilgilerini kabul etmiyor. Parolayı yeniden girin.';
+
+  @override
+  String get remoteDesktopFailIdleTimeout =>
+      'Oturum, sunucunun boşta kalma süresi sınırından sonra kesildi.';
+
+  @override
+  String get remoteDesktopFailSessionTimeLimit =>
+      'Oturum sunucunun süre sınırına ulaştı.';
+
+  @override
+  String get remoteDesktopFailReplacedByOtherConnection =>
+      'Başka bir bağlantı bu oturumu devraldı.';
+
+  @override
+  String get remoteDesktopFailDisconnectedOnServer =>
+      'Oturum sunucuda kesildi.';
+
+  @override
+  String get remoteDesktopFailLoggedOffByAdministrator =>
+      'Bir yönetici oturumu kapattı.';
+
+  @override
+  String get remoteDesktopFailLoggedOff => 'Oturum kapatıldı.';
+
+  @override
+  String get remoteDesktopFailServerShutdown => 'Sunucu kapanıyor.';
+
+  @override
+  String get remoteDesktopFailServerReboot => 'Sunucu yeniden başlatılıyor.';
+
+  @override
+  String get remoteDesktopFailServerDeniedConnection =>
+      'Sunucu bağlantıyı reddetti.';
+
+  @override
+  String get remoteDesktopFailLicensingFailed =>
+      'Sunucuda Uzak Masaüstü lisanslaması başarısız oldu. Lisans sunucusunu ve İstemci Erişim Lisanslarını (CAL) kontrol edin.';
+
+  @override
+  String get remoteDesktopFailVncSecurityUnsupported =>
+      'VNC sunucusu desteklenen bir güvenlik türü sunmuyor; yalnızca VNC parolası veya güvenliksiz bağlantı destekleniyor. TigerVNC için SecurityTypes=VncAuth ayarlayın.';
+
+  @override
+  String get remoteDesktopFailPasswordRequired =>
+      'VNC sunucusu parola istiyor.';
+
+  @override
+  String get tcpTargetUnreachable =>
+      'Sunucu bu adrese bağlanamadı. Hizmetin çalıştığını ve o bağlantı noktasını dinlediğini kontrol edin.';
+
+  @override
+  String get sshTcpForwardingProhibited =>
+      'SSH sunucusu bu bağlantıyı yönlendirmeyi reddetti. sshd_config dosyasındaki AllowTcpForwarding ve PermitOpen ayarlarını, authorized_keys içindeki anahtarda no-port-forwarding veya permitopen seçeneği olup olmadığını kontrol edin.';
+
+  @override
+  String get monitorRelayForbidden =>
+      'Monitor bu bağlantıyı reddetti: parolası değişti veya şifrelenmemiş HTTP üzerinden bağlantı kabul etmiyor. Yeniden oturum açın ya da HTTPS ile bağlanın.';
+
+  @override
+  String get remoteDesktopCertificateChanged =>
+      'Uzak masaüstü sertifikası değişti';
+
+  @override
+  String get remoteDesktopTrustCertificate => 'Sertifikaya güvenilsin mi?';
+
+  @override
+  String get remoteDesktopCertificateChangedTip =>
+      'Sertifikanın parmak izi artık kaydedilen değerle eşleşmiyor. Güveni değiştirmeden önce yeni parmak izini doğrulayın.';
+
+  @override
+  String get remoteDesktopCertificateUnverifiedTip =>
+      'Sistem bu sertifikayı doğrulayamadı. Devam etmeden önce SHA-256 parmak izini doğrulayın.';
+
+  @override
+  String get remoteDesktopReplaceTrust => 'Güveni değiştir';
+
+  @override
+  String get remoteDesktopTrustReconnect => 'Güven ve yeniden bağlan';
+
+  @override
+  String remoteDesktopDeleteProfile(String name) {
+    return '“$name” uzak masaüstü profili silinsin mi?';
+  }
+
+  @override
+  String remoteDesktopReconnectAttempt(int attempt) {
+    return 'Yeniden bağlanılıyor ($attempt/3)…';
+  }
+
+  @override
+  String remoteDesktopPreviousCertificate(String fingerprint) {
+    return 'Daha önce güvenilen\n$fingerprint';
+  }
+
+  @override
+  String remoteDesktopCertificateSubject(String subject) {
+    return 'Konu: $subject';
+  }
+
+  @override
+  String remoteDesktopCertificateIssuer(String issuer) {
+    return 'Veren: $issuer';
+  }
+
+  @override
+  String remoteDesktopCertificateValidity(String start, String end) {
+    return 'Geçerlilik: $start – $end';
+  }
+
+  @override
+  String get pveAuthToken => 'API belirteci';
+
+  @override
+  String get pveVersionLow =>
+      'Bu özellik şu anda test aşamasında ve yalnızca PVE 8+ üzerinde test edildi. Lütfen dikkatli kullanın.';
+
+  @override
+  String get pveTokenId => 'Belirteç kimliği';
+
+  @override
+  String get pveTokenSecret => 'Belirteç gizli anahtarı';
+
+  @override
+  String get pveTokenTip =>
+      'PVE\'de Veri Merkezi → İzinler → API Tokens altında oluşturun. Gösterilecek yollarda VM.Audit, VM.PowerMgmt, VM.Console, VM.Snapshot, VM.Snapshot.Rollback, Datastore.Audit ve Sys.Audit gerekir; ayrıcalık ayrımı açıksa bunları belirtecin kendisine verin.';
+
+  @override
+  String pveTokenNoPrivileges(String account, String command) {
+    return '$account belirteci bu ana makinede hiçbir şey göremiyor. Yetki ayrımı açık bir belirteç, kullanıcısının izinlerini almaz; PVE ana makinesinde izin verin:\n$command\nya da belirteçte \"Privilege Separation\" seçeneğini kaldırın.';
+  }
+
+  @override
+  String pveUserNoPrivileges(String account, String command) {
+    return '$account bu ana makinede hiçbir şey göremiyor. PVE ana makinesinde izin verin:\n$command';
+  }
+
+  @override
+  String get pveTokenIdInvalid =>
+      'Belirteç kimliği user@realm!tokenid biçiminde olmalıdır';
+
+  @override
+  String get pvePasswordAuthTip =>
+      'PAM realm\'inde SSH kullanıcısı olarak SSH parolasıyla, SSH anahtar kullanıyorsa aşağıdaki PVE parolasıyla oturum açar. Gerektiğinde iki aşamalı doğrulama kodu istenir.';
+
+  @override
+  String get pveCertUnpinned =>
+      'Henüz onaylanmış bir sertifika yok. Güvenilir bir CA imzalamadıysa, sonraki bağlantı sertifikayı onay için gösterir.';
+
+  @override
+  String get pveCertForget => 'Sertifikayı unut';
+
+  @override
+  String get pveCertForgetTip =>
+      'Sonraki bağlantı PVE sertifikasını yeniden onay için gösterecek.';
+
+  @override
+  String get virtualization => 'Sanallaştırma';
+
+  @override
+  String get virtIntro =>
+      'Proxmox VE ve libvirt/KVM ana makinelerindeki sanal makineleri ve kapsayıcıları yönetin: durum, güç işlemleri ve konsollar.';
+
+  @override
+  String get virtIntroPveMoved =>
+      'Proxmox VE sunucu sayfasından bu sekmeye taşındı. Bir sunucunun PVE kartı onu burada açar.';
+
+  @override
+  String get virtIntroLibvirt =>
+      'libvirt\'in virsh aracı kurulu bir sunucu, QEMU/KVM sanal makineleriyle birlikte ana makine olarak görünür.';
+
+  @override
+  String get virtIntroTransports =>
+      'İkisi de SSH üzerinden, Monitor aracılığıyla veya bu cihazda çalışır.';
+
+  @override
+  String get virtIntroTokens =>
+      'PVE, parola yerine bir API belirteciyle oturum açabilir. Sunucunun düzenleme sayfasında, PVE altında ayarlayın.';
+
+  @override
+  String get virtIntroInBar => 'Sekme çubuğuna eklendi.';
+
+  @override
+  String get virtIntroInMore =>
+      'Daha fazla altında. Ayarlardaki Ana Sayfa Sekmeleri ile sekme çubuğuna taşıyabilirsiniz.';
+
+  @override
+  String get virtGuests => 'Sanal makineler';
+
+  @override
+  String get virtHosts => 'Ana makineler';
+
+  @override
+  String get virtCheckServer => 'Bu sunucuyu denetle';
+
+  @override
+  String get virtCheckAll => 'Tüm sunucuları denetle';
+
+  @override
+  String get virtProbeNotChecked => 'Henüz denetlenmedi';
+
+  @override
+  String get virtProbeAbsent => 'Ana makine değil';
+
+  @override
+  String virtProbeContainer(String kind) {
+    return '$kind kapsayıcısı';
+  }
+
+  @override
+  String get virtProbeContainerTip =>
+      'Bu sunucu bir kapsayıcıda çalışıyor, yani ana makine değil konuk. Onu çalıştıran ana makineden yönetilir.';
+
+  @override
+  String get virtProbePve => 'PVE, ayarlanmadı';
+
+  @override
+  String virtPveSetupTip(String version) {
+    return 'Bu sunucuda $version çalışıyor. Sanal makinelerini ve kapsayıcılarını burada yönetmek için sunucu ayarlarında API erişimini girin (API belirteci önerilir).';
+  }
+
+  @override
+  String get virtNoHosts => 'Sanallaştırma ana makinesi yok';
+
+  @override
+  String get virtNoHostsTip =>
+      'Proxmox VE çalıştıran ve API erişimi girilmiş bir sunucu ana makinedir; virsh\'in yanıt verdiği sunucu da öyledir. Diğer sunucular ana makine değiştiriciden denetlenebilir.';
+
+  @override
+  String get virtNoGuests => 'Sanal makine veya konteyner yok';
+
+  @override
+  String get virtPaused => 'Duraklatıldı';
+
+  @override
+  String get virtStarting => 'Başlatılıyor…';
+
+  @override
+  String get virtStopping => 'Durduruluyor…';
+
+  @override
+  String get virtRebooting => 'Yeniden başlatılıyor…';
+
+  @override
+  String get virtMigrating => 'Taşınıyor…';
+
+  @override
+  String get virtBackingUp => 'Yedekleniyor…';
+
+  @override
+  String get virtResume => 'Sürdür';
+
+  @override
+  String get virtOverview => 'Genel bakış';
+
+  @override
+  String get virtConsole => 'Konsol';
+
+  @override
+  String get virtConsoleNone => 'Bu konuk için yapılandırılmış konsol yok';
+
+  @override
+  String get virtConsoleGraphical => 'Grafik';
+
+  @override
+  String get virtVncPasswordNeeded => 'Bu ekran bir parola istiyor';
+
+  @override
+  String get virtConsoleSerialTip =>
+      'Konuğun seri konsolunu ana makinede virsh ile açar. Bağlantıyı kes veya Ctrl+] ana makinenin kabuğuna döndürür.';
+
+  @override
+  String virtConsoleVia(String transport) {
+    return '$transport üzerinden';
+  }
+
+  @override
+  String get virtConsoleEnterTip => 'Çıktı yok mu? Enter\'a basın';
+
+  @override
+  String virtConsoleAutoEnter(int seconds) {
+    return 'İstemi göstermek için $seconds saniye içinde Enter\'a basılacak';
+  }
+
+  @override
+  String get virtConsoleEnterNow => 'Şimdi';
+
+  @override
+  String get virtOffTip =>
+      'CPU, bellek, disk ve ağı burada canlı görmek için başlatın.';
+
+  @override
+  String get virtAllocated => 'Ayrılan';
+
+  @override
+  String virtRunningCount(int running, int total) {
+    return '$running çalışıyor · toplam $total';
+  }
+
+  @override
+  String get virtTemplate => 'Şablon';
+
+  @override
+  String get virtAutostart => 'Ana makineyle başlar';
+
+  @override
+  String get virtErrUnreachable => 'Bu ana makineye ulaşılamadı';
+
+  @override
+  String get virtErrNotConfigured => 'Bu sunucunun PVE ayarları eksik';
+
+  @override
+  String get virtErrNotConfiguredTip =>
+      'Sunucu ayarlarında adresi ve parolayı ya da API belirtecini denetleyin.';
+
+  @override
+  String get virtErrAuthFailed => 'Ana makine oturum açmayı reddetti';
+
+  @override
+  String get virtErrCertUnconfirmed => 'Ana makinenin sertifikasını onaylayın';
+
+  @override
+  String get virtErrCertChanged => 'Ana makinenin sertifikası değişti';
+
+  @override
+  String get virtErrRelayNotGranted =>
+      'Monitor bu bağlantı üzerinden sunucudan TCP bağlantısı açmaz.';
+
+  @override
+  String get virtErrExecNotGranted => 'Monitor komut çalıştırmıyor';
+
+  @override
+  String get virtErrNotInstalled => 'Bu sunucuda virsh kurulu değil';
+
+  @override
+  String get virtErrServerRemoved => 'Bu sunucu artık mevcut değil';
+
+  @override
+  String get virtErrSudoRequired =>
+      'libvirt\'e erişmek için sudo parola istiyor';
+
+  @override
+  String get virtErrSudoRejected => 'sudo parolayı reddetti';
+
+  @override
+  String get virtErrInvalidResponse =>
+      'Ana makine beklenmeyen biçimde yanıt verdi';
+
+  @override
+  String get virtErrActionFailed => 'Ana makine işlemi reddetti';
+
+  @override
+  String get remoteSessionIdleTimeout => 'Ayrılınca kapat';
+
+  @override
+  String get remoteSessionIdleTimeoutTip =>
+      'Uzak masaüstünden veya VM konsolundan ayrıldıktan sonra bağlantı bir süre açık kalır. Kapatılmadan önce bir uyarı gösterilir; bağlantıyı açık tutmak için 10 saniyeniz vardır.';
+
+  @override
+  String get remoteSessionKeepAlive => 'Açık tut';
+
+  @override
+  String get remoteSessionClosedAway => 'Boşta kaldığı için kapatıldı';
+
+  @override
+  String remoteSessionClosingIn(int seconds) {
+    return '$seconds sn içinde kapanıyor';
+  }
+
+  @override
+  String get virtSnapshots => 'Anlık görüntüler';
+
+  @override
+  String get virtSnapshotCreate => 'Anlık görüntü al';
+
+  @override
+  String get virtSnapshotNone => 'Henüz anlık görüntü yok';
+
+  @override
+  String get virtSnapshotWithMemory => 'Diskler ve bellek';
+
+  @override
+  String get virtSnapshotDiskOnly => 'Yalnızca diskler';
+
+  @override
+  String get virtSnapshotParent => 'Üst';
+
+  @override
+  String get virtSnapshotRevert => 'Geri dön';
+
+  @override
+  String get virtSnapshotMemory => 'Belleği dahil et';
+
+  @override
+  String get virtSnapshotMemoryTip =>
+      'Geri dönüldüğünde konuk bu andan devam eder.';
+
+  @override
+  String get virtSnapshotMemoryAlways =>
+      'Burada çalışan bir konuğun anlık görüntüsü her zaman belleğini içerir.';
+
+  @override
+  String get virtSnapshotMemoryOff =>
+      'Konuk çalışmıyor, bu yüzden yalnızca diskleri kaydedilir.';
+
+  @override
+  String get virtSnapshotNameInvalid =>
+      'Önce bir harf, sonra harf, rakam, - veya _; 2 ile 40 karakter.';
+
+  @override
+  String get virtSnapshotNameTaken => 'Bu adda bir anlık görüntü zaten var.';
+
+  @override
+  String get virtSnapshotRevertTip =>
+      'Geri dönmek, anlık görüntüden sonraki tüm değişiklikleri siler.';
+
+  @override
+  String virtSnapshotRevertAsk(String guest, String snapshot) {
+    return '$guest, $snapshot anına geri döndürülsün mü? O zamandan beri yapılan tüm değişiklikler kaybolur.';
+  }
+
+  @override
+  String virtSnapshotRevertStops(String guest) {
+    return 'Bu anlık görüntüde bellek yok: $guest durdurulacak.';
+  }
+
+  @override
+  String get virtSnapshotStartAfter => 'Ardından başlat';
+
+  @override
+  String get virtVolumes => 'Birimler';
+
+  @override
+  String get virtNoPools => 'Depolama havuzu yok';
+
+  @override
+  String get virtNoNetworks => 'Ağ yok';
+
+  @override
+  String get virtPoolInactive =>
+      'Havuz etkin değil, bu yüzden birimleri listelenemiyor.';
+
+  @override
+  String get virtShared => 'Düğümler arasında paylaşılan';
+
+  @override
+  String get virtBackingFile => 'Temel dosya';
+
+  @override
+  String get virtNetIsolated => 'Yalıtılmış';
+
+  @override
+  String get virtNetBridged => 'Köprülü';
+
+  @override
+  String get virtNetRouted => 'Yönlendirilmiş';
+
+  @override
+  String get virtBridge => 'Köprü';
+
+  @override
+  String get virtPorts => 'Bağlantı noktaları';
+
+  @override
+  String get virtAttachedGuests => 'Bağlı konuklar';
+
+  @override
+  String get virtNoAttachedGuests => 'Bağlı konuk yok';
+
+  @override
+  String get virtCreateVm => 'Yeni sanal makine';
+
+  @override
+  String get virtCreateLxc => 'Yeni kapsayıcı';
+
+  @override
+  String get virtCreateGuest => 'Yeni sanal makine veya kapsayıcı';
+
+  @override
+  String get virtKindVm => 'Sanal makine';
+
+  @override
+  String get virtKindLxc => 'Kapsayıcı';
+
+  @override
+  String get virtHostname => 'Ana makine adı';
+
+  @override
+  String get virtInstallMedia => 'Kurulum ortamı';
+
+  @override
+  String get virtNoIsos => 'Bu ana makinede ISO kalıbı yok';
+
+  @override
+  String get virtNoTemplates =>
+      'Bu ana makinede kapsayıcı şablonu yok. PVE\'de bir depolamanın CT Şablonları\'ndan indirilebilir.';
+
+  @override
+  String get virtNoDiskStorage =>
+      'Bu ana makinede yeni disk alan bir depolama yok';
+
+  @override
+  String get virtStartAfterCreate => 'Oluşturunca başlat';
+
+  @override
+  String get virtUnprivileged => 'Ayrıcalıksız kapsayıcı';
+
+  @override
+  String get virtUnprivilegedTip =>
+      'root\'u ana makinede sıradan bir kullanıcıdır.';
+
+  @override
+  String get virtSshKeys => 'SSH açık anahtarları';
+
+  @override
+  String get virtCredentialsTip => 'root parolası, SSH anahtarları veya ikisi.';
+
+  @override
+  String virtCreated(String name) {
+    return '$name oluşturuldu';
+  }
+
+  @override
+  String virtCreatedNotStarted(String name) {
+    return '$name oluşturuldu ama başlamadı';
+  }
+
+  @override
+  String get virtErrExists => 'Bu adda bir konuk veya disk zaten var';
+
+  @override
+  String get virtCreateNameInvalidLibvirt =>
+      'Harf, rakam, ., _ ve -, harf veya rakamla başlar; en fazla 63 karakter.';
+
+  @override
+  String get virtCreateNameInvalidPve =>
+      'Harf, rakam ve -, noktalarla ayrılmış parçalar; en fazla 63 karakter.';
+
+  @override
+  String get virtCreateNameTaken => 'Bu adda bir konuk var.';
+
+  @override
+  String get virtCreateVmidTaken => 'Bu VMID kullanımda.';
+
+  @override
+  String get virtCreateCoresInvalid =>
+      'Bu ana makinenin izin verdiğinden fazla çekirdek.';
+
+  @override
+  String get virtCreateMemoryInvalid => 'Kullanılabilir bellek yetersiz.';
+
+  @override
+  String get virtCreateStorageMissing => 'Diskin depolanacağı konumu seçin.';
+
+  @override
+  String get virtCreateDiskInvalid => '1 GiB ile 64 TiB arası.';
+
+  @override
+  String get virtCreateTemplateMissing => 'Bir şablon seçin.';
+
+  @override
+  String get virtCreateCredentialsMissing =>
+      'Bir root parolası veya SSH açık anahtarı ayarlayın.';
+
+  @override
+  String virtCreatePasswordShort(int min) {
+    return 'En az $min karakter.';
+  }
+
+  @override
+  String get virtCreateSshKeysInvalid =>
+      'Her satıra bir OpenSSH açık anahtarı.';
+
+  @override
+  String get virtDeleteDisks => 'Disklerini de sil';
+
+  @override
+  String get virtDeleteDisksPve =>
+      'Diskleri onunla birlikte silinir; kurulum ortamı korunur.';
+
+  @override
+  String virtDeleted(String name) {
+    return '$name silindi';
+  }
+
+  @override
+  String get pveTokenTipCreate =>
+      'Konuk oluşturmak ve silmek için ayrıca VM.Allocate, VM.Config.*, Datastore.AllocateSpace ve SDN.Use gerekir.';
+
+  @override
+  String get pveTokenTipHardware =>
+      'Donanım düzenlemek için VM.Config.CPU, VM.Config.Memory, VM.Config.Disk, VM.Config.CDROM, VM.Config.Network ve VM.Config.Options gerekir; yeni diskler ve arabirimler için ayrıca Datastore.AllocateSpace ve SDN.Use gerekir. Ekran kartı ile USB ve PCI aygıtları ayrıca VM.Config.HWType gerektirir; kaynak eşlemesiyle verilen bir aygıt o eşleme üzerinde Mapping.Use, eşlemeleri listelemek için Mapping.Audit gerektirir.';
+
+  @override
+  String get pveTokenTipBackup =>
+      'Klonlama VM.Clone, yedekleme ve geri yükleme VM.Backup, şablona çevirme VM.Allocate gerektirir; yedekleme işleri ayrıca okumak için Sys.Audit, oluşturmak, düzenlemek ve silmek için / üzerinde Sys.Modify gerektirir; kopyanın veya yedeğin gittiği yerde Datastore.AllocateSpace de gerekir.';
+
+  @override
+  String get virtErrConflict => 'Başka yerde değişti';
+
+  @override
+  String get virtErrConflictTip =>
+      'Bu yapılandırma burada okunduktan sonra başka biri tarafından değiştirildi, bu yüzden hiçbir şey değiştirilmedi. Yeniden okundu: hâlâ gerekiyorsa değişikliği tekrar yapın.';
+
+  @override
+  String get virtHardware => 'Donanım';
+
+  @override
+  String get virtHwAddDisk => 'Disk ekle';
+
+  @override
+  String get virtHwAddMount => 'Bağlama noktası ekle';
+
+  @override
+  String get virtHwAddNic => 'Ağ arabirimi ekle';
+
+  @override
+  String get virtHwAppliesOnRestart =>
+      'Kaydedildi. Bir sonraki başlatmada geçerli olur.';
+
+  @override
+  String get virtHwAutostart => 'Ana makineyle başlat';
+
+  @override
+  String get virtHwAutostartPve => 'onboot · VMID sırasıyla başlatılır';
+
+  @override
+  String get virtHwBalloonLibvirt => 'Geçerli bellek';
+
+  @override
+  String get virtHwBalloonNote =>
+      'Bellek azaldığında ana makinenin konuğun boştaki belleğini geri almasına izin verir';
+
+  @override
+  String get virtHwBoot => 'Önyükleme';
+
+  @override
+  String get virtHwBootOrder => 'Önyükleme sırası';
+
+  @override
+  String get virtHwBootTip =>
+      'Oklar aygıtı taşır; dokunmak ondan önyüklemeyi açar veya kapatır.';
+
+  @override
+  String get virtHwCdrom => 'CD-ROM';
+
+  @override
+  String get virtHwConfigFile => 'Yapılandırma dosyası';
+
+  @override
+  String get virtHwCores => 'Çekirdekler';
+
+  @override
+  String get virtHwCpuTypeDefault => 'Varsayılan';
+
+  @override
+  String get virtHwDeleteVolume => 'Birimini de sil';
+
+  @override
+  String get virtHwDetach => 'Ayır';
+
+  @override
+  String get virtHwDiskHotplug => 'Sıcak takılabilir: çalışırken eklenebilir';
+
+  @override
+  String get virtHwDisksLxc => 'Kök disk ve bağlama noktaları';
+
+  @override
+  String get virtHwEject => 'Çıkar';
+
+  @override
+  String get virtHwEmpty => 'Ortam yok';
+
+  @override
+  String get virtHwFirewall => 'Güvenlik duvarı';
+
+  @override
+  String virtHwFree(String size) {
+    return '$size boş';
+  }
+
+  @override
+  String get virtHwGrow => 'Büyüt';
+
+  @override
+  String get virtHwGrowNote => 'Diskler yalnızca büyütülebilir.';
+
+  @override
+  String get virtHwGrowNoteRunning =>
+      'Diskler yalnızca büyür. Çalışırken büyütüldüyse bölüm konukta genişletilmelidir.';
+
+  @override
+  String get virtHwGuestUsed => 'Konuğun kullandığı';
+
+  @override
+  String virtHwHostCpus(int threads, int allocated) {
+    return 'Ana makine $threads iş parçacığı · $allocated ayrılmış';
+  }
+
+  @override
+  String virtHwHostMem(String total, String allocated) {
+    return 'Ana makine $total · $allocated ayrılmış';
+  }
+
+  @override
+  String get virtHwHotplugNow => 'Sıcak takılır: hemen geçerli olur.';
+
+  @override
+  String get virtHwIssueBootEmpty => 'En az bir aygıt işaretleyin';
+
+  @override
+  String virtHwIssueCpuCount(int max) {
+    return 'Toplam 1 ile $max vCPU arası';
+  }
+
+  @override
+  String get virtHwIssueCpuOnline => 'Etkin vCPU\'lar: 1 ile toplam arası';
+
+  @override
+  String get virtHwIssueDiskShrink =>
+      'Şimdikinden büyük olmalı: diskler yalnızca büyür';
+
+  @override
+  String get virtHwIssueDiskSize => '1 ile 65536 GiB arası';
+
+  @override
+  String virtHwIssueMemory(int min, int max) {
+    return '$min ile $max MiB arası';
+  }
+
+  @override
+  String get virtHwIssueMemoryMin => 'Bellekten fazla olamaz';
+
+  @override
+  String get virtHwIssueMountPoint => '/data gibi mutlak bir yol';
+
+  @override
+  String get virtHwIssueStorageSpace => 'Depolamanın boş alanından fazla';
+
+  @override
+  String get virtHwLater => 'Yeniden başlatınca geçerli';
+
+  @override
+  String get virtHwLess => 'Azalt';
+
+  @override
+  String get virtHwLinkDown => 'Bağlı değil';
+
+  @override
+  String get virtHwLinkNote =>
+      'Kapalıyken konuk kablonun çekildiğini görür; yeniden başlatma gerekmez';
+
+  @override
+  String get virtHwLinkUp => 'Bağlı';
+
+  @override
+  String get virtHwMac => 'MAC adresi';
+
+  @override
+  String get virtHwModel => 'Model';
+
+  @override
+  String get virtHwMore => 'Artır';
+
+  @override
+  String get virtHwMountFromPool =>
+      'Bağlama noktaları doğrudan bir depolamadan ayrılır';
+
+  @override
+  String get virtHwMountPoint => 'Bağlama noktası';
+
+  @override
+  String get virtHwMoveDown => 'Aşağı taşı';
+
+  @override
+  String get virtHwMoveUp => 'Yukarı taşı';
+
+  @override
+  String get virtHwNewDisk => 'Yeni disk';
+
+  @override
+  String get virtHwNewMount => 'Yeni bağlama noktası';
+
+  @override
+  String get virtHwNewNic => 'Yeni ağ arabirimi';
+
+  @override
+  String get virtHwNicHotplug => 'virtio arabirimleri sıcak takılabilir';
+
+  @override
+  String get virtHwNics => 'Ağ arabirimleri';
+
+  @override
+  String get virtHwNoMedia => 'Ortam yok';
+
+  @override
+  String get virtHwNoNetworks => 'Burada ağ veya köprü yok';
+
+  @override
+  String get virtHwNoStorage => 'Burada disk alabilen depolama yok';
+
+  @override
+  String get virtHwOnline => 'Etkin vCPU\'lar';
+
+  @override
+  String get virtHwPendingBanner =>
+      'Bazı donanım değişiklikleri yeniden başlatınca geçerli olur';
+
+  @override
+  String get virtHwPickNet => 'Bir ağ seçin';
+
+  @override
+  String get virtHwPickPool => 'Bir depolama ve boyut seçin';
+
+  @override
+  String get virtHwProcessor => 'İşlemci';
+
+  @override
+  String get virtHwRemove => 'Kaldır';
+
+  @override
+  String get virtHwRemoveCdrom => 'CD-ROM\'u kaldır';
+
+  @override
+  String virtHwRemoveDiskAsk(String disk, String guest) {
+    return '$disk, $guest konuğundan kaldırılsın mı?';
+  }
+
+  @override
+  String virtHwRemoveNicAsk(String nic, String guest) {
+    return '$nic, $guest konuğundan kaldırılsın mı?';
+  }
+
+  @override
+  String get virtHwResources => 'Kaynaklar';
+
+  @override
+  String get virtHwRestartNow => 'Şimdi yeniden başlat';
+
+  @override
+  String get virtHwRevert => 'Geri al';
+
+  @override
+  String get virtHwRevertAll => 'Tümünü geri al';
+
+  @override
+  String get virtSetRenameStopped =>
+      'Yeniden adlandırmak için konuğu kapatın: libvirt yalnızca çalışmayan bir konuğu yeniden adlandırır.';
+
+  @override
+  String virtSetIssueDescription(int max) {
+    return 'En çok $max bayt (UTF-8), denetim karakteri olmadan.';
+  }
+
+  @override
+  String get virtSetManualStart => 'Elle başlatılır';
+
+  @override
+  String get virtSetProtection => 'Koruma';
+
+  @override
+  String get virtSetProtectionNote =>
+      'Konuğun silinmesini ve disklerinin değiştirilmesini engeller';
+
+  @override
+  String get virtSetIrreversible => 'Geri alınamaz';
+
+  @override
+  String get virtSetDeleteStopFirst => 'Silmeden önce kapatın.';
+
+  @override
+  String get virtSetDeleteProtected =>
+      'Koruma açık: önce Genel altında kapatın.';
+
+  @override
+  String get virtSetDeleteAgain => 'Onaylamak için yeniden basın';
+
+  @override
+  String virtSetDeleteConfirm(String name) {
+    return '$name öğesini sil';
+  }
+
+  @override
+  String get virtSetDeleteVm => 'Sanal makineyi sil';
+
+  @override
+  String get virtSetDeleteLxc => 'Kapsayıcıyı sil';
+
+  @override
+  String get virtHwSockets => 'Soketler';
+
+  @override
+  String get virtHwSource => 'Kaynak';
+
+  @override
+  String get virtHwSwap => 'Takas';
+
+  @override
+  String get virtHwTopology => 'Soket × çekirdek';
+
+  @override
+  String virtHwTopologyValue(int sockets, int cores, int threads) {
+    return '$sockets soket × $cores çekirdek × $threads iş parçacığı';
+  }
+
+  @override
+  String virtHwTotal(String size) {
+    return 'toplam $size';
+  }
+
+  @override
+  String get virtHwVolumeKept =>
+      'Disk yapılandırması kaldırıldı ancak çalışan VM diski kullanmaya devam ediyor; bu nedenle volume korundu. VM bir sonraki başlatıldığında bağlantısı kesilecek.';
+
+  @override
+  String get virtHwBus => 'Veri yolu';
+
+  @override
+  String get virtHwCache => 'Önbellek';
+
+  @override
+  String get virtHwBusStopped =>
+      'Veri yolu yalnızca konuk durdurulmuşken değişir.';
+
+  @override
+  String get virtHwMacGenerate => 'Oluştur';
+
+  @override
+  String get virtHwIssueMac =>
+      'Tek noktaya yayın MAC adresi olmalı, örn. 52:54:00:12:34:56';
+
+  @override
+  String get virtHwIssueStopFirst => 'Önce konuğu durdurun';
+
+  @override
+  String get virtHwIssueStorageMissing => 'Önce bir depolama seçin';
+
+  @override
+  String get virtHwIssueDevice => 'Önce bir aygıt seçin';
+
+  @override
+  String get virtHwDevices => 'CD-ROM ve geçiş';
+
+  @override
+  String get virtHwDevicesEmpty => 'USB ve PCI geçişi, CD-ROM, TPM';
+
+  @override
+  String get virtHwAddDevice => 'Aygıt ekle';
+
+  @override
+  String get virtHwNewDevice => 'Yeni aygıt';
+
+  @override
+  String get virtHwUsbHotplug => 'USB geçişi çalışırken takılabilir.';
+
+  @override
+  String get virtHwPci => 'PCI geçişi';
+
+  @override
+  String get virtHwIommuOffTitle => 'Ana makinede IOMMU yok';
+
+  @override
+  String get virtHwIommuOffBody =>
+      'Önce ana makinenin BIOS\'unda VT-d ya da AMD-Vi\'yi, çekirdeğinde IOMMU\'yu açın. O zamana kadar PCI aygıtı verilen konuk başlamaz.';
+
+  @override
+  String get virtHwPciTitle => 'Ana makinede IOMMU gerekir';
+
+  @override
+  String get virtHwPciBody =>
+      'Geçirildikten sonra ana makine aygıtı kullanamaz, konuk da çalışırken taşınamaz.';
+
+  @override
+  String virtHwIommuGroup(int group) {
+    return 'IOMMU grubu $group';
+  }
+
+  @override
+  String virtHwIommuShared(int count) {
+    return 'IOMMU grubunu paylaşan $count aygıt birlikte geçirilir';
+  }
+
+  @override
+  String get virtHwNoHostDevices => 'Bu ana makinede geçirilecek aygıt yok';
+
+  @override
+  String get virtHwMappingsOnly =>
+      'Burada yalnızca kaynak eşlemeleri kullanılabilir: PVE ham aygıt geçişine yalnızca parolasıyla giriş yapan root@pam için izin verir. Eşlemeleri Veri Merkezi → Kaynak Eşlemeleri altında oluşturun.';
+
+  @override
+  String get virtHwTpmNote => 'Windows 11 TPM 2.0 gerektirir.';
+
+  @override
+  String get virtHwDisplay => 'Görüntü';
+
+  @override
+  String get virtHwProtocol => 'Protokol';
+
+  @override
+  String get virtHwListen => 'Dinleme';
+
+  @override
+  String get virtHwGpu => 'Ekran kartı';
+
+  @override
+  String get virtHwListenAllTitle => 'Konsol ağa açık';
+
+  @override
+  String get virtHwListenAllBody =>
+      'Tüm adreslerde dinlemek, ana makineye erişen herkesin konsola bağlanmasına izin verir. 127.0.0.1\'de tutun ve SSH tüneliyle bağlanın.';
+
+  @override
+  String get virtHwFirmware => 'Ürün yazılımı';
+
+  @override
+  String get virtHwUefiSub =>
+      'OVMF · Secure Boot destekli, Windows 11 için gerekli';
+
+  @override
+  String get virtHwBiosSub => 'SeaBIOS · eski sistemler ve MBR diskler';
+
+  @override
+  String get virtHwSecureBootNote =>
+      'Yalnızca imzalı çekirdek ve önyükleyicileri başlatır';
+
+  @override
+  String get virtHwFirmwareWarnTitle =>
+      'Kurulu bir sistemin ürün yazılımını değiştirmeyin';
+
+  @override
+  String get virtHwFirmwareWarnBody =>
+      'UEFI ile BIOS arasında geçiş, kurulu sistemi önyüklenemez hâle getirir.';
+
+  @override
+  String get virtHwFirmwareStopped =>
+      'Ürün yazılımı yalnızca konuk durdurulmuşken değişir.';
+
+  @override
+  String get virtHwSecureBootVars =>
+      'Secure Boot\'u açıp kapatmak EFI değişkenlerini yeniden oluşturur; içlerinde kayıtlı önyükleme girdileri kaybolur.';
+
+  @override
+  String get virtHwEfiStorage => 'EFI değişkenlerinin yeri';
+
+  @override
+  String virtHwSwitchFirmwareAsk(String guest, String firmware) {
+    return '$guest, $firmware olarak değiştirilsin mi?';
+  }
+
+  @override
+  String get virtCloneName => 'Yeni ad';
+
+  @override
+  String get virtCloneFull => 'Tam klon';
+
+  @override
+  String get virtCloneCopyDisks => 'Disk içeriğini kopyala';
+
+  @override
+  String get virtCloneLinkedNote =>
+      'Kapalı: şablonun disklerine bağlı bir bağlantılı klon';
+
+  @override
+  String get virtCloneFullOnly =>
+      'Yalnızca bir şablon bağlantılı klon olarak klonlanabilir';
+
+  @override
+  String get virtCloneEmptyNote => 'Kapalı: aynı boyutta yeni boş diskler';
+
+  @override
+  String get virtCloneStopFirst => 'Klonlamadan önce kapatın.';
+
+  @override
+  String get virtCloneFullShort => 'Tam';
+
+  @override
+  String get virtCloneLinkedShort => 'Bağlantılı';
+
+  @override
+  String get virtCloneEmptyShort => 'Boş diskler';
+
+  @override
+  String get virtCloning => 'Klonlanıyor…';
+
+  @override
+  String virtCloned(String name) {
+    return '$name olarak klonlandı';
+  }
+
+  @override
+  String get virtBackupPlan => 'Plan';
+
+  @override
+  String get virtBackupPlanWhere => 'Veri merkezi → Yedekleme';
+
+  @override
+  String get virtBackupNoPlanShort => 'Plan yok';
+
+  @override
+  String get virtBackupNoPlan =>
+      'Bu konuğu içeren zamanlanmış yedekleme işi yok.';
+
+  @override
+  String get virtBackupKeep => 'Sakla';
+
+  @override
+  String get virtBackupJobDisabled => 'Bu iş devre dışı.';
+
+  @override
+  String virtBackupCount(int count) {
+    return '$count yedek';
+  }
+
+  @override
+  String virtSnapshotCount(int count) {
+    return '$count anlık görüntü';
+  }
+
+  @override
+  String get virtBackupNoStorage => 'Bu düğümde yedekleri tutan depolama yok.';
+
+  @override
+  String get virtBackupLiveTip =>
+      'VM çalışırken kesinti olmadan snapshot modunda yedekleyin.';
+
+  @override
+  String get virtBackupStoppedTip => 'Kapalı: olduğu gibi yedeklenir';
+
+  @override
+  String get virtBackupNow => 'Şimdi yedekle';
+
+  @override
+  String get virtBackupNotes => 'Notlar';
+
+  @override
+  String get virtBackupProtected =>
+      'Korumalı: koruma PVE\'de kaldırılana kadar silinemez.';
+
+  @override
+  String virtBackupVerified(String state) {
+    return 'Doğrulama: $state';
+  }
+
+  @override
+  String get virtBackupRestoreOverwrites =>
+      'Geri yükleme mevcut diskleri üzerine yazar';
+
+  @override
+  String get virtBackupStopFirst => 'Geri yüklemeden önce kapatın.';
+
+  @override
+  String get virtBackupRestoreAgain =>
+      'Konuğun diskleri ve yapılandırması yedektekilerle değiştirilir.';
+
+  @override
+  String get virtBackupDeleteConfirm => 'Yedeği sil';
+
+  @override
+  String get virtBackupRestoreNew => 'Yeni olarak geri yükle';
+
+  @override
+  String get virtBackupRestoreConfirm => 'Üzerine geri yükle';
+
+  @override
+  String get virtBackupDone => 'Yedekleme tamamlandı';
+
+  @override
+  String get virtBackupDeleted => 'Yedek silindi';
+
+  @override
+  String virtBackupRestored(String time) {
+    return '$time tarihinden geri yüklendi';
+  }
+
+  @override
+  String pveNeedsPrivilege(
+    String account,
+    String privilege,
+    String path,
+    String command,
+  ) {
+    return '$account hesabının $path üzerinde $privilege yetkisi yok. PVE ana makinesinde verin:\n$command';
+  }
+
+  @override
+  String get virtCanDelete => 'Silinebilir';
+
+  @override
+  String get virtInUse => 'Kullanımda';
+
+  @override
+  String get virtOps => 'İşlemler';
+
+  @override
+  String get virtPool => 'Depolama havuzu';
+
+  @override
+  String get virtPoolNew => 'Yeni depolama havuzu';
+
+  @override
+  String get virtStorageAdd => 'Depolama ekle';
+
+  @override
+  String virtPoolUsedPct(String pct) {
+    return '%$pct kullanıldı';
+  }
+
+  @override
+  String get virtPoolInUse =>
+      'Bir VM buradaki bir birimi kullanıyor; havuz durdurulamaz veya kaldırılamaz.';
+
+  @override
+  String get virtPoolDelete => 'Havuzu sil';
+
+  @override
+  String get virtStorageRemove => 'Depolamayı kaldır';
+
+  @override
+  String virtPoolDeleteAsk(String name) {
+    return '$name havuzu kaldırılsın mı? Tanımı silinir; birimleri yerinde kalır.';
+  }
+
+  @override
+  String virtStorageRemoveAsk(String name) {
+    return '$name depolaması PVE yapılandırmasından kaldırılsın mı? İçindekiler kalır.';
+  }
+
+  @override
+  String virtPoolDeleteKeepsVolumes(int count) {
+    return '$count birimi diskte kalır.';
+  }
+
+  @override
+  String get virtPoolDeleteStorage => 'Dizinini de sil (yalnızca boşsa)';
+
+  @override
+  String virtPoolStopAsk(String name) {
+    return '$name havuzu durdurulsun mu? Yeniden başlayana kadar birimler listelenemez ve oluşturulamaz.';
+  }
+
+  @override
+  String get virtStorageClusterWide =>
+      'Bu, kümede bu depolamaya sahip her düğüm için geçerlidir.';
+
+  @override
+  String get virtStorageDisable => 'Devre dışı bırak';
+
+  @override
+  String get virtStorageEnable => 'Etkinleştir';
+
+  @override
+  String virtStorageDisableAsk(String name) {
+    return '$name depolaması devre dışı bırakılsın mı? Diskleri üzerinde olan VM\'ler yeniden etkinleşene kadar başlamaz.';
+  }
+
+  @override
+  String get virtPoolLogicalNote =>
+      'Var olan bir birim grubu olduğu gibi kullanılır; hiçbir şey biçimlendirilmez.';
+
+  @override
+  String get virtPoolMountPoint => 'Bağlama noktası';
+
+  @override
+  String get virtPoolSourceNfs => 'Kaynak (host:/yol)';
+
+  @override
+  String get virtPoolSourceVg => 'Birim grubu';
+
+  @override
+  String get virtPoolSourceThin => 'Birim grubu / thin pool';
+
+  @override
+  String get virtPoolSourceZfs => 'ZFS havuzu';
+
+  @override
+  String get virtPoolTypeVg => 'LVM birim grubu';
+
+  @override
+  String get virtResNameEmpty => 'Bir ad girin';
+
+  @override
+  String get virtResNotFound => 'Artık bu sunucuda değil';
+
+  @override
+  String get virtResUnsupported => 'Bu sunucu bunu desteklemiyor';
+
+  @override
+  String get virtResNameInvalid =>
+      'Bu ana makinenin kabul ettiği bir ad değil (harf, rakam, . _ -)';
+
+  @override
+  String get virtResSourceInvalid => 'Geçerli bir yol veya kaynak değil';
+
+  @override
+  String get virtResTargetInvalid => 'Mutlak bir yol';
+
+  @override
+  String get virtResCidrInvalid => 'Önekli bir adres, ör. 192.168.150.1/24';
+
+  @override
+  String get virtResDhcpInvalid =>
+      'Ağda sıralı iki adres, ana makinenin adresi hariç';
+
+  @override
+  String get virtResSubnetTaken => 'Buradaki başka bir ağ bu alt ağda';
+
+  @override
+  String get virtResBridgeInvalid => 'Arabirim adı değil';
+
+  @override
+  String get virtResFormat => 'Bu havuz bu biçimi desteklemiyor';
+
+  @override
+  String get virtVolNew => 'Yeni birim';
+
+  @override
+  String virtVolCount(int count) {
+    return '$count birim';
+  }
+
+  @override
+  String get virtVolNone => 'Bu havuzda henüz birim yok.';
+
+  @override
+  String get virtVolEmptyAttach =>
+      'Yeni bir birim daha sonra herhangi bir VM\'e takılabilir';
+
+  @override
+  String get virtVolEmptyUpload => 'Doğrudan bir ISO da yüklenebilir';
+
+  @override
+  String get virtVolPveName =>
+      'PVE birimi VM\'ine göre adlandırır: vm-<VMID>-disk-<N>';
+
+  @override
+  String get virtVolUsers => 'Kullanan';
+
+  @override
+  String get virtVolAllocated => 'Ayrılmış';
+
+  @override
+  String get virtVolGrowFromGuest =>
+      'Bir VM kullanıyor: o VM\'in Donanım görünümünden büyütün';
+
+  @override
+  String get virtVolInUse => 'Bu birimi bir VM kullanıyor';
+
+  @override
+  String virtVolBackingOf(String names) {
+    return '$names için temel dosya';
+  }
+
+  @override
+  String get virtVolIsBase =>
+      'Başka birimler bunun üzerine kurulu; silmek onları bozar';
+
+  @override
+  String get virtVolAttach => 'VM\'e tak';
+
+  @override
+  String get virtVolAttachNote =>
+      'İlk diskinin bulunduğu veri yoluna yeni disk olarak takılır';
+
+  @override
+  String virtVolAttached(String name) {
+    return '$name makinesine takıldı';
+  }
+
+  @override
+  String get virtVolInsert => 'CD-ROM\'a tak';
+
+  @override
+  String virtVolInserted(String name) {
+    return '$name CD-ROM sürücüsüne takıldı';
+  }
+
+  @override
+  String virtVolNoCdrom(String name) {
+    return '$name makinesinde CD-ROM sürücüsü yok';
+  }
+
+  @override
+  String virtVolDeleteAsk(String name, String pool) {
+    return '$name birimi $pool havuzundan silinsin mi? İçeriği kalıcı olarak gider.';
+  }
+
+  @override
+  String get virtUploadIso => 'ISO yükle';
+
+  @override
+  String virtUploadTo(String pool) {
+    return '$pool konumuna yükle';
+  }
+
+  @override
+  String virtUploadDone(String name) {
+    return '$name yüklendi';
+  }
+
+  @override
+  String get virtNetConfig => 'Yapılandırma';
+
+  @override
+  String get virtNetConfigFile => 'Yapılandırma dosyası';
+
+  @override
+  String get virtNetInternal => 'Dahili';
+
+  @override
+  String get virtNetBridgePorts => 'Köprü bağlantı noktaları';
+
+  @override
+  String get virtNetHostBridge => 'Ana makine köprüsü';
+
+  @override
+  String get virtNetPortsHint => 'eno2; dahili köprü için boş';
+
+  @override
+  String get virtNetDhcpRange => 'DHCP aralığı';
+
+  @override
+  String get virtNetDhcpTip => 'dnsmasq VM\'lere adres verir';
+
+  @override
+  String get virtNetVlanTip => 'VM ağ kartları VLAN etiketi taşıyabilir';
+
+  @override
+  String get virtNetNatTip =>
+      'Ana makine üzerinden: VM\'ler dışarı çıkar, dışarıdan girilemez';
+
+  @override
+  String get virtNetRoutedTip =>
+      'NAT olmadan ana makine yönlendirir: LAN\'da dönüş rotası gerekir';
+
+  @override
+  String get virtNetIsolatedTip =>
+      'Yalnızca VM\'ler ve ana makine birbirine ulaşır';
+
+  @override
+  String get virtNetBridgedTip =>
+      'VM\'ler ana makinenin bir köprüsüne, fiziksel ağına katılır';
+
+  @override
+  String get virtNetNew => 'Yeni ağ';
+
+  @override
+  String get virtNetNewBridge => 'Yeni Linux köprüsü';
+
+  @override
+  String get virtNetVirtual => 'Sanal ağ';
+
+  @override
+  String get virtNetDelete => 'Ağı sil';
+
+  @override
+  String virtNetDeleteAsk(String name) {
+    return '$name ağı silinsin mi? Durdurulur ve tanımı kaldırılır.';
+  }
+
+  @override
+  String virtNetDeleteAskPve(String name, String node) {
+    return '$name köprüsü $node üzerinden kaldırılsın mı? Şimdi bekleyen yapılandırmadan, uygulanınca da ana makineden çıkar.';
+  }
+
+  @override
+  String virtNetInUse(int count) {
+    return 'Üzerindeki VM: $count. Silinemez.';
+  }
+
+  @override
+  String virtNetStopAsk(String name, int count) {
+    return '$name durdurulsun mu? Üzerindeki $count VM yeniden başlayana kadar ağı kaybeder.';
+  }
+
+  @override
+  String get virtNetInactivePve =>
+      'Etkin değil: yeni bir köprü uygulanana kadar bekleyen yapılandırmada durur.';
+
+  @override
+  String get virtNetPveApplyNote =>
+      'Bekleyen değişiklik olarak kaydedilir; yapılandırma uygulanınca geçerli olur (ifreload -a).';
+
+  @override
+  String get virtNetPendingSaved =>
+      'Bekleyen olarak kaydedildi: geçerli olması için yapılandırmayı uygulayın';
+
+  @override
+  String virtNetPendingTitle(String node) {
+    return '$node üzerinde bekleyen ağ değişiklikleri';
+  }
+
+  @override
+  String get virtNetPendingTip =>
+      'PVE ağ değişikliklerini uygulanana kadar interfaces.new içinde tutar.';
+
+  @override
+  String get virtNetPendingShow => 'Değişiklikleri göster';
+
+  @override
+  String get virtNetApply => 'Yapılandırmayı uygula';
+
+  @override
+  String virtNetApplyAsk(String node) {
+    return '$node üzerinde bekleyen ağ yapılandırması uygulansın mı? PVE ana makinenin ağını yeniden yükler (ifreload -a): bir hata ana makineye erişimi kesebilir.';
+  }
+
+  @override
+  String virtNetRevertAsk(String node) {
+    return '$node üzerinde bekleyen ağ yapılandırması atılsın mı?';
+  }
+
+  @override
+  String get pveTokenTipStorage =>
+      'Depolama yönetimi /storage üzerinde Datastore.Allocate (ekleme, devre dışı bırakma, kaldırma), Datastore.AllocateSpace (birimler) ve Datastore.AllocateTemplate (yüklemeler) gerektirir; Linux köprüleri ve ağ yapılandırmasını uygulamak düğümde Sys.Modify gerektirir.';
+
+  @override
+  String get virtCreateUnnamed => 'Adsız';
+
+  @override
+  String get virtCreateNotChosen => 'Seçilmedi';
+
+  @override
+  String get virtCreateKindVmSub => 'qm · tam bir KVM sanal makinesi';
+
+  @override
+  String get virtCreateKindLxcSub =>
+      'pct · ana makinenin çekirdeğini paylaşır, daha hafif';
+
+  @override
+  String get virtCloudImage => 'Bulut imajı';
+
+  @override
+  String get virtCloudImageTip =>
+      'Bu, işletim sistemi kurulu bir disk imajıdır. VM oluşturulurken kopyalanır ve Depolama’da belirtilen boyuta genişletilir; ilk açılışta cloud-init yapılandırır. Orijinal imaj değişmez.';
+
+  @override
+  String get virtNoCloudImagesLibvirt =>
+      'Kullanılabilir cloud image yok. qcow2 veya raw imajı depolama havuzuna yükleyin ve herhangi bir VM tarafından kullanılmadığını doğrulayın.';
+
+  @override
+  String get virtNoCloudImagesPve =>
+      'Kullanılabilir cloud image yok. qcow2, raw veya vmdk imajını Import içerik türünü destekleyen depolamaya yükleyin (PVE 8.2 veya üzeri gerekir).';
+
+  @override
+  String get virtCreateWindowsTitle => 'Windows 11 UEFI ve TPM 2.0 gerektirir';
+
+  @override
+  String get virtCreateWindowsBody =>
+      'Yukarıda UEFI\'yi seçin ve TPM\'yi açın.';
+
+  @override
+  String get virtCreateWindowsNoTpm =>
+      'Bu ana makinede yazılım TPM\'si (swtpm) yok: VM\'ye vermek için kurun.';
+
+  @override
+  String virtCreateImageSize(String size) {
+    return 'İmaj $size: disk en az bu kadar büyük olmalı.';
+  }
+
+  @override
+  String get virtCreateImageMissing => 'Bir bulut imajı seçin.';
+
+  @override
+  String get virtCreateIncomplete =>
+      'Önce turuncu ile işaretlenen tüm alanları doldurun.';
+
+  @override
+  String virtCreateOn(String host) {
+    return '$host üzerinde oluşturulur';
+  }
+
+  @override
+  String get virtCiTip =>
+      'sudo yetkili bir hesap oluşturun. Parola, SSH anahtarı veya ikisiyle oturum açabilirsiniz.';
+
+  @override
+  String get virtCiUserInvalid =>
+      'Küçük harf, rakam, _ ve -; harf veya _ ile başlamalı';
+
+  @override
+  String get virtCiCredentialsMissing =>
+      'Bir parola veya SSH anahtarı belirleyin.';
+
+  @override
+  String get virtCiHostnamePve => 'Ana bilgisayar adı VM\'nin adıdır.';
+
+  @override
+  String get virtCiStatic => 'Statik';
+
+  @override
+  String get virtCiAddressInvalid =>
+      'Önekiyle bir IPv4 adresi, örneğin 10.0.0.5/24';
+
+  @override
+  String get virtCiGatewayInvalid => 'Bir IPv4 adresi, örneğin 10.0.0.1';
+
+  @override
+  String get virtCiDnsFromDhcp => 'Boş: DHCP\'den';
+
+  @override
+  String get virtCiDnsInvalid => 'Boşluk veya virgülle ayrılmış IP adresleri';
+
+  @override
+  String get virtCiSearch => 'Arama alanı';
+
+  @override
+  String get virtCiSeedNote =>
+      'Ayarlar küçük bir ISO dosyasına yazılır ve CD-ROM olarak bağlanır. VM silindiğinde bu dosya da silinir. Parolanın yalnızca hash’i saklanır.';
+
+  @override
+  String get virtCiNoToolTitle =>
+      'Ana makinede cloud-init verisini oluşturacak araç yok';
+
+  @override
+  String virtCiNoToolBody(String tools) {
+    return 'Ana bilgisayara $tools araçlarından birini yükleyin. Aksi halde cloud-init yapılandırma oluşturamaz ve imaj başladıktan sonra oturum açılacak bir hesap olmaz.';
+  }
+
+  @override
+  String get virtHwCloudInitNote =>
+      'cloud-init\'in ilk açılışta okuduğu veri. Kurulum ortamı değil: buraya bir şey takılmaz.';
+
+  @override
+  String get virtHwCdromLater =>
+      'Çalışırken sürücü bir sonraki açılışta eklenir (SATA ve IDE çalışırken takmayı desteklemez).';
+
+  @override
+  String virtCreateDiskKept(String size) {
+    return 'Disk, imajın kendi boyutu olan $size olarak kaldı; istenenden büyük: bir disk hiçbir zaman üzerindeki sistemden küçük kesilmez.';
+  }
+
+  @override
+  String get virtCiEditTip =>
+      'Bu VM’nin cloud-init ayarlarını; sudo yetkili hesabı, oturum açma yöntemi, ana bilgisayar adı ve adres dahil yapılandırın.';
+
+  @override
+  String get virtCiForeignTitle =>
+      'Bu seed, bu uygulamanın yazdığından fazlasını içeriyor';
+
+  @override
+  String get virtCiForeignBody =>
+      'Başka araçların yazdığı paketler, komutlar ve diğer hesaplar gibi ayarlar burada gösterilmez. Kaydettiğinizde seed bu sayfadaki ayarlarla değiştirilir.';
+
+  @override
+  String get virtCiPasswordKept => 'Ayarlı. Korumak için boş bırakın';
+
+  @override
+  String get virtCiRemovePassword => 'Parolayı kaldır';
+
+  @override
+  String get virtCiRemovePasswordNote => 'Yalnızca SSH anahtarıyla giriş';
+
+  @override
+  String get virtCiKeysAdded =>
+      'Anahtarlar hesaba eklenir. Buradan kaldırmak sistemden silmez; ayrıca silmeniz gerekir. Kullanıcı adını değiştirmek yeni bir hesap oluşturur, eskisini korur.';
+
+  @override
+  String get virtCiEffectTitle => 'Bir sonraki açılışta geçerli olur';
+
+  @override
+  String get virtCiEffectLibvirt =>
+      'Kaydetmek, yeni bir örnek kimliğiyle yeni bir seed yazar.';
+
+  @override
+  String get virtCiEffectPve =>
+      'PVE cloud-init sürücüsünü hemen yeniden yazar. Instance ID bu ayarlardan üretildiğinden her değişiklik yeni bir ID oluşturur.';
+
+  @override
+  String get virtCiNewInstance =>
+      'Bir sonraki açılışta cloud-init sistemi yeni bir örnek olarak ele alır: ana makine adını yeniden ayarlar, hesap yoksa oluşturur, parolasını ayarlar, anahtarları ekler ve ağ yapılandırmasını yeniden yazar. Yeni SSH ana makine anahtarları da üretir; bu yüzden SSH istemcileri ana makine anahtarının değiştiği uyarısını verir. O açılıştan önce hiçbir şey değişmez.';
+
+  @override
+  String get virtCiSaved => 'Kaydedildi. Bir sonraki açılışta geçerli olur.';
+
+  @override
+  String get virtSnapshotExternal => 'Çalışırken yalnızca disk';
+
+  @override
+  String get virtSnapshotExternalTip =>
+      'VM çalışmaya devam eder. Her disk için seçilen depolama havuzunda bir qcow2 overlay oluşturulur ve VM bu snapshot zincirini kullanmayı sürdürür.';
+
+  @override
+  String get virtSnapshotFormInternal => 'Dahili (imaj içinde)';
+
+  @override
+  String get virtSnapshotOverlayPool => 'Katman havuzu';
+
+  @override
+  String get virtSnapshotOverlayBeside => 'Her diskin yanında';
+
+  @override
+  String get virtSnapshotExternalNoMemory =>
+      'Harici anlık görüntü belleği saklamaz: guest durdurulmaz.';
+
+  @override
+  String get virtSnapshotChain => 'Disk zinciri';
+
+  @override
+  String virtSnapshotChainDepth(String count) {
+    return '$count katman';
+  }
+
+  @override
+  String get virtSnapshotChainFile => 'Dosya';
+
+  @override
+  String get virtSnapshotChainActive => 'Şu anda kullanımda';
+
+  @override
+  String get virtSnapshotChainBase => 'Temel imaj';
+
+  @override
+  String get virtSnapshotNoSupport =>
+      'Guest depolaması anlık görüntüyü desteklemiyor, bu yüzden oluşturulamaz.';
+
+  @override
+  String get virtSnapshotRevertChain =>
+      'Zincirdeki bir snapshot’a dönmek, çalışan overlay’i imajla birleştirir ve sonraki snapshot’ları kullanılamaz hale getirir. Yalnızca en yeni snapshot’a dönülebilir.';
+
+  @override
+  String get virtSnapshotRevertHasChildren =>
+      'Sonraki bir anlık görüntü bunun üzerinde olduğu sürece reddedilir.';
+
+  @override
+  String get virtSnapshotDiff => 'Şimdikiyle farklar';
+
+  @override
+  String get virtSnapshotDiffNone =>
+      'Yapılandırma bu anlık görüntüden beri değişmedi.';
+
+  @override
+  String get virtSnapshotDiffShow => 'Şimdikiyle karşılaştır';
+
+  @override
+  String get virtSnapshotDiffGroupCpu => 'İşlemci';
+
+  @override
+  String get virtSnapshotDiffGroupMemory => 'Bellek';
+
+  @override
+  String get virtSnapshotDiffGroupDisks => 'Diskler';
+
+  @override
+  String get virtSnapshotDiffGroupNic => 'Arayüzler';
+
+  @override
+  String get virtSnapshotDiffGroupFirmware => 'Ürün yazılımı';
+
+  @override
+  String get virtSnapshotDiffGroupBoot => 'Önyükleme';
+
+  @override
+  String get virtSnapshotDiffGroupOther => 'Diğer';
+
+  @override
+  String virtSnapshotDiffValue(String after, String before) {
+    return '$before → $after';
+  }
+
+  @override
+  String get virtSnapshotDiffRemoved => 'kaldırıldı';
+
+  @override
+  String get virtSnapshotDiffAdded => 'eklendi';
+
+  @override
+  String virtSnapshotDiffAsk(String snapshot) {
+    return '$snapshot konumuna dönerseniz değişecekler:';
+  }
+
+  @override
+  String virtSnapshotDiffHost(String error) {
+    return 'Ana makine neyin farklı olduğunu söyleyemedi: $error';
+  }
+
+  @override
+  String virtSnapshotExternalExists(String count) {
+    return 'Guest zaten $count katmanda; bu anlık görüntü bir tane daha ekler.';
+  }
+
+  @override
+  String get virtToTemplate => 'Şablona çevir';
+
+  @override
+  String get virtToTemplateNote =>
+      'Şablon başlatılamaz ve tekrar guest hâline getirilemez. Diskleri temel imaj olur; bağlantılı klon bunları paylaşır.';
+
+  @override
+  String virtToTemplateConfirm(String name) {
+    return '$name şablona çevrilsin mi?';
+  }
+
+  @override
+  String get virtToTemplateIrreversible =>
+      'Bu geri alınamaz: şablon tekrar guest hâline getirilemez.';
+
+  @override
+  String get virtToTemplateStopped => 'Önce kapatın.';
+
+  @override
+  String get virtToTemplateSnapshots =>
+      'Anlık görüntüsü olan bir guest şablon olamaz.';
+
+  @override
+  String virtTemplateCreated(String name) {
+    return '$name artık bir şablon';
+  }
+
+  @override
+  String get virtTemplateTip => 'Bir şablon ancak klonlandıktan sonra çalışır.';
+
+  @override
+  String get virtCloneStorageSame => 'Kaynakla aynı';
+
+  @override
+  String get virtCloneNodeSame => 'Kaynakla aynı';
+
+  @override
+  String get virtCloneStorageContent => 'Bu depolama VM disklerini tutmaz.';
+
+  @override
+  String get virtCloneStorageShared =>
+      'Başka bir düğüme kopyalamak paylaşımlı depolama gerektirir.';
+
+  @override
+  String get virtCloneNodeUnknown => 'Bu ana makinede böyle bir düğüm yok.';
+
+  @override
+  String get virtCloneLinkedTarget =>
+      'Bağlantılı klon şablonun disklerini paylaşır; bu yüzden depolama veya düğüm belirtemez.';
+
+  @override
+  String get virtBackupJobs => 'Yedekleme işleri';
+
+  @override
+  String get virtBackupJobsNone =>
+      'Zamanlanmış yedekleme işi yok. Ekleyin, guest\'ler düzenli yedeklensin.';
+
+  @override
+  String get virtBackupJobNew => 'Yeni iş';
+
+  @override
+  String get virtBackupJobRun => 'Şimdi çalıştır';
+
+  @override
+  String get virtBackupJobRunAsk => 'Bu yedekleme işi şimdi başlatılsın mı?';
+
+  @override
+  String virtBackupJobDeleteAsk(String id) {
+    return '$id yedekleme işi silinsin mi? Oluşturulan yedekler kalır.';
+  }
+
+  @override
+  String get virtBackupJobSaved => 'İş kaydedildi';
+
+  @override
+  String get virtBackupJobDeleted => 'İş silindi';
+
+  @override
+  String get virtBackupJobStarted => 'Yedekleme işi başlatıldı';
+
+  @override
+  String get virtBackupSchedule => 'Zamanlama';
+
+  @override
+  String get virtBackupScheduleHelp =>
+      'systemd takvim olaylarının bir alt kümesi: 02:30, mon..fri 02:30, sat 03:00, daily, hourly, */15.';
+
+  @override
+  String get virtBackupScheduleInvalid =>
+      'Ana makine bu zamanlamayı kabul etmiyor.';
+
+  @override
+  String virtBackupScheduleNext(String times) {
+    return 'Sonraki çalışmalar: $times';
+  }
+
+  @override
+  String get virtBackupSelection => 'Guest\'ler';
+
+  @override
+  String get virtBackupSelectionAll => 'Tüm guest\'ler';
+
+  @override
+  String get virtBackupSelectionList => 'Seçilen guest\'ler';
+
+  @override
+  String get virtBackupSelectionNone => 'En az bir guest seçin.';
+
+  @override
+  String get virtBackupMail => 'Bildirim';
+
+  @override
+  String get virtBackupNotesTemplate => 'Yedek notları';
+
+  @override
+  String virtBackupNotesTemplateTip(String vars) {
+    return 'Notlar işin oluşturduğu her yedeğe eklenir. Değeriyle değişenler: $vars.';
+  }
+
+  @override
+  String get virtBackupPrune => 'Saklama';
+
+  @override
+  String get virtBackupPruneTip =>
+      'PVE saklama seçenekleri, örn. keep-last=7,keep-daily=4. Boş: depolamanın veya düğümün kendi ayarı.';
+
+  @override
+  String get virtBackupJobNode => 'Düğüm';
+
+  @override
+  String get virtBackupJobNodeAny => 'Her düğüm';
+
+  @override
+  String get virtBackupEnabled => 'Etkin';
+
+  @override
+  String get virtBackupOptions => 'Seçenekler';
+
+  @override
+  String get virtBackupProtect => 'Koru';
+
+  @override
+  String get virtBackupProtectTip =>
+      'Korunan yedek saklama ile silinmez ve koruma kaldırılana kadar silinemez.';
+
+  @override
+  String get virtBackupEditNotes => 'Notlar';
+
+  @override
+  String get virtBackupSaveNotes => 'Kaydet';
+
+  @override
+  String get virtBackupEdited => 'Yedek güncellendi';
+
+  @override
+  String get virtBackupRestoreStorage => 'Depolamaya geri yükle';
+
+  @override
+  String get virtBackupRestoreStorageSame => 'Yedekteki gibi';
+
+  @override
+  String get virtCloneStorageMissing =>
+      'Bu düğümde VM disklerini tutan bir depolama yok.';
+
+  @override
+  String get virtBackupCompress => 'Sıkıştırma';
+
+  @override
+  String get virtBackupUnprotect => 'Korumayı kaldır';
+
+  @override
+  String get virtBackupModeStops =>
+      'suspend ve stop, kopyalama sırasında çalışan guest\'i kesintiye uğratır.';
+
+  @override
+  String get virtBackupScheduleValidate => 'Ana makinede doğrula';
+
+  @override
+  String virtBackupSelected(int count) {
+    return '$count seçili';
+  }
+
+  @override
+  String get virtBackupExcludeTip =>
+      'Düğümdeki tüm guest\'ler alınır. Birini kapatırsanız dışarıda kalır.';
+
+  @override
+  String virtNetEditAsk(int count) {
+    return 'Çalışan ağ yeniden başlatılana kadar değişmez. Yeniden başlatma, bağlı $count VM’nin ağ bağlantısını keser.';
+  }
+
+  @override
+  String get virtNetEditAskNoGuest =>
+      'Çalışan ağ yeniden başlatılana kadar değişmez.';
+
+  @override
+  String get virtNetEditRestart => 'Şimdi uygulamak için yeniden başlat';
+
+  @override
+  String get virtNetEditRestartNote =>
+      'Üzerindeki VM\'ler yeniden başlatma sırasında ağ bağlantısını kaybeder.';
+
+  @override
+  String get virtNetEditPending =>
+      'Tanımda, çalışan ağın henüz almadığı bir değişiklik var.';
+
+  @override
+  String get virtNetRestart => 'Yeniden başlat';
+
+  @override
+  String virtNetRestartAsk(String name, int count) {
+    return '$name yeniden başlatılsın mı? Üzerindeki VM\'ler ($count) ağ geri gelene kadar bağlantısız kalır.';
+  }
+
+  @override
+  String virtNetRestartAskNone(String name) {
+    return '$name yeniden başlatılsın mı? Üzerinde hiçbir şey yok.';
+  }
+
+  @override
+  String get virtNetHosts => 'Statik adresler';
+
+  @override
+  String get virtNetHostAdd => 'Adres ekle';
+
+  @override
+  String get virtNetHostMac => 'MAC';
+
+  @override
+  String get virtNetHostIp => 'Adres';
+
+  @override
+  String get virtNetHostName => 'Ad (isteğe bağlı)';
+
+  @override
+  String get virtNetHostEmpty =>
+      'Hiçbir MAC adresine sabit IP atanmadı; tüm VM’ler DHCP aralığından IP alacak.';
+
+  @override
+  String get virtNetHostOthers =>
+      'Diğer her VM, DHCP aralığından bir adres alır.';
+
+  @override
+  String get virtNetHostInvalid =>
+      'Ana makinenin reddedeceği bir MAC, adres veya ad ya da iki kez aynı MAC.';
+
+  @override
+  String get virtNetManagementIface =>
+      'Bu arabirim ana makinenin kendi adresini taşıyor. Düzenlemek veya uygulamak ana makinenin bağlantısını keser.';
+
+  @override
+  String get virtNetManagementTip =>
+      'Bu arayüz ana bilgisayarın yönetim trafiğini taşır veya yönetim arayüzünün altındadır. Uygulama bunu değiştirmez.';
+
+  @override
+  String get virtNetPhysicalTip =>
+      'Fiziksel arabirim ana makinenin kendisine aittir: uygulama yalnızca köprüleri düzenler.';
+
+  @override
+  String get virtNetVlanAware => 'VLAN farkında';
+
+  @override
+  String get virtCiExpire => 'Parolanın süresi dolar';
+
+  @override
+  String get virtCiExpireNote =>
+      'Bu parolayla ilk oturum açışta yeni bir parola belirlenmelidir. Yalnızca libvirt: PVE \"expire: false\" yazar ve bunun için bir seçeneği yoktur.';
+
+  @override
+  String get virtCiSearchHint => 'lab.example dev.lab.example';
+
+  @override
+  String get virtCiSearchTip =>
+      'Birden çok, boşlukla ayrılmış; resolv.conf ilk birkaçını tutar.';
+
+  @override
+  String virtCiNicsTip(int count) {
+    return 'Seed\'in ağ yapılandırmasında $count NIC var; form ilkini düzenler.';
+  }
+
+  @override
+  String get virtUsbByVendor => 'Satıcı ve ürüne göre';
+
+  @override
+  String get virtUsbByAddress => 'Adrese göre';
+
+  @override
+  String get virtUsbAddressTip =>
+      'Aygıt bu adresi izler: oraya takılı olan her şey VM\'ye verilir. libvirt bir USB hostdev\'i veri yolu ve aygıt numarasıyla adlandırır.';
+
+  @override
+  String virtUsbPortNote(int bus, String port) {
+    return 'veri yolu $bus · bağlantı noktası $port';
+  }
+
+  @override
+  String get virtSbUnsupported =>
+      'Ana makinenin ürün yazılımı tanımlayıcılarında kayıtlı anahtarlara sahip Secure Boot ürün yazılımı yok, bu nedenle bunu kullanan bir domain başlatılamaz.';
+
+  @override
+  String get virtCreateSecureBoot => 'Secure Boot';
+
+  @override
+  String get virtCreateSecureBootNote =>
+      'Yalnızca imzalı çekirdekler ve önyükleyiciler başlatılır.';
+
+  @override
+  String virtUsbAddressNote(int bus, int device) {
+    return 'veri yolu $bus · aygıt $device';
+  }
+
+  @override
+  String get virtHwRevertPendingTitle => 'Bekleyen değişiklikleri at';
+
+  @override
+  String virtHwRevertPendingBody(String name) {
+    return '$name çalıştığı duruma geri döndürülür: tanım çalışandan yeniden yazılır ve bir sonraki başlatma tam olarak şu ankinin sahip olduğunu alır. NVRAM dosyası ve ürün yazılımı olduğu gibi kalır.';
+  }
+
+  @override
+  String virtHwRevertAllAsk(String name) {
+    return '$name için bir sonraki başlatmayı bekleyen tüm değişiklikler atılsın mı?';
+  }
+
+  @override
+  String get virtBackupPlanNew => 'Yeni plan';
+
+  @override
+  String get virtBackupPlanNewTip =>
+      'Yalnızca bu konuğu yedekleyen bir zamanlama.';
+
+  @override
+  String virtBackupPlanOthers(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count başka konuğu da yedekler',
+      zero: 'Başka konuk yok',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reduceMotion => 'Hareketi azalt';
+
+  @override
+  String get copyLink => 'Bağlantıyı kopyala';
+
+  @override
+  String funcNeedsAgentHttps(String func) {
+    return '$func, bu Monitor’e HTTPS ile bağlanmayı ya da hem Monitor’de hem bu uygulamada düz HTTP’ye izin verilmesini gerektirir.';
+  }
+
+  @override
+  String get monitorAccess => 'Erişim';
+
+  @override
+  String get monitorChangePassword => 'Parolayı değiştir';
+
+  @override
+  String get monitorNewPassword => 'Yeni parola';
+
+  @override
+  String get monitorCurrentPassword => 'Mevcut parolanız';
+
+  @override
+  String get monitorPasswordTooShort => 'En az 8 karakter';
+
+  @override
+  String get monitorPasswordMismatch => 'Parolalar eşleşmiyor';
+
+  @override
+  String get monitorErrReauth => 'Parolanız yanlıştı.';
+
+  @override
+  String get monitorPasswordNotSaved =>
+      'Parola Monitor’de değiştirildi, ancak uygulama kaydedemedi. Bu sunucunun ayarlarında Monitor parolasını güncelleyin.';
+
+  @override
+  String get firewall => 'Güvenlik duvarı';
+
+  @override
+  String get firewallLinuxOnly =>
+      'Güvenlik duvarı yönetimi ufw veya firewalld kurulu Linux sunucularını destekler.';
+
+  @override
+  String get firewallNeedsRoot =>
+      'Güvenlik duvarı kurallarını okumak root yetkisi gerektirir. Devam etmek için sudo parolasını girin.';
+
+  @override
+  String get firewallIncoming => 'Gelen';
+
+  @override
+  String get firewallOutgoing => 'Giden';
+
+  @override
+  String get firewallRouted => 'Yönlendirilen';
+
+  @override
+  String get firewallDefaultPolicy => 'Varsayılan politika';
+
+  @override
+  String get firewallLogging => 'Günlük kaydı';
+
+  @override
+  String get firewallRules => 'Kurallar';
+
+  @override
+  String get firewallRule => 'Kural';
+
+  @override
+  String get firewallAddRule => 'Kural ekle';
+
+  @override
+  String get firewallAnywhere => 'Her yer';
+
+  @override
+  String firewallFromFmt(String source) {
+    return 'kaynak: $source';
+  }
+
+  @override
+  String get firewallFrom => 'Kaynak';
+
+  @override
+  String get firewallTo => 'Hedef';
+
+  @override
+  String get firewallProtocol => 'Protokol';
+
+  @override
+  String get firewallInterface => 'Arayüz';
+
+  @override
+  String get firewallComment => 'Açıklama';
+
+  @override
+  String get firewallAppProfile => 'Uygulama profili';
+
+  @override
+  String get firewallPrepend => 'Diğer tüm kuralların önüne koy';
+
+  @override
+  String get firewallIpv6Off =>
+      'IPv6 kapalı (IPV6=no): v6 kuralları yüklenmez.';
+
+  @override
+  String get firewallReload => 'Yeniden yükle';
+
+  @override
+  String get firewallNothingMatched =>
+      'Bir port, uygulama profili, adres veya arayüz girin.';
+
+  @override
+  String get firewallInvalidPort =>
+      'Geçersiz port. 22, 80,443 veya 6000:6010 biçimini kullanın.';
+
+  @override
+  String get firewallTooManyPorts =>
+      'En fazla 15 port; bir aralık iki sayılır.';
+
+  @override
+  String get firewallPortsNeedProtocol =>
+      'Port listesi veya aralığı için tcp ya da udp gerekir.';
+
+  @override
+  String get firewallInvalidAddress =>
+      'Geçersiz adres. Bir IP adresi veya 192.168.1.0/24 gibi bir ağ kullanın.';
+
+  @override
+  String get firewallMixedIpVersions =>
+      'Kaynak ve Hedef ya ikisi de IPv4 ya da ikisi de IPv6 olmalıdır.';
+
+  @override
+  String get firewallInvalidInterface => 'Geçersiz arayüz adı.';
+
+  @override
+  String get firewallInvalidComment => 'Açıklama \' veya satır sonu içeremez.';
+
+  @override
+  String get firewallInvalidProtocol => 'Desteklenmeyen protokol.';
+
+  @override
+  String get firewallInterfaceIn => 'Gelen arayüzü';
+
+  @override
+  String get firewallInterfaceOut => 'Giden arayüzü';
+
+  @override
+  String get firewallSourcePort => 'Kaynak port';
+
+  @override
+  String get firewallMoreOptions => 'Diğer seçenekler';
+
+  @override
+  String get firewallNoneInstalled =>
+      'Bu sunucuda ne ufw ne de firewalld kurulu. Sistemin paket yöneticisiyle birini kurun, örneğin `apt install ufw` veya `dnf install firewalld`.';
+
+  @override
+  String get firewallKeepAccess => 'Önce bu uygulamanın portlarını açık tut';
+
+  @override
+  String firewallWillRefuseFmt(String access) {
+    return '$access: bu uygulamanın yeni bağlantıları reddedilecek. Kullanılan bağlantı kopana kadar açık kalır.';
+  }
+
+  @override
+  String firewallMayRefuseFmt(String access) {
+    return '$access: Kaynak IP adresine veya gelen ağ arayüzüne bağlı olarak bu uygulamaya yeni bağlantılar reddedilebilir. Uygulama bunu önceden belirleyemez.';
+  }
+
+  @override
+  String firewallRateLimitedFmt(String access) {
+    return '$access: bağlantılar hız sınırına tabi olacak. 30 saniye içinde 6 veya daha fazla bağlantı açan adres reddedilir ve bu uygulama bu sıklıkta yeniden bağlanabilir.';
+  }
+
+  @override
+  String get firewallConflict =>
+      'ufw ve firewalld aynı anda açık. İkisi de çekirdeğin kurallarını yazar ve en son yüklenen neyin geçeceğine karar verir.';
+
+  @override
+  String get firewallDefaultZone => 'Varsayılan zone';
+
+  @override
+  String get firewallZone => 'Zone';
+
+  @override
+  String get firewallTarget => 'Target';
+
+  @override
+  String get firewallMasquerade => 'Masquerade';
+
+  @override
+  String get firewallServices => 'Servisler';
+
+  @override
+  String get firewallPorts => 'Portlar';
+
+  @override
+  String get firewallSources => 'Kaynaklar';
+
+  @override
+  String get firewallInterfaces => 'Arayüzler';
+
+  @override
+  String get firewallRichRules => 'Rich rules';
+
+  @override
+  String get firewallForwardPorts => 'Yönlendirilen portlar';
+
+  @override
+  String get firewallRuntimeOnly => 'yalnızca runtime';
+
+  @override
+  String get firewallPermanentOnly => 'yalnızca permanent';
+
+  @override
+  String get firewallThisConnection => 'bu bağlantı';
+
+  @override
+  String get firewallDefaultTag => 'varsayılan';
+
+  @override
+  String get firewallDrift =>
+      'Geçerli yapılandırma kayıtlı olandan farklı. Reload veya yeniden başlatma onu kayıtlı yapılandırmayla değiştirir.';
+
+  @override
+  String firewallDriftLockoutFmt(String access) {
+    return 'Reload veya yeniden başlatmadan sonra $access reddedilecek: kayıtlı yapılandırma ona izin vermiyor.';
+  }
+
+  @override
+  String get firewallSaveRuntime => 'Permanent olarak kaydet';
+
+  @override
+  String get firewallReloadLoses =>
+      'Permanent olarak kaydedilmeyen değişiklikler kaybolacak.';
+
+  @override
+  String get firewallPanic => 'Panic modu açık: tüm paketler atılıyor.';
+
+  @override
+  String get firewallPanicOff => 'Panic modunu kapat';
+
+  @override
+  String get firewallStoppedNote =>
+      'firewalld durdurulmuş. Değişiklikler kaydedilir ve başladığında geçerli olur.';
+
+  @override
+  String get firewallInvalidSource =>
+      'Geçersiz kaynak. Bir adres, 192.168.1.0/24 gibi bir ağ, ipset:AD veya bir MAC adresi kullanın.';
+
+  @override
+  String get firewallInvalidRichRule =>
+      'Rich rule \"rule\" ile başlar ve tek satırdır.';
+
+  @override
+  String get firewallInvalidForwardPort =>
+      'port=80:proto=tcp:toport=8080 biçimini toport, toaddr veya ikisiyle birlikte kullanın.';
+
+  @override
+  String get monitorSyncNeedsServer =>
+      'Yedeği saklayacak Monitor’ün sunucusunu seçin.';
+
+  @override
+  String get monitorBackupUnsupported =>
+      'Bu Monitor yedek saklayamaz. Monitor’ü güncelleyin.';
+
+  @override
+  String monitorBackupTooLarge(String max) {
+    return 'Yedek, Monitor’ün kabul ettiği boyuttan ($max) büyük.';
+  }
+
+  @override
+  String get monitorBackupTooMany =>
+      'Monitor izin verdiği sayıda yedeği zaten saklıyor. Önce birini silin.';
+
+  @override
+  String get virtCreateVmidInvalid => '100 ile 999999999 arasında bir VMID.';
+
+  @override
+  String get virtCreateNodeOffline => 'Bu düğüm çevrimiçi değil.';
+
+  @override
+  String get virtCreateMediaMissing => 'Bu kurulum ortamı bu ana makinede yok.';
+
+  @override
+  String get virtCreateNetworkMissing => 'Yeni bir konuk bu ağı kullanamaz.';
+
+  @override
+  String get virtCreateNotOffered =>
+      'Bu ana makine yeni bir VM için bunu sunmuyor.';
+
+  @override
+  String get virtCreateSecureBootNeedsUefi => 'Secure Boot için UEFI gerekir.';
+
+  @override
+  String get virtGuestNotStopped => 'Önce kapatın.';
+
+  @override
+  String get virtGuestIsTemplate => 'Zaten bir şablon.';
+
+  @override
+  String get virtCreateImageBigger =>
+      'İmaj diskten büyük: diski en az onun kadar büyük yapın.';
+
+  @override
+  String get virtBackupIssueStorage => 'Bu depolama bu düğümde yedek tutmuyor.';
+
+  @override
+  String get virtBackupIssueOption =>
+      'PVE\'nin kabul ettiği bir mod veya sıkıştırma değil.';
+
+  @override
+  String get virtBackupIssueNodeOffline => 'İşin düğümü çevrimiçi değil.';
+
+  @override
+  String get programWaiting => 'İşleminiz bekleniyor';
+
+  @override
+  String get programWaitingPermission => 'Onayınız bekleniyor';
+
+  @override
+  String get programWaitingQuestion => 'Yanıtınız bekleniyor';
+
+  @override
+  String get programWaitingAuth => 'Oturum açmanız bekleniyor';
+
+  @override
+  String get programStatus => 'Program durumu';
+
+  @override
+  String get programIdle => 'Boşta';
+
+  @override
+  String get programThisShell => 'Bu shell';
+
+  @override
+  String get programProgress => 'İlerleme';
+
+  @override
+  String get programCommandRunning => 'Bir komut çalışıyor';
+
+  @override
+  String get programCommandSucceeded => 'Son komut başarıyla tamamlandı';
+
+  @override
+  String programCommandFailed(int code) {
+    return 'Son komut $code çıkış koduyla tamamlandı';
+  }
+
+  @override
+  String get programStatusAlerts =>
+      'Bir program size ihtiyaç duyduğunda bildir';
+
+  @override
+  String get programStatusAlertsTip =>
+      'Görünmeyen bir terminal için: program kendisinin bildirdiği üzere sizi beklediğinde, tamamlandığında veya hata verdiğinde (OSC 7501, OSC 9;4) ya da en az 30 saniye çalışan bir komut sona erdiğinde (OSC 133).';
+
+  @override
+  String get termLineHeight => 'Satır yüksekliği';
+
+  @override
+  String get termLineHeightTip =>
+      'Bir terminal satırının kapladığı alanı, yazı tipi boyutunun 1,0 ile 2,0 katı arasında belirler. Yazı tipi boyutu gibi, ekrana sığan satır sayısını etkiler.';
+
+  @override
+  String get termFontTip =>
+      'Bir yazı tipi dosyası seçilmediğinde terminal, sistemin eş aralıklı yazı tipini kullanır; eksik glifler için CJK ve emoji glifleri içeren yazı tiplerine başvurur.';
+
+  @override
+  String get netSpeed => 'Ağ hızı';
+
+  @override
+  String get inRange => 'aralıkta';
+
+  @override
+  String threadsFmt(int count) {
+    return '$count iş parçacığı';
+  }
+
+  @override
+  String get workspace => 'Çalışma alanı';
+
+  @override
+  String get workspaceTroubleshoot => 'Sorun giderme';
+
+  @override
+  String workspaceNotConnected(String server) {
+    return '$server bağlı değil';
+  }
+
+  @override
+  String get workspaceConnectHint =>
+      'Bu sunucu başlangıçta bağlanmayacak şekilde ayarlanmış.';
+
+  @override
+  String workspaceAllTabs(int count) {
+    return 'Tüm sekmeler ($count)';
+  }
+
+  @override
+  String get workspaceAsleep => 'Bağlı değil';
+
+  @override
+  String workspaceClosed(String what) {
+    return '$what kapatıldı';
+  }
+
+  @override
+  String get workspaceClosePane => 'Bölmeyi kapat';
+
+  @override
+  String get workspaceClosePaneHint =>
+      'İçindeki tüm sekmeleri kapatır; geri alınabilir';
+
+  @override
+  String get workspaceDropLeft => 'Sol';
+
+  @override
+  String get workspaceDropRight => 'Sağ';
+
+  @override
+  String get workspaceDropTop => 'Üst';
+
+  @override
+  String get workspaceDropBottom => 'Alt';
+
+  @override
+  String get workspaceDropMerge => 'Bu bölmeye ekle';
+
+  @override
+  String get workspaceEmpty => 'Boş çalışma alanı';
+
+  @override
+  String get workspaceEmptyTemplate =>
+      'Boş bir çalışma alanında kaydedilecek düzen yok';
+
+  @override
+  String workspaceFromTemplate(String template, String server) {
+    return '$server üzerinde “$template” şablonundan yeni çalışma alanı';
+  }
+
+  @override
+  String get workspaceHidden => 'Gizli';
+
+  @override
+  String get workspaceMaximize => 'Büyüt';
+
+  @override
+  String workspaceMaximized(int pane, int hidden) {
+    return 'Bölme $pane büyütüldü, $hidden gizli';
+  }
+
+  @override
+  String workspaceMaximizeHint(String keys) {
+    return '$keys veya sekme çubuğuna çift tıklayın';
+  }
+
+  @override
+  String get workspaceNewEmpty => 'Yeni boş çalışma alanı';
+
+  @override
+  String get workspaceNewPane => 'Yeni bölme';
+
+  @override
+  String get workspaceNewTab => 'Yeni sekme';
+
+  @override
+  String get workspaceNewTabFocused => 'Yeni sekme · odaklı bölmede';
+
+  @override
+  String get workspaceNoMatch => 'Eşleşme yok';
+
+  @override
+  String get workspaceNothingToReopen => 'Yeniden açılacak bir şey yok';
+
+  @override
+  String workspacePane(int index) {
+    return 'Bölme $index';
+  }
+
+  @override
+  String get workspacePaneActions => 'Bölme işlemleri';
+
+  @override
+  String workspacePaneCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count bölme',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get workspacePanes => 'Bölmeler';
+
+  @override
+  String workspacePanesHead(String workspace) {
+    return '$workspace · iki bölme gösterilir; dokunulan odaklanır';
+  }
+
+  @override
+  String workspacePaneTabs(int index) {
+    return 'Bölme $index sekmeleri';
+  }
+
+  @override
+  String workspacePickView(String server) {
+    return '$server üzerinde yeni sekme · bir görünüm seçin';
+  }
+
+  @override
+  String get workspaceQuickOpen => 'Hızlı aç';
+
+  @override
+  String get workspaceQuickOpenHead => 'Hızlı aç · Enter ilkini açar';
+
+  @override
+  String get workspaceQuickOpenHint =>
+      'Sunucular, görünümler, sekmeler veya çalışma alanları, ör. db docker';
+
+  @override
+  String get workspaceRestore => 'Geri yükle';
+
+  @override
+  String get workspaceSaveTemplate => 'Düzeni şablon olarak kaydet';
+
+  @override
+  String get workspaceSeamTip =>
+      'Boyutlandırmak için sürükleyin, eşitlemek için çift tıklayın';
+
+  @override
+  String get workspaceSplitDown => 'Aşağı böl';
+
+  @override
+  String get workspaceSplitRight => 'Sağa böl';
+
+  @override
+  String get workspaceSwitchTo => 'Geçiş yap';
+
+  @override
+  String get workspaceSwitchWorkspace => 'Çalışma alanı değiştir';
+
+  @override
+  String workspaceSyncBar(int count) {
+    return 'Girdi eşitleme: yazılanlar bu çalışma alanının $count terminaline gönderilir';
+  }
+
+  @override
+  String get workspaceSyncOff => 'Girdi eşitlemeyi durdur';
+
+  @override
+  String get workspaceSyncOn => 'Girdiyi tüm terminallere eşitle';
+
+  @override
+  String get workspaceSyncOnToast =>
+      'Girdi eşitleme açık: herhangi bir terminalde yazılanlar bu çalışma alanının tüm terminallerine gönderilir';
+
+  @override
+  String get workspaceSyncOffToast => 'Girdi eşitleme kapalı';
+
+  @override
+  String workspaceTemplateOf(String workspace) {
+    return '$workspace düzeni';
+  }
+
+  @override
+  String workspaceTemplateSaved(String name) {
+    return '“$name” şablonu kaydedildi';
+  }
+
+  @override
+  String get workspaceTemplatesHead =>
+      'Düzen şablonları · odaklı bölmenin sunucusunda yeni çalışma alanı';
+
+  @override
+  String get workspaceMoveTo => 'Bağlantıyı koruyarak çalışma alanına taşı';
+
+  @override
+  String workspaceMoved(String server, String workspace) {
+    return '$server terminali “$workspace” alanına taşındı, hâlâ bağlı';
+  }
+
+  @override
+  String get workspaceNew => 'Yeni çalışma alanı';
+
+  @override
+  String get workspaceIntoFocused => 'Odaklı bölmeye';
+
+  @override
+  String get keybindings => 'Klavye kısayolları';
+
+  @override
+  String get kbSearchHint => 'Komut, tuş veya kapsam ara';
+
+  @override
+  String get kbOnlyModified => 'Yalnızca değiştirilenler';
+
+  @override
+  String get kbResetAll => 'Tümünü varsayılana sıfırla';
+
+  @override
+  String get kbResetAllAsk =>
+      'Bu platformdaki tüm kısayollar varsayılana sıfırlansın mı?';
+
+  @override
+  String get kbResetDone => 'Varsayılan kısayollar geri yüklendi';
+
+  @override
+  String get kbResetOne => 'Varsayılana sıfırla';
+
+  @override
+  String get kbUnassigned => 'Atanmamış';
+
+  @override
+  String get kbFixed => 'Sabit';
+
+  @override
+  String get kbModified => 'Değiştirildi';
+
+  @override
+  String get kbDefault => 'Varsayılan';
+
+  @override
+  String get kbFixedHint => 'Bu tuşlar değiştirilemez';
+
+  @override
+  String get kbNote =>
+      'Çalışma alanı kısayolları yalnızca çalışma alanında çalışır. Ayarları açmak gibi genel kısayollar her sayfada çalışır. Çalışma alanı dışındaki bir terminalde, çalışma alanı, Ayarlar veya sunucu sekmesi işlemlerine atanmış kısayollar shell\'e iletilir; bu işlemler o terminalde kullanılamaz. Kopyala, yapıştır ve tümünü seç terminal kontrolleridir; yapılandırılabilir kısayollar değildir.';
+
+  @override
+  String kbCurrent(String keys, String scope) {
+    return 'Geçerli: $keys · Kapsam: $scope';
+  }
+
+  @override
+  String get kbPress => 'Bir tuş kombinasyonuna basın';
+
+  @override
+  String get kbRecordHint =>
+      'Onaylamak için Enter, iptal için Esc. Odak kaybolursa yukarıdaki kutuya dokunup yeniden basın.';
+
+  @override
+  String kbConflict(String name, String scope) {
+    return '“$name” ($scope) ile çakışıyor';
+  }
+
+  @override
+  String get kbConflictNote =>
+      'Onaylamak bu kombinasyonu çakışan komuttan kaldırır.';
+
+  @override
+  String get kbRemove => 'Kısayolu kaldır';
+
+  @override
+  String kbChanged(String name, String keys) {
+    return '“$name” artık $keys';
+  }
+
+  @override
+  String get kbScopeGlobal => 'Genel';
+
+  @override
+  String get kbScopeSettings => 'Ayarlar sayfası';
+
+  @override
+  String get kbScopeServerTab => 'Sunucu sekmesi';
+
+  @override
+  String get kbWsSplitRight => 'Çalışma alanı: sağa böl';
+
+  @override
+  String get kbWsSplitDown => 'Çalışma alanı: aşağı böl';
+
+  @override
+  String get kbWsFocusLeft => 'Çalışma alanı: soldaki bölmeye odaklan';
+
+  @override
+  String get kbWsFocusRight => 'Çalışma alanı: sağdaki bölmeye odaklan';
+
+  @override
+  String get kbWsFocusUp => 'Çalışma alanı: üstteki bölmeye odaklan';
+
+  @override
+  String get kbWsFocusDown => 'Çalışma alanı: alttaki bölmeye odaklan';
+
+  @override
+  String get kbWsNewTab => 'Çalışma alanı: yeni sekme';
+
+  @override
+  String get kbWsCloseTab => 'Çalışma alanı: sekmeyi kapat';
+
+  @override
+  String get kbWsNextTab => 'Çalışma alanı: sonraki sekme';
+
+  @override
+  String get kbWsPrevTab => 'Çalışma alanı: önceki sekme';
+
+  @override
+  String get kbWsTabs => 'Çalışma alanı: odaklı bölmenin sekmeleri';
+
+  @override
+  String get kbWsReopenTab => 'Çalışma alanı: kapatılan sekmeyi yeniden aç';
+
+  @override
+  String get kbWsMaximize => 'Çalışma alanı: bölmeyi büyüt veya geri yükle';
+
+  @override
+  String get kbWsSync => 'Çalışma alanı: girdiyi tüm terminallere eşitle';
+
+  @override
+  String get kbWsQuickOpen => 'Çalışma alanı: hızlı aç';
+
+  @override
+  String get kbWsSwitcher => 'Çalışma alanı: çalışma alanı değiştir';
+
+  @override
+  String get kbHomeTab => 'Ana sayfa: 1–9. sekmeye git';
+
+  @override
+  String get kbAppSettings => 'Ayarları aç';
+
+  @override
+  String get kbSettingsSearch => 'Ayarlar: ara';
+
+  @override
+  String get kbServerPrev => 'Sunucular: önceki sunucu';
+
+  @override
+  String get kbServerNext => 'Sunucular: sonraki sunucu';
+
+  @override
+  String get kbServerList => 'Sunucular: sunucu listesi';
+
+  @override
+  String get kbServerClose => 'Sunucular: ayrıntıları kapat';
+
+  @override
+  String get storageTitle => 'Depolama';
+
+  @override
+  String get storageLinuxOnly =>
+      'Storage management currently supports Linux servers.';
+
+  @override
+  String get storageDisks => 'Diskler';
+
+  @override
+  String get storageRaid => 'RAID dizisi';
+
+  @override
+  String get storagePools => 'ZFS havuzları';
+
+  @override
+  String get storageNoFilesystem => 'Dosya sistemi yok';
+
+  @override
+  String storageUsage(Object total, Object used) {
+    return '$total içinde $used';
+  }
+
+  @override
+  String storageFree(Object size) {
+    return '$size free';
+  }
+
+  @override
+  String get storageBusyMounted => 'Kullanımda';
+
+  @override
+  String get storageBusySwap => 'Takas alanı';
+
+  @override
+  String get storageBusyRaid => 'Bir RAID dizisinde';
+
+  @override
+  String get storageBusyPool => 'Bir havuzda';
+
+  @override
+  String get storageBusyVolume => 'Bir birim içeriyor';
+
+  @override
+  String get storageBusyReadOnly => 'Salt okunur';
+
+  @override
+  String get storageBusySystem => 'Sistem bölümü';
+
+  @override
+  String get storageSystemMount =>
+      'Sistem bu bağlama noktasını kullanıyor; bağlı kalacak.';
+
+  @override
+  String get storageNotMounted => 'Burada artık bağlı bir şey yok.';
+
+  @override
+  String get storageMount => 'Bağla';
+
+  @override
+  String get storageUnmount => 'Bağlantıyı kes';
+
+  @override
+  String get storageFormat => 'Biçimlendir';
+
+  @override
+  String get storageInitialize => 'Başlat';
+
+  @override
+  String get storageSmartTest => 'SMART testi';
+
+  @override
+  String get storageFilesystem => 'Dosya sistemi';
+
+  @override
+  String get storageLabel => 'Etiket';
+
+  @override
+  String get storageMountpoint => 'Bağlama noktası';
+
+  @override
+  String get storageMountPersist =>
+      'Her başlangıçta yeniden bağla (/etc/fstab)';
+
+  @override
+  String get storageMountOwn =>
+      'ServerBox uygulamasının buraya yazmasına izin ver (yedekler için)';
+
+  @override
+  String get storageName => 'Ad';
+
+  @override
+  String get storageLevel => 'Seviye';
+
+  @override
+  String get storageLayout => 'Düzen';
+
+  @override
+  String storagePickDevices(Object count) {
+    return 'En az $count aygıt seçin. İçlerindeki veriler silinir.';
+  }
+
+  @override
+  String get storageCreateRaid => 'RAID dizisi oluştur';
+
+  @override
+  String storageCreateRaidBody(Object devices, Object level, Object name) {
+    return '$devices aygıtlarından /dev/$name (RAID $level) oluşturur. İçlerindeki tüm veriler silinir.';
+  }
+
+  @override
+  String get storageCreatePool => 'Havuz oluştur';
+
+  @override
+  String storageCreatePoolBody(Object devices, Object layout, Object name) {
+    return '$devices aygıtlarından $name ($layout) havuzunu oluşturur. İçlerindeki tüm veriler silinir.';
+  }
+
+  @override
+  String storageFormatBody(Object device) {
+    return '$device üzerinde yeni bir dosya sistemi oluşturur. İçindeki tüm veriler silinir.';
+  }
+
+  @override
+  String storageInitializeBody(Object device) {
+    return '$device aygıtını siler ve diskin tamamını kaplayan tek bir bölüm oluşturur. İçindeki tüm veriler silinir.';
+  }
+
+  @override
+  String storageMountBody(Object device, Object mountpoint) {
+    return '$device aygıtını $mountpoint konumuna bağlar.';
+  }
+
+  @override
+  String storageUnmountBody(Object mountpoint) {
+    return '$mountpoint bağlantısını keser ve başlangıçta bağlanmasını durdurur.';
+  }
+
+  @override
+  String storageSmartTestBody(Object device) {
+    return '$device üzerinde kısa bir kendi kendine testi başlatır. Birkaç dakika sürer; ilerleme durumu ve sonuç burada görünür.';
+  }
+
+  @override
+  String get storageAddMember => 'Disk ekle';
+
+  @override
+  String storageAddMemberBody(Object array, Object device) {
+    return '$device aygıtını /dev/$array dizisine ekler: arızalı bir üyenin yerine geçer veya yedek olarak bekler. İçindeki veriler silinir.';
+  }
+
+  @override
+  String get storageRemoveMember => 'Kaldır';
+
+  @override
+  String storageRemoveMemberBody(Object array, Object device) {
+    return '$device aygıtını arızalı olarak işaretleyip /dev/$array dizisinden çıkarır. Dizi onsuz çalışmaya devam eder; çalışan bir üyeyse durumu düşer.';
+  }
+
+  @override
+  String get storageDeleteRaid => 'RAID dizisini sil';
+
+  @override
+  String storageDeleteRaidBody(Object array) {
+    return '/dev/$array dizisini durdurur ve üyelerindeki RAID imzalarını siler. Veriler kaybolur.';
+  }
+
+  @override
+  String get storageDestroyPool => 'Havuzu yok et';
+
+  @override
+  String storageDestroyPoolBody(Object name) {
+    return '$name havuzunu ve içindeki her şeyi yok eder.';
+  }
+
+  @override
+  String get storageScrub => 'Bütünlük denetimi';
+
+  @override
+  String storageScrubBody(Object name) {
+    return '$name havuzunun tamamını okur ve onarılabilen sorunları düzeltir. Arka planda çalışır.';
+  }
+
+  @override
+  String get storageState => 'Durum';
+
+  @override
+  String get storageHealthy => 'Sağlıklı';
+
+  @override
+  String get storageDegraded => 'Düşük performanslı';
+
+  @override
+  String storageSync(Object action) {
+    return 'Eşitleme ($action)';
+  }
+
+  @override
+  String get storageFaulty => 'Arızalı';
+
+  @override
+  String get storageSpare => 'Yedek';
+
+  @override
+  String get storageActive => 'Çalışıyor';
+
+  @override
+  String get storageScan => 'Son tarama';
+
+  @override
+  String storageErrors(Object count) {
+    return '$count hata';
+  }
+
+  @override
+  String get storageNoDisks => 'Disk yok';
+
+  @override
+  String get storageNoArrays => 'Dizi yok';
+
+  @override
+  String get storageNoPools => 'Havuz yok';
+
+  @override
+  String get storageNoMdadm =>
+      'mdadm kurulu değil: burada diziler oluşturulamaz veya değiştirilemez.';
+
+  @override
+  String get storageNoZfs => 'ZFS (zfsutils) kurulu değil.';
+
+  @override
+  String storageTypeToConfirm(Object word) {
+    return 'Onaylamak için $word yazın';
+  }
+
+  @override
+  String get storageConfirmationMismatch =>
+      'The confirmation text did not match.';
+
+  @override
+  String storageInUse(Object device) {
+    return '$device kullanımda.';
+  }
+
+  @override
+  String get storageBusy => 'Disklerde başka bir değişiklik sürüyor.';
+
+  @override
+  String get storageHealthRead => 'Disk sağlığını oku';
+
+  @override
+  String get storageHealthWearing => 'Yıpranıyor';
+
+  @override
+  String get storageHealthFailing => 'Arızalı';
+
+  @override
+  String get storageHealthAsleep => 'Uykuda';
+
+  @override
+  String get storageHealthUnsupported => 'SMART yok';
+
+  @override
+  String storageTemperature(Object value) {
+    return '$value °C';
+  }
+
+  @override
+  String storagePowerOn(Object hours) {
+    return '$hours saattir açık';
+  }
+
+  @override
+  String storageBadSectors(Object count) {
+    return '$count bozuk sektör';
+  }
+
+  @override
+  String storageTesting(Object percent) {
+    return 'Kendi kendine test: %$percent kaldı';
+  }
+
+  @override
+  String get storageGrowPartition => 'Bölümü büyüt';
+
+  @override
+  String storageGrowPartitionBody(Object device) {
+    return '$device aygıtını sonrasındaki boş alana genişletir. Ardından dosya sistemini genişletin.';
+  }
+
+  @override
+  String get storageEncrypt => 'Şifrele (LUKS)';
+
+  @override
+  String get storagePassphrase => 'Parola ifadesi';
+
+  @override
+  String get storagePassphraseAgain => 'Tekrar girin';
+
+  @override
+  String get storagePassphraseHint =>
+      'En az 8 karakter. Olmadan veriler okunamaz: güvenli bir yerde saklayın.';
+
+  @override
+  String get storageInvalidPassphrase =>
+      'Parola ifadesi tek satırda 8 ila 512 karakter olmalıdır.';
+
+  @override
+  String get storagePassphrasesDiffer => 'Parola ifadeleri eşleşmiyor.';
+
+  @override
+  String get storageEncrypted => 'Şifreli';
+
+  @override
+  String get storageLocked => 'Kilitli';
+
+  @override
+  String get storageUnlock => 'Kilidi aç';
+
+  @override
+  String storageUnlockBody(Object device) {
+    return '$device aygıtını parola ifadesiyle açar.';
+  }
+
+  @override
+  String get storageLock => 'Kilitle';
+
+  @override
+  String storageLockBody(Object device) {
+    return '$device aygıtını kapatır. Dosya sistemi önce bağdan çıkarılmalıdır.';
+  }
+
+  @override
+  String get storageReplace => 'Değiştir';
+
+  @override
+  String storageReplaceBody(Object name, Object old, Object replacement) {
+    return '$name havuzundaki $old aygıtını $replacement ile değiştirir. Havuz verileri ona kopyalar; $replacement içeriği kaybolur.';
+  }
+
+  @override
+  String get storageAttach => 'Yansıt';
+
+  @override
+  String storageAttachBody(Object existing, Object replacement) {
+    return '$existing aygıtını $replacement üzerine yansıtır. $replacement içeriği kaybolur.';
+  }
+
+  @override
+  String get storageAddSpare => 'Yedek ekle';
+
+  @override
+  String storageAddSpareBody(Object devices, Object name) {
+    return '$devices aygıtlarını $name havuzuna yedek olarak ekler. İçerikleri kaybolur.';
+  }
+
+  @override
+  String get storageRemoveDevice => 'Kaldır';
+
+  @override
+  String storageRemoveDeviceBody(Object device, Object name) {
+    return '$device aygıtını $name havuzundan çıkarır.';
+  }
+
+  @override
+  String get storageOnline => 'Çevrimiçi yap';
+
+  @override
+  String storageOnlineBody(Object device, Object name) {
+    return '$device aygıtını $name havuzuna geri getirir ve tüm disk boyutuna genişletir.';
+  }
+
+  @override
+  String get storageDetails => 'Ayrıntılar';
+
+  @override
+  String get storageAttributes => 'Öznitelikler';
+
+  @override
+  String get storageAttrValue => 'Değer';
+
+  @override
+  String get storageAttrWorst => 'En kötü';
+
+  @override
+  String get storageAttrThresh => 'Eşik';
+
+  @override
+  String get storageSelfTests => 'Öz sınamalar';
+
+  @override
+  String get storageTestShort => 'Kısa';
+
+  @override
+  String get storageTestLong => 'Uzun';
+
+  @override
+  String get storageTestPassed => 'Başarılı';
+
+  @override
+  String get storageTestFailed => 'Başarısız';
+
+  @override
+  String get storageTestAborted => 'Durduruldu';
+
+  @override
+  String storageAtHours(Object hours) {
+    return '$hours saatinde';
+  }
+
+  @override
+  String get storageNothingToShow => 'Gösterilecek bir şey yok';
+
+  @override
+  String get storageLongTest => 'Uzun sınama';
+
+  @override
+  String storageSmartLongTestBody(Object device) {
+    return '$device üzerinde uzun bir öz sınama başlatır. Tüm diski okur: büyük disklerde saatler sürer.';
+  }
+
+  @override
+  String get storageMountedInside => 'Önce dosya sistemini bağdan çıkarın.';
+
+  @override
+  String get storageNotRemovable =>
+      'Burada yalnızca yedek veya önbellek aygıtları çıkarılabilir.';
+
+  @override
+  String get storageNotGrowable => 'This device cannot be grown here.';
+
+  @override
+  String get storageOverlapping => 'Choose devices that do not overlap.';
+
+  @override
+  String get storageInvalidDevice =>
+      'The device is invalid or no longer available.';
+
+  @override
+  String get storageInvalidMountpoint => 'The mount point is invalid.';
+
+  @override
+  String get storageInvalidName => 'The name is invalid.';
+
+  @override
+  String get storageInvalidFilesystem => 'The filesystem is not supported.';
+
+  @override
+  String get storageInvalidLabel => 'The label is invalid.';
+
+  @override
+  String get storageInvalidLevel => 'The RAID level or pool layout is invalid.';
+
+  @override
+  String get storageTooFewDevices => 'Not enough valid devices were selected.';
+
+  @override
+  String get storageExpand => 'Genişlet';
+
+  @override
+  String storageExpandBody(Object device) {
+    return '$device üzerindeki dosya sistemini aygıtın tamamını kullanacak şekilde genişletir. Bağlı kalır.';
+  }
+
+  @override
+  String get storageGrowRaid => 'Büyüt';
+
+  @override
+  String storageGrowRaidBody(Object array, Object device) {
+    return '$device aygıtını /dev/$array dizisine ek bir çalışan üye olarak ekler. RAID 1 bir ayna daha kazanır; RAID 5 ve 6 yeniden şekillendirme tamamlandığında kapasite kazanır. Bu işlem saatler sürebilir. Ardından dosya sistemini genişletin. $device içindeki veriler kaybolur.';
+  }
+
+  @override
+  String get storageAddToPool => 'Disk ekle';
+
+  @override
+  String storageAddToPoolBody(Object devices, Object layout, Object name) {
+    return 'Daha fazla alan için $devices aygıtlarını $layout düzeniyle $name havuzuna ekler. Daha sonra çıkarılamazlar ve içlerindeki veriler kaybolur.';
+  }
+
+  @override
+  String get sharingTitle => 'Paylaşımlar';
+
+  @override
+  String get sharingSmb => 'SMB';
+
+  @override
+  String get sharingNfs => 'NFS';
+
+  @override
+  String get sharingService => 'Hizmet';
+
+  @override
+  String get sharingRunning => 'Çalışıyor';
+
+  @override
+  String get sharingStopped => 'Durduruldu';
+
+  @override
+  String get sharingNfsServer => 'NFS sunucusu';
+
+  @override
+  String get sharingNoSamba =>
+      'Samba kurulu değil. Windows, macOS ve Linux SMB paylaşımlarını açabilir.';
+
+  @override
+  String get sharingNoNfs =>
+      'NFS sunucusu kurulu değil. Linux ve macOS NFS dışa aktarımlarını bağlayabilir.';
+
+  @override
+  String get sharingInstallSamba => 'Samba\'yı kur';
+
+  @override
+  String get sharingInstallSambaBody =>
+      'Samba\'yı makinenin paket yöneticisiyle kurar.';
+
+  @override
+  String get sharingInstallNfs => 'NFS sunucusunu kur';
+
+  @override
+  String get sharingInstallNfsBody =>
+      'NFS sunucusunu makinenin paket yöneticisiyle kurar.';
+
+  @override
+  String get sharingAddShare => 'Paylaşım ekle';
+
+  @override
+  String get sharingAddExport => 'Dışa aktarım ekle';
+
+  @override
+  String get sharingEdit => 'Düzenle';
+
+  @override
+  String get sharingRemove => 'Kaldır';
+
+  @override
+  String get sharingSave => 'Kaydet';
+
+  @override
+  String sharingSaveSmbBody(Object name, Object path) {
+    return '$path yolunu SMB üzerinden $name adıyla paylaşır, ardından Samba\'yı yeniden yükler.';
+  }
+
+  @override
+  String sharingSaveNfsBody(Object path) {
+    return '$path yolunu NFS üzerinden dışa aktarır, ardından dışa aktarımları yeniden yükler.';
+  }
+
+  @override
+  String sharingRemoveSmbBody(Object name) {
+    return '$name paylaşımını durdurur. Klasör ve içindeki dosyalar kalır.';
+  }
+
+  @override
+  String sharingRemoveNfsBody(Object path) {
+    return '$path dışa aktarımını durdurur. Klasör ve içindeki dosyalar kalır.';
+  }
+
+  @override
+  String get sharingElsewhere => 'ServerBox dışında ayarla';
+
+  @override
+  String get sharingNoShares => 'SMB paylaşımı yok';
+
+  @override
+  String get sharingNoExports => 'NFS dışa aktarımı yok';
+
+  @override
+  String get sharingReadOnly => 'Salt okunur';
+
+  @override
+  String get sharingReadWrite => 'Oku ve yaz';
+
+  @override
+  String get sharingGuest => 'Misafirler';
+
+  @override
+  String get sharingGuestLabel =>
+      'Ağdaki herkesin hesap olmadan erişmesine izin ver';
+
+  @override
+  String get sharingUsersHint =>
+      'İzin verilen hesaplar (hiçbiri seçilmezse: SMB parolası olan tüm hesaplar):';
+
+  @override
+  String get sharingFolder => 'Klasör';
+
+  @override
+  String get sharingFolderHint =>
+      'Sunucudaki bir klasör; örneğin Storage\'da bağlanan bir disk.';
+
+  @override
+  String get sharingComment => 'Açıklama';
+
+  @override
+  String get sharingPasswords => 'SMB parolaları';
+
+  @override
+  String get sharingPasswordsBody =>
+      'Samba kendi parolalarını kullanır: bağlanan her hesap için bir parola belirleyin.';
+
+  @override
+  String get sharingSetPassword => 'Parola belirle';
+
+  @override
+  String get sharingNewPassword => 'Yeni SMB parolası';
+
+  @override
+  String get sharingNewPasswordAgain => 'Parolayı tekrar girin';
+
+  @override
+  String get sharingPasswordsDiffer => 'İki parola birbirinden farklı.';
+
+  @override
+  String get sharingClientsHint =>
+      'Kim bağlayabilir: * herkes için; bir ana makine, adres veya 192.168.1.0/24 gibi bir ağ.';
+
+  @override
+  String get sharingClient => 'İstemci';
+
+  @override
+  String get sharingAddClient => 'İstemci ekle';
+
+  @override
+  String get sharingSquashRoot => 'root, nobody olur';
+
+  @override
+  String get sharingSquashAll => 'Herkes, nobody olur';
+
+  @override
+  String get sharingSquashNone => 'root, root olarak kalır';
+
+  @override
+  String sharingNotAFolder(Object path) {
+    return '$path, sunucuda bir klasör değil.';
+  }
+
+  @override
+  String sharingRefused(Object detail) {
+    return 'Yapılandırma reddedildi ve önceki yapılandırma geri yüklendi: $detail';
+  }
+
+  @override
+  String get sharingDuplicate =>
+      'Başka bir paylaşım bu adı veya klasörü zaten kullanıyor.';
+
+  @override
+  String get sharingInvalidName =>
+      'Ad; harf, rakam ve _ . - içerebilir (en fazla 32 karakter).';
+
+  @override
+  String get sharingInvalidPath =>
+      'Klasör, tırnak işareti, ters eğik çizgi veya .. içermeyen mutlak bir yol olmalıdır.';
+
+  @override
+  String get sharingInvalidClient =>
+      'İstemci *, ana makine, adres veya ağ olabilir.';
+
+  @override
+  String get sharingInvalidPassword => 'Bu parola kullanılamaz.';
+
+  @override
+  String get sharingTimeMachineOption => 'Time Machine yedekleri (Mac)';
+
+  @override
+  String get sharingRecycleOption => 'Silinen dosyaları .recycle içinde tut';
+
+  @override
+  String get sharingTimeMachine => 'Time Machine';
+
+  @override
+  String get sharingRecycle => 'Geri dönüşüm kutusu';
+
+  @override
+  String get sharingConnectedNow => 'Şu anda bağlı';
+
+  @override
+  String get sharingNobodyConnected => 'Bağlı kimse yok';
+
+  @override
+  String get sharingShowConnections => 'Bağlantıları göster';
+
+  @override
+  String get sharingShowConnectionsBody => 'Bağlı olanları root olarak okur.';
+
+  @override
+  String get sharingConnectionsLinuxOnly =>
+      'Sharing management currently supports Linux servers.';
+
+  @override
+  String get agentThisDevice => 'Bu cihaz';
+
+  @override
+  String get agentSource => 'Kaynak';
+
+  @override
+  String agentDeleteRemoteTip(String server) {
+    return 'Görev $server üzerinde silinecek.';
+  }
+
+  @override
+  String get agentPlan => 'Plan';
+
+  @override
+  String get agentRemoteGone => 'Bu görev artık sunucuda yok.';
+
+  @override
+  String agentRemoteReplyHint(String server) {
+    return '$server üzerindeki görevi yanıtla';
+  }
+
+  @override
+  String agentRemoteStatus(String server, String status) {
+    String _temp0 = intl.Intl.selectLogic(status, {
+      'queued': 'Kuyrukta',
+      'running': 'Çalışıyor',
+      'waiting': 'Yanıtınız bekleniyor',
+      'done': 'Tamamlandı',
+      'failed': 'Başarısız',
+      'cancelled': 'Durduruldu',
+      'other': '',
+    });
+    return '$server · $_temp0';
+  }
+
+  @override
+  String agentRemoteAlways(String rule) {
+    return '$rule kuralına her zaman izin ver';
+  }
+
+  @override
+  String agentRemoteTypeToRun(String name) {
+    return 'Çalıştırmak için $name yazın';
+  }
+
+  @override
+  String get agentRemoteRunAnyway => 'Yine de çalıştır';
+
+  @override
+  String agentRemoteSudoFor(String user) {
+    return '$user kullanıcısının parolası';
+  }
+
+  @override
+  String get agentRemoteSudoWrong => 'Yanlış parola';
+
+  @override
+  String get agentRemoteSudoRemember => '15 dakika boyunca hatırla';
+
+  @override
+  String agentNewOn(String place) {
+    return 'Yeni sohbet: $place';
+  }
+
+  @override
+  String agentRemoteNewHint(String server) {
+    return '$server sunucusundaki agenta soru sorun veya ona bir görev verin.';
+  }
+
+  @override
+  String get agentPermissionMode => 'İzin modu';
+
+  @override
+  String get agentModeAuto => 'Otomatik';
+
+  @override
+  String get agentModeManual => 'Manuel';
+
+  @override
+  String get agentModeBypass => 'Tümüne izin ver';
+
+  @override
+  String get agentModeBypassOff => 'Bu sunucuda devre dışı';
+
+  @override
+  String get agentModeBypassWarn =>
+      'Tümüne izin ver: silme, yeniden başlatma ve yapılandırma değişiklikleri sorulmadan yapılır.';
+
+  @override
+  String get webApps => 'Web uygulamaları';
+
+  @override
+  String get webAppUnhealthy => 'Sağlıksız';
+
+  @override
+  String get webAppDown => 'Çalışmıyor';
+
+  @override
+  String get webAppInstalling => 'Yükleniyor';
+
+  @override
+  String get webAppsEmpty =>
+      'Henüz web uygulaması yok. Monitor panelinin App Store\'undan dağıtın.';
+
+  @override
+  String get deskAppOpensInPanel => 'Panelde açılır';
+
+  @override
+  String get webAppVersion => 'Sürüm';
+
+  @override
+  String get webAppHomepage => 'Web sitesi';
+
+  @override
+  String webAppUpdate(String version) {
+    return '$version sürümü mevcut. Monitor panelinden güncelleyin.';
+  }
+
+  @override
+  String noticeStackDown(String app) {
+    return '$app çalışmıyor';
+  }
+
+  @override
+  String noticeStackDownBody(String services) {
+    return 'Çalışmıyor: $services.';
+  }
+
+  @override
+  String get noticeStackDownBodyEmpty => 'Hiçbir konteyner çalışmıyor.';
+
+  @override
+  String noticeStackUnhealthy(String app) {
+    return '$app sağlıksız';
+  }
+
+  @override
+  String noticeStackUnhealthyBody(String services) {
+    return 'Sağlık denetimi başarısız: $services.';
+  }
+
+  @override
+  String noticeStackBack(String app) {
+    return '$app yeniden çalışıyor';
+  }
+
+  @override
+  String get noticeStackBackBody => 'Tüm konteynerler çalışıyor.';
+
+  @override
+  String noticeStackUpdate(String app) {
+    return '$app için güncelleme var';
+  }
+
+  @override
+  String noticeStackUpdateBody(String project, String version, String current) {
+    return '$project $version yüklenebilir (şu anki: $current).';
+  }
+
+  @override
+  String noticeStorageArrayDegraded(String array) {
+    return '/dev/$array düşürülmüş durumda';
+  }
+
+  @override
+  String get noticeStorageArrayDegradedBody =>
+      'Bir üye arızalandı veya eksik; dizi yedeklilik olmadan çalışıyor.';
+
+  @override
+  String noticeStorageArrayBack(String array) {
+    return '/dev/$array yeniden sağlıklı';
+  }
+
+  @override
+  String get noticeStorageArrayBackBody => 'Tüm üyeler çalışıyor.';
+
+  @override
+  String noticeStoragePoolUnhealthy(String pool, String health) {
+    return '$pool havuzu $health';
+  }
+
+  @override
+  String get noticeStoragePoolUnhealthyBody =>
+      'Hangi aygıt olduğunu görmek için Storage bölümünü açın.';
+
+  @override
+  String noticeStoragePoolBack(String pool) {
+    return '$pool havuzu yeniden çevrimiçi';
+  }
+
+  @override
+  String get noticeStoragePoolBackBody => 'Tüm aygıtlar çalışıyor.';
+
+  @override
+  String noticeStorageDiskFailing(String device) {
+    return '$device arızalanıyor';
+  }
+
+  @override
+  String get noticeStorageDiskFailingBody =>
+      'SMART denetimi veya kendi kendine testi başarısız oldu: içindeki verileri başka yere kopyalayın ve diski değiştirin.';
+
+  @override
+  String noticeStorageDiskSectors(String device, int count) {
+    return '$device üzerinde $count bozuk sektör var';
+  }
+
+  @override
+  String noticeStorageDiskSectorsBody(int was) {
+    return 'Önceden $was idi. Sektör kaybeden diskler çoğu zaman yakında arızalanır.';
+  }
+
+  @override
+  String noticeStorageMaintenanceFailed(String task) {
+    return 'Depolama bakımı çalıştırılamadı: $task';
+  }
+
+  @override
+  String get storageTaskScrub => 'Havuzları temizle ve dizileri denetle';
+
+  @override
+  String get storageTaskSmartShort => 'Kısa SMART testi';
+
+  @override
+  String get storageTaskSmartLong => 'Uzun SMART testi';
+
+  @override
+  String get storageNeedsSudo =>
+      'sudo parola istedi: Monitor hesabını root olarak çalıştırın veya yukarıdaki komutlara izin verin.';
+
+  @override
+  String get monitorTab => 'Monitor';
+
+  @override
+  String get monitorOverview => 'Genel bakış';
+
+  @override
+  String get monitorNotices => 'Bildirimler';
+
+  @override
+  String get monitorAudit => 'Denetim günlüğü';
+
+  @override
+  String get monitorLive => 'Oturumlar ve cihazlar';
+
+  @override
+  String get monitorNoAgents =>
+      'Henüz Monitor üzerinden erişilen bir sunucu yok.';
+
+  @override
+  String get monitorNotOffered =>
+      'Bu Monitor sürümü bunu sunmuyor. Monitor’u güncelleyin.';
+
+  @override
+  String get monitorAlertsNotOffered =>
+      'Bu Monitor sürümü uyarıları bildirmiyor.';
+
+  @override
+  String get monitorAlertsNone => 'Tetiklenen kural yok.';
+
+  @override
+  String monitorFiringFor(String duration) {
+    return '$duration süredir';
+  }
+
+  @override
+  String monitorAgentVersion(String version) {
+    return 'Monitor $version';
+  }
+
+  @override
+  String monitorAgentUpdate(String version) {
+    return '$version mevcut';
+  }
+
+  @override
+  String monitorUnread(int count) {
+    return '$count okunmamış';
+  }
+
+  @override
+  String monitorAppsUnwell(int count) {
+    return 'Sorunlu uygulamalar: $count';
+  }
+
+  @override
+  String monitorAppsUpdates(int count) {
+    return 'Uygulama güncellemeleri: $count';
+  }
+
+  @override
+  String get monitorUpdatesOnly => 'Yalnızca güncellemeler';
+
+  @override
+  String get monitorNoUpdates => 'Güncellemesi olan uygulama yok.';
+
+  @override
+  String get monitorNoticesEmpty => 'Bildirim yok.';
+
+  @override
+  String get monitorMarkAllRead => 'Tümünü okundu işaretle';
+
+  @override
+  String get monitorAuditExec => 'Komutlar';
+
+  @override
+  String get monitorAuditMachine => 'Makine yönetimi';
+
+  @override
+  String get monitorAuditListen => 'Dinlenen bağlantı noktaları';
+
+  @override
+  String get monitorAuditTicket => 'Bağlantı biletleri';
+
+  @override
+  String get monitorAuditPush => 'Bildirim kanalları';
+
+  @override
+  String get monitorAuditAdmin => 'Hesap';
+
+  @override
+  String get monitorAuditDenied => 'Reddedildi';
+
+  @override
+  String get monitorLoadMore => 'Daha fazla yükle';
+
+  @override
+  String get monitorLiveSessions => 'Terminal oturumları';
+
+  @override
+  String get monitorLiveConnections => 'Bağlantılar';
+
+  @override
+  String get monitorLiveWatchTokens => 'Saat ve widget belirteçleri';
+
+  @override
+  String get monitorLiveDevices => 'Oturum açmış cihazlar';
+
+  @override
+  String get monitorLiveDevicesTip =>
+      'Bir cihazı unutmak, sonraki oturum açmasının hesap genelindeki başarısız deneme sınırına sayılmasını sağlar. Cihazın oturumunu kapatmaz: parolayı bilen cihaz yeniden oturum açar. Bir cihazı dışarıda tutmak için parolayı değiştirin.';
+
+  @override
+  String get monitorLiveAttached => 'Bağlı';
+
+  @override
+  String get monitorLiveDetached => 'Ayrılmış';
+
+  @override
+  String get monitorLiveEnd => 'Sonlandır';
+
+  @override
+  String get monitorLiveRevoke => 'İptal et';
+
+  @override
+  String get monitorLiveForget => 'Unut';
+
+  @override
+  String monitorLiveEndSessionConfirm(String name) {
+    return '\"$name\" terminal oturumu sonlandırılsın mı? İçinde çalışanlar durur.';
+  }
+
+  @override
+  String monitorLiveEndConnectionConfirm(String name) {
+    return '$name bağlantısı sonlandırılsın mı?';
+  }
+
+  @override
+  String monitorLiveRevokeConfirm(String name) {
+    return '$name belirteci iptal edilsin mi? Yeniden kurulana kadar güncellenmez.';
+  }
+
+  @override
+  String monitorLiveForgetConfirm(String name) {
+    return '$name unutulsun mu?';
+  }
+
+  @override
+  String monitorLiveExpires(String time) {
+    return 'Bitiş: $time';
+  }
+
+  @override
+  String get monitorLiveStream => 'Aktarılan bağlantı';
+
+  @override
+  String get monitorLiveAccepted => 'Yönlendirilen bağlantı';
+
+  @override
+  String get monitorLiveConsole => 'Konsol';
+
+  @override
+  String monitorAgentsCount(int count) {
+    return '$count Monitor';
+  }
+
+  @override
+  String get monitorStatOnline => 'Çevrimiçi';
+
+  @override
+  String get monitorStatFiring => 'Etkin uyarılar';
+
+  @override
+  String get monitorStatUnread => 'Okunmamış';
+
+  @override
+  String get monitorStatUpdates => 'Güncellemeler';
+
+  @override
+  String get monitorAuditEmpty => 'Eşleşen kayıt yok.';
+
+  @override
+  String get monitorLiveNoSessions => 'Açık terminal oturumu yok.';
+
+  @override
+  String get monitorLiveNoConnections => 'Yönlendirilen bağlantı yok.';
+
+  @override
+  String get monitorLiveNoTokens => 'Eşlenmiş saat veya widget yok.';
+
+  @override
+  String get monitorLiveNoDevices => 'Oturum açmış cihaz yok.';
+
+  @override
+  String get monitorUpdateAgent => 'Monitor güncelle';
+
+  @override
+  String get monitorAgentTooOldTip => 'Güncelleme adımları Monitor sekmesinde.';
+
+  @override
+  String get monitorAgentTooOldBody =>
+      'Bu Monitor tek parola öncesine ait ve uygulama oturum açamıyor. Güncellemeden sonra parolası en eski yönetici hesabının parolası olur.';
+
+  @override
+  String monitorAgentOutdatedBody(String latest, String running) {
+    return '$latest yayımlandı; bu Monitor $running çalıştırıyor.';
+  }
+
+  @override
+  String get monitorUpdateRunHint =>
+      'Sunucuda, Monitor kurulduğu hesapla çalıştırın:';
+
+  @override
+  String get monitorUpdateSshHint =>
+      'Terminal bunu çalıştırır. Monitor sistem genelinde kuruluysa ve terminal SSH üzerindense, sudo orada parolasını sorar.';
+
+  @override
+  String get monitorUpdateNoSsh =>
+      'Uygulama bu sunucuda terminal açamıyor: komutu orada kendiniz çalıştırın.';
+
+  @override
+  String get monitorUpdateDocker =>
+      'Docker’da mı? Yeni imajı çekip konteyneri yeniden oluşturun.';
+
+  @override
+  String get monitorUpdateAfter =>
+      'Yeniden başladığında Monitor sekmesini yenileyin.';
+
+  @override
+  String get monitorUpdateInTerminal => 'Terminalde çalıştır';
+
+  @override
+  String get monitorHowToUpdate => 'Nasıl güncellenir';
+
+  @override
+  String get monitorUpdateNix =>
+      'NixOS modülüyle kuruldu: sistem yapılandırmanızdan güncelleyip yeniden derleyin.';
+
+  @override
+  String get noticeAgentUpdate => 'Monitor için bir güncelleme var';
+
+  @override
+  String get monitorUpdateLegacyUser => 'Hesap adı';
+
+  @override
+  String get monitorUpdateLegacyHint =>
+      'Bu Monitor hâlâ hesap adı ve parolayla oturum açıyor: bu uygulamanın önceden kullandığı ad (çoğunlukla admin) ve kayıtlı parola.';
+
+  @override
+  String get monitorUpdateNow => 'Şimdi güncelle';
+
+  @override
+  String get monitorUpdating => 'Güncelleniyor…';
+
+  @override
+  String get monitorUpdateRestarting =>
+      'Monitor yeniden başlıyor; bağlantı birkaç saniye içinde geri gelir…';
+
+  @override
+  String monitorUpdateDone(String version) {
+    return 'Güncellendi: Monitor $version çalıştırıyor.';
+  }
+
+  @override
+  String get monitorUpdateFailed =>
+      'Güncelleme başarısız oldu. Çıktısı yukarıda.';
+
+  @override
+  String get monitorUpdateAgentHint =>
+      'Monitor yükleyiciyi kendisinden ayrı çalıştırır, bu yüzden yeniden başlaması güncellemeyi durdurmaz. Bu sırada bağlantı birkaç saniye kopar; bu pencere güncellemeyi yeniden başlatma boyunca izler.';
+
+  @override
+  String get monitorUpdateSudoPassword => 'sudo parolası';
+
+  @override
+  String get monitorUpdateSudoHint =>
+      'Burada yükleyici root gerektirir (bir OpenRC hizmeti). Parola bir kez kullanılır ve kaydedilmez.';
+
+  @override
+  String get monitorUpdateSudoRefused => 'sudo bu parolayı kabul etmedi.';
+
+  @override
+  String get monitorUpdateNoAnswer =>
+      'Monitor geri gelmedi. Sunucuda denetleyin.';
+
+  @override
+  String get keyArrowDown => 'Aşağı ok';
+
+  @override
+  String get keyArrowLeft => 'Sol ok';
+
+  @override
+  String get keyArrowRight => 'Sağ ok';
+
+  @override
+  String get keyArrowUp => 'Yukarı ok';
+
+  @override
+  String get keyControl => 'Control';
+
+  @override
+  String get keyEscape => 'Escape';
+
+  @override
+  String get keyPageDown => 'Sayfa aşağı';
+
+  @override
+  String get keyPageUp => 'Sayfa yukarı';
+
+  @override
+  String get termTextView => 'Metin olarak görüntüle';
+
+  @override
+  String termTextLetGo(int count) {
+    return 'Artık saklanmayan önceki satırlar: $count';
+  }
+
+  @override
+  String get systemGroups => 'Gruplar';
+
+  @override
+  String get userGid => 'GID';
+
+  @override
+  String get userGroupMembers => 'Üyeler';
+
+  @override
+  String get userPrimaryMembers => 'Birincil üyeler';
+
+  @override
+  String get userSystemGroup => 'Sistem grubu';
+
+  @override
+  String get userMembersHint => 'alice,bob';
+
+  @override
+  String get userRegularGroup => 'Regular';
+
+  @override
+  String get termMetricsBar => 'Terminalin altında sunucu değerleri';
+
+  @override
+  String get termMetricsBarTip =>
+      'CPU, bellek, ağ ve disk, sunucu kartındaki gibi. Telefonda sanal tuşların üstünde.';
+
+  @override
+  String get termSideMetrics => 'Server readings in a side panel';
+
+  @override
+  String get termSideMetricsTip =>
+      'Stays put while the terminal scrolls, so the readings are always in view.';
+
+  @override
+  String get termFilePanel => 'Files under the terminal';
+
+  @override
+  String get termFilePanelTip =>
+      'Upload, download, rename and delete on the server while the session stays open. Drag its top edge to resize; the arrow folds it away.';
+
+  @override
+  String get termBgColor => 'Terminal background';
+
+  @override
+  String get termFgColor => 'Terminal text colour';
+
+  @override
+  String get barColor => 'Panel colour';
+
+  @override
+  String get filePanelOpacity => 'Panel opacity';
+
+  @override
+  String get uiAccentColor => 'Accent colour';
+
+  @override
+  String get uiTextColor => 'Text colour';
+
+  @override
+  String get sftpFiles => 'Files';
+
+  @override
+  String get sftpTunnels => 'Tunnels';
+
+  @override
+  String get sftpModified => 'Modified';
+
+  @override
+  String get sftpPermissions => 'Permissions';
+
+  @override
+  String get sftpLoading => 'Loading…';
+
+  @override
+  String get sftpEmptyDir => 'Empty directory';
+
+  @override
+  String get sftpNoUploads => 'No uploads yet';
+
+  @override
+  String get sftpUploads => 'Uploads';
+
+  @override
+  String get sftpUploadDone => 'Done';
+
+  @override
+  String get sftpUploadFailed => 'Failed';
+
+  @override
+  String get sftpNewFolder => 'New folder';
+
+  @override
+  String get sftpDirectoryTree => 'Directory tree';
+
+  @override
+  String sftpItems(int count) {
+    return '$count items';
+  }
+
+  @override
+  String sftpDeleteConfirm(String name) {
+    return 'Delete \"$name\"?';
+  }
+
+  @override
+  String get swap => 'Swap';
+
+  @override
+  String get copied => 'Copied';
+
+  @override
+  String get localResources => 'Resources';
+
+  @override
+  String get freeTotal => 'Free/Total';
+
+  @override
+  String get processes => 'Processes';
+
+  @override
+  String get ipAddress => 'IP';
+
+  @override
+  String get localNotAdded => 'This device is not added as a server';
+
+  @override
+  String get launchFailedTitle => 'ServerBox başlatılamadı';
+
+  @override
+  String get launchFailedBody =>
+      'Aşağıdaki hatayı kopyalayıp günlük dosyalarıyla birlikte bir GitHub issue\'sunda bildirin.';
+
+  @override
+  String launchFailedLogs(String path) {
+    return 'Günlükler: $path';
+  }
+
+  @override
+  String get reconnect => 'Yeniden bağlan';
+
+  @override
+  String get reconnectEndsShell =>
+      'Yeniden bağlanacak bir tmux oturumu yok; yeniden bağlanmak bu kabuğu ve içinde hâlâ çalışan her şeyi sonlandırır ve ekrandaki çıktısını temizler.';
+
+  @override
+  String get handedness => 'Baskın el';
+
+  @override
+  String get handednessLeft => 'Sol el';
+
+  @override
+  String get handednessRight => 'Sağ el';
+
+  @override
+  String get handednessTip =>
+      'Cihazı tuttuğunuz elin tarafında sekmeler, sistemin kendi çubukları gibi durum çubuğunun yanındaki sütunda durur.';
+
+  @override
+  String get storeUnreadableTitle => 'Önceki veriler açılamadı';
+
+  @override
+  String get storeUnreadableKeyLost =>
+      'ServerBox verilerini şifreleyen anahtar artık sistemin anahtar deposunda değil. Sistem anahtar deposunu sıfırladığında, anahtarlık hizmeti kullanılamadığında veya uygulama verileri başka bir cihazdan, örneğin bir taşıma aracıyla kopyalandığında bu olur. Bu anahtar olmadan veriler çözülemez, bu yüzden ServerBox verisiz başlatıldı.';
+
+  @override
+  String get storeUnreadableKeyRejected =>
+      'Sistemin anahtar deposundaki anahtar ServerBox verilerini açmıyor: veriler başka bir anahtarla şifrelenmiş ya da dosya bozuk. ServerBox verisiz başlatıldı.';
+
+  @override
+  String storeUnreadableKept(String path) {
+    return 'Eski dosya şurada tutuldu:\n$path\nSunucularınızı geri almak için bir yedeği geri yükleyin.';
+  }
+
+  @override
+  String get storeKeyLostAsk =>
+      'ServerBox verilerini şifreleyen anahtar sistem anahtar deposunda yok. Anahtar deposu veya anahtarlık yalnızca şu anda kullanılamıyorsa, örneğin henüz kilidi açılmadıysa, yeniden deneyin. Aksi halde ServerBox verisiz başlayabilir; eski dosya saklanır.';
+
+  @override
+  String get storeKeyLostStartEmpty => 'Verisiz başlat';
+
+  @override
+  String get storeVaultFailedAsk =>
+      'Sistem anahtar deposu, ServerBox verilerini şifreleyen anahtarın şifresini çözemedi. Hata tek seferlikse, gerekirse cihazı yeniden başlattıktan sonra tekrar deneyin. Her seferinde başarısız oluyorsa verilerin şifresi çözülemez ve ServerBox verisiz başlatılabilir; eski dosya saklanır. Verisiz başlatmak yedekleme parolasını, WebDAV ve GitHub kimlik bilgilerini ve kayıtlı sudo parolalarını da siler.';
+
+  @override
+  String get storeVaultFailedRootHint =>
+      'Root\'lu bir cihazda anahtar deposuna müdahale eden bir modül (ör. TrickyStore) bu hataya yol açar. Bu uygulamayı modülün hedef listesinden çıkarın, ardından verisiz başlatın.';
+
+  @override
+  String get storeUnreadableVaultFailed =>
+      'Sistem anahtar deposu, ServerBox verilerini şifreleyen anahtarın şifresini çözemediği için ServerBox anahtar deposundaki girdilerini sıfırladı ve verisiz başladı. Yedekleme parolası, WebDAV ve GitHub kimlik bilgileri ve kayıtlı sudo parolaları yeniden girilmelidir.';
+
+  @override
+  String get hostCertAuthorities => 'Ana makine sertifika yetkilileri';
+
+  @override
+  String get hostCertAuthoritiesTip =>
+      'Sertifikası bunlardan biri tarafından imzalanmış bir ana makineye sormadan güvenilir, OpenSSH\'nin @cert-authority\'si gibi; diğer ana makineler önceden olduğu gibi ilk bağlantıda sorulur. Ana makineler * ve ? içeren, virgülle ayrılmış kalıplardır, ! hariç tutar; 22 dışındaki bir bağlantı noktası [host]:port olarak eşleştirilir.';
+
+  @override
+  String get hostCertAuthorityInvalid =>
+      'Desteklenen bir SSH ortak anahtarı değil (ssh-ed25519, ssh-rsa veya ecdsa-sha2-*)';
+
+  @override
+  String get hostCertAuthorityNoHosts =>
+      'Kefil olduğu ana makineleri girin, örneğin *';
+
+  @override
+  String get hostCertAuthorityExists => 'Zaten listede';
+
+  @override
+  String get addToHomeScreen => 'Ana ekrana ekle';
+
+  @override
+  String transfersActive(int count) {
+    return '$count aktarım';
+  }
+
+  @override
+  String get syncKeyRotate => 'Eşitleme anahtarını değiştir';
+}

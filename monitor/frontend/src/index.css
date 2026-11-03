@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* Light / dark as one crossfade (`crossfade` in lib/theme.svelte.ts sets the
+   pace from the design system's tokens). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--appearance-fade, 0ms);
+  animation-timing-function: var(--appearance-ease, ease);
+}
+
+@layer base {
+  html,
+  body {
+    /* The desk is the whole screen; nothing scrolls under it. */
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+  /* The page is drawn in the design system (`desk/lk`, `.lk` on <body>). */
+  body {
+    background: var(--surface-desktop);
+  }
+}

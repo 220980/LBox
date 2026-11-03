@@ -1,0 +1,25 @@
+# ServerBox's fork: advisories `cargo audit` reports that are accepted, each
+# with why. One not listed here still fails the audit. What ServerBox ships is
+# decided by its own Cargo.lock (`flutter_server_box/.cargo/audit.toml`); this
+# lock only builds this workspace.
+[advisories]
+ignore = [
+  # TODO: remove once sspi depends on hickory 0.26 — its 0.23 release and its
+  # master both ask for 0.25.
+  #
+  # hickory-proto 0.25: unbounded NSEC3 validation loop, and O(n²) name
+  # compression. Only sspi's `dns_resolver` uses it, for a Kerberos KDC lookup,
+  # and only `ironrdp-mstsgu`'s `smartcard` feature turns that on: RD gateway
+  # with smart-card logon, neither of which ServerBox builds. Fixing it here
+  # means a fork of sspi, for code no ServerBox build contains.
+  "RUSTSEC-2026-0118",
+  "RUSTSEC-2026-0119",
+
+  # TODO: remove once `rsa` has a release that fixes it — none does.
+  #
+  # rsa 0.10 (through picky): Marvin attack, non-constant-time private-key
+  # operations. picky signs with a private key for smart-card logon only, which
+  # ServerBox leaves off (`ironrdp-connector`'s `scard` feature); CredSSP uses
+  # public keys.
+  "RUSTSEC-2023-0071",
+]

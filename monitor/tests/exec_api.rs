@@ -1,0 +1,403 @@
+//! End-to-end coverage for `POST /api/v1/exec`.
+//!
+//! The endpoint runs whatever it is given, so what these assert is mostly the
+//! refusals: no token, and the grant switched off. The happy path is checked
+//! against real commands, since an exec endpoint that reports someone else's
+//! output would be worse than one that reports none.
+
+mod common;
+
+use std::sync::{Arc, Once};
+
+use ntex::time::Millis;
+use ntex::service::map_state_factory;
+use ntex::web::test::{self as web_test, TestServer};
+use ntex::web::{self, App};
+use rustls::crypto::ring;
+use sbm_parser::script;
+use serde_json::json;
+use server_box_monitor::api::auth::generate_token;
+use server_box_monitor::api::server::{Agent, AppState};
+use server_box_monitor::core::config::Config;
+use server_box_monitor::core::remote_access::{DEFAULT_EXEC_TIMEOUT_SECS, ExecConfig};
+
+const SECRET: &str = "test-secret-that-is-long-enough-32ch";
+
+/// The test client speaks TLS whether or not this server does, and rustls
+/// refuses to pick a provider for itself.
+fn ensure_crypto_provider() {
+    static ONCE: Once = Once::new();
+    ONCE.call_once(|| {
+        let _ = ring::default_provider().install_default();
+    });
+}
+
+async fn app_state() -> Arc<AppState> {
+    app_state_with(ExecConfig::default()).await
+}
+
+async fn app_state_with(exec: ExecConfig) -> Arc<AppState> {
+    ensure_crypto_provider();
+    let mut config = Config {
+        jwt_secret: Some(SECRET.to_string()),
+        ..Default::default()
+    };
+    let mut remote = config.get_remote_access();
+    remote.exec = exec;
+    // The test server listens on loopback, which counts as a secure
+    // transport.
+    config.remote_access = Some(remote);
+
+    let db = sqlx::SqlitePool::connect("sqlite::memory:").await.unwrap();
+    sqlx::migrate!("./migrations").run(&db).await.unwrap();
+    common::add_owner(&db).await;
+    AppState::new(Arc::new(config), db)
+}
+
+async fn test_server(state: Arc<AppState>) -> TestServer {
+    web_test::server(async move |_| {
+        let state = state.clone();
+        map_state_factory(Agent(state), App::<Agent>::new().service(
+            web::scope("/api/v1").service(
+                web::resource("/exec").route(web::post().to(server_box_monitor::api::exec::exec)),
+            ),
+        ))
+    })
+}
+
+/// Past the endpoint's own bound, so a request that hangs fails the test
+/// through the endpoint's `timed_out`, never through the client giving up.
+///
+/// These run real commands, and on a Windows runner starting PowerShell is
+/// several seconds before it has read a byte; with the tests running at once
+/// a request has waited half a minute there before it was even read.
+const REQUEST_TIMEOUT: Millis = Millis((DEFAULT_EXEC_TIMEOUT_SECS as u32 + 30) * 1000);
+
+/// The response body, or the status when the call was refused.
+async fn post(srv: &TestServer, body: serde_json::Value) -> Result<serde_json::Value, u16> {
+    let resp = srv
+        .post("/api/v1/exec")
+        .timeout(REQUEST_TIMEOUT)
+        .header("Authorization", format!("Bearer {}", token()))
+        .send_json(&body)
+        .await
+        .unwrap();
+    if !resp.status().is_success() {
+        return Err(resp.status().as_u16());
+    }
+    Ok(resp.json().await.unwrap())
+}
+
+fn token() -> String {
+    generate_token(SECRET).unwrap()
+}
+
+fn platform_command<'a>(unix: &'a str, windows: &'a str) -> &'a str {
+    if cfg!(windows) { windows } else { unix }
+}
+
+fn platform_line(text: &str) -> String {
+    format!("{text}{}", if cfg!(windows) { "\r\n" } else { "\n" })
+}
+
+fn platform_powershell_command(unix: &str, windows: &str) -> String {
+    if cfg!(windows) {
+        script::encoded_powershell_command(windows)
+    } else {
+        unix.to_string()
+    }
+}
+
+#[ntex::test]
+async fn a_command_runs_and_its_output_comes_back() {
+    let srv = test_server(app_state().await).await;
+    let body = post(&srv, json!({"cmd": "echo exec-ok"})).await.unwrap();
+
+    assert_eq!(body["exit_code"], 0);
+    assert_eq!(body["stdout"], platform_line("exec-ok"));
+    assert_eq!(body["stderr"], "");
+    assert_eq!(body["truncated"], false);
+    assert_eq!(body["timed_out"], false);
+}
+
+/// The bounds come from `[remote_access.exec]`, so an operator who needs a
+/// command this endpoint was not sized for can have one.
+///
+/// Asserted through a *shortened* limit rather than a lengthened one: the
+/// mechanism is the same either way, and a test that proves a 30-minute
+/// timeout is honoured has to take 30 minutes to fail.
+#[ntex::test]
+async fn the_configured_timeout_is_what_kills_a_command() {
+    let srv = test_server(
+        app_state_with(ExecConfig {
+                timeout_secs: Some(1),
+                ..Default::default()
+            },
+        )
+        .await,
+    )
+    .await;
+    // Not `timeout /t`: it refuses a redirected stdin and exits at once, so
+    // it only passed when starting it took longer than the limit.
+    let cmd = platform_command("sleep 20", "ping -n 21 127.0.0.1 >NUL");
+    let body = post(&srv, json!({ "cmd": cmd })).await.unwrap();
+
+    assert_eq!(body["timed_out"], true, "{body}");
+    // Killed rather than exited, and nothing it had buffered is reported as
+    // though the command had finished saying it.
+    assert!(body["exit_code"].is_null());
+    assert_eq!(body["stdout"], "");
+}
+
+/// The other half of the same section: what is kept of each stream.
+#[ntex::test]
+async fn the_configured_output_cap_is_what_truncates() {
+    let srv = test_server(
+        app_state_with(ExecConfig {
+                max_output_bytes: Some(16),
+                ..Default::default()
+            },
+        )
+        .await,
+    )
+    .await;
+    let body = post(&srv, json!({"cmd": "echo 0123456789abcdefghijklmnop"}))
+        .await
+        .unwrap();
+
+    assert_eq!(body["truncated"], true);
+    assert_eq!(body["stdout"].as_str().unwrap().len(), 16);
+    // The command itself succeeded; only this agent's copy of its output is a
+    // prefix, which is exactly the distinction `truncated` exists to make.
+    assert_eq!(body["exit_code"], 0);
+    assert_eq!(body["timed_out"], false);
+}
+
+/// The two streams stay apart: a caller that parses `stdout` must not find a
+/// warning in the middle of it.
+#[ntex::test]
+async fn stdout_and_stderr_are_reported_separately() {
+    let srv = test_server(app_state().await).await;
+    let cmd = platform_command("echo out; echo err 1>&2", "echo out&echo err>&2");
+    let body = post(&srv, json!({"cmd": cmd})).await.unwrap();
+
+    assert_eq!(body["stdout"], platform_line("out"));
+    assert_eq!(body["stderr"], platform_line("err"));
+}
+
+#[ntex::test]
+async fn a_failing_command_reports_its_exit_code() {
+    let srv = test_server(app_state().await).await;
+    let body = post(&srv, json!({"cmd": "exit 3"})).await.unwrap();
+
+    assert_eq!(body["exit_code"], 3);
+}
+
+/// What a caller sends as input never reaches the audit row.
+///
+/// The whole reason `stdin` is a field rather than something the caller pipes
+/// inside its own command: `sudo -S` reads its password from there, and a
+/// password written into the command would be recorded here and visible in the
+/// machine's process list.
+#[ntex::test]
+async fn stdin_is_not_audited() {
+    let state = app_state().await;
+    let db = state.db.clone();
+    let srv = test_server(state).await;
+    post(
+        &srv,
+        json!({
+            "cmd": platform_command("cat > /dev/null", "more > NUL"),
+            "stdin": "hunter2-not-in-the-log",
+        }),
+    )
+    .await
+    .unwrap();
+
+    let rows: Vec<String> = sqlx::query_scalar(
+        "SELECT coalesce(subject, '') || ' ' || coalesce(detail, '') FROM access_log",
+    )
+    .fetch_all(&db)
+    .await
+    .unwrap();
+    assert!(
+        !rows.iter().any(|r| r.contains("hunter2")),
+        "input must not be recorded, got {rows:?}"
+    );
+}
+
+/// A command that never reads its input still answers.
+///
+/// More than a pipe buffer — 64 KiB on Linux — so the write blocks until
+/// something drains it, and nothing ever does. Before the write was moved
+/// inside the timeout this held the worker forever.
+#[ntex::test]
+async fn a_command_that_ignores_a_large_stdin_still_returns() {
+    let srv = test_server(app_state().await).await;
+    let body = post(
+        &srv,
+        json!({"cmd": "echo ignored-it", "stdin": "x".repeat(512 * 1024)}),
+    )
+    .await
+    .unwrap();
+
+    assert_eq!(body["stdout"], platform_line("ignored-it"));
+    assert_eq!(body["timed_out"], false);
+}
+
+/// How a sudo password gets in with no terminal to type it into.
+#[ntex::test]
+async fn stdin_reaches_the_command() {
+    let srv = test_server(app_state().await).await;
+    let cmd = platform_powershell_command(
+        "cat",
+        "$text = [Console]::In.ReadToEnd(); [Console]::Out.Write($text)",
+    );
+    let body = post(&srv, json!({"cmd": cmd, "stdin": "fed-on-stdin"}))
+        .await
+        .unwrap();
+
+    assert_eq!(body["stdout"], "fed-on-stdin");
+}
+
+/// A script arrives on stdin rather than as an argument, which is how a
+/// multi-line one survives — `CommandExec.run` sends every script this way.
+#[ntex::test]
+async fn a_multi_line_script_fed_to_a_shell_runs_whole() {
+    let srv = test_server(app_state().await).await;
+    let body = post(
+        &srv,
+        json!({
+            "cmd": platform_command(
+                "cat | sh",
+                "powershell -NoLogo -NoProfile -NonInteractive -Command -",
+            ),
+            "stdin": "echo first\necho 'second with \"quotes\"'\n",
+        }),
+    )
+    .await
+    .unwrap();
+
+    let expected = format!(
+        "{}{}",
+        platform_line("first"),
+        platform_line("second with \"quotes\"")
+    );
+    assert_eq!(body["stdout"], expected);
+}
+
+#[ntex::test]
+async fn env_reaches_the_command_without_being_quoted_into_it() {
+    let srv = test_server(app_state().await).await;
+    let cmd = platform_powershell_command(
+        "printf '%s' \"$SBM_TEST\"",
+        "[Console]::Out.Write($env:SBM_TEST)",
+    );
+    let body = post(
+        &srv,
+        json!({
+            "cmd": cmd,
+            // Would need escaping if it were prepended to the command as an
+            // `export` line, which is the reason this is a field.
+            "env": {"SBM_TEST": "a 'quoted' \"value\""},
+        }),
+    )
+    .await
+    .unwrap();
+
+    assert_eq!(body["stdout"], "a 'quoted' \"value\"");
+}
+
+/// The agent's own environment is kept, not replaced: a command still needs a
+/// `PATH` to find anything.
+#[ntex::test]
+async fn env_adds_to_the_environment_rather_than_replacing_it() {
+    let srv = test_server(app_state().await).await;
+    let cmd = platform_command(
+        "test -n \"$PATH\" && echo has-path",
+        "if defined PATH echo has-path",
+    );
+    let body = post(&srv, json!({"cmd": cmd, "env": {"SBM_TEST": "x"}}))
+        .await
+        .unwrap();
+
+    assert_eq!(body["stdout"], platform_line("has-path"));
+}
+
+#[ntex::test]
+async fn an_empty_command_is_rejected() {
+    let srv = test_server(app_state().await).await;
+    assert_eq!(post(&srv, json!({"cmd": "   "})).await.unwrap_err(), 400);
+}
+
+#[ntex::test]
+async fn a_request_without_a_token_is_refused() {
+    let srv = test_server(app_state().await).await;
+    let resp = srv
+        .post("/api/v1/exec")
+        .send_json(&json!({"cmd": "echo nope"}))
+        .await
+        .unwrap();
+
+    assert_eq!(resp.status().as_u16(), 401);
+}
+
+#[ntex::test]
+async fn a_forged_token_is_refused() {
+    let srv = test_server(app_state().await).await;
+    let forged = generate_token("another-secret-that-is-long-enough").unwrap();
+    let resp = srv
+        .post("/api/v1/exec")
+        .header("Authorization", format!("Bearer {forged}"))
+        .send_json(&json!({"cmd": "echo nope"}))
+        .await
+        .unwrap();
+
+    assert_eq!(resp.status().as_u16(), 401);
+}
+
+/// What ran is recorded before it runs, so a command that hangs or takes the
+/// agent down still leaves a trace.
+#[ntex::test]
+async fn the_command_is_audited() {
+    let state = app_state().await;
+    let db = state.db.clone();
+    let srv = test_server(state).await;
+    post(&srv, json!({"cmd": "echo audited-command"}))
+        .await
+        .unwrap();
+
+    let subject: Option<String> = sqlx::query_scalar(
+        "SELECT subject FROM access_log WHERE kind = 'exec' ORDER BY id DESC LIMIT 1",
+    )
+    .fetch_one(&db)
+    .await
+    .unwrap();
+    assert_eq!(subject.as_deref(), Some("echo audited-command"));
+}
+
+#[ntex::test]
+async fn large_input_and_both_output_streams_make_progress_together() {
+    let srv = test_server(
+        app_state_with(ExecConfig {
+                timeout_secs: Some(10),
+                max_output_bytes: Some(4096),
+                ..Default::default()
+            },
+        )
+        .await,
+    )
+    .await;
+    let cmd = platform_powershell_command(
+        "head -c 131072 /dev/zero | tr '\\0' o; head -c 131072 /dev/zero | tr '\\0' e >&2; cat >/dev/null",
+        "[Console]::Out.Write(('o' * 131072)); [Console]::Error.Write(('e' * 131072)); $null = [Console]::In.ReadToEnd()",
+    );
+    let body = post(&srv, json!({"cmd": cmd, "stdin": "x".repeat(512 * 1024)}))
+        .await
+        .unwrap();
+    assert_eq!(body["timed_out"], false);
+    assert_eq!(body["exit_code"], 0);
+    assert_eq!(body["truncated"], true);
+    assert_eq!(body["stdout"], "o".repeat(4096));
+    assert_eq!(body["stderr"], "e".repeat(4096));
+}

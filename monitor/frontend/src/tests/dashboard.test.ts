@@ -1,0 +1,257 @@
+import { get } from 'svelte/store'
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { render, screen, fireEvent, waitFor } from '@testing-library/svelte'
+import '@testing-library/jest-dom/vitest'
+import { flushSync } from 'svelte'
+import Dashboard from '../desk/apps/status/StatusApp.svelte'
+import { LL } from '../i18n/i18n-svelte'
+import { api } from '../lib/api'
+import { capabilitiesStore } from '../lib/capabilities.svelte'
+import { servers } from '../lib/servers.svelte'
+import type { Capabilities, CustomCmdOutput, SystemMetrics } from '../types'
+
+vi.mock('../lib/api', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('../lib/api')>()),
+  api: {
+    getMetrics: vi.fn(),
+    getHistory: vi.fn(),
+    getCardOrder: vi.fn(),
+    updateCardOrder: vi.fn(),
+  },
+}))
+
+/// The iperf dialog mounts the shared terminal component; xterm is stubbed so
+/// the page renders without a DOM renderer.
+vi.mock('../lib/xterm', () => ({
+  terminalBackground: () => '#ffffff',
+  mountTerminal: vi.fn(async () => ({
+    renderer: {
+      write: (_data: Uint8Array, done: () => void) => done(),
+      reset() {},
+      cols: 80,
+      rows: 24,
+    },
+    setTheme() {},
+    focus() {},
+    dispose() {},
+  })),
+}))
+
+/// The app's menubar menus, as it last gave them (its iperf and power
+/// entries live there).
+const menus = vi.hoisted(() => ({ provide: null as null | (() => { label: string; items: { label?: string }[] }[]) }))
+vi.mock('../desk/sys/window.svelte', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('../desk/sys/window.svelte')>()),
+  useMenus: (provide: () => { label: string; items: { label?: string }[] }[]) => {
+    menus.provide = provide
+  },
+}))
+const menuLabels = () => (menus.provide?.() ?? []).flatMap((m) => m.items.map((i) => i.label ?? ''))
+const ll = get(LL)
+
+const mocked = vi.mocked(api)
+
+const metrics = (custom_cmds?: CustomCmdOutput[]): SystemMetrics =>
+  ({
+    timestamp: '2026-01-01T00:00:00Z',
+    server_name: 'srv',
+    cpu_usage: 10,
+    memory: { total: 100, used: 50, free: 50, usage_percent: 50 },
+    swap: { total: 0, used: 0, usage_percent: 0 },
+    disk: { total: 100, used: 50, free: 50, usage_percent: 50 },
+    network: { rx_bytes: 0, tx_bytes: 0 },
+    custom_cmds,
+  }) as unknown as SystemMetrics
+
+const caps = (features: string[]): Capabilities =>
+  ({
+    features,
+    access: { ok: true },
+  }) as unknown as Capabilities
+
+/// The dashboard renders once its first metrics poll has answered.
+async function rendered() {
+  return screen.findByRole('button', { name: ll.deskPauseRefresh() })
+}
+
+beforeEach(() => {
+  // `bind:clientWidth` in LineChart measures through a ResizeObserver, which
+  // jsdom does not have.
+  vi.stubGlobal(
+    'ResizeObserver',
+    class {
+      observe() {}
+      unobserve() {}
+      disconnect() {}
+    },
+  )
+})
+
+afterEach(() => {
+  vi.unstubAllGlobals()
+})
+
+describe('Dashboard custom commands', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+    servers.list = [{ id: 'local', url: '', token: 't' }]
+    servers.currentId = 'local'
+    mockMetrics(metrics())
+  })
+
+  function mockMetrics(value: SystemMetrics) {
+    mocked.getMetrics.mockResolvedValue(value)
+    mocked.getHistory.mockResolvedValue([])
+    mocked.getCardOrder.mockResolvedValue({ card_order: [] })
+  }
+
+  it('draws no card when there are no commands', async () => {
+    render(Dashboard)
+    await rendered()
+    expect(screen.queryByText(ll.customCmd())).toBeNull()
+  })
+
+  it('shows a one-line output as a plain row, with the count', async () => {
+    mockMetrics(metrics([{ name: 'health', output: 'ok' }]))
+    render(Dashboard)
+    await rendered()
+    expect(await screen.findByText('health')).toBeInTheDocument()
+    expect(screen.getByText('ok')).toBeInTheDocument()
+    expect(screen.getByText(ll.customCmdCount({ count: 1 }))).toBeInTheDocument()
+    // Nothing to open: the row is not interactive.
+    expect(screen.queryByRole('dialog')).toBeNull()
+  })
+
+  it('treats a one-line output that ends in a newline as a plain row', async () => {
+    // The agent serves the output as the command printed it, so a single line
+    // normally ends in `\n` — that must not read as a second line.
+    mockMetrics(metrics([{ name: 'health', output: 'single line\n' }]))
+    render(Dashboard)
+    await rendered()
+    const row = await screen.findByRole('button', { name: /health/ })
+    expect(row).toHaveTextContent('single line')
+    expect(row).toBeDisabled()
+    expect(screen.queryByRole('dialog')).toBeNull()
+  })
+
+  it('still opens a multi-line output that ends in a newline', async () => {
+    mockMetrics(metrics([{ name: 'health', output: 'first line\nsecond line\n' }]))
+    render(Dashboard)
+    await rendered()
+    const row = await screen.findByRole('button', { name: /health/ })
+    expect(row).toHaveTextContent('first line')
+    expect(row).not.toHaveTextContent('second line')
+    expect(row).not.toBeDisabled()
+
+    await fireEvent.click(row)
+    const dialog = await screen.findByRole('dialog')
+    expect(dialog).toHaveTextContent('second line')
+  })
+
+  it('shows a multi-line output as its first line, opening the rest in a dialog', async () => {
+    mockMetrics(metrics([{ name: 'health', output: 'line one\nline two\nline three' }]))
+    render(Dashboard)
+    await rendered()
+    const row = await screen.findByRole('button', { name: /health/ })
+    expect(row).toHaveTextContent('line one')
+    expect(row).not.toHaveTextContent('line three')
+
+    await fireEvent.click(row)
+    expect(await screen.findByRole('dialog')).toBeInTheDocument()
+    expect(screen.getByText(/line three/)).toBeInTheDocument()
+  })
+
+  it('renders HTML in an output as text', async () => {
+    mockMetrics(metrics([{ name: 'health', output: '<b>bold</b>\nsecond' }]))
+    render(Dashboard)
+    await rendered()
+    const row = await screen.findByRole('button', { name: /health/ })
+    expect(row).toHaveTextContent('<b>bold</b>')
+
+    await fireEvent.click(row)
+    const dialog = await screen.findByRole('dialog')
+    expect(dialog).toHaveTextContent('<b>bold</b>')
+    // Untrusted text, drawn as text: no element was built from it.
+    expect(document.querySelector('b')).toBeNull()
+  })
+})
+
+describe('Dashboard iperf action', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+    servers.list = [{ id: 'local', url: '', token: 't' }]
+    servers.currentId = 'local'
+    mocked.getMetrics.mockResolvedValue(metrics())
+    mocked.getHistory.mockResolvedValue([])
+    mocked.getCardOrder.mockResolvedValue({ card_order: [] })
+  })
+
+  it('is hidden when the agent does not list iperf', async () => {
+    capabilitiesStore.byServer['local'] = caps([])
+    render(Dashboard)
+    await rendered()
+    expect(menuLabels().some((l) => l.startsWith(ll.iperf()))).toBe(false)
+  })
+
+  it('is offered when the agent lists iperf and the account holds shell', async () => {
+    capabilitiesStore.byServer['local'] = caps(['iperf'])
+    render(Dashboard)
+    await rendered()
+    expect(menuLabels().some((l) => l.startsWith(ll.iperf()))).toBe(true)
+  })
+})
+
+describe('Dashboard card arrangement', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+    servers.list = [{ id: 'local', url: '', token: 't' }]
+    servers.currentId = 'local'
+    capabilitiesStore.byServer['local'] = caps([])
+    mocked.getMetrics.mockResolvedValue(metrics())
+    mocked.getHistory.mockResolvedValue([])
+    mocked.getCardOrder.mockResolvedValue({ card_order: [] })
+    mocked.updateCardOrder.mockResolvedValue(undefined as never)
+  })
+
+  /// The View menu's Rearrange cards, as the menubar would run it.
+  const toggleArranging = () => {
+    const item = (menus.provide?.() ?? [])
+      .flatMap((m) => m.items)
+      .find((i) => i.label === ll.arrangeCards()) as { action: () => void } | undefined
+    if (!item) throw new Error('no Rearrange cards item')
+    flushSync(() => item.action())
+  }
+
+  it('moves a card from the keyboard and says where it went', async () => {
+    render(Dashboard)
+    await rendered()
+    toggleArranging()
+    expect(screen.getByRole('button', { name: ll.cardMoveEarlier({ name: ll.cpuUsage() }) })).toBeDisabled()
+
+    const later = screen.getByRole('button', { name: ll.cardMoveLater({ name: ll.cpuUsage() }) })
+    later.focus()
+    await fireEvent.click(later)
+    expect(mocked.updateCardOrder.mock.calls[0][0].slice(0, 2)).toEqual(['memory', 'cpu'])
+    // Any total: the visible cards, which the saved order does not count.
+    const moved = ll.cardMoved({ name: ll.cpuUsage(), position: 2, total: 0 }).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    expect(await screen.findByText(new RegExp(`^${moved.replace('0', '\\d+')}$`))).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: ll.cardMoveLater({ name: ll.cpuUsage() }) })).toHaveFocus()
+  })
+
+  it('keeps the order when another server is removed', async () => {
+    servers.list = [
+      { id: 'a', url: 'https://a.example', token: 't' },
+      { id: 'b', url: 'https://b.example', token: 't' },
+    ]
+    servers.currentId = 'a'
+    capabilitiesStore.byServer['a'] = caps([])
+    mocked.getCardOrder.mockResolvedValue({ card_order: ['disk', 'cpu', 'memory', 'network'] })
+    render(Dashboard)
+    await rendered()
+    await waitFor(() => expect(mocked.getCardOrder).toHaveBeenCalledOnce())
+
+    servers.remove('b')
+    await new Promise((r) => setTimeout(r, 10))
+    expect(mocked.getCardOrder).toHaveBeenCalledOnce()
+  })
+})
