@@ -11,12 +11,9 @@ Windows first, forked from [ServerBox](https://github.com/lollipopkit/flutter_se
 
 ## Screenshots
 
-| Terminal | Files & upload progress |
-| --- | --- |
-| ![Terminal](screenshots/screenshot-1.png) | ![Files](screenshots/screenshot-2.png) |
+![LBox terminal](screenshots/screenshot-1.png)
 
-> Replace the two images in `screenshots/` with your own (keep the names, or
-> update the paths above).
+> Add or replace images in `screenshots/`.
 
 ## Features
 

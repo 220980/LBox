@@ -11,11 +11,9 @@
 
 ## 截图
 
-| 终端 | 文件管理与上传进度 |
-| --- | --- |
-| ![终端](screenshots/screenshot-1.png) | ![文件管理](screenshots/screenshot-2.png) |
+![LBox 终端](screenshots/screenshot-1.png)
 
-> 请把 `screenshots/` 里的两张图换成你自己的实际界面（保留文件名，或同步修改上面的路径）。
+> 图片放在 `screenshots/`，可自行增删替换。
 
 ## 功能
 
