@@ -13,7 +13,6 @@
 
 ![LBox 终端](screenshots/screenshot-1.png)
 
-> 图片放在 `screenshots/`，可自行增删替换。
 
 ## 功能
 
